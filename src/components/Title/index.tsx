@@ -1,11 +1,11 @@
 import React from 'react';
 
-export interface ButtonProps {
+export interface TitleProps {
   label: string;
 }
 
-const Button = (props: ButtonProps) => {
-  return <h1>{props.label}</h1>;
+const Title = (props: TitleProps) => {
+  return <h1 className="text-3xl">{props.label}</h1>;
 };
 
-export default Button;
+export default Title;

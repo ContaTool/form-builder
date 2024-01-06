@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['eslint:recommended', 'prettier', 'plugin:storybook/recommended'],
+  extends: ['eslint:recommended', 'prettier'],
   rules: {
     semi: ['error', 'always'],
     'no-console': 1,
