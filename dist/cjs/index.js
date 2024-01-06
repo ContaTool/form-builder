@@ -1,5 +1,7 @@
 'use strict';
 
+require('./styles.css');
+
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
@@ -2614,18 +2616,18 @@ if (process.env.NODE_ENV === 'production') {
 var reactExports = react.exports;
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-var Button$1 = function(props) {
+const Button$1 = (props)=>{
     return React.createElement("button", null, props.label);
 };
 
-var Card = function(props) {
+const Card = (props)=>{
     return React.createElement("div", {
         className: "max-w-sm rounded overflow-hidden shadow-lg bg-white p-4"
     }, props.children);
 };
 
-var Button = function(props) {
-    return React.createElement("button", null, props.label);
+const Button = (props)=>{
+    return React.createElement("h1", null, props.label);
 };
 
 exports.Button = Button$1;

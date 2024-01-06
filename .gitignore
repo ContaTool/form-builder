@@ -1,0 +1,10 @@
+#generate git ignore 
+
+
+#ignore .env file
+.env
+node_modules/*
+.DS_Store
+
+#ignore build folder
+dist/*
