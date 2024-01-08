@@ -36,6 +36,7 @@ export default [
       commonjs(), // Convierte módulos de CommonJS a ES6
       resolve(), // Permite Rollup resolver módulos de Node.js
     ],
+    external: ['react', 'react-dom'],
   },
   {
     input: 'lib/styles.css',

@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./lib/**/*.tsx'],
+  content: [
+    './lib/**/*.tsx',
+    './node_modules/react-tailwindcss-select/dist/index.esm.js',
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -10,7 +13,8 @@ module.exports = {
       },
     },
   },
-  prefix: 'ct-',
+  plugins: [require('@tailwindcss/forms')],
+  // prefix: 'ct-',
   corePlugins: {
     preflight: false,
   },

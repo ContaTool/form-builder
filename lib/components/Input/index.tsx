@@ -3,7 +3,7 @@ import React from 'react';
 //   UseFormRegisterReturn,
 //   UseFormRegister,
 //   useFormContext,
-// } from 'react-hook-form';
+// } from 'reahook-form';
 
 export interface InputProps {
   label: string;
@@ -18,7 +18,7 @@ export default function Input(props: InputProps) {
   // } = useFormContext();
 
   return (
-    <div className="ct-py-2">
+    <div className="py-2">
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
         htmlFor={props.name}

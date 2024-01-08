@@ -7,9 +7,7 @@ export interface TitleProps {
 
 const Title = (props: TitleProps) => {
   return (
-    <span className={`${props?.className} ct-text-lg ct-py-4 `}>
-      {props.label}
-    </span>
+    <span className={`${props?.className} text-lg py-4 `}>{props.label}</span>
   );
 };
 

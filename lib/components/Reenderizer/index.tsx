@@ -1,20 +1,27 @@
 import React from 'react';
 import { FormElement } from '../Form';
-import Title, { TitleProps } from '../Title';
-import Card, { CardProps } from '../Card';
+import Title from '../Title';
+import Card from '../Card';
 import Input from '../Input';
+import Add from '../Add';
+import Tabs from '../Tabs';
+import Select from '../Select';
 
 const Components = {
   title: Title,
   card: Card,
 };
 
-const Recursive = (props: FormElement) => {
+export const Recursive = (props: FormElement) => {
   let Component;
   if (props.type === 'title') Component = Title;
   if (props.type === 'card') Component = Card;
   if (props.type === 'input') Component = Input;
-  if (!Component) return;
+  if (props.type === 'add') Component = Add;
+  if (props.type === 'tabs') Component = Tabs;
+  if (props.type === 'select') Component = Select;
+
+  if (!Component) Component = () => <div>componente invalido</div>;
 
   return (
     <Component {...props.props}>
