@@ -1,22 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
-const options = [
-  { value: 'dev', label: '1055 - Developer' },
-  { value: 'fox', label: '🦊 Developer' },
-  { value: 'Butterfly', label: '🦋 Social Media' },
-  { value: 'Honeybee', label: '🐝 Multímedia' },
-];
+interface SelectProps {
+  label: string;
+  name?: string;
+  options: { value: string; label: string }[];
+}
 
-const Select = (props) => {
+const Select = (props: SelectProps) => {
   const [query, setQuery] = useState('');
-  const [filteredOptions, setFilteredOptions] = useState(options);
+  const [filteredOptions, setFilteredOptions] = useState(props.options);
   const [isOpen, setIsOpen] = useState(false);
 
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -28,11 +36,11 @@ const Select = (props) => {
     };
   }, [wrapperRef]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
 
-    const filtered = options.filter((option) =>
+    const filtered = props.options.filter((option) =>
       option.label.toLowerCase().includes(inputValue.toLowerCase())
     );
 
@@ -40,7 +48,7 @@ const Select = (props) => {
     setIsOpen(true);
   };
 
-  const handleOptionSelect = (option) => {
+  const handleOptionSelect = (option: { value: string; label: string }) => {
     setQuery(option.label);
     setIsOpen(false);
   };
