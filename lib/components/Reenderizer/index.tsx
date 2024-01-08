@@ -1,16 +1,11 @@
 import React from 'react';
-import { FormElement } from '../Form';
+import type { FormElement } from '../Form';
 import Title from '../Title';
 import Card from '../Card';
 import Input from '../Input';
 import Add from '../Add';
 import Tabs from '../Tabs';
 import Select from '../Select';
-
-const Components = {
-  title: Title,
-  card: Card,
-};
 
 export const Recursive = (props: FormElement) => {
   let Component;

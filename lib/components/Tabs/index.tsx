@@ -9,7 +9,7 @@ interface TabsProps {
 const Tabs = (props: TabsProps) => {
   if (!props.tabs) return;
 
-  const [activeTab, setActiveTab] = React.useState(props.tabs[0].label);
+  const [activeTab, setActiveTab] = React.useState(props.tabs[0].props.label);
 
   return (
     <div>
@@ -28,16 +28,16 @@ const Tabs = (props: TabsProps) => {
           <nav className="-mb-px flex gap-6" aria-label="Tabs">
             {props.tabs.map((tab) => (
               <a
-                onClick={() => setActiveTab(tab.label)}
+                onClick={() => setActiveTab(tab.props.label)}
                 className={`
                 ${
-                  activeTab === tab.label
+                  activeTab === tab.props.label
                     ? 'font-medium  text-black  border-pink-500'
                     : ' text-gray-500  hover:text-gray-700 hover:border-gray-300'
                 }
                 shrink-0 border-b-2  px-1 pb-4 hover:cursor-pointer text-md  `}
               >
-                {tab.label}
+                {tab.props.label}
               </a>
             ))}
           </nav>
@@ -46,10 +46,12 @@ const Tabs = (props: TabsProps) => {
 
       {props.tabs.map((tab) => (
         <div className="pt-4">
-          {tab.children?.map((element: FormElement, index: number) => {
+          {tab.props.children?.map((element: FormElement, index: number) => {
             return (
               <div
-                className={`${activeTab === tab.label ? 'block' : 'hidden'}`}
+                className={`${
+                  activeTab === tab.props.label ? 'block' : 'hidden'
+                }`}
               >
                 <Recursive key={index} {...element} />
               </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import Reenderizer from '../Reenderizer';
 
+import { addElementToForm } from '../../helpers/index.js';
+
 export type FormElement = {
   type: string;
   props: {
@@ -11,13 +13,13 @@ export type FormElement = {
 
 export interface FormProps {
   isEditing: boolean;
-  form: Array<Element>;
+  form: Array<FormElement>;
 }
 
 const Form = (props: FormProps) => {
   return (
     <form>
-      <Reenderizer data={props.form} />
+      <Reenderizer data={addElementToForm(props.form)} />
     </form>
   );
 };
