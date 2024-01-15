@@ -1,21 +1,28 @@
 import React, {
   ChangeEvent,
-  ChangeEventHandler,
+  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
+import { FormContext } from '../../context/FormContext';
+import type { TFormContext } from '../../context/FormContext';
 
 interface SelectProps extends ElementProps {
   options?: { value: string; label: string }[];
 }
 
 const Select = (props: SelectProps) => {
+  // States
   const [query, setQuery] = useState('');
   const [filteredOptions, setFilteredOptions] = useState(props.options);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Refs
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // Contexts
+  const { clickOnElement } = useContext<TFormContext>(FormContext);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -51,8 +58,14 @@ const Select = (props: SelectProps) => {
     setIsOpen(false);
   };
 
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    const element = props.element;
+    clickOnElement?.call(null, element);
+  };
+
   return (
-    <div className="py-2 relative " ref={wrapperRef}>
+    <div onClick={handleClick} className="py-2 relative" ref={wrapperRef}>
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
         htmlFor={props.name}

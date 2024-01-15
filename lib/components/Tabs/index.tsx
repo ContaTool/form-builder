@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Recursive } from '../Reenderizer';
 
-interface TabsProps {
+import { FormContext } from '../../context/FormContext';
+import type { TFormContext } from '../../context/FormContext';
+
+interface TabsProps extends ElementProps {
   tabs?: DataFormElement[];
 }
 
@@ -10,8 +13,17 @@ const Tabs = (props: TabsProps) => {
 
   const [activeTab, setActiveTab] = React.useState(props.tabs[0].props.label);
 
+  // Contexts
+  const { clickOnElement } = useContext<TFormContext>(FormContext);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    const element = props.element;
+    clickOnElement?.call(null, element);
+  };
+
   return (
-    <div>
+    <div onClick={handleClick}>
       <div className="sm:hidden">
         <label htmlFor="Tab" className="sr-only">
           Tab

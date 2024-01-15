@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { FormContext, TFormContext } from '../../context/FormContext';
+import { FormContext } from '../../context/FormContext';
+import type { TFormContext } from '../../context/FormContext';
 
 const Card = (props: ElementProps) => {
   const { clickOnElement } = useContext<TFormContext>(FormContext);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    console.log('Button clicked');
     const element = props.element;
     clickOnElement?.call(null, element);
   };
