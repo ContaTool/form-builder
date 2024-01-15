@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 
 export type TFormContext = {
-  addNewElement?: () => void;
+  clickOnElement?: (params: DataFormElement) => void;
 };
 
 export const FormContext = createContext<TFormContext>({});

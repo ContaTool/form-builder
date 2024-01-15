@@ -1,11 +1,15 @@
 export {};
 declare global {
-  type FormElement = {
+  type DataFormElement = {
     type: string;
     props: {
       label?: string;
-      children?: FormElement[];
-      tabs?: FormElement[];
+      children?: DataFormElement[];
+      tabs?: DataFormElement[];
     };
   };
+
+  interface ElementProps extends React.HTMLProps<HTMLElement> {
+    element: DataFormElement;
+  }
 }

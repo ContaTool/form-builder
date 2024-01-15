@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { FormContext, TFormContext } from '../../context/FormContext';
 
-export interface CardProps extends React.HTMLProps<HTMLElement> {
-  label?: string;
-}
+const Card = (props: ElementProps) => {
+  const { clickOnElement } = useContext<TFormContext>(FormContext);
 
-const Card = (props: CardProps) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    console.log('Button clicked');
+    const element = props.element;
+    clickOnElement?.call(null, element);
+  };
+
   return (
-    <div className="my-4 w-full rounded shadow-lg bg-white pt-2 pb-8 px-4">
+    <div
+      onClick={handleClick}
+      className="my-4 w-full rounded shadow-lg bg-white pt-2 pb-8 px-4"
+    >
       <div className="py-4 font-bold">
         <span className={`text-xl`}>{props.label}</span>
       </div>

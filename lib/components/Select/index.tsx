@@ -6,9 +6,7 @@ import React, {
   useState,
 } from 'react';
 
-interface SelectProps extends React.HTMLProps<HTMLElement> {
-  label?: string;
-  name?: string;
+interface SelectProps extends ElementProps {
   options?: { value: string; label: string }[];
 }
 

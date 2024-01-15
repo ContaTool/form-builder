@@ -6,7 +6,7 @@ import Add from '../Add';
 import Tabs from '../Tabs';
 import Select from '../Select';
 
-export const Recursive = (props: FormElement): JSX.Element => {
+export const Recursive = (props: DataFormElement): JSX.Element => {
   let Component;
   if (props.type === 'title') Component = Title;
   if (props.type === 'card') Component = Card;
@@ -18,16 +18,16 @@ export const Recursive = (props: FormElement): JSX.Element => {
 
   if (!Component) Component = () => <div>Componente Invalido</div>;
   return (
-    <Component {...props.props}>
-      {props.props.children?.map((child: FormElement, index: number) => (
+    <Component {...props.props} element={props}>
+      {props.props.children?.map((child: DataFormElement, index: number) => (
         <Recursive key={index} {...child} />
       ))}
     </Component>
   );
 };
 
-const Reenderizer = ({ data }: { data: FormElement[] }) => {
-  return data.map((item: FormElement, index: number) => (
+const Reenderizer = ({ data }: { data: DataFormElement[] }) => {
+  return data.map((item: DataFormElement, index: number) => (
     <Recursive key={index} {...item} />
   ));
 };

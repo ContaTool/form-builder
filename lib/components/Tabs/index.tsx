@@ -2,7 +2,7 @@ import React from 'react';
 import { Recursive } from '../Reenderizer';
 
 interface TabsProps {
-  tabs?: FormElement[];
+  tabs?: DataFormElement[];
 }
 
 const Tabs = (props: TabsProps) => {
@@ -45,17 +45,19 @@ const Tabs = (props: TabsProps) => {
 
       {props.tabs.map((tab) => (
         <div className="pt-4">
-          {tab.props.children?.map((element: FormElement, index: number) => {
-            return (
-              <div
-                className={`${
-                  activeTab === tab.props.label ? 'block' : 'hidden'
-                }`}
-              >
-                <Recursive key={index} {...element} />
-              </div>
-            );
-          })}
+          {tab.props.children?.map(
+            (element: DataFormElement, index: number) => {
+              return (
+                <div
+                  className={`${
+                    activeTab === tab.props.label ? 'block' : 'hidden'
+                  }`}
+                >
+                  <Recursive key={index} {...element} />
+                </div>
+              );
+            }
+          )}
         </div>
       ))}
     </div>

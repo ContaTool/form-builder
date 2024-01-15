@@ -1,15 +1,19 @@
-const addedObject: FormElement = {
+const addedObject: DataFormElement = {
   type: 'add',
   props: {},
 };
 
-const addObjectsToChildren = (children: FormElement[]): FormElement[] => {
+const addObjectsToChildren = (
+  children: DataFormElement[]
+): DataFormElement[] => {
   if (children.length === 0) return [addedObject];
   else if (children.length > 0) return [addedObject, ...children, addedObject];
   else return [];
 };
 
-export const addElementToForm = (form: FormElement[]): FormElement[] => {
+export const addElementToForm = (
+  form: DataFormElement[]
+): DataFormElement[] => {
   return form.map((elemento) => {
     return {
       ...elemento,
