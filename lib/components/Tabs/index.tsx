@@ -1,9 +1,8 @@
 import React from 'react';
 import { Recursive } from '../Reenderizer';
-import { FormElement } from '../Form';
 
 interface TabsProps {
-  tabs: any[];
+  tabs?: FormElement[];
 }
 
 const Tabs = (props: TabsProps) => {

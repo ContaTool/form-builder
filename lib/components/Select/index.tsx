@@ -6,10 +6,10 @@ import React, {
   useState,
 } from 'react';
 
-interface SelectProps {
-  label: string;
+interface SelectProps extends React.HTMLProps<HTMLElement> {
+  label?: string;
   name?: string;
-  options: { value: string; label: string }[];
+  options?: { value: string; label: string }[];
 }
 
 const Select = (props: SelectProps) => {
@@ -40,7 +40,7 @@ const Select = (props: SelectProps) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
 
-    const filtered = props.options.filter((option) =>
+    const filtered = props.options?.filter((option) =>
       option.label.toLowerCase().includes(inputValue.toLowerCase())
     );
 
@@ -72,7 +72,7 @@ const Select = (props: SelectProps) => {
         />
         {isOpen && (
           <ul className="absolute z-10 left-0 w-full mt-2 border rounded bg-white shadow-md">
-            {filteredOptions.map((option, index) => (
+            {filteredOptions?.map((option, index) => (
               <li
                 key={index}
                 className="py-2 px-4 cursor-pointer hover:bg-gray-200"

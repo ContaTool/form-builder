@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-export interface CardProps {
-  label: string;
-  children: React.ReactNode;
+export interface CardProps extends React.HTMLProps<HTMLElement> {
+  label?: string;
 }
 
 const Card = (props: CardProps) => {
   return (
-    <div className="mb-4 w-full rounded shadow-lg bg-white pt-2 pb-8 px-4">
+    <div className="my-4 w-full rounded shadow-lg bg-white pt-2 pb-8 px-4">
       <div className="py-4 font-bold">
         <span className={`text-xl`}>{props.label}</span>
       </div>
