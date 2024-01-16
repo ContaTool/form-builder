@@ -10,6 +10,6 @@ declare global {
   };
 
   interface ElementProps extends React.HTMLProps<HTMLElement> {
-    element: DataFormElement;
+    element?: DataFormElement;
   }
 }
