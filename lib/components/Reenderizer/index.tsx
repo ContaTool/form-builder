@@ -16,7 +16,7 @@ export const Recursive = (props: DataFormElement): JSX.Element => {
   if (props.type === 'tabs') Component = Tabs;
   if (props.type === 'select') Component = Select;
 
-  if (!Component) Component = () => <div>Componente Invalido</div>;
+  if (!Component) Component = () => <div>Componente Invalido {props.type}</div>;
   return (
     <Component {...props.props} element={props}>
       {props.props.children?.map((child: DataFormElement, index: number) => (

@@ -5,6 +5,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { useFormContext } from 'react-hook-form';
+
 import { FormContext } from '../../context/FormContext';
 import type { TFormContext } from '../../context/FormContext';
 
@@ -15,7 +17,9 @@ interface SelectProps extends ElementProps {
 const Select = (props: SelectProps) => {
   // States
   const [query, setQuery] = useState('');
-  const [filteredOptions, setFilteredOptions] = useState(props.options);
+  const [filteredOptions, setFilteredOptions] = useState(
+    props.options?.filter((i) => i.value != 'add')
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   // Refs
@@ -23,6 +27,12 @@ const Select = (props: SelectProps) => {
 
   // Contexts
   const { clickOnElement } = useContext<TFormContext>(FormContext);
+  const {
+    register,
+    setValue,
+    trigger,
+    formState: { errors },
+  } = useFormContext();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -54,7 +64,10 @@ const Select = (props: SelectProps) => {
   };
 
   const handleOptionSelect = (option: { value: string; label: string }) => {
+    console.log('option selected?');
     setQuery(option.label);
+    setValue(props.name, option.value);
+    trigger(props.name);
     setIsOpen(false);
   };
 
@@ -63,6 +76,13 @@ const Select = (props: SelectProps) => {
     const element = props.element;
     clickOnElement?.call(null, element);
   };
+
+  if (!props.name)
+    return (
+      <p className="text-red-500 text-xs italic pt-2">
+        Propiedades deben proveer un nombre (name)
+      </p>
+    );
 
   return (
     <div onClick={handleClick} className="py-2 relative" ref={wrapperRef}>
@@ -74,6 +94,7 @@ const Select = (props: SelectProps) => {
       </label>
       <div>
         <input
+          {...register(props.name, { ...props.validations })}
           type="text"
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Buscar..."
@@ -86,7 +107,7 @@ const Select = (props: SelectProps) => {
             {filteredOptions?.map((option, index) => (
               <li
                 key={index}
-                className="py-2 px-4 cursor-pointer hover:bg-gray-200"
+                className="py-2 px-4 cursor-pointer hover:bg-pink-200"
                 onClick={() => handleOptionSelect(option)}
               >
                 {option.label}
@@ -95,8 +116,7 @@ const Select = (props: SelectProps) => {
           </ul>
         )}
         <p className="text-red-500 text-xs italic pt-2">
-          Error: Aqui va a un error que vas a mostrar
-          {/* {errors[props.name]?.message?.toString()} */}
+          {errors[props.name]?.message?.toString()}
         </p>
       </div>
     </div>

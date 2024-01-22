@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FormContext } from '../../context/FormContext';
 import type { TFormContext } from '../../context/FormContext';
-
-// import {
-//   UseFormRegisterReturn,
-//   UseFormRegister,
-//   useFormContext,
-// } from 'reahook-form';
+import { useFormContext } from 'react-hook-form';
 
 export default function Input(props: ElementProps) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   const { clickOnElement } = useContext<TFormContext>(FormContext);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -17,10 +17,12 @@ export default function Input(props: ElementProps) {
     clickOnElement?.call(null, element);
   };
 
-  // const {
-  //   register,
-  //   formState: { errors },
-  // } = useFormContext();
+  if (!props.name)
+    return (
+      <p className="text-red-500 text-xs italic pt-2">
+        Propiedades deben proveer un nombre (name)
+      </p>
+    );
 
   return (
     <div onClick={handleClick} className="py-2">
@@ -32,7 +34,7 @@ export default function Input(props: ElementProps) {
       </label>
       <div className="relative">
         <input
-          // {...register(props.name)}
+          {...register(props.name, { ...props.validations })}
           // {...props}
           placeholder={props.placeholder}
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -40,8 +42,7 @@ export default function Input(props: ElementProps) {
       </div>
 
       <p className="text-red-500 text-xs italic pt-2">
-        Error: Aqui va a un error que vas a mostrar
-        {/* {errors[props.name]?.message?.toString()} */}
+        {errors[props.name]?.message?.toString()}
       </p>
     </div>
   );

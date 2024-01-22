@@ -1,3 +1,5 @@
+import type { RegisterOptions } from 'react-hook-form';
+
 export {};
 declare global {
   type DataFormElement = {
@@ -11,5 +13,7 @@ declare global {
 
   interface ElementProps extends React.HTMLProps<HTMLElement> {
     element?: DataFormElement;
+    name: string;
+    validations: RegisterOptions;
   }
 }
