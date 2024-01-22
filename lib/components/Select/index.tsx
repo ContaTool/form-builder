@@ -69,6 +69,8 @@ const Select = (props: SelectProps) => {
     setValue(props.name, option.value);
     trigger(props.name);
     setIsOpen(false);
+
+    props.test(option.value);
   };
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {

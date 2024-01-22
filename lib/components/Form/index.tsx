@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Controller, FormProvider, useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
@@ -15,7 +15,13 @@ export interface FormProps {
   form: Array<DataFormElement>;
 }
 
+import text from '../../forms/text';
+
 const Form = (props: FormProps) => {
+  // States
+  const [currentForm, setCurrentForm] = useState([...props.form]);
+
+  // Hooks
   const form = useForm();
 
   const clickOnElement = (params: DataFormElement) => {
@@ -31,13 +37,10 @@ const Form = (props: FormProps) => {
       <FormProvider {...form}>
         <form onSubmit={form.handleSubmit((data) => onMyFormSubmit(data))}>
           <Reenderizer
-            data={props.isEditing ? addElementToForm(props.form) : props.form}
+            data={props.isEditing ? addElementToForm(currentForm) : currentForm}
           />
           <button
-            className="mb-4
-        disabled:opacity-50
-        place-self-end
-        bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+            className="mb-4 disabled:opacity-50 place-self-end bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
             disabled={form.formState.isSubmitting}
             type="submit"
           >

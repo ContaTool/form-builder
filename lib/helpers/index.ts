@@ -33,3 +33,34 @@ export const addElementToForm = (
     };
   });
 };
+
+export const replacePlaceholder = (
+  array: Array<any>,
+  identifier: string,
+  replacer: any
+): Array<any> => {
+  const index = array.findIndex(
+    (i) => i.props.for === identifier && i.type === 'placeholder'
+  );
+
+  const new_array = [...array];
+
+  if (index > 0) {
+    new_array[index] = replacer;
+  }
+
+  return new_array.map((i) => {
+    if ('children' in i.props) {
+      return {
+        ...i,
+        props: {
+          ...i.props,
+          children: [
+            ...replacePlaceholder(i.props.children, identifier, replacer),
+          ],
+        },
+      };
+    }
+    return i;
+  });
+};
