@@ -6,11 +6,17 @@ import newForm from '../../forms/new';
 
 interface PropertyEditorProps {
   ctx: DataFormElement;
-  onSubmit: () => {};
+  onSubmit: (data) => {};
 }
 
 const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
   const type = option.options.find((i) => i.value === ctx?.type);
+
+  console.log('context ', ctx);
+
+  const handleSubmit = (data) => {
+    onSubmit({ ...data, id: ctx.id });
+  };
 
   return (
     <>
@@ -18,7 +24,7 @@ const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
         <Form
           isEditing={false}
           form={newForm.props.children}
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
         />
       ) : null}
     </>

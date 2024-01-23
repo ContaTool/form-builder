@@ -64,7 +64,7 @@ const Select = (props: SelectProps) => {
   };
 
   const handleOptionSelect = (option: { value: string; label: string }) => {
-    console.log('option selected?');
+    console.log('option selected?', option);
     setQuery(option.label);
     setValue(props.name, option.value);
     trigger(props.name);
@@ -97,10 +97,14 @@ const Select = (props: SelectProps) => {
       <div>
         <input
           {...register(props.name, { ...props.validations })}
+          type="hidden"
+        />
+        <input
           type="text"
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Buscar..."
           value={query}
+          autoComplete="off"
           onChange={handleInputChange}
           onClick={() => setIsOpen(true)}
         />

@@ -26,17 +26,15 @@ const Form = (props: FormProps) => {
   };
 
   // useEffect(() => {
-  //   // console.log('form has been changed', props.form);
-  //   setCurrentForm(props.form);
-  // }, [props.form]);
+  //   console.log('form has been changed', props);
+  //   //   setCurrentForm(props.form);
+  // }, [props]);
 
   return (
     <FormContext.Provider value={{ clickOnElement }}>
       <FormProvider {...form}>
         <form
-          onSubmit={form.handleSubmit((data) =>
-            props.onSubmit({ ...data, formIdentifier: 'abc123' })
-          )}
+          onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}
         >
           <Reenderizer data={props.form} />
           <button

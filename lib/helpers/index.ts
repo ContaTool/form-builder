@@ -7,7 +7,7 @@ const addedObject: DataFormElement = {
 
 const createAddObject = (): DataFormElement => {
   return {
-    id: 'abc123',
+    id: uuidv4(),
     ...addedObject,
   };
 };

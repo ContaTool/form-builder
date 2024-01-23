@@ -45,10 +45,6 @@ const Reenderizer = ({ data }: { data: DataFormElement[] }) => {
     setElements([...replacePlaceholder(data, 'field_type', option)]);
   };
 
-  useEffect(() => {
-    setElements(data);
-  }, [data]);
-
   return elements.map((item: DataFormElement) => {
     return <Recursive key={uuidv4()} {...item} test={test} />;
   });
