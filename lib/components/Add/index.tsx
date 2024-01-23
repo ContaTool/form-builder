@@ -7,6 +7,7 @@ export default function Add(props: ElementProps) {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     const element = props.element;
+    console.log('elemetno', props, props.element);
     clickOnElement?.call(null, element);
   };
 

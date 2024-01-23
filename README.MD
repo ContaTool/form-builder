@@ -1,2 +1,8 @@
-Install storybook ?
-Install Tailwind []
+<!-- Titles -->
+
+{
+type: 'titulo',
+props: {
+label: "I'm a title"
+}
+}

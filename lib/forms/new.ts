@@ -1,5 +1,7 @@
 import options from './formOptions';
 import text from './text';
+import input from './input';
+import parragraph from './parragraph';
 
 export default {
   type: 'root',
@@ -24,10 +26,16 @@ export default {
                 },
               },
             },
+            { type: 'empty_block', props: {} },
             {
               type: 'placeholder',
               props: {
                 for: 'field_type',
+                options: {
+                  title: text,
+                  input: input,
+                  parragraph: parragraph,
+                },
               },
             },
           ],

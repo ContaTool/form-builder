@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import { Recursive } from '../Reenderizer';
 
 import { FormContext } from '../../context/FormContext';
@@ -39,6 +41,7 @@ const Tabs = (props: TabsProps) => {
           <nav className="-mb-px flex gap-6" aria-label="Tabs">
             {props.tabs.map((tab) => (
               <a
+                key={uuidv4()}
                 onClick={() => setActiveTab(tab.props.label)}
                 className={`
                 ${
@@ -61,11 +64,12 @@ const Tabs = (props: TabsProps) => {
             (element: DataFormElement, index: number) => {
               return (
                 <div
+                  key={uuidv4()}
                   className={`${
                     activeTab === tab.props.label ? 'block' : 'hidden'
                   }`}
                 >
-                  <Recursive key={index} {...element} />
+                  <Recursive key={uuidv4()} {...element} />
                 </div>
               );
             }

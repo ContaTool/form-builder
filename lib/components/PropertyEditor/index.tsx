@@ -6,15 +6,20 @@ import newForm from '../../forms/new';
 
 interface PropertyEditorProps {
   ctx: DataFormElement;
+  onSubmit: () => {};
 }
 
-const PropertyEditor = ({ ctx }: PropertyEditorProps) => {
+const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
   const type = option.options.find((i) => i.value === ctx?.type);
 
   return (
     <>
       {ctx?.type === 'add' ? (
-        <Form isEditing={false} form={newForm.props.children} />
+        <Form
+          isEditing={false}
+          form={newForm.props.children}
+          onSubmit={onSubmit}
+        />
       ) : null}
     </>
   );

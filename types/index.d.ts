@@ -3,6 +3,7 @@ import type { RegisterOptions } from 'react-hook-form';
 export {};
 declare global {
   type DataFormElement = {
+    id?: string;
     type: string;
     props: {
       label?: string;

@@ -105,7 +105,7 @@ const Select = (props: SelectProps) => {
           onClick={() => setIsOpen(true)}
         />
         {isOpen && (
-          <ul className="absolute z-10 left-0 w-full mt-2 border rounded bg-white shadow-md">
+          <ul className="hover:cursor-pointer absolute z-10 left-0 w-full mt-2 border rounded bg-white shadow-md">
             {filteredOptions?.map((option, index) => (
               <li
                 key={index}
