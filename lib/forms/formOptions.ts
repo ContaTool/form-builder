@@ -1,7 +1,7 @@
 export default {
   options: [
     { value: 'title', label: 'Título' },
-    { value: 'parragraph', label: 'Parrafo' },
+    { value: 'paragraph', label: 'Parrafo' },
     { value: 'input', label: 'Campo de texto' },
 
     // { value: 'card', label: 'Tarjeta' },

@@ -8,6 +8,8 @@ import Add from '../Add';
 import Tabs from '../Tabs';
 import Select from '../Select';
 import TextArea from '../TextArea';
+import Paragraph from '../Paragraph';
+
 import { replacePlaceholder } from '../../helpers';
 
 export const Recursive = (props: DataFormElement): JSX.Element => {
@@ -20,6 +22,8 @@ export const Recursive = (props: DataFormElement): JSX.Element => {
   if (props.type === 'placeholder' || props.type === 'empty_block')
     Component = () => <div></div>;
   if (props.type === 'title') Component = Title;
+  if (props.type === 'paragraph') Component = Paragraph;
+
   if (props.type === 'card') Component = Card;
   if (props.type === 'input') Component = Input;
   if (props.type === 'textarea') Component = TextArea;

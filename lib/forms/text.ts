@@ -3,7 +3,7 @@ export default [
     type: 'input',
     props: {
       label: 'Texto del campo',
-      name: 'name',
+      name: 'label',
       validations: {
         required: 'Este campo es obligatorio',
         minLength: {
@@ -14,3 +14,11 @@ export default [
     },
   },
 ];
+
+// {
+//   key,
+//   type: 'title',
+//   props: {
+//     label: "I'm a title",
+//   },
+// },

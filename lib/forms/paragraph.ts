@@ -3,7 +3,7 @@ export default [
     type: 'textarea',
     props: {
       label: 'Texto del campo',
-      name: 'name',
+      name: 'text',
       validations: {
         required: 'Este campo es obligatorio',
         minLength: {

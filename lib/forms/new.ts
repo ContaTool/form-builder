@@ -1,7 +1,7 @@
 import options from './formOptions';
 import text from './text';
 import input from './input';
-import parragraph from './parragraph';
+import paragraph from './paragraph';
 
 export default {
   type: 'root',
@@ -17,7 +17,7 @@ export default {
               props: {
                 label: 'Tipo de Campo',
                 options: options.options,
-                name: 'field_type',
+                name: 'type',
                 dependingForm: {
                   titulo: text,
                 },
@@ -34,7 +34,7 @@ export default {
                 options: {
                   title: text,
                   input: input,
-                  parragraph: parragraph,
+                  paragraph: paragraph,
                 },
               },
             },

@@ -16,7 +16,7 @@ interface SelectProps extends ElementProps {
 
 const Select = (props: SelectProps) => {
   // States
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState<string>('');
   const [filteredOptions, setFilteredOptions] = useState(
     props.options?.filter((i) => i.value != 'add')
   );
@@ -64,12 +64,11 @@ const Select = (props: SelectProps) => {
   };
 
   const handleOptionSelect = (option: { value: string; label: string }) => {
-    console.log('option selected?', option);
+    //console.log('option selected?', option);
     setQuery(option.label);
+    setIsOpen(false);
     setValue(props.name, option.value);
     trigger(props.name);
-    setIsOpen(false);
-
     props.test(option.value);
   };
 
@@ -97,9 +96,6 @@ const Select = (props: SelectProps) => {
       <div>
         <input
           {...register(props.name, { ...props.validations })}
-          type="hidden"
-        />
-        <input
           type="text"
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Buscar..."

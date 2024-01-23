@@ -12,10 +12,20 @@ interface PropertyEditorProps {
 const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
   const type = option.options.find((i) => i.value === ctx?.type);
 
-  console.log('context ', ctx);
+  // console.log('context ', ctx);
 
   const handleSubmit = (data) => {
-    onSubmit({ ...data, id: ctx.id });
+    // Create element from form
+    const d = { ...data };
+    delete d.type;
+
+    onSubmit({
+      id: ctx.id,
+      type: data.type,
+      props: {
+        ...d,
+      },
+    });
   };
 
   return (
