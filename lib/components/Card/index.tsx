@@ -14,7 +14,7 @@ const Card = (props: ElementProps) => {
   return (
     <div
       onClick={handleClick}
-      className="my-4 w-full rounded shadow-lg bg-white pt-2 pb-8 px-4 @container"
+      className="my-4 w-full rounded shadow-lg bg-white pt-2 pb-8 px-4 @container  col-span-3"
     >
       <div className="py-4 font-bold">
         <span className="text-xl">{props.label}</span>

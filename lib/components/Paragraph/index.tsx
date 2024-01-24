@@ -6,7 +6,7 @@ export interface ParagraphProps extends React.HTMLProps<HTMLElement> {
 
 const Paragraph = (props: ParagraphProps) => {
   return (
-    <span className={`${props?.className} font-bold text-md py-4 `}>
+    <span className={`${props?.className} font-medium text-md py-4 `}>
       {props?.text}
     </span>
   );

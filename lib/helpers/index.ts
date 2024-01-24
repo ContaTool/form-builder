@@ -22,6 +22,11 @@ const addObjectsToChildren = (
 };
 
 export const editMode = (form: DataFormElement[]): DataFormElement[] => {
+  // If no children anyway have to return something
+  if (form.length === 0) {
+    return [...addObjectsToChildren([])];
+  }
+
   return form.map((elemento) => {
     return {
       ...elemento,
@@ -54,7 +59,7 @@ export const findInArrayAndReplace = (
 
   if (index >= 0) {
     const new_forms = replacer;
-    new_array.splice(index, 1, ...new_forms);
+    new_array.splice(index + 1, 0, ...new_forms);
   }
 
   return new_array.map((i) => {

@@ -34,6 +34,7 @@ const Form = (props: FormProps) => {
     <FormContext.Provider value={{ clickOnElement }}>
       <FormProvider {...form}>
         <form
+          className="grid grid-cols-3 gap-4"
           onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}
         >
           <Reenderizer data={props.form} />

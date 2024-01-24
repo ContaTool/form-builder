@@ -3,8 +3,8 @@ export default {
     { value: 'title', label: 'Título' },
     { value: 'paragraph', label: 'Parrafo' },
     { value: 'input', label: 'Campo de texto' },
+    { value: 'card', label: 'Tarjeta' },
 
-    // { value: 'card', label: 'Tarjeta' },
     // { value: 'tab', label: 'Tabs' },
     // { value: 'tabs', label: 'Tab' },
     // { value: 'input_date', label: 'Campo de Fecha' },

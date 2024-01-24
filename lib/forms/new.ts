@@ -18,15 +18,25 @@ export default {
                 label: 'Tipo de Campo',
                 options: options.options,
                 name: 'type',
-                dependingForm: {
-                  titulo: text,
-                },
+                dependingForm: 'field_type',
                 validations: {
                   required: 'Este campo es obligatorio',
                 },
               },
             },
-            { type: 'empty_block', props: {} },
+            {
+              type: 'select',
+              props: {
+                name: 'box_size',
+                label: 'Espacios formulario',
+                placholder: 'Cuanto ganas?',
+                options: [
+                  { value: 'col-span-1', label: '1' },
+                  { value: 'col-span-2', label: '2' },
+                  { value: 'col-span-3', label: '3' },
+                ],
+              },
+            },
             {
               type: 'placeholder',
               props: {

@@ -15,6 +15,8 @@ interface SelectProps extends ElementProps {
 }
 
 const Select = (props: SelectProps) => {
+  // console.log('select props', props.dependingForm);
+
   // States
   const [query, setQuery] = useState<string>('');
   const [filteredOptions, setFilteredOptions] = useState(
@@ -69,7 +71,10 @@ const Select = (props: SelectProps) => {
     setIsOpen(false);
     setValue(props.name, option.value);
     trigger(props.name);
-    props.test(option.value);
+
+    if (props.dependingForm) {
+      props.test(option.value);
+    }
   };
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
