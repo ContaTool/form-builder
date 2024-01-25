@@ -7,9 +7,9 @@ export interface TitleProps extends React.HTMLProps<HTMLElement> {
 
 const Title = (props: TitleProps) => {
   return (
-    <span className={`${props?.box_size} font-bold text-xl py-4 `}>
+    <p className={`${props?.box_size} font-bold text-xl py-4 `}>
       {props?.label}
-    </span>
+    </p>
   );
 };
 

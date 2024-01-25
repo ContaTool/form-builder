@@ -5,46 +5,37 @@ const addedObject: DataFormElement = {
   props: {},
 };
 
-const createAddObject = (): DataFormElement => {
+const createAddObject = (parent: string): DataFormElement => {
   return {
     id: uuidv4(),
+    parent,
     ...addedObject,
   };
 };
 
 const addObjectsToChildren = (
-  children: DataFormElement[]
+  children: DataFormElement[],
+  parent: string
 ): DataFormElement[] => {
-  if (children.length === 0) return [createAddObject()];
-  else if (children.length > 0)
-    return [createAddObject(), ...children, createAddObject()];
-  else return [];
+  // if (children.length === 0) return [createAddObject(parent)];
+  // else if (children.length > 0)
+  //   return [createAddObject(parent), ...children, createAddObject(parent)];
+  // else
+
+  console.log('children call', children);
+
+  return [createAddObject(parent), ...children, createAddObject(parent)];
 };
 
 export const editMode = (form: DataFormElement[]): DataFormElement[] => {
-  // If no children anyway have to return something
-  if (form.length === 0) {
-    return [...addObjectsToChildren([])];
-  }
+  const modifiedform = form
+    .map((elemento) => {
+      console.log('elemento');
+      return [elemento];
+    })
+    .flat();
 
-  return form.map((elemento) => {
-    return {
-      ...elemento,
-      props: {
-        ...elemento.props,
-        ...(elemento.props?.children
-          ? {
-              children: addObjectsToChildren(
-                editMode(elemento.props?.children || [])
-              ),
-            }
-          : {}),
-        ...(elemento.props?.tabs
-          ? { tabs: editMode(elemento.props?.tabs || []) }
-          : {}),
-      },
-    };
-  });
+  return modifiedform;
 };
 
 export const findInArrayAndReplace = (

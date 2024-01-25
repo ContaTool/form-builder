@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import { replacePlaceholder } from '../../helpers';
+
 import Title from '../Title';
 import Card from '../Card';
 import Input from '../Input';
@@ -9,40 +11,28 @@ import Tabs from '../Tabs';
 import Select from '../Select';
 import TextArea from '../TextArea';
 import Paragraph from '../Paragraph';
-
-import { replacePlaceholder } from '../../helpers';
+import Root from '../Root';
 
 export const Recursive = (props: DataFormElement): JSX.Element => {
-  // It this its performant if before check if element have childrens
-
-  // console.log('has to render ', props);
-
-  let Component;
-
-  if (props.type === 'placeholder' || props.type === 'empty_block')
-    Component = () => <div></div>;
-  if (props.type === 'title') Component = Title;
-  if (props.type === 'paragraph') Component = Paragraph;
-
-  if (props.type === 'card') Component = Card;
-  if (props.type === 'input') Component = Input;
-  if (props.type === 'textarea') Component = TextArea;
-
-  if (props.type === 'add') Component = Add;
-  if (props.type === 'tabs') Component = Tabs;
-  if (props.type === 'select') Component = Select;
-
-  if (!Component) Component = () => <div>Componente Invalido {props.type}</div>;
-  return (
-    <Component {...props.props} element={props} test={props.test}>
-      {props.props.children?.map((child: DataFormElement) => (
-        <Recursive key={uuidv4()} {...child} test={props.test} />
-      ))}
-    </Component>
-  );
+  return <></>;
 };
 
-const Reenderizer = ({ data }: { data: DataFormElement[] }) => {
+const componentMapping: { [key: string]: React.ComponentType<any> } = {
+  root: Root,
+  title: Title,
+  card: Card,
+  paragraph: Paragraph,
+};
+
+const Reenderizer = ({
+  data,
+  isEditing,
+  parent,
+}: {
+  data: DataFormElement[];
+  isEditing: boolean;
+  parent?: string;
+}): JSX.Element => {
   const [elements, setElements] = useState(data);
 
   const test = (option: string) => {
@@ -53,9 +43,46 @@ const Reenderizer = ({ data }: { data: DataFormElement[] }) => {
     setElements(data);
   }, [data]);
 
-  return elements.map((item: DataFormElement) => {
-    return <Recursive key={uuidv4()} {...item} test={test} />;
-  });
+  if (elements.length === 0) return <></>;
+
+  return (
+    <>
+      {elements.map((item: DataFormElement): JSX.Element => {
+        // Check if the field_type has a corresponding component in the mapping
+        const Component = componentMapping[item.type];
+
+        if (Component) {
+          const commonProps = {
+            key: item.id,
+            ...item.props,
+            parent,
+            isEditing: isEditing,
+          };
+
+          // console.log('item', commonProps);
+
+          const renderedComponent = (
+            <Component {...commonProps}>
+              <Reenderizer
+                data={item.props?.children || []}
+                isEditing={isEditing}
+                parent={item.id}
+              />
+            </Component>
+          );
+
+          return isEditing && item.type !== 'root' ? (
+            <Add>{renderedComponent}</Add>
+          ) : (
+            renderedComponent
+          );
+        }
+
+        // If no corresponding component is found, you can return a default or handle it as needed
+        return <div key={item.id}>Unsupported field type: {item.type}</div>;
+      })}
+    </>
+  );
 };
 
 export default Reenderizer;

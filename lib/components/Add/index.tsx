@@ -1,22 +1,80 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import { FormContext, TFormContext } from '../../context/FormContext';
 
-export default function Add(props: ElementProps) {
-  const { clickOnElement } = useContext<TFormContext>(FormContext);
+interface AddProps {
+  children: JSX.Element;
+}
 
+const AddButton = ({
+  visible,
+  parent,
+}: {
+  visible: boolean;
+  parent: string;
+}) => {
+  const { clickOnElement } = useContext<TFormContext>(FormContext);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    const element = props.element;
-    console.log('elemetno', props, props.element);
+    const element: DataFormElement = {
+      id: uuidv4(),
+      type: 'add',
+      props: {},
+      parent,
+      position: 0,
+    };
+    console.log('handle click here');
     clickOnElement?.call(null, element);
   };
 
   return (
     <div
       onClick={handleClick}
-      className="col-span-3 border border-dashed hover:text-zinc-900 text-zinc-500 rounded-md border-1 hover:border-black border-gray-400 hover:cursor-pointer flex justify-center items-center py-8"
+      className={`after:content-['+'] after:absolute after:left-1/2 after:w-8 after:h-8
+        after:font-bold after:hover:cursor-pointer after:rounded-full after:shadow-lg 
+        after:flex after:justify-center after:items-center after:bg-pink-300 after:-m-3
+         ${visible ? 'after:visible' : 'after:invisible'}
+        `}
+    ></div>
+  );
+};
+
+export default function Add(props: AddProps) {
+  const { clickOnElement } = useContext<TFormContext>(FormContext);
+  const [showAdd, setShowAdd] = useState<boolean>(false);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    // TODO: Esto servira para el update.
+    // console.log('element clicked');
+    event.stopPropagation();
+    // console.log('current parent', props);
+    const element = props.children.props;
+    console.log(element, element);
+    // clickOnElement?.call(null, element);
+  };
+
+  return (
+    <div
+      onMouseEnter={(e) => {
+        e.stopPropagation();
+        setShowAdd(true);
+      }}
+      onMouseLeave={(e) => {
+        e.stopPropagation();
+        setShowAdd(false);
+      }}
+      className="flex flex-col col-span-3 py-3"
     >
-      <span className="text-sm font-bold ">AGREGAR ELEMENTO</span>
+      <div
+        onClick={handleClick}
+        className="border border-dashed border-gray-200 
+        relative
+        hover:cursor-pointer"
+      >
+        {props.children}
+        <AddButton visible={showAdd} parent={'ABC12#'} />
+      </div>
     </div>
   );
 }

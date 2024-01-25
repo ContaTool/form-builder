@@ -14,6 +14,8 @@ export interface FormProps {
 }
 
 const Form = (props: FormProps) => {
+  // console.log('form recibido', props.form);
+
   // State
   // const [currentForm, setCurrentForm] = useState([...props.form]);
 
@@ -21,30 +23,25 @@ const Form = (props: FormProps) => {
   const form = useForm();
 
   const clickOnElement = (params: DataFormElement) => {
-    // console.log('clic', params);
     props.clickOnElement?.call(null, params);
   };
-
-  // useEffect(() => {
-  //   console.log('form has been changed', props);
-  //   //   setCurrentForm(props.form);
-  // }, [props]);
 
   return (
     <FormContext.Provider value={{ clickOnElement }}>
       <FormProvider {...form}>
         <form
-          className="grid grid-cols-3 gap-4"
           onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}
         >
-          <Reenderizer data={props.form} />
-          <button
-            className="mb-4 disabled:opacity-50 place-self-end bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
-            disabled={form.formState.isSubmitting}
-            type="submit"
-          >
-            Guardar
-          </button>
+          <Reenderizer data={props.form} isEditing={props.isEditing} />
+          {!props.isEditing && (
+            <button
+              className="mb-4 disabled:opacity-50 place-self-end bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+              disabled={form.formState.isSubmitting}
+              type="submit"
+            >
+              Guardar
+            </button>
+          )}
         </form>
       </FormProvider>
     </FormContext.Provider>

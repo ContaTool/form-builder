@@ -6,9 +6,9 @@ const Card = (props: ElementProps) => {
   const { clickOnElement } = useContext<TFormContext>(FormContext);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-    const element = props.element;
-    clickOnElement?.call(null, element);
+    // event.stopPropagation();
+    // const element = props.element;
+    // clickOnElement?.call(null, element);
   };
 
   return (

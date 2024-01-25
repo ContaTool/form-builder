@@ -12,7 +12,7 @@ interface PropertyEditorProps {
 const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
   const type = option.options.find((i) => i.value === ctx?.type);
 
-  // console.log('context ', ctx);
+  console.log('context ', ctx);
 
   const handleSubmit = (data) => {
     // Create element from form
@@ -25,17 +25,15 @@ const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
       props: {
         ...d,
       },
+      position: ctx.position,
+      parent: ctx.parent,
     });
   };
 
   return (
     <>
       {ctx?.type === 'add' ? (
-        <Form
-          isEditing={false}
-          form={newForm.props.children}
-          onSubmit={handleSubmit}
-        />
+        <Form isEditing={false} form={newForm} onSubmit={handleSubmit} />
       ) : null}
     </>
   );

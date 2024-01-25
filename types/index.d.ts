@@ -10,6 +10,8 @@ declare global {
       children?: DataFormElement[];
       tabs?: DataFormElement[];
     };
+    parent?: string;
+    position: number;
   };
 
   interface ElementProps extends React.HTMLProps<HTMLElement> {
