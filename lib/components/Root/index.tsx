@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-export interface RootProps extends React.HTMLProps<HTMLElement> {}
+export interface RootProps extends React.HTMLProps<HTMLElement> {
+  size: number;
+}
 
 const Root = (props: RootProps) => {
-  return <div className="grid grid-cols-3 gap-4">{props?.children}</div>;
+  return (
+    <div
+      className={``}
+      // style={{
+      //   display: 'grid',
+      //   gridTemplateColumns: `repeat(${props.size}, 1fr)`,
+      // }}
+    >
+      {props?.children}
+    </div>
+  );
 };
 
 export default Root;

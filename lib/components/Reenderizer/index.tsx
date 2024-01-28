@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import { replacePlaceholder } from '../../helpers';
@@ -12,6 +12,8 @@ import Select from '../Select';
 import TextArea from '../TextArea';
 import Paragraph from '../Paragraph';
 import Root from '../Root';
+import Container from '../Container';
+import { FormContext } from '../../context/FormContext';
 
 export const Recursive = (props: DataFormElement): JSX.Element => {
   return <></>;
@@ -33,22 +35,32 @@ const Reenderizer = ({
   isEditing: boolean;
   parent?: string;
 }): JSX.Element => {
+  console.log('render with parent', parent);
+
+  // States
   const [elements, setElements] = useState(data);
+
+  // const split_times = 12;
+  // const children_size = 0;
+  // const split_times_array = Array.from({ length: children_size });
 
   const test = (option: string) => {
     setElements([...replacePlaceholder(data, 'field_type', option)]);
   };
 
   useEffect(() => {
+    console.log('received form', data)
     setElements(data);
   }, [data]);
 
-  if (elements.length === 0) return <></>;
+  if(!elements) return <></>
 
   return (
     <>
-      {elements.map((item: DataFormElement): JSX.Element => {
-        // Check if the field_type has a corresponding component in the mapping
+
+      <Add parent={elements.id} id={uuidv4()} position={0} />
+
+      {elements.props.children.map((item: DataFormElement, index: number): JSX.Element => {
         const Component = componentMapping[item.type];
 
         if (Component) {
@@ -56,26 +68,24 @@ const Reenderizer = ({
             key: item.id,
             ...item.props,
             parent,
-            isEditing: isEditing,
+              isEditing: isEditing,
           };
 
-          // console.log('item', commonProps);
 
           const renderedComponent = (
-            <Component {...commonProps}>
-              <Reenderizer
-                data={item.props?.children || []}
-                isEditing={isEditing}
-                parent={item.id}
-              />
-            </Component>
+            <>
+              <Component {...commonProps}>
+                <Reenderizer
+                  data={item}
+                  isEditing={isEditing}
+                  parent={elements.id}
+                />
+              </Component>
+              <Add parent={elements.id || ''} id={uuidv4()} position={index + 1} />
+            </>
           );
 
-          return isEditing && item.type !== 'root' ? (
-            <Add>{renderedComponent}</Add>
-          ) : (
-            renderedComponent
-          );
+          return renderedComponent;
         }
 
         // If no corresponding component is found, you can return a default or handle it as needed

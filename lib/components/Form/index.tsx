@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import Reenderizer from '../Reenderizer';
-import { FormContext } from '../../context/FormContext';
+import { FormContext } from '../../context/OldFormContext';
+import { Droppable } from '@hello-pangea/dnd';
 
 export interface FormProps {
   clickOnElement?: (params: DataFormElement) => void;
@@ -22,29 +23,27 @@ const Form = (props: FormProps) => {
   // Hooks
   const form = useForm();
 
-  const clickOnElement = (params: DataFormElement) => {
-    props.clickOnElement?.call(null, params);
-  };
+  // const clickOnElement = (params: DataFormElement) => {
+  //   props.clickOnElement?.call(null, params);
+  // };
 
   return (
-    <FormContext.Provider value={{ clickOnElement }}>
-      <FormProvider {...form}>
-        <form
-          onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}
-        >
-          <Reenderizer data={props.form} isEditing={props.isEditing} />
-          {!props.isEditing && (
-            <button
-              className="mb-4 disabled:opacity-50 place-self-end bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
-              disabled={form.formState.isSubmitting}
-              type="submit"
-            >
-              Guardar
-            </button>
-          )}
-        </form>
-      </FormProvider>
-    </FormContext.Provider>
+    // <FormContext.Provider value={{ clickOnElement }}>
+    <FormProvider {...form}>
+      <form onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}>
+        <Reenderizer data={props.form[0]} isEditing={props.isEditing} />
+        {!props.isEditing && (
+          <button
+            className="mb-4 disabled:opacity-50 place-self-end bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+            disabled={form.formState.isSubmitting}
+            type="submit"
+          >
+            Guardar
+          </button>
+        )}
+      </form>
+    </FormProvider>
+    // </FormContext.Provider>
   );
 };
 

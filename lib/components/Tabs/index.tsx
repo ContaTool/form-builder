@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Recursive } from '../Reenderizer';
 
-import { FormContext } from '../../context/FormContext';
-import type { TFormContext } from '../../context/FormContext';
+import { FormContext } from '../../context/OldFormContext';
+import type { TFormContext } from '../../context/OldFormContext';
 
 interface TabsProps extends ElementProps {
   tabs?: DataFormElement[];

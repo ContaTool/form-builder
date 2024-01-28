@@ -7,8 +7,8 @@ import React, {
 } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { FormContext } from '../../context/FormContext';
-import type { TFormContext } from '../../context/FormContext';
+import { FormContext } from '../../context/OldFormContext';
+import type { TFormContext } from '../../context/OldFormContext';
 
 interface SelectProps extends ElementProps {
   options?: { value: string; label: string }[];
