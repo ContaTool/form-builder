@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 
 import { Droppable } from '@hello-pangea/dnd';
-import { FormContext } from '../../context/FormContext';
+import { DragDropContext } from '../../context/DragDropContext';
 
 interface AddProps {
   parent: string;
@@ -11,16 +11,21 @@ interface AddProps {
 
 export default function Add(props: AddProps) {
   // Context
-  const useFormContext = useContext(FormContext);
+  const useDragDropContext = useContext(DragDropContext);
 
-  if (!useFormContext) {
-    throw new Error('Form context needs FormContextProvider');
+  if (!useDragDropContext) {
+    throw new Error('DragDrop Context is not implemented');
   }
 
   useEffect(() => {
     if (props.parent && props.id && !isNaN(props.position)) {
-      console.log('parent has been set', props.parent, props.id, props.position);
-      useFormContext.addDropable({...props});
+      // console.log(
+      //   'parent has been set',
+      //   props.parent,
+      //   props.id,
+      //   props.position
+      // );
+      useDragDropContext.addDropable({ ...props });
     }
   }, [props.parent, props.id, props.position]);
 

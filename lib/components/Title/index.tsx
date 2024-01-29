@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormContext } from '../../hooks/useFormContext';
+import { useItemSelected } from '../../hooks/useItemSelected';
 
 export interface TitleProps extends React.HTMLProps<HTMLElement> {
   label?: string;
@@ -7,11 +7,11 @@ export interface TitleProps extends React.HTMLProps<HTMLElement> {
 }
 
 const Title = (props: TitleProps) => {
-  const { handleComponentClick } = useFormContext();
+  const { selectItem } = useItemSelected();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    handleComponentClick(props);
+    selectItem(props);
   };
 
   return (

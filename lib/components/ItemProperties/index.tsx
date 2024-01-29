@@ -1,23 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Tabs from './Tabs';
 import { FormContext } from '../../context/FormContext';
+import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {}
 
 const ItemProperties = () => {
-  // Listen for external click y muestra las propiedades
-
-  const useFormContext = useContext(FormContext);
-
-  if (!useFormContext) {
-    throw new Error('Form context needs FormContextProvider');
-  }
-
+  const { item } = useItemSelected();
   const [hasToShow, setHasToShow] = useState<string>('new');
 
-  // useEffect(() => {
-  //   console.log('element was clicked', useFormContext.selectedElement);
-  // }, [useFormContext.selectedElement]);
+  useEffect(() => {
+    console.log('element was clicked', item);
+    if (item) {
+      setHasToShow('properties');
+    }
+  }, [item]);
 
   return (
     <div>

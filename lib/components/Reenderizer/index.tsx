@@ -35,7 +35,7 @@ const Reenderizer = ({
   isEditing: boolean;
   parent?: string;
 }): JSX.Element => {
-  console.log('render with parent', parent);
+  // console.log('render with parent', parent);
 
   // States
   const [elements, setElements] = useState(data);
@@ -49,7 +49,7 @@ const Reenderizer = ({
   };
 
   useEffect(() => {
-    console.log('received form', data);
+    // console.log('received form', data);
     setElements(data);
   }, [data]);
 

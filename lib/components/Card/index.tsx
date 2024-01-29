@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { useFormContext } from '../../hooks/useFormContext';
+import { useItemSelected } from '../../hooks/useItemSelected';
 
 const Card = (props: ElementProps) => {
-  const { handleComponentClick } = useFormContext();
+  const { selectItem } = useItemSelected();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    handleComponentClick(props);
+    selectItem(props);
   };
 
   return (
