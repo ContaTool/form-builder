@@ -49,48 +49,52 @@ const Reenderizer = ({
   };
 
   useEffect(() => {
-    console.log('received form', data)
+    console.log('received form', data);
     setElements(data);
   }, [data]);
 
-  if(!elements) return <></>
+  if (!elements) return <></>;
 
   return (
     <>
-
       <Add parent={elements.id} id={uuidv4()} position={0} />
 
-      {elements.props.children.map((item: DataFormElement, index: number): JSX.Element => {
-        const Component = componentMapping[item.type];
+      {elements.props.children.map(
+        (item: DataFormElement, index: number): JSX.Element => {
+          const Component = componentMapping[item.type];
 
-        if (Component) {
-          const commonProps = {
-            key: item.id,
-            ...item.props,
-            parent,
+          if (Component) {
+            const commonProps = {
+              key: item.id,
+              ...item.props,
+              parent,
               isEditing: isEditing,
-          };
+            };
 
-
-          const renderedComponent = (
-            <>
-              <Component {...commonProps}>
-                <Reenderizer
-                  data={item}
-                  isEditing={isEditing}
-                  parent={elements.id}
+            const renderedComponent = (
+              <>
+                <Component {...commonProps}>
+                  <Reenderizer
+                    data={item}
+                    isEditing={isEditing}
+                    parent={elements.id}
+                  />
+                </Component>
+                <Add
+                  parent={elements.id || ''}
+                  id={uuidv4()}
+                  position={index + 1}
                 />
-              </Component>
-              <Add parent={elements.id || ''} id={uuidv4()} position={index + 1} />
-            </>
-          );
+              </>
+            );
 
-          return renderedComponent;
+            return renderedComponent;
+          }
+
+          // If no corresponding component is found, you can return a default or handle it as needed
+          return <div key={item.id}>Unsupported field type: {item.type}</div>;
         }
-
-        // If no corresponding component is found, you can return a default or handle it as needed
-        return <div key={item.id}>Unsupported field type: {item.type}</div>;
-      })}
+      )}
     </>
   );
 };

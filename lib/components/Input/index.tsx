@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { FormContext } from '../../context/OldFormContext';
-import type { TFormContext } from '../../context/OldFormContext';
 import { useFormContext } from 'react-hook-form';
 
 export default function Input(props: ElementProps) {
@@ -9,12 +7,12 @@ export default function Input(props: ElementProps) {
     formState: { errors },
   } = useFormContext();
 
-  const { clickOnElement } = useContext<TFormContext>(FormContext);
+  // const { clickOnElement } = useContext<TFormContext>(FormContext);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     const element = props.element;
-    clickOnElement?.call(null, element);
+    // clickOnElement?.call(null, element);
   };
 
   if (!props.name)

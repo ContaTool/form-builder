@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Recursive } from '../Reenderizer';
 
-import { FormContext } from '../../context/OldFormContext';
-import type { TFormContext } from '../../context/OldFormContext';
+// import { FormContext } from '../../context/OldFormContext';
+// import type { TFormContext } from '../../context/OldFormContext';
 
 interface TabsProps extends ElementProps {
   tabs?: DataFormElement[];
@@ -16,12 +16,12 @@ const Tabs = (props: TabsProps) => {
   const [activeTab, setActiveTab] = React.useState(props.tabs[0].props.label);
 
   // Contexts
-  const { clickOnElement } = useContext<TFormContext>(FormContext);
+  // const { clickOnElement } = useContext<TFormContext>(FormContext);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     const element = props.element;
-    clickOnElement?.call(null, element);
+    // clickOnElement?.call(null, element);
   };
 
   return (

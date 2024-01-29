@@ -5,6 +5,5 @@ export { default as Input } from './Input';
 export { default as Form } from './Form';
 export { default as Tabs } from './Tabs';
 
-export { default as PropertyEditor } from './PropertyEditor';
-export { FormDragDropContext } from '../context/FormDragDropContext';
+export { default as ItemProperties } from './ItemProperties';
 export { FormContextProvider } from '../context/FormContext';

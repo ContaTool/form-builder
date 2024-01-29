@@ -6,7 +6,6 @@ import newForm from '../../forms/new';
 import formOptions from '../../forms/formOptions';
 
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
-import { FormDragDropContext } from '../../context/FormDragDropContext';
 
 interface PropertyEditorProps {
   ctx: DataFormElement;
@@ -60,7 +59,7 @@ const PropertyEditor = ({ ctx, onSubmit }: PropertyEditorProps) => {
                         {...provided.dragHandleProps}
                         ref={provided.innerRef}
                         className="
-                          border  border-gray-300 
+                          border  border-gray-300
                           relative select-none
                           h-16 rounded
                           flex justify-center items-center
