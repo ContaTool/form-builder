@@ -4,7 +4,7 @@ import { Droppable } from '@hello-pangea/dnd';
 import { DragDropContext } from '../../context/DragDropContext';
 
 interface AddProps {
-  parent: string;
+  parent: string | undefined;
   id: string;
   position: number;
 }

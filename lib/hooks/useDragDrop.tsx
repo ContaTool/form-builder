@@ -15,7 +15,9 @@ export const useDragDrop = (props: useDragDropProps) => {
   const [droppables, setDroppables] = useState<Droppable[]>([]);
 
   // RemoveItemByID
-  // TODO: add this method
+  const removeItemById = () => {
+    throw new Error('Function not implemented.');
+  };
 
   // findItemByID
   const findDropableByID = (ID: string) => {
@@ -34,9 +36,7 @@ export const useDragDrop = (props: useDragDropProps) => {
       return new Error('No destination id setted on drag item');
     }
 
-    // props
-
-    // onDragEnd({ ...findDropableByID(d), type: e.draggableId });
+    props.onDragEnd({ ...findDropableByID(d), type: e.draggableId });
   };
 
   return {

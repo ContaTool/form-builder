@@ -1,12 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
-import Tabs from './Tabs';
-import { FormContext } from '../../context/FormContext';
+
+import New from './New';
+import { PropertyEditor } from './PropertyEditor';
+
 import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {}
 
 const ItemProperties = () => {
-  const { item } = useItemSelected();
+  const { item, selectItem } = useItemSelected();
   const [hasToShow, setHasToShow] = useState<string>('new');
 
   useEffect(() => {
@@ -18,9 +20,10 @@ const ItemProperties = () => {
 
   return (
     <div>
-      {hasToShow === 'new' ? <p>Nuevo elemento</p> : null}
-      {hasToShow === 'properties' ? <p>Propiedades</p> : null}
+      {hasToShow === 'new' ? <New></New> : null}
+      {hasToShow === 'properties' ? <PropertyEditor /> : null}
       <button
+        onClick={() => selectItem(0)}
         title="Contact Sale"
         className="fixed z-90 bottom-12 right-4
         w-16 h-16 rounded-full  drop-shadow-lg

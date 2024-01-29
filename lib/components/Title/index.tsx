@@ -3,22 +3,22 @@ import { useItemSelected } from '../../hooks/useItemSelected';
 
 export interface TitleProps extends React.HTMLProps<HTMLElement> {
   label?: string;
-  box_size?: string;
+  isEditing?: boolean;
+  id: string;
 }
 
 const Title = (props: TitleProps) => {
+  console.log('received props in title', props);
   const { selectItem } = useItemSelected();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
+    console.log('las props ', props);
     selectItem(props);
   };
 
   return (
-    <p
-      onClick={handleClick}
-      className={`${props?.box_size} font-bold text-xl py-4 `}
-    >
+    <p onClick={handleClick} className={`font-bold text-xl py-4 `}>
       {props?.label}
     </p>
   );

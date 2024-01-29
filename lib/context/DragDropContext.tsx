@@ -1,11 +1,6 @@
 import React, { useState, createContext } from 'react';
-import {
-  DragDropContext as DndContext,
-  OnDragEndResponder,
-} from '@hello-pangea/dnd';
+import { DragDropContext as DndContext } from '@hello-pangea/dnd';
 import { Droppable, useDragDrop } from '../hooks/useDragDrop';
-
-// import { FormDragDropContext } from './FormDragDropContext';
 
 export type DragDropContextProps = {
   // click: () => void;

@@ -13,7 +13,6 @@ import TextArea from '../TextArea';
 import Paragraph from '../Paragraph';
 import Root from '../Root';
 import Container from '../Container';
-import { FormContext } from '../../context/FormContext';
 
 export const Recursive = (props: DataFormElement): JSX.Element => {
   return <></>;
@@ -31,7 +30,7 @@ const Reenderizer = ({
   isEditing,
   parent,
 }: {
-  data: DataFormElement[];
+  data: DataFormElement;
   isEditing: boolean;
   parent?: string;
 }): JSX.Element => {
@@ -44,9 +43,9 @@ const Reenderizer = ({
   // const children_size = 0;
   // const split_times_array = Array.from({ length: children_size });
 
-  const test = (option: string) => {
-    setElements([...replacePlaceholder(data, 'field_type', option)]);
-  };
+  // const test = (option: string) => {
+  //   setElements([...replacePlaceholder(data, 'field_type', option)]);
+  // };
 
   useEffect(() => {
     // console.log('received form', data);
@@ -57,16 +56,22 @@ const Reenderizer = ({
 
   return (
     <>
-      <Add parent={elements.id} id={uuidv4()} position={0} />
+      {isEditing ? (
+        <Add parent={elements.id} id={uuidv4()} position={0} />
+      ) : null}
 
-      {elements.props.children.map(
+      {elements.props.children?.map(
         (item: DataFormElement, index: number): JSX.Element => {
+          console.log('item', item);
+
           const Component = componentMapping[item.type];
 
           if (Component) {
             const commonProps = {
-              key: item.id,
               ...item.props,
+              key: item.id,
+              id: item.id,
+              type: item.type,
               parent,
               isEditing: isEditing,
             };
@@ -80,11 +85,14 @@ const Reenderizer = ({
                     parent={elements.id}
                   />
                 </Component>
-                <Add
-                  parent={elements.id || ''}
-                  id={uuidv4()}
-                  position={index + 1}
-                />
+                {isEditing ? (
+                  <Add
+                    parent={elements.id || ''}
+                    id={uuidv4()}
+                    key={uuidv4()}
+                    position={index + 1}
+                  />
+                ) : null}
               </>
             );
 
