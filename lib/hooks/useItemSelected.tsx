@@ -11,7 +11,7 @@ export const useItemSelected = () => {
 
   const _selectItem = (item) => {
     console.log('item has been selected hook', item);
-    ctx.selectItem(1);
+    ctx.selectItem(item);
   };
 
   return {

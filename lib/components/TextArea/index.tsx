@@ -1,20 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { FormContext } from '../../context/OldFormContext';
-import type { TFormContext } from '../../context/OldFormContext';
 import { useFormContext } from 'react-hook-form';
 
-export default function Input(props: ElementProps) {
+export default function Input(props: ItemProps) {
   const {
     register,
     formState: { errors },
   } = useFormContext();
 
-  const { clickOnElement } = useContext<TFormContext>(FormContext);
-
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    const element = props.element;
-    clickOnElement?.call(null, element);
+    if (props.isEditing) {
+      const element = props.element;
+    }
   };
 
   if (!props.name)

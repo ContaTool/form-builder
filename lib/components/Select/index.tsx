@@ -7,9 +7,6 @@ import React, {
 } from 'react';
 import { useFormContext } from 'react-hook-form';
 
-import { FormContext } from '../../context/OldFormContext';
-import type { TFormContext } from '../../context/OldFormContext';
-
 interface SelectProps extends ElementProps {
   options?: { value: string; label: string }[];
 }
@@ -28,7 +25,6 @@ const Select = (props: SelectProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // Contexts
-  const { clickOnElement } = useContext<TFormContext>(FormContext);
   const {
     register,
     setValue,
@@ -72,15 +68,15 @@ const Select = (props: SelectProps) => {
     setValue(props.name, option.value);
     trigger(props.name);
 
-    if (props.dependingForm) {
-      props.test(option.value);
-    }
+    // if (props.dependingForm) {
+    //   props.test(option.value);
+    // }
   };
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     const element = props.element;
-    clickOnElement?.call(null, element);
+    //clickOnElement?.call(null, element);
   };
 
   if (!props.name)

@@ -19,4 +19,8 @@ declare global {
     name: string;
     validations: RegisterOptions;
   }
+
+  interface ItemProps extends ElementProps {
+    isEditing: boolean;
+  }
 }

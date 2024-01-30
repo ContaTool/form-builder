@@ -1,12 +1,20 @@
 import React, { useContext } from 'react';
 import { useItemSelected } from '../../hooks/useItemSelected';
 
-const Card = (props: ElementProps) => {
+interface ItemProps extends ElementProps {
+  isEditing: boolean;
+}
+
+const Card = (props: ItemProps) => {
   const { selectItem } = useItemSelected();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    selectItem(props);
+    if (props.isEditing) {
+      console.log('clicked');
+
+      selectItem(props);
+    }
   };
 
   return (

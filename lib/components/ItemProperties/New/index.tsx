@@ -33,7 +33,7 @@ export const NewItem = (props: NewItemProps) => {
                         className="
                           border  border-gray-300
                           relative select-none
-                          h-16 rounded
+                          py-6 rounded
                           flex justify-center items-center
                           hover:cursor-pointer"
                       >

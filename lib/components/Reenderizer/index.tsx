@@ -23,6 +23,9 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   title: Title,
   card: Card,
   paragraph: Paragraph,
+  select: Select,
+  textarea: TextArea,
+  input: Input,
 };
 
 const Reenderizer = ({
@@ -62,7 +65,7 @@ const Reenderizer = ({
 
       {elements.props.children?.map(
         (item: DataFormElement, index: number): JSX.Element => {
-          console.log('item', item);
+          // console.log('item', item);
 
           const Component = componentMapping[item.type];
 

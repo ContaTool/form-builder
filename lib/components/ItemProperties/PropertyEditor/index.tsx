@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import newForm from '../../../forms/new';
+import titleForm from '../forms/titleForm';
+
 import Form from '../../Form';
+import cardForm from '../forms/cardForm';
 
-export const PropertyEditor = () => {
+interface PropertyEditorProps {
+  type: string;
+}
+
+const formMapping: { [key: string]: any } = {
+  title: titleForm,
+  card: cardForm,
+};
+
+export const PropertyEditor = (props: PropertyEditorProps) => {
+  const [form, setForm] = useState();
+
   const handleSubmit = () => {
     console.log('Submitted');
   };
 
-  return <Form isEditing={false} form={newForm} onSubmit={handleSubmit} />;
+  useEffect(() => {
+    console.log('setted prop type', props.type);
+    if (props.type) {
+      console.log(props.type);
+      console.log('setted', formMapping[props.type]);
+      setForm(formMapping[props.type]);
+    }
+  }, [props.type]);
+
+  if (!form) return <></>;
+
+  return <Form isEditing={false} form={form} onSubmit={handleSubmit} />;
 };
 
 // const type = option.options.find((i) => i.value === ctx?.type);
