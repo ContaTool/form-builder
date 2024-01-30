@@ -5,8 +5,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import Reenderizer from '../Reenderizer';
 
 export interface FormProps {
+  // FIXME: INTERFACE DISORGANIZED
   clickOnElement?: (params: DataFormElement) => void;
-  editElement?: () => void;
   isEditing: boolean;
   data?: any;
   form: Array<DataFormElement>;
@@ -19,6 +19,10 @@ const Form = (props: FormProps) => {
     defaultValues: props.data,
   });
 
+  // useEffect(() => {
+  //   form.reset();
+  // }, [props.data]);
+
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}>
@@ -26,7 +30,8 @@ const Form = (props: FormProps) => {
         {!props.isEditing && (
           <button
             className="mb-4 disabled:opacity-50 place-self-end bg-black
-             hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+          hover:bg-gray-700 text-white font-bold py-2 px-4 rounded 
+            inline-flex items-center"
             disabled={form.formState.isSubmitting}
             type="submit"
           >

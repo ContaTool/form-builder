@@ -20,7 +20,7 @@ const ItemProperties = (props: ItemPropertiesProps) => {
     <div>
       {item ? (
         <PropertyEditor
-          type={item?.type}
+          item={item}
           onSubmit={(data) => props.onSubmit({ ...item, ...data })}
         />
       ) : (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import titleForm from '../forms/titleForm';
 
@@ -6,7 +6,7 @@ import Form from '../../Form';
 import cardForm from '../forms/cardForm';
 
 interface PropertyEditorProps {
-  type?: string;
+  item: NDataFormElement<any>;
   onSubmit: (data: any) => void;
 }
 
@@ -16,24 +16,24 @@ const formMapping: { [key: string]: any } = {
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {
-  const [form, setForm] = useState();
+  // States
+  const [form, setForm] = useState<NDataFormElement<any> | null>();
 
   useEffect(() => {
-    if (props.type) {
-      setForm(formMapping[props.type]);
-    }
-  }, [props.type]);
+    setForm(null);
+    setTimeout(() => {
+      setForm(formMapping[props.item?.type]);
+    }, 1);
+  }, [props.item]);
 
   if (!form) return <></>;
 
   return (
     <Form
       isEditing={false}
-      form={form}
+      form={form} //FIXME: Invalid type
       onSubmit={props.onSubmit}
-      data={{
-        label: 'Esto es un texto ',
-      }}
+      data={props.item.props}
     />
   );
 };
