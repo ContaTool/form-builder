@@ -9,7 +9,7 @@ interface InputProps {
   validations?: RegisterOptions;
 }
 
-export default function Input(props: NDataFormElement<InputProps>) {
+export default function Select(props: NDataFormElement<InputProps>) {
   const {
     register,
     formState: { errors },

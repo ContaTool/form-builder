@@ -2,7 +2,13 @@ import React, { useContext } from 'react';
 import { useItemSelected } from '../../hooks/useItemSelected';
 import { useBaseItem } from '../../hooks/useBaseItem';
 
-const Card = (props: ItemProps) => {
+interface Props {}
+
+interface CardProps extends NDataFormElement<Props> {
+  children: JSX.Element;
+}
+
+const Card = (props: CardProps) => {
   const { handleClick, baseStyles } = useBaseItem(props);
 
   return (

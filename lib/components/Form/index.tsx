@@ -19,10 +19,6 @@ const Form = (props: FormProps) => {
     defaultValues: props.data,
   });
 
-  // useEffect(() => {
-  //   form.reset();
-  // }, [props.data]);
-
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}>

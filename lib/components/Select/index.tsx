@@ -6,18 +6,19 @@ import React, {
   useState,
 } from 'react';
 import { useFormContext } from 'react-hook-form';
+import { useBaseItem } from '../../hooks/useBaseItem';
 
 interface SelectProps extends ElementProps {
   options?: { value: string; label: string }[];
 }
 
-const Select = (props: SelectProps) => {
-  // console.log('select props', props.dependingForm);
+const Select = (props: NDataFormElement<SelectProps>) => {
+  const { handleClick, baseStyles } = useBaseItem(props);
 
   // States
   const [query, setQuery] = useState<string>('');
   const [filteredOptions, setFilteredOptions] = useState(
-    props.options?.filter((i) => i.value != 'add')
+    props.props.options?.filter((i) => i.value != 'add')
   );
   const [isOpen, setIsOpen] = useState(false);
 
@@ -53,7 +54,7 @@ const Select = (props: SelectProps) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
 
-    const filtered = props.options?.filter((option) =>
+    const filtered = props.props.options?.filter((option) =>
       option.label.toLowerCase().includes(inputValue.toLowerCase())
     );
 
@@ -65,21 +66,15 @@ const Select = (props: SelectProps) => {
     //console.log('option selected?', option);
     setQuery(option.label);
     setIsOpen(false);
-    setValue(props.name, option.value);
-    trigger(props.name);
+    setValue(props.props.name, option.value);
+    trigger(props.props.name);
 
     // if (props.dependingForm) {
     //   props.test(option.value);
     // }
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-    const element = props.element;
-    //clickOnElement?.call(null, element);
-  };
-
-  if (!props.name)
+  if (!props.props.name)
     return (
       <p className="text-red-500 text-xs italic pt-2">
         Propiedades deben proveer un nombre (name)
@@ -87,16 +82,20 @@ const Select = (props: SelectProps) => {
     );
 
   return (
-    <div onClick={handleClick} className="py-2 relative" ref={wrapperRef}>
+    <div
+      onClick={handleClick}
+      className={`${baseStyles} y-2 relative`}
+      ref={wrapperRef}
+    >
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        htmlFor={props.name}
+        htmlFor={props.props.name}
       >
-        {props.label}
+        {props.props.label}
       </label>
       <div>
         <input
-          {...register(props.name, { ...props.validations })}
+          {...register(props.props.name, { ...props.props.validations })}
           type="text"
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Buscar..."
@@ -119,7 +118,7 @@ const Select = (props: SelectProps) => {
           </ul>
         )}
         <p className="text-red-500 text-xs italic pt-2">
-          {errors[props.name]?.message?.toString()}
+          {errors[props.props.name]?.message?.toString()}
         </p>
       </div>
     </div>

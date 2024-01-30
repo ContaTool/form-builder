@@ -23,9 +23,10 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   title: Title,
   card: Card,
   input: Input,
-  // paragraph: Paragraph,
-  // select: Select,
+  paragraph: Paragraph,
   textarea: TextArea,
+  container: Container,
+  select: Select,
 };
 
 const Reenderizer = ({

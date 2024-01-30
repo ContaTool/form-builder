@@ -1,11 +1,11 @@
 import React from 'react';
 import { useBaseItem } from '../../hooks/useBaseItem';
 
-interface Title {
+interface TitleProps {
   label?: string;
 }
 
-const Title = (props: NDataFormElement<Title>) => {
+const Title = (props: NDataFormElement<TitleProps>) => {
   const { handleClick, baseStyles } = useBaseItem(props);
 
   return (

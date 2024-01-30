@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import titleForm from '../forms/titleForm';
 
 import Form from '../../Form';
 import cardForm from '../forms/cardForm';
+import paragraphForm from '../forms/paragraphForm';
+import containerForm from '../forms/containerForm';
 
 interface PropertyEditorProps {
   item: NDataFormElement<any>;
@@ -13,6 +15,8 @@ interface PropertyEditorProps {
 const formMapping: { [key: string]: any } = {
   title: titleForm,
   card: cardForm,
+  paragraph: paragraphForm,
+  container: containerForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

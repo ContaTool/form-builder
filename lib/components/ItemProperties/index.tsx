@@ -12,17 +12,28 @@ const ItemProperties = (props: ItemPropertiesProps) => {
   // Hooks
   const { item, selectItem } = useItemSelected();
 
-  useEffect(() => {
-    console.log(item);
-  }, [item]);
+  const _beforeSubmit = (data: any) => {
+    if (item) {
+      const d = { id: item.id, ...data };
+
+      if (Object.keys(d).includes('children')) {
+        d.children = d.children.map((i: NDataFormElement<any>) => i.id);
+      }
+
+      if (item.type == 'container') {
+        d.size = 1;
+      }
+
+      props.onSubmit(d);
+      return;
+    }
+    throw new Error('Item is not setted before save');
+  };
 
   return (
     <div>
       {item ? (
-        <PropertyEditor
-          item={item}
-          onSubmit={(data) => props.onSubmit({ ...item, ...data })}
-        />
+        <PropertyEditor item={item} onSubmit={(data) => _beforeSubmit(data)} />
       ) : (
         <New />
       )}

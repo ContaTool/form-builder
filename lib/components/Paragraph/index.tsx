@@ -1,13 +1,19 @@
 import React from 'react';
+import { useBaseItem } from '../../hooks/useBaseItem';
 
-export interface ParagraphProps extends React.HTMLProps<HTMLElement> {
+interface ParagraphProps {
   text?: string;
 }
 
-const Paragraph = (props: ParagraphProps) => {
+const Paragraph = (props: NDataFormElement<ParagraphProps>) => {
+  const { handleClick, baseStyles } = useBaseItem(props);
+
   return (
-    <p className={`${props?.className} font-medium text-md py-4 `}>
-      {props?.text}
+    <p
+      onClick={handleClick}
+      className={`${baseStyles} font-medium text-md py-4 `}
+    >
+      {props.props.text}
     </p>
   );
 };
