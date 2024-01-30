@@ -18,13 +18,20 @@ export default [
                 props: {
                   name: 'label',
                   label: 'Texto',
+                  validations: {
+                    required: 'Este campo es obligatorio',
+                    minLength: {
+                      value: 3,
+                      message: 'Minimo debes tener 3 carácteres',
+                    },
+                  },
                 },
               },
               {
                 type: 'textarea',
                 props: {
-                  name: 'description',
-                  label: 'Texto de ayuda al usuario',
+                  name: 'guide_text',
+                  label: 'Texto guia para el usuario',
                 },
               },
             ],

@@ -3,8 +3,8 @@ import type { Dispatch, SetStateAction } from 'react';
 import { DragDropContextProvider } from './DragDropContext';
 
 export type ItemSelectedContextProps = {
-  selectItem: Dispatch<SetStateAction<number>>;
-  item: number;
+  selectItem: Dispatch<SetStateAction<ItemProps | undefined>>;
+  item: ItemProps | undefined;
 };
 
 const ItemSelectedContext = createContext<ItemSelectedContextProps | undefined>(
@@ -18,7 +18,7 @@ interface ItemSelectedContextProviderProps {
 const ItemSelectedContextProvider = (
   props: ItemSelectedContextProviderProps
 ) => {
-  const [item, selectItem] = useState<number>(0);
+  const [item, selectItem] = useState<ItemProps | undefined>(undefined);
 
   const value = {
     item,

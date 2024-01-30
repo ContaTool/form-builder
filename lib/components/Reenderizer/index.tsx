@@ -42,16 +42,7 @@ const Reenderizer = ({
   // States
   const [elements, setElements] = useState(data);
 
-  // const split_times = 12;
-  // const children_size = 0;
-  // const split_times_array = Array.from({ length: children_size });
-
-  // const test = (option: string) => {
-  //   setElements([...replacePlaceholder(data, 'field_type', option)]);
-  // };
-
   useEffect(() => {
-    // console.log('received form', data);
     setElements(data);
   }, [data]);
 

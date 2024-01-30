@@ -1,18 +1,14 @@
 import React from 'react';
-import { useItemSelected } from '../../hooks/useItemSelected';
+import { useBaseItem } from '../../hooks/useBaseItem';
 
 const Title = (props: ItemProps) => {
-  const { selectItem } = useItemSelected();
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-    if (props.isEditing) {
-      selectItem(props);
-    }
-  };
+  const { handleClick, baseStyles } = useBaseItem(props);
 
   return (
-    <p onClick={handleClick} className={`font-bold text-xl py-4 `}>
+    <p
+      onClick={handleClick}
+      className={`${baseStyles} font-bold text-xl py-4 `}
+    >
       {props?.label}
     </p>
   );

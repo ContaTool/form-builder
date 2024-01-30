@@ -9,8 +9,7 @@ export const useItemSelected = () => {
     );
   }
 
-  const _selectItem = (item) => {
-    console.log('item has been selected hook', item);
+  const _selectItem = (item: ItemProps) => {
     ctx.selectItem(item);
   };
 

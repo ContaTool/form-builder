@@ -20,7 +20,7 @@ declare global {
     validations: RegisterOptions;
   }
 
-  interface ItemProps extends ElementProps {
+  interface ItemProps extends React.HTMLProps<HTMLElement>, DataFormElement {
     isEditing: boolean;
   }
 }

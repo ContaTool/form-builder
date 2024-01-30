@@ -22,7 +22,7 @@ const addObjectsToChildren = (
   //   return [createAddObject(parent), ...children, createAddObject(parent)];
   // else
 
-  console.log('children call', children);
+  // console.log('children call', children);
 
   return [createAddObject(parent), ...children, createAddObject(parent)];
 };

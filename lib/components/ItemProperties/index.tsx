@@ -2,29 +2,30 @@ import React, { useState, useContext, useEffect } from 'react';
 
 import New from './New';
 import { PropertyEditor } from './PropertyEditor';
-
 import { useItemSelected } from '../../hooks/useItemSelected';
 
-interface ItemPropertiesProps {}
+interface ItemPropertiesProps {
+  onSubmit: (data: any) => void;
+}
 
-const ItemProperties = () => {
+const ItemProperties = (props: ItemPropertiesProps) => {
+  // Hooks
   const { item, selectItem } = useItemSelected();
-  const [hasToShow, setHasToShow] = useState<string>();
 
   useEffect(() => {
-    console.log('element was clicked', item);
-    if (item) {
-      setHasToShow('properties');
-      return;
-    }
-    console.log('setted to new');
-    setHasToShow('new');
+    console.log(item);
   }, [item]);
 
   return (
     <div>
-      {hasToShow === 'new' ? <New></New> : null}
-      {hasToShow === 'properties' ? <PropertyEditor type={item.type} /> : null}
+      {item ? (
+        <PropertyEditor
+          type={item?.type}
+          onSubmit={(data) => props.onSubmit({ ...item, ...data })}
+        />
+      ) : (
+        <New />
+      )}
       <button
         onClick={() => selectItem(null)}
         title="Contact Sale"

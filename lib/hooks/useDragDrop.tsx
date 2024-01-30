@@ -30,7 +30,6 @@ export const useDragDrop = (props: useDragDropProps) => {
   };
 
   const onDragEnd: OnDragEndResponder = (e) => {
-    console.log('drag end');
     const d = e.destination?.droppableId;
     if (!d) {
       return new Error('No destination id setted on drag item');
