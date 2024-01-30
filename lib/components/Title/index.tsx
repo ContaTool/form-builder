@@ -1,7 +1,11 @@
 import React from 'react';
 import { useBaseItem } from '../../hooks/useBaseItem';
 
-const Title = (props: ItemProps) => {
+interface Title {
+  label?: string;
+}
+
+const Title = (props: NDataFormElement<Title>) => {
   const { handleClick, baseStyles } = useBaseItem(props);
 
   return (
@@ -9,7 +13,7 @@ const Title = (props: ItemProps) => {
       onClick={handleClick}
       className={`${baseStyles} font-bold text-xl py-4 `}
     >
-      {props?.label}
+      {props.props.label}
     </p>
   );
 };

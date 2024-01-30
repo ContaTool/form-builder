@@ -22,10 +22,10 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   root: Root,
   title: Title,
   card: Card,
-  paragraph: Paragraph,
-  select: Select,
-  textarea: TextArea,
   input: Input,
+  // paragraph: Paragraph,
+  // select: Select,
+  textarea: TextArea,
 };
 
 const Reenderizer = ({
@@ -55,19 +55,20 @@ const Reenderizer = ({
       ) : null}
 
       {elements.props.children?.map(
-        (item: DataFormElement, index: number): JSX.Element => {
+        (item: NDataFormElement<any>, index: number): JSX.Element => {
           // console.log('item', item);
 
           const Component = componentMapping[item.type];
 
           if (Component) {
-            const commonProps = {
-              ...item.props,
+            const commonProps: NDataFormElement<any> = {
+              props: { ...item.props },
               key: item.id,
               id: item.id,
               type: item.type,
               parent,
-              isEditing: isEditing,
+              isEditing: isEditing ?? false,
+              position: index,
             };
 
             const renderedComponent = (

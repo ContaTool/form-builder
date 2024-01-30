@@ -1,7 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
+import type { RegisterOptions } from 'react-hook-form';
 
-export default function Input(props: ItemProps) {
+interface InputProps {
+  name?: string;
+  label?: string;
+  placeholder?: string;
+  validations?: RegisterOptions;
+}
+
+export default function Input(props: NDataFormElement<InputProps>) {
   const {
     register,
     formState: { errors },
@@ -10,11 +18,10 @@ export default function Input(props: ItemProps) {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     if (props.isEditing) {
-      const element = props.element;
     }
   };
 
-  if (!props.name)
+  if (!props.props.name)
     return (
       <p className="text-red-500 text-xs italic pt-2">
         Propiedades deben proveer un nombre (name)
@@ -25,22 +32,21 @@ export default function Input(props: ItemProps) {
     <div onClick={handleClick} className="py-2">
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        htmlFor={props.name}
+        htmlFor={props.props.name}
       >
-        {props.label}
+        {props.props.label}
       </label>
       <div className="relative">
         <input
-          {...register(props.name, { ...props.validations })}
+          {...register(props.props.name, { ...props.props.validations })}
           // {...props}
-
-          placeholder={props.placeholder}
+          placeholder={props.props.placeholder}
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         />
       </div>
 
       <p className="text-red-500 text-xs italic pt-2">
-        {errors[props.name]?.message?.toString()}
+        {errors[props.props.name]?.message?.toString()}
       </p>
     </div>
   );

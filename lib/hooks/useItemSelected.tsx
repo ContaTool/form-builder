@@ -9,7 +9,7 @@ export const useItemSelected = () => {
     );
   }
 
-  const _selectItem = (item: ItemProps) => {
+  const _selectItem = (item: NDataFormElement<any>) => {
     ctx.selectItem(item);
   };
 
