@@ -20,9 +20,9 @@ const ItemProperties = (props: ItemPropertiesProps) => {
         d.children = d.children.map((i: NDataFormElement<any>) => i.id);
       }
 
-      if (item.type == 'container') {
-        d.size = 1;
-      }
+      // if (item.type == 'container') {
+      //   d.size = 1;
+      // }
 
       props.onSubmit(d);
       return;

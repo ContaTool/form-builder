@@ -6,6 +6,7 @@ import Form from '../../Form';
 import cardForm from '../forms/cardForm';
 import paragraphForm from '../forms/paragraphForm';
 import containerForm from '../forms/containerForm';
+import inputForm from '../forms/inputForm';
 
 interface PropertyEditorProps {
   item: NDataFormElement<any>;
@@ -17,6 +18,7 @@ const formMapping: { [key: string]: any } = {
   card: cardForm,
   paragraph: paragraphForm,
   container: containerForm,
+  input: inputForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

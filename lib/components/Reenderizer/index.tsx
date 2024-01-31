@@ -51,7 +51,7 @@ const Reenderizer = ({
 
   return (
     <>
-      {isEditing ? (
+      {isEditing && elements.type !== 'container' ? (
         <Add parent={elements.id} id={uuidv4()} position={0} />
       ) : null}
 
@@ -81,7 +81,7 @@ const Reenderizer = ({
                     parent={elements.id}
                   />
                 </Component>
-                {isEditing ? (
+                {isEditing && elements.type !== 'container' ? (
                   <Add
                     parent={elements.id || ''}
                     id={uuidv4()}

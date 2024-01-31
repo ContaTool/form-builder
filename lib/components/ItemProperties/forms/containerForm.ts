@@ -17,7 +17,6 @@ export default [
                 type: 'select',
                 props: {
                   label: 'Columnas',
-                  placholder: '',
                   name: 'size',
                   options: [
                     { value: '1', label: '1' },
