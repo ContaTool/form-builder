@@ -6,6 +6,7 @@ import Reenderizer from '../Reenderizer';
 
 export interface FormProps {
   // FIXME: INTERFACE DISORGANIZED
+  children: JSX.Element;
   clickOnElement?: (params: DataFormElement) => void;
   isEditing: boolean;
   data?: any;
@@ -19,21 +20,19 @@ const Form = (props: FormProps) => {
     defaultValues: props.data,
   });
 
+  const handleSubmit = (data) => {
+    // FIXME: Se queda submitting despues de que se envia
+    // if (!form.formState.isSubmitting) {
+    props.onSubmit({ ...data });
+    // }
+    console.log('is submitting?', form.formState.isSubmitting);
+  };
+
   return (
     <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit((data) => props.onSubmit({ ...data }))}>
+      <form onSubmit={form.handleSubmit((data) => handleSubmit(data))}>
         <Reenderizer data={props.form[0]} isEditing={props.isEditing} />
-        {!props.isEditing && (
-          <button
-            className="mb-4 disabled:opacity-50 place-self-end bg-black
-          hover:bg-gray-700 text-white font-bold py-2 px-4 rounded 
-            inline-flex items-center"
-            disabled={form.formState.isSubmitting}
-            type="submit"
-          >
-            Guardar
-          </button>
-        )}
+        {props.children}
       </form>
     </FormProvider>
   );

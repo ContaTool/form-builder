@@ -5,15 +5,19 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useFormContext } from 'react-hook-form';
+import { RegisterOptions, useFormContext } from 'react-hook-form';
 import { useBaseItem } from '../../hooks/useBaseItem';
 
-interface SelectProps extends ElementProps {
+interface SelectProps {
+  name?: string;
+  label?: string;
+  validations?: RegisterOptions;
   options?: { value: string; label: string }[];
 }
 
 const Select = (props: NDataFormElement<SelectProps>) => {
   const { handleClick, baseStyles } = useBaseItem(props);
+  const [name, setName] = useState<string>(props.props.name || '-');
 
   // States
   const [query, setQuery] = useState<string>('');
@@ -66,20 +70,13 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     //console.log('option selected?', option);
     setQuery(option.label);
     setIsOpen(false);
-    setValue(props.props.name, option.value);
-    trigger(props.props.name);
+    setValue(name, option.value);
+    trigger(name);
 
     // if (props.dependingForm) {
     //   props.test(option.value);
     // }
   };
-
-  if (!props.props.name)
-    return (
-      <p className="text-red-500 text-xs italic pt-2">
-        Propiedades deben proveer un nombre (name)
-      </p>
-    );
 
   return (
     <div
@@ -89,13 +86,13 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     >
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        htmlFor={props.props.name}
+        htmlFor={name}
       >
         {props.props.label}
       </label>
       <div>
         <input
-          {...register(props.props.name, { ...props.props.validations })}
+          {...register(name, { ...props.props.validations })}
           type="text"
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           placeholder="Buscar..."
@@ -118,7 +115,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
           </ul>
         )}
         <p className="text-red-500 text-xs italic pt-2">
-          {errors[props.props.name]?.message?.toString()}
+          {errors[name]?.message?.toString()}
         </p>
       </div>
     </div>

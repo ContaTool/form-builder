@@ -11,6 +11,8 @@ import Tabs from '../Tabs';
 import Select from '../Select';
 import TextArea from '../TextArea';
 import Paragraph from '../Paragraph';
+import Button from '../Button';
+import Detailed from '../Detailed';
 import Root from '../Root';
 import Container from '../Container';
 
@@ -27,6 +29,8 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   textarea: TextArea,
   container: Container,
   select: Select,
+  detailed: Detailed,
+  button: Button,
 };
 
 const Reenderizer = ({
@@ -67,7 +71,7 @@ const Reenderizer = ({
               key: item.id,
               id: item.id,
               type: item.type,
-              parent,
+              parent: elements.id,
               isEditing: isEditing ?? false,
               position: index,
             };

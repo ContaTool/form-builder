@@ -6,6 +6,7 @@ import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {
   onSubmit: (data: any) => void;
+  deleteItem: (data: NDataFormElement<any>) => void;
 }
 
 const ItemProperties = (props: ItemPropertiesProps) => {
@@ -20,10 +21,6 @@ const ItemProperties = (props: ItemPropertiesProps) => {
         d.children = d.children.map((i: NDataFormElement<any>) => i.id);
       }
 
-      // if (item.type == 'container') {
-      //   d.size = 1;
-      // }
-
       props.onSubmit(d);
       return;
     }
@@ -33,7 +30,11 @@ const ItemProperties = (props: ItemPropertiesProps) => {
   return (
     <div>
       {item ? (
-        <PropertyEditor item={item} onSubmit={(data) => _beforeSubmit(data)} />
+        <PropertyEditor
+          item={item}
+          onSubmit={(data) => _beforeSubmit(data)}
+          deleteItem={props.deleteItem}
+        />
       ) : (
         <New />
       )}
