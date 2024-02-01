@@ -12,7 +12,11 @@ interface InputProps {
 
 export default function Select(props: NDataFormElement<InputProps>) {
   const { handleClick, baseStyles } = useBaseItem(props);
-  const [name, setName] = useState<string>(props.props.name || '-');
+  const [name, _] = useState<string>(
+    props.detailed
+      ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}`
+      : props.props.name ?? '-'
+  );
 
   const {
     register,

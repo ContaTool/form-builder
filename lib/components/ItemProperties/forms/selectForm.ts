@@ -24,33 +24,19 @@ export default [
                 type: 'detailed',
                 props: {
                   name: 'options',
-                  form: [
+                  template: [
                     {
-                      type: 'container',
+                      type: 'input',
                       props: {
-                        size: 3,
-                        children: [
-                          {
-                            type: 'input',
-                            props: {
-                              name: 'opcion',
-                              label: 'Opcion label ',
-                            },
-                          },
-                          {
-                            type: 'input',
-                            props: {
-                              name: 'value',
-                              label: 'Valor',
-                            },
-                          },
-                          // {
-                          //   type: 'button',
-                          //   props: {
-                          //     label: 'Agregar',
-                          //   },
-                          // },
-                        ],
+                        name: 'label',
+                        label: 'Etiqueta ',
+                      },
+                    },
+                    {
+                      type: 'input',
+                      props: {
+                        name: 'value',
+                        label: 'Valor',
                       },
                     },
                   ],

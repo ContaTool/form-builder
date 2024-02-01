@@ -33,6 +33,12 @@ declare global {
     parent?: string;
     isEditing?: boolean;
     position?: number;
+    detailed?:
+      | {
+          name: string;
+          index: number;
+        }
+      | undefined;
   };
 }
 

@@ -37,16 +37,19 @@ const Reenderizer = ({
   data,
   isEditing,
   parent,
+  detailed,
 }: {
   data: NDataFormElement<any>[];
   isEditing: boolean;
   parent?: string;
+  detailed?: {
+    name: string;
+    index: number;
+  };
 }): JSX.Element => {
   return (
     <>
       {data.map((item: NDataFormElement<any>, index: number) => {
-        console.log('render with parent', parent);
-
         const Component = componentMapping[item.type];
 
         if (Component) {
@@ -58,6 +61,7 @@ const Reenderizer = ({
             parent: parent,
             isEditing: isEditing ?? false,
             position: index,
+            detailed: detailed,
           };
 
           return (
@@ -72,6 +76,7 @@ const Reenderizer = ({
                   />
                 ) : null}
                 <Reenderizer
+                  detailed={detailed}
                   data={item.props.children}
                   isEditing={isEditing}
                   parent={item.id}

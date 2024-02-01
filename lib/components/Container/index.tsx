@@ -8,7 +8,7 @@ import { useBaseItem } from '../../hooks/useBaseItem';
 
 interface Props {
   size: number;
-  children: Array<any>;
+  // children: Array<any>;
 }
 
 interface ContainerProps extends NDataFormElement<Props> {
