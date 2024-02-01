@@ -10,7 +10,7 @@ export interface FormProps {
   clickOnElement?: (params: DataFormElement) => void;
   isEditing: boolean;
   data?: any;
-  form: Array<DataFormElement>;
+  form: NDataFormElement<any>[];
   onSubmit: (data: any) => void;
 }
 
@@ -31,7 +31,7 @@ const Form = (props: FormProps) => {
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit((data) => handleSubmit(data))}>
-        <Reenderizer data={props.form[0]} isEditing={props.isEditing} />
+        <Reenderizer data={props.form} isEditing={props.isEditing} />
         {props.children}
       </form>
     </FormProvider>

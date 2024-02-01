@@ -38,71 +38,62 @@ const Reenderizer = ({
   isEditing,
   parent,
 }: {
-  data: DataFormElement;
+  data: NDataFormElement<any>[];
   isEditing: boolean;
   parent?: string;
 }): JSX.Element => {
-  // console.log('render with parent', parent);
-
-  // States
-  const [elements, setElements] = useState(data);
-
-  useEffect(() => {
-    setElements(data);
-  }, [data]);
-
-  if (!elements) return <></>;
-
   return (
     <>
-      {isEditing && elements.type !== 'container' ? (
-        <Add parent={elements.id} id={uuidv4()} position={0} />
-      ) : null}
+      {data.map((item: NDataFormElement<any>, index: number) => {
+        console.log('render with parent', parent);
 
-      {elements.props.children?.map(
-        (item: NDataFormElement<any>, index: number): JSX.Element => {
-          // console.log('item', item);
+        const Component = componentMapping[item.type];
 
-          const Component = componentMapping[item.type];
+        if (Component) {
+          const commonProps: NDataFormElement<any> = {
+            props: { ...item.props },
+            key: item.id,
+            id: item.id,
+            type: item.type,
+            parent: parent,
+            isEditing: isEditing ?? false,
+            position: index,
+          };
 
-          if (Component) {
-            const commonProps: NDataFormElement<any> = {
-              props: { ...item.props },
-              key: item.id,
-              id: item.id,
-              type: item.type,
-              parent: elements.id,
-              isEditing: isEditing ?? false,
-              position: index,
-            };
-
-            const renderedComponent = (
-              <>
-                <Component {...commonProps}>
-                  <Reenderizer
-                    data={item}
-                    isEditing={isEditing}
-                    parent={elements.id}
-                  />
-                </Component>
-                {isEditing && elements.type !== 'container' ? (
+          return (
+            <>
+              <Component {...commonProps}>
+                {isEditing && item.props.children ? (
                   <Add
-                    parent={elements.id || ''}
+                    parent={item.id}
                     id={uuidv4()}
                     key={uuidv4()}
-                    position={index + 1}
+                    position={0}
                   />
                 ) : null}
-              </>
-            );
-
-            return renderedComponent;
-          }
-
-          // If no corresponding component is found, you can return a default or handle it as needed
-          return <div key={item.id}>Unsupported field type: {item.type}</div>;
+                <Reenderizer
+                  data={item.props.children}
+                  isEditing={isEditing}
+                  parent={item.id}
+                />
+              </Component>
+              {isEditing &&
+              (!item.props.children ||
+                (data.length == index + 1 && item.type !== 'root')) ? (
+                <Add
+                  parent={parent}
+                  id={uuidv4()}
+                  key={uuidv4()}
+                  position={index + 1}
+                />
+              ) : null}
+            </>
+          );
         }
-      )}
+
+        // If no corresponding component is found, you can return a default or handle it as needed
+        return <div key={item.id}>Unsupported field type: {item.type}</div>;
+      })}
     </>
   );
 };

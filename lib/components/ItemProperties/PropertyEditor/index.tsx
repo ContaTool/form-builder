@@ -32,12 +32,13 @@ const formMapping: { [key: string]: any } = {
 
 export const PropertyEditor = (props: PropertyEditorProps) => {
   // States
-  const [form, setForm] = useState<NDataFormElement<any> | null>();
+  const [form, setForm] = useState<NDataFormElement<any>[] | null>([]);
   const { selectItem } = useItemSelected();
 
   useEffect(() => {
     setForm(null);
     setTimeout(() => {
+      console.log('item', props.item);
       setForm(formMapping[props.item?.type]);
     }, 1);
   }, [props.item]);
@@ -54,7 +55,7 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
   return (
     <Form
       isEditing={false}
-      form={form} //FIXME: Invalid type
+      form={form}
       onSubmit={props.onSubmit}
       // isSubmitting={handleIsSubmitting}
       data={props.item.props}
@@ -63,7 +64,7 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
         <button
           onClick={deleteItem}
           className="mb-4 disabled:opacity-50 place-self-end bg-red-500
-          hover:bg-red-700 text-white font-bold py-2 px-4 rounded 
+          hover:bg-red-700 text-white font-bold py-2 px-4 rounded
             inline-flex items-center me-2"
           type="button"
         >
@@ -72,7 +73,7 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
 
         <button
           className="mb-4 disabled:opacity-50 place-self-end bg-black
-          hover:bg-gray-700 text-white font-bold py-2 px-4 rounded 
+          hover:bg-gray-700 text-white font-bold py-2 px-4 rounded
             inline-flex items-center"
           type="submit"
         >
