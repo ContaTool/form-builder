@@ -5,11 +5,11 @@ import Add from '../Add';
 
 interface Props {}
 
-interface CardProps extends NDataFormElement<Props> {
+interface RootProps extends NDataFormElement<Props> {
   children: JSX.Element;
 }
 
-const Root = (props: CardProps) => {
+const Root = (props: RootProps) => {
   return <div className={``}>{props.children}</div>;
 };
 

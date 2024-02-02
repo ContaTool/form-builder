@@ -14,6 +14,7 @@ import containerForm from '../forms/containerForm';
 import inputForm from '../forms/inputForm';
 import { useItemSelected } from '../../../hooks/useItemSelected';
 import selectForm from '../forms/selectForm';
+import tabsForm from '../forms/tabsForm';
 
 interface PropertyEditorProps {
   item: NDataFormElement<any>;
@@ -28,6 +29,7 @@ const formMapping: { [key: string]: any } = {
   container: containerForm,
   input: inputForm,
   select: selectForm,
+  tabs: tabsForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

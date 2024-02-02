@@ -4,12 +4,12 @@ import { useBaseItem } from '../../hooks/useBaseItem';
 import Reenderizer from '../Reenderizer';
 import Container from '../Container';
 
-interface ButtonProps {
+interface DetailedProps {
   template: Array<NDataFormElement<any>>;
   name: string;
 }
 
-const Detailed = (props: NDataFormElement<ButtonProps>) => {
+const Detailed = (props: NDataFormElement<DetailedProps>) => {
   const {
     control,
     getValues,
@@ -20,11 +20,11 @@ const Detailed = (props: NDataFormElement<ButtonProps>) => {
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: 'options', // Nombre del campo que representa el array
+    name: props.props.name,
   });
 
   const addItem = () => {
-    append({ option: '', value: '' });
+    append({});
   };
 
   const removeItem = (position: number) => {
@@ -34,9 +34,9 @@ const Detailed = (props: NDataFormElement<ButtonProps>) => {
   return (
     <div className={`${baseStyles} pb-4`}>
       <>
-        {getValues('options') ? (
+        {getValues(props.props.name) ? (
           <>
-            {Array(getValues('options').length ?? 0)
+            {Array(getValues(props.props.name).length ?? 0)
               .fill(0)
               .map((_, index: number) => {
                 return (
@@ -44,12 +44,12 @@ const Detailed = (props: NDataFormElement<ButtonProps>) => {
                     <Container
                       key={String(index)}
                       type="container"
-                      props={{ size: 3 }}
+                      props={{ size: props.props.template.length + 1 }}
                     >
                       <>
                         <Reenderizer
                           detailed={{
-                            name: 'options',
+                            name: props.props.name,
                             index,
                           }}
                           isEditing={false}

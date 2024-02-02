@@ -16,10 +16,6 @@ import Detailed from '../Detailed';
 import Root from '../Root';
 import Container from '../Container';
 
-export const Recursive = (props: DataFormElement): JSX.Element => {
-  return <></>;
-};
-
 const componentMapping: { [key: string]: React.ComponentType<any> } = {
   root: Root,
   title: Title,
@@ -31,6 +27,8 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   select: Select,
   detailed: Detailed,
   button: Button,
+  tabs: Tabs,
+  tab: Root,
 };
 
 const Reenderizer = ({
