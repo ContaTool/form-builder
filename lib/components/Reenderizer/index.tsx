@@ -82,7 +82,9 @@ const Reenderizer = ({
               </Component>
               {isEditing &&
               (!item.props.children ||
-                (data.length == index + 1 && item.type !== 'root')) ? (
+                (data.length == index + 1 &&
+                  item.type !== 'tab' &&
+                  item.type !== 'root')) ? (
                 <Add
                   parent={parent}
                   id={uuidv4()}

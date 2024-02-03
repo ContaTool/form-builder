@@ -1,9 +1,4 @@
-import React, {
-  ButtonHTMLAttributes,
-  MouseEventHandler,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import titleForm from '../forms/titleForm';
 
@@ -60,7 +55,7 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
       form={form}
       onSubmit={props.onSubmit}
       // isSubmitting={handleIsSubmitting}
-      data={props.item.props}
+      data={props.item}
     >
       <div className="flex flex-row justify-end">
         <button

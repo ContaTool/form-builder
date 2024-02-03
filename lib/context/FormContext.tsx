@@ -1,8 +1,11 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import { DragDropContextProvider } from './DragDropContext';
 import { ItemSelectedContextProvider } from './ItemSelectedContext';
 
-export type FormContextProps = {};
+export type FormContextProps = {
+  activeTabs: number;
+  setActiveTab: (activeTab: number) => void;
+};
 
 const FormContext = createContext<FormContextProps | undefined>(undefined);
 
@@ -12,7 +15,16 @@ export interface FormContextProvider {
 }
 
 const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
-  const values = {};
+  const [activeTabs, setActiveTabs] = useState(0);
+
+  const setActiveTab = (activeTab: number) => {
+    setActiveTabs(activeTab);
+  };
+
+  const values = {
+    activeTabs,
+    setActiveTab,
+  };
 
   return (
     <FormContext.Provider value={values}>

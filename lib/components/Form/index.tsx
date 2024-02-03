@@ -9,15 +9,32 @@ export interface FormProps {
   children: JSX.Element;
   clickOnElement?: (params: DataFormElement) => void;
   isEditing: boolean;
-  data?: any;
+  data?: any; //DATA to be binded.
   form: NDataFormElement<any>[];
   onSubmit: (data: any) => void;
 }
 
 const Form = (props: FormProps) => {
+  // console.log('props data', props.data);
+
+  // Extraer.
+  const fixTab = (data: any) => {
+    if (data) {
+      console.log('soy tab', data);
+      if (data.type === 'tabs') {
+        return {
+          tabs: data.props.children.map((i: any) => ({
+            label: i.props.label,
+          })),
+        };
+      }
+      return data.props;
+    }
+  };
+
   // Hooks
   const form = useForm({
-    defaultValues: props.data,
+    defaultValues: fixTab(props.data),
   });
 
   const handleSubmit = (data) => {

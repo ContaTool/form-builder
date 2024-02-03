@@ -18,12 +18,6 @@ export default [
                 props: {
                   name: 'tabs',
                   template: [
-                    // {
-                    //   type: 'uuid',
-                    //   props: {
-                    //     name: 'id',
-                    //   },
-                    // },
                     {
                       type: 'input',
                       props: {
