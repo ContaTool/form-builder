@@ -24,7 +24,7 @@ export default [
                 type: 'detailed',
                 props: {
                   name: 'options',
-                  template: [
+                  children: [
                     {
                       type: 'input',
                       props: {

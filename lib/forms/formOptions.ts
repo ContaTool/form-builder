@@ -8,6 +8,7 @@ export default {
     { value: 'card', label: 'Tarjeta' },
     { value: 'tabs', label: 'Tabs' },
     { value: 'select', label: 'Selector' },
+    { value: 'detailed', label: 'Detallado' },
     // { value: 'tabs', label: 'Tab' },
     // { value: 'input_date', label: 'Campo de Fecha' },
     // { value: 'checkbox', label: 'Checkbox' },

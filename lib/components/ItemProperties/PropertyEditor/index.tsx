@@ -10,6 +10,7 @@ import inputForm from '../forms/inputForm';
 import { useItemSelected } from '../../../hooks/useItemSelected';
 import selectForm from '../forms/selectForm';
 import tabsForm from '../forms/tabsForm';
+import detailedForm from '../forms/detailedForm';
 
 interface PropertyEditorProps {
   item: NDataFormElement<any>;
@@ -25,6 +26,7 @@ const formMapping: { [key: string]: any } = {
   input: inputForm,
   select: selectForm,
   tabs: tabsForm,
+  detailed: detailedForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

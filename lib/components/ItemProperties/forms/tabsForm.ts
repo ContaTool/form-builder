@@ -17,7 +17,7 @@ export default [
                 type: 'detailed',
                 props: {
                   name: 'tabs',
-                  template: [
+                  children: [
                     {
                       type: 'input',
                       props: {
