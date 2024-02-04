@@ -39,7 +39,7 @@ const Reenderizer = ({
 }: {
   data: NDataFormElement<any>[];
   isEditing: boolean;
-  parent?: string;
+  parent?: { id: string; type: string };
   detailed?: {
     name: string;
     index: number;
@@ -67,17 +67,18 @@ const Reenderizer = ({
               <Component {...commonProps}>
                 {isEditing && item.props.children ? (
                   <Add
-                    parent={item.id}
+                    parent={{ id: item.id || '', type: item.type }}
                     id={uuidv4()}
                     key={uuidv4()}
                     position={0}
                   />
                 ) : null}
+
                 <Reenderizer
                   detailed={detailed}
                   data={item.props.children}
                   isEditing={isEditing}
-                  parent={item.id}
+                  parent={{ id: item.id || '', type: item.type }}
                 />
               </Component>
               {isEditing &&
@@ -86,7 +87,7 @@ const Reenderizer = ({
                   item.type !== 'tab' &&
                   item.type !== 'root')) ? (
                 <Add
-                  parent={parent}
+                  parent={{ id: parent?.id || '', type: parent?.type || '' }}
                   id={uuidv4()}
                   key={uuidv4()}
                   position={index + 1}

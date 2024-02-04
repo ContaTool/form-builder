@@ -30,7 +30,7 @@ declare global {
     key?: string;
     type: string;
     props: T;
-    parent?: string;
+    parent?: { id: string; type: string };
     isEditing?: boolean;
     position?: number;
     detailed?:

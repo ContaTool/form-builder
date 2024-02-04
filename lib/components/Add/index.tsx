@@ -4,7 +4,7 @@ import { Droppable } from '@hello-pangea/dnd';
 import { DragDropContext } from '../../context/DragDropContext';
 
 interface AddProps {
-  parent: string | undefined;
+  parent: { id: string; type: string };
   id: string;
   position: number;
 }
@@ -18,33 +18,22 @@ export default function Add(props: AddProps) {
   }
 
   useEffect(() => {
-    if (props.parent && props.id && !isNaN(props.position)) {
-      // console.log(
-      //   'parent has been set',
-      //   props.parent,
-      //   props.id,
-      //   props.position
-      // );
-      useDragDropContext.addDropable({ ...props });
+    if (props.parent.id && props.id && !isNaN(props.position)) {
+      useDragDropContext.addDropable({
+        parent: props.parent.id,
+        id: props.id,
+        position: props.position,
+      });
     }
   }, [props.parent, props.id, props.position]);
 
-  // const { clickOnElement } = useContext<TFormContext>(FormContext);
-  // const [showAdd, setShowAdd] = useState<boolean>(false);
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    // TODO: Esto servira para el update.
-    // console.log('element clicked');
-    event.stopPropagation();
-    // console.log('current parent', props);
-    // const element = props.children.props;
-    // console.log(element, element);
-    // clickOnElement?.call(null, element);
-  };
+  if (props.parent.type === 'container') {
+    return <></>;
+  }
 
   return (
     <div className="">
-      <div onClick={handleClick} className="rounded-md relative">
+      <div className="rounded-md relative">
         <Droppable droppableId={props.id}>
           {(provided, snapshot) => (
             <div

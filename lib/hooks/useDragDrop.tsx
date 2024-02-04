@@ -13,6 +13,7 @@ export type Droppable = {
 
 export const useDragDrop = (props: useDragDropProps) => {
   const [droppables, setDroppables] = useState<Droppable[]>([]);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
 
   // RemoveItemByID
   const removeItemById = () => {
@@ -30,16 +31,21 @@ export const useDragDrop = (props: useDragDropProps) => {
   };
 
   const onDragEnd: OnDragEndResponder = (e) => {
+    setIsDragging(false);
     const d = e.destination?.droppableId;
-    if (!d) {
-      return new Error('No destination id setted on drag item');
+    if (d) {
+      props.onDragEnd({ ...findDropableByID(d), type: e.draggableId });
     }
+  };
 
-    props.onDragEnd({ ...findDropableByID(d), type: e.draggableId });
+  const onDradStart = () => {
+    setIsDragging(true);
   };
 
   return {
     addDropable,
     onDragEnd,
+    onDradStart,
+    isDragging,
   };
 };

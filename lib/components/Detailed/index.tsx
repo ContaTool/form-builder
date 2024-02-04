@@ -16,8 +16,6 @@ interface DetailedProps extends NDataFormElement<Props> {
 }
 
 const Detailed = (props: DetailedProps) => {
-  console.log('props of detailed', props.isEditing);
-
   const {
     control,
     getValues,
@@ -54,31 +52,28 @@ const Detailed = (props: DetailedProps) => {
             .fill('')
             .map((_, index: number) => {
               return (
-                <Container
-                  key={String(index)}
-                  type="container"
-                  props={{ size: props.props.children.length + 1 }} //FIXME change to props.children + 1
-                >
-                  <>
-                    <Reenderizer
-                      detailed={{
-                        name: props.props.name,
-                        index,
-                      }}
-                      isEditing={props.isEditing || false}
-                      parent=""
-                      data={props.props.children}
-                    ></Reenderizer>
+                <>
+                  <div className="grid">{props.children}</div>
+                  {/* <Reenderizer
+                    detailed={{
+                      name: props.props.name,
+                      index,
+                    }}
+                    isEditing={props.isEditing || false}
+                    parent={{ id: props.id || '', type: 'detailed' }} //FIXME:
+                    data={props.props.children ?? []}
+                  >
+                    {props.children}
+                  </Reenderizer> */}
 
-                    <button
+                  {/* <button
                       onClick={() => removeItem(index)}
                       className="mt-4 h-12 flex-1 self-center rounded-md border border-transparent bg-pink-100 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2"
                       type="button"
                     >
                       Eliminar
-                    </button>
-                  </>
-                </Container>
+                    </button> */}
+                </>
               );
             })}
         </div>

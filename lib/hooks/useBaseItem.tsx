@@ -12,7 +12,6 @@ export const useBaseItem = (props: NDataFormElement<any>) => {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
     if (props.isEditing) {
-      console.log('click', props);
       selectItem(props);
     }
   };

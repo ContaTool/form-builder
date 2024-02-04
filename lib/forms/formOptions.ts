@@ -9,6 +9,7 @@ export default {
     { value: 'tabs', label: 'Tabs' },
     { value: 'select', label: 'Selector' },
     { value: 'detailed', label: 'Detallado' },
+    { value: 'textarea', label: 'Area de texto' },
     // { value: 'tabs', label: 'Tab' },
     // { value: 'input_date', label: 'Campo de Fecha' },
     // { value: 'checkbox', label: 'Checkbox' },

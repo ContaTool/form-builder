@@ -67,7 +67,6 @@ const Select = (props: NDataFormElement<SelectProps>) => {
   };
 
   const handleOptionSelect = (option: { value: string; label: string }) => {
-    //console.log('option selected?', option);
     setQuery(option.label);
     setIsOpen(false);
     setValue(name, option.value);

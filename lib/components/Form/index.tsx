@@ -15,12 +15,9 @@ export interface FormProps {
 }
 
 const Form = (props: FormProps) => {
-  // console.log('props data', props.data);
-
   // Extraer.
   const fixTab = (data: any) => {
     if (data) {
-      console.log('soy tab', data);
       if (data.type === 'tabs') {
         return {
           tabs: data.props.children.map((i: any) => ({
@@ -42,7 +39,6 @@ const Form = (props: FormProps) => {
     // if (!form.formState.isSubmitting) {
     props.onSubmit({ ...data });
     // }
-    console.log('is submitting?', form.formState.isSubmitting);
   };
 
   return (

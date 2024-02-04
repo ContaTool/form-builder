@@ -5,6 +5,7 @@ import { Droppable, useDragDrop } from '../hooks/useDragDrop';
 export type DragDropContextProps = {
   // click: () => void;
   addDropable: (data: Droppable) => void;
+  isDragging: boolean;
 };
 
 const DragDropContext = createContext<DragDropContextProps | undefined>(
@@ -21,15 +22,23 @@ const DragDropContextProvider = ({
   onDragEnd,
 }: DragDropContextProvider) => {
   // States
-  const { addDropable, onDragEnd: _onDragEnd } = useDragDrop({ onDragEnd });
+  const {
+    addDropable,
+    onDradStart: _onDragStart,
+    onDragEnd: _onDragEnd,
+    isDragging,
+  } = useDragDrop({ onDragEnd });
 
   const values = {
     addDropable,
+    isDragging,
   };
 
   return (
     <DragDropContext.Provider value={values}>
-      <DndContext onDragEnd={_onDragEnd}>{children}</DndContext>
+      <DndContext onDragStart={_onDragStart} onDragEnd={_onDragEnd}>
+        {children}
+      </DndContext>
     </DragDropContext.Provider>
   );
 };

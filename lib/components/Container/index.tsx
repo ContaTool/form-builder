@@ -8,11 +8,10 @@ import { useBaseItem } from '../../hooks/useBaseItem';
 
 interface Props {
   size: number;
-  // children: Array<any>;
 }
 
 interface ContainerProps extends NDataFormElement<Props> {
-  children: JSX.Element;
+  children?: JSX.Element;
 }
 
 const Container = (props: ContainerProps) => {
@@ -29,7 +28,12 @@ const Container = (props: ContainerProps) => {
       {props?.children}
       {props.isEditing && (
         <div className="pt-4 pb-4 flex flex-col justify-center min-h-14">
-          <Add parent={props.id} id={uuidv4()} key={uuidv4()} position={10} />
+          <Add
+            parent={{ id: props.id || '', type: 'root' }}
+            id={uuidv4()}
+            key={uuidv4()}
+            position={0} //FIXME: !props?.children ? 1  || props.children.length  + 1
+          />
         </div>
       )}
     </div>

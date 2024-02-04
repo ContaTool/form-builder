@@ -22,15 +22,12 @@ const addObjectsToChildren = (
   //   return [createAddObject(parent), ...children, createAddObject(parent)];
   // else
 
-  // console.log('children call', children);
-
   return [createAddObject(parent), ...children, createAddObject(parent)];
 };
 
 export const editMode = (form: DataFormElement[]): DataFormElement[] => {
   const modifiedform = form
     .map((elemento) => {
-      console.log('elemento');
       return [elemento];
     })
     .flat();

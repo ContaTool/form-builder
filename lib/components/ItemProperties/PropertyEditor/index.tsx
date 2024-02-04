@@ -11,6 +11,7 @@ import { useItemSelected } from '../../../hooks/useItemSelected';
 import selectForm from '../forms/selectForm';
 import tabsForm from '../forms/tabsForm';
 import detailedForm from '../forms/detailedForm';
+import textAreaForm from '../forms/textAreaForm';
 
 interface PropertyEditorProps {
   item: NDataFormElement<any>;
@@ -27,6 +28,7 @@ const formMapping: { [key: string]: any } = {
   select: selectForm,
   tabs: tabsForm,
   detailed: detailedForm,
+  textarea: textAreaForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {
@@ -37,7 +39,6 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
   useEffect(() => {
     setForm(null);
     setTimeout(() => {
-      console.log('item', props.item);
       setForm(formMapping[props.item?.type]);
     }, 1);
   }, [props.item]);
