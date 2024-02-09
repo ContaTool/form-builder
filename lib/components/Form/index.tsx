@@ -18,7 +18,7 @@ const Form = (props: FormProps) => {
   // Extraer.
   const fixTab = (data: any) => {
     if (data) {
-      if (data.type === 'tabs') {
+      if (data.type === 'tabs' && data.props.children) {
         return {
           tabs: data.props.children.map((i: any) => ({
             label: i.props.label,

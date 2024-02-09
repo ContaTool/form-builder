@@ -26,17 +26,25 @@ export default [
                   name: 'options',
                   children: [
                     {
-                      type: 'input',
+                      type: 'container',
                       props: {
-                        name: 'label',
-                        label: 'Etiqueta ',
-                      },
-                    },
-                    {
-                      type: 'input',
-                      props: {
-                        name: 'value',
-                        label: 'Valor',
+                        size: 2,
+                        children: [
+                          {
+                            type: 'input',
+                            props: {
+                              name: 'label',
+                              label: 'Etiqueta ',
+                            },
+                          },
+                          {
+                            type: 'input',
+                            props: {
+                              name: 'value',
+                              label: 'Valor',
+                            },
+                          },
+                        ],
                       },
                     },
                   ],

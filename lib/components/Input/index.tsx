@@ -24,7 +24,7 @@ export default function Select(props: NDataFormElement<InputProps>) {
   } = useFormContext();
 
   return (
-    <div className={`${baseStyles} py-2`} onClick={handleClick}>
+    <div className={`${baseStyles} `} onClick={handleClick}>
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
         htmlFor={name}

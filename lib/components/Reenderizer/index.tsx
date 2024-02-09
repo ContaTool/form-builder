@@ -45,6 +45,10 @@ const Reenderizer = ({
     index: number;
   };
 }): JSX.Element => {
+  useEffect(() => {
+    // console.log('Reenderizer');
+  }, []);
+
   return (
     <>
       {data.map((item: NDataFormElement<any>, index: number) => {

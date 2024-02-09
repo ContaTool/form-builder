@@ -37,6 +37,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     formState: { errors },
   } = useFormContext();
 
+  // Effects
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (

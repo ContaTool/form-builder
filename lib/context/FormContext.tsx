@@ -1,10 +1,10 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { DragDropContextProvider } from './DragDropContext';
 import { ItemSelectedContextProvider } from './ItemSelectedContext';
 
 export type FormContextProps = {
-  activeTabs: number;
-  setActiveTab: (activeTab: number) => void;
+  getActiveTab: (tabID: string) => number;
+  setActiveTab: (activeTab: number, tab: string) => void;
 };
 
 const FormContext = createContext<FormContextProps | undefined>(undefined);
@@ -14,17 +14,29 @@ export interface FormContextProvider {
   onDragEnd: (e: any) => void;
 }
 
-const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
-  const [activeTabs, setActiveTabs] = useState(0);
+type activeTabType = { [key: string]: number };
 
-  const setActiveTab = (activeTab: number) => {
-    setActiveTabs(activeTab);
+const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
+  const [activeTabs, setActiveTabs] = useState<activeTabType>();
+
+  const setActiveTab = (activeTab: number, tab: string) => {
+    console.log(activeTab, tab);
+    setActiveTabs((prev) => ({ ...prev, [tab]: activeTab }));
+  };
+
+  const getActiveTab = (tabID: string) => {
+    return activeTabs?.[tabID] ?? 0;
+    // return 0;
   };
 
   const values = {
-    activeTabs,
+    getActiveTab,
     setActiveTab,
   };
+
+  useEffect(() => {
+    console.log('active tabs', activeTabs);
+  }, [activeTabs]);
 
   return (
     <FormContext.Provider value={values}>
