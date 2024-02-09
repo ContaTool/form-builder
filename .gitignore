@@ -7,6 +7,6 @@ node_modules/*
 .DS_Store
 
 #ignore build folder
-dist/*
+# dist/*
 
-dist
+# dist

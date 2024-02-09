@@ -53,26 +53,23 @@ const Detailed = (props: DetailedProps) => {
             .map((_, index: number) => {
               return (
                 <>
-                  <div className="grid">{props.children}</div>
-                  {/* <Reenderizer
-                    detailed={{
-                      name: props.props.name,
-                      index,
-                    }}
-                    isEditing={props.isEditing || false}
-                    parent={{ id: props.id || '', type: 'detailed' }} //FIXME:
-                    data={props.props.children ?? []}
+                  <div>
+                    {props.children[0] && React.cloneElement(props.children[0])}
+                    {props.children[1] &&
+                      React.cloneElement(props.children[1], {
+                        detailed: {
+                          name: props.props.name,
+                          index,
+                        },
+                      })}
+                  </div>
+                  <button
+                    onClick={() => removeItem(index)}
+                    className="mt-4 h-12 flex-1 self-center rounded-md border border-transparent bg-pink-100 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2"
+                    type="button"
                   >
-                    {props.children}
-                  </Reenderizer> */}
-
-                  {/* <button
-                      onClick={() => removeItem(index)}
-                      className="mt-4 h-12 flex-1 self-center rounded-md border border-transparent bg-pink-100 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2"
-                      type="button"
-                    >
-                      Eliminar
-                    </button> */}
+                    Eliminar
+                  </button>
                 </>
               );
             })}
