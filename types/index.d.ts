@@ -4,7 +4,7 @@ export {};
 declare global {
   type DataFormElement = {
     id?: string;
-    type: string;
+    type?: string;
     props: {
       label?: string;
       children?: DataFormElement[];
@@ -39,6 +39,7 @@ declare global {
           index: number;
         }
       | undefined;
+    children: JSX.Element;
   };
 }
 

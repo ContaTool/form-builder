@@ -29,7 +29,7 @@ const ItemProperties = (props: ItemPropertiesProps) => {
 
   return (
     <div>
-      {item ? (
+      {/* {item ? (
         <PropertyEditor
           item={item}
           onSubmit={(data) => _beforeSubmit(data)}
@@ -46,7 +46,7 @@ const ItemProperties = (props: ItemPropertiesProps) => {
         bg-pink-500 text-white font-bold"
       >
         +
-      </button>
+      </button> */}
     </div>
   );
 };

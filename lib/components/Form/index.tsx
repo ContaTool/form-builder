@@ -1,53 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import Title from '../Title';
+import SubTitle from '../SubTitle';
+import Card from '../Card';
 
-import { FormProvider, useForm } from 'react-hook-form';
-
-import Reenderizer from '../Reenderizer';
-
-export interface FormProps {
-  // FIXME: INTERFACE DISORGANIZED
-  children: JSX.Element;
-  clickOnElement?: (params: DataFormElement) => void;
-  isEditing: boolean;
-  data?: any; //DATA to be binded.
-  form: NDataFormElement<any>[];
-  onSubmit: (data: any) => void;
-}
+export interface FormProps {}
 
 const Form = (props: FormProps) => {
-  // Extraer.
-  const fixTab = (data: any) => {
-    if (data) {
-      if (data.type === 'tabs' && data.props.children) {
-        return {
-          tabs: data.props.children.map((i: any) => ({
-            label: i.props.label,
-          })),
-        };
-      }
-      return data.props;
-    }
-  };
+  console.log('render form');
 
-  // Hooks
-  const form = useForm({
-    defaultValues: fixTab(props.data),
-  });
-
-  const handleSubmit = (data) => {
-    // FIXME: Se queda submitting despues de que se envia
-    // if (!form.formState.isSubmitting) {
-    props.onSubmit({ ...data });
-    // }
-  };
+  const [number, setNumber] = useState(0);
+  // const memoizedProps = useMemo(() => (), []);
 
   return (
-    <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit((data) => handleSubmit(data))}>
-        <Reenderizer data={props.form} isEditing={props.isEditing} />
-        {props.children}
-      </form>
-    </FormProvider>
+    <div>
+      {/* <SubTitle type={`subtitle`} props={{ size: 0 }} /> */}
+      <Card type="card" props={{}}>
+        <Title type="title" props={{ label: 'Form' }} />
+      </Card>
+      <button onClick={() => setNumber(number + 1)}>+</button>
+    </div>
   );
 };
 

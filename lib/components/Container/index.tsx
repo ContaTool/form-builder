@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 
 import { v4 as uuidv4 } from 'uuid';
 
-import { editMode } from '../../helpers';
 import Add from '../Add';
 import { useBaseItem } from '../../hooks/useBaseItem';
+import { compareFormComponent } from '../../helpers';
 
 interface Props {
   size: number;
@@ -40,4 +40,4 @@ const Container = (props: ContainerProps) => {
   );
 };
 
-export default Container;
+export default React.memo(Container, compareFormComponent);

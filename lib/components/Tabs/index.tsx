@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useBaseItem } from '../../hooks/useBaseItem';
 import Reenderizer from '../Reenderizer';
-import { FormContext } from '../../context/FormContext';
 
 interface Props {
   children: Array<NDataFormElement<any>>;
@@ -13,13 +12,6 @@ interface TabsProps extends NDataFormElement<Props> {
 }
 
 const Tabs = (props: TabsProps) => {
-  // Context
-  const formCtx = useContext(FormContext);
-
-  if (formCtx === undefined) {
-    throw new Error('Form Context is not implemented');
-  }
-
   // Hooks
   const { handleClick, baseStyles } = useBaseItem(props);
 
@@ -27,8 +19,8 @@ const Tabs = (props: TabsProps) => {
 
   // Effects
   useEffect(() => {
-    console.log('tab has been re-renders');
-  }, [props]);
+    console.log('tab has been rendered', new Date());
+  }, []);
 
   // Methods
 
@@ -40,10 +32,9 @@ const Tabs = (props: TabsProps) => {
           {props.props.children.map((tab, index) => (
             <a
               key={uuidv4()}
-              onClick={() => formCtx.setActiveTab(index, props.id || '')}
               className={`
                 ${
-                  formCtx.getActiveTab(props.id || '') === index
+                  0 === index
                     ? 'font-msedium  text-black  border-pink-500'
                     : ' text-gray-500  hover:text-gray-700 hover:border-gray-300'
                 }
@@ -59,7 +50,7 @@ const Tabs = (props: TabsProps) => {
         return (
           <div
             key={uuidv4()}
-            className={`${formCtx.getActiveTab(props.id || '') === index ? 'block' : 'hidden'} p-4`}
+            className={`${0 === index ? 'block' : 'hidden'} p-4`}
           >
             <Reenderizer
               data={[tab]}

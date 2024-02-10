@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
-import { DragDropContextProvider } from './DragDropContext';
 
 export type ItemSelectedContextProps = {
   selectItem: Dispatch<SetStateAction<NDataFormElement<any> | undefined>>;

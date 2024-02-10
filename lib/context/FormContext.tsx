@@ -26,17 +26,12 @@ const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
 
   const getActiveTab = (tabID: string) => {
     return activeTabs?.[tabID] ?? 0;
-    // return 0;
   };
 
   const values = {
     getActiveTab,
     setActiveTab,
   };
-
-  useEffect(() => {
-    console.log('active tabs', activeTabs);
-  }, [activeTabs]);
 
   return (
     <FormContext.Provider value={values}>

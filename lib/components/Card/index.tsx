@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useItemSelected } from '../../hooks/useItemSelected';
 import { useBaseItem } from '../../hooks/useBaseItem';
+import { compareFormComponent } from '../../helpers';
 
 interface Props {}
 
@@ -23,4 +24,4 @@ const Card = (props: CardProps) => {
   );
 };
 
-export default Card;
+export default React.memo(Card, compareFormComponent);

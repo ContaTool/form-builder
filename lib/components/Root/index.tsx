@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 
-import Add from '../Add';
+import { compareFormComponent } from '../../helpers';
 
 interface Props {}
 
@@ -13,4 +12,4 @@ const Root = (props: RootProps) => {
   return <div className={``}>{props.children}</div>;
 };
 
-export default Root;
+export default React.memo(Root, compareFormComponent);

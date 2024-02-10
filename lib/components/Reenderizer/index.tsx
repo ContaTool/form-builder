@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import { replacePlaceholder } from '../../helpers';
-
 import Title from '../Title';
 import Card from '../Card';
 import Input from '../Input';
@@ -45,9 +43,7 @@ const Reenderizer = ({
     index: number;
   };
 }): JSX.Element => {
-  useEffect(() => {
-    // console.log('Reenderizer');
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>

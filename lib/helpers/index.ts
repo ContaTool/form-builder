@@ -1,105 +1,30 @@
-import { v4 as uuidv4 } from 'uuid';
-
-const addedObject: DataFormElement = {
-  type: 'add',
-  props: {},
-};
-
-const createAddObject = (parent: string): DataFormElement => {
-  return {
-    id: uuidv4(),
-    parent,
-    ...addedObject,
-  };
-};
-
-const addObjectsToChildren = (
-  children: DataFormElement[],
-  parent: string
-): DataFormElement[] => {
-  // if (children.length === 0) return [createAddObject(parent)];
-  // else if (children.length > 0)
-  //   return [createAddObject(parent), ...children, createAddObject(parent)];
-  // else
-
-  return [createAddObject(parent), ...children, createAddObject(parent)];
-};
-
-export const editMode = (form: DataFormElement[]): DataFormElement[] => {
-  const modifiedform = form
-    .map((elemento) => {
-      return [elemento];
-    })
-    .flat();
-
-  return modifiedform;
-};
-
-export const findInArrayAndReplace = (
-  array: Array<any>,
-  identifier: string,
-  identifierKey: string,
-  replacer: Array<any>
-): Array<any> => {
-  const index = array.findIndex((i) => i[identifierKey] === identifier);
-
-  const new_array = [...array];
-
-  if (index >= 0) {
-    const new_forms = replacer;
-    new_array.splice(index + 1, 0, ...new_forms);
-  }
-
-  return new_array.map((i) => {
-    if ('children' in i.props) {
-      return {
-        ...i,
-        props: {
-          ...i.props,
-          children: [
-            ...findInArrayAndReplace(
-              i.props.children,
-              identifier,
-              identifierKey,
-              replacer
-            ),
-          ],
-        },
-      };
+export const compareFormComponent = <T>(
+  prevProps: Readonly<NDataFormElement<T>>,
+  nextProps: Readonly<NDataFormElement<T>>
+): boolean => {
+  Object.keys(prevProps).forEach((key) => {
+    if (typeof prevProps[key] === 'function') {
+      console.error(
+        `${prevProps.type} contains a function in its properties. This can lead to problems with re-rendering. Please check the ${key} parameter.`
+      );
     }
-    return i;
   });
-};
 
-// TODO: Must be replaced by findInArrayAndReplace
-export const replacePlaceholder = (
-  array: Array<any>,
-  identifier: string,
-  replacer: string
-): Array<any> => {
-  const index = array.findIndex(
-    (i) => i.props.for === identifier && i.type === 'placeholder'
+  return (
+    JSON.stringify(copyObjectExcludeProperties(prevProps, ['children'])) ===
+    JSON.stringify(copyObjectExcludeProperties(nextProps, ['children']))
   );
-
-  const new_array = [...array];
-
-  if (index > 0) {
-    const new_forms = new_array[index].props.options[replacer];
-    new_array.splice(index, 1, ...new_forms);
-  }
-
-  return new_array.map((i) => {
-    if ('children' in i.props) {
-      return {
-        ...i,
-        props: {
-          ...i.props,
-          children: [
-            ...replacePlaceholder(i.props.children, identifier, replacer),
-          ],
-        },
-      };
-    }
-    return i;
-  });
 };
+
+function copyObjectExcludeProperties<T extends Record<string, any>>(
+  obj: T,
+  excludedProps: (keyof T)[]
+): Partial<T> {
+  const newObj: Partial<T> = {};
+  for (const key in obj) {
+    if (!excludedProps.includes(key as keyof T)) {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
+}
