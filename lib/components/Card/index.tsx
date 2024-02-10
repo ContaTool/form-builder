@@ -12,6 +12,8 @@ interface CardProps extends NDataFormElement<Props> {
 const Card = (props: CardProps) => {
   const { handleClick, baseStyles } = useBaseItem(props);
 
+  console.log('card has been rendered');
+
   return (
     <div
       onClick={handleClick}

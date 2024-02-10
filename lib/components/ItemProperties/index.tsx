@@ -29,7 +29,7 @@ const ItemProperties = (props: ItemPropertiesProps) => {
 
   return (
     <div>
-      {/* {item ? (
+      {item ? (
         <PropertyEditor
           item={item}
           onSubmit={(data) => _beforeSubmit(data)}
@@ -39,14 +39,14 @@ const ItemProperties = (props: ItemPropertiesProps) => {
         <New />
       )}
       <button
-        onClick={() => selectItem(null)}
+        onClick={() => selectItem(undefined)}
         title="Contact Sale"
         className="fixed z-90 bottom-12 right-4
         w-16 h-16 rounded-full  drop-shadow-lg
         bg-pink-500 text-white font-bold"
       >
         +
-      </button> */}
+      </button>
     </div>
   );
 };

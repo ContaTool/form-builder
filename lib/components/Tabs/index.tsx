@@ -17,10 +17,7 @@ const Tabs = (props: TabsProps) => {
 
   // States
 
-  // Effects
-  useEffect(() => {
-    console.log('tab has been rendered', new Date());
-  }, []);
+  console.log('tab has been rendered', new Date());
 
   // Methods
 
@@ -52,12 +49,12 @@ const Tabs = (props: TabsProps) => {
             key={uuidv4()}
             className={`${0 === index ? 'block' : 'hidden'} p-4`}
           >
-            <Reenderizer
+            {/* <Reenderizer
               data={[tab]}
               isEditing={props.isEditing ?? false}
               parent={{ type: 'tabs', id: props.id || '' }}
-            ></Reenderizer>
-            {/* {props.children} */}
+            ></Reenderizer> */}
+            {props.children}
           </div>
         );
       })}

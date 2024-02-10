@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 
 export type ItemSelectedContextProps = {
@@ -21,13 +21,23 @@ const ItemSelectedContextProvider = (
     undefined
   );
 
-  const value = {
-    item,
-    selectItem,
-  };
+  const _selectItem = useCallback(
+    (item: NDataFormElement<any>) => {
+      selectItem(item);
+    },
+    [selectItem]
+  );
+
+  const contextValue = useMemo(
+    () => ({
+      item,
+      selectItem: _selectItem,
+    }),
+    [item, selectItem]
+  );
 
   return (
-    <ItemSelectedContext.Provider value={value}>
+    <ItemSelectedContext.Provider value={contextValue}>
       {props.children}
     </ItemSelectedContext.Provider>
   );

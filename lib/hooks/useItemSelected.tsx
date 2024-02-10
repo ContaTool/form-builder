@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useCallback, useContext } from 'react';
 import { ItemSelectedContext } from '../context/ItemSelectedContext';
 
 export const useItemSelected = () => {
@@ -9,9 +9,15 @@ export const useItemSelected = () => {
     );
   }
 
-  const _selectItem = (item: NDataFormElement<any>) => {
-    ctx.selectItem(item);
-  };
+  console.log('use Item selected hook rendered');
+
+  const _selectItem = useCallback(
+    (item: NDataFormElement<any> | undefined) => {
+      console.log('click received', item);
+      ctx.selectItem(item);
+    },
+    [ctx.selectItem]
+  );
 
   return {
     selectItem: _selectItem,

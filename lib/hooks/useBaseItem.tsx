@@ -1,25 +1,30 @@
+import React, { useCallback, useMemo } from 'react';
 import { useItemSelected } from './useItemSelected';
 
-// TODO: Cambiar ItemProps
-
-// interface BaseItemProps extends Omit<NDataFormElement<any>, 'props'> {}
 interface BaseItemProps extends NDataFormElement<any> {}
 
 export const useBaseItem = (props: NDataFormElement<any>) => {
+  console.log('hook re rendered', props.type);
+
   const { selectItem, item } = useItemSelected();
   const isSelected = item?.id === props.id;
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-    console.log('clicked');
-    if (props.isEditing) {
-      if (props.id !== item?.id) {
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLElement>) => {
+      event.stopPropagation();
+      if (props.isEditing  && item?.id !== props.id) {
+        console.log('clicked');
         selectItem(props);
+        console.log('selected', props.id)
+        console.log('current select', item)
       }
-    }
-  };
+    },
+    [props, selectItem]
+  );
 
-  const baseStyles = `${isSelected && 'border border-solid border-blue-500 my-2'}`;
+  const baseStyles = useMemo(() => {
+    return isSelected ? 'border border-solid border-blue-500 my-2' : '';
+  }, [isSelected]);
 
   return {
     handleClick,

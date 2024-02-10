@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { RegisterOptions } from 'react-hook-form';
 import { useBaseItem } from '../../hooks/useBaseItem';
+import { compareFormComponent } from '../../helpers';
 
 interface InputProps {
   name?: string;
@@ -10,7 +11,7 @@ interface InputProps {
   validations?: RegisterOptions;
 }
 
-export default function Select(props: NDataFormElement<InputProps>) {
+const Select = (props: NDataFormElement<InputProps>) => {
   const { handleClick, baseStyles } = useBaseItem(props);
   const [name, _] = useState<string>(
     props.detailed
@@ -46,4 +47,6 @@ export default function Select(props: NDataFormElement<InputProps>) {
       </p>
     </div>
   );
-}
+};
+
+export default React.memo(Select, compareFormComponent);

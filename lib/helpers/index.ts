@@ -2,6 +2,10 @@ export const compareFormComponent = <T>(
   prevProps: Readonly<NDataFormElement<T>>,
   nextProps: Readonly<NDataFormElement<T>>
 ): boolean => {
+  // console.log(
+  //   copyObjectExcludeProperties(prevProps, ['children']),
+  //   copyObjectExcludeProperties(nextProps, ['children'])
+  // );
   Object.keys(prevProps).forEach((key) => {
     if (typeof prevProps[key] === 'function') {
       console.error(
