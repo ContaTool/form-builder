@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
-import formOptions from '../../../forms/formOptions';
+import ItemList from '../ItemList';
 
 interface NewItemProps {
   // ctx: DataFormElement;
@@ -18,7 +18,7 @@ export const NewItem = (props: NewItemProps) => {
               ref={provided.innerRef}
               className="droppable-area grid grid-cols-2 gap-2"
             >
-              {formOptions.options.map((element, index) => {
+              {ItemList.options.map((element, index) => {
                 return (
                   <Draggable
                     key={element.value}

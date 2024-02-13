@@ -1,5 +1,5 @@
 import * as React from 'react';
-import React__default, { createContext, useState, useCallback as useCallback$1, useMemo as useMemo$1, useContext, useRef, useEffect, useLayoutEffect as useLayoutEffect$1 } from 'react';
+import React__default, { useState, useRef, useEffect, useContext, useLayoutEffect as useLayoutEffect$1, createContext } from 'react';
 import ReactDOM, { unstable_batchedUpdates, flushSync } from 'react-dom';
 
 function styleInject(css, ref) {
@@ -27,7 +27,7 @@ function styleInject(css, ref) {
     }
 }
 
-var css_248z = "/* styles.css */\n[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    border-radius: 0px;\n    padding-top: 0.5rem;\n    padding-right: 0.75rem;\n    padding-bottom: 0.5rem;\n    padding-left: 0.75rem;\n    font-size: 1rem;\n    line-height: 1.5rem;\n    --tw-shadow: 0 0 #0000;\n}\n[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n    border-color: #2563eb;\n}\ninput::-moz-placeholder, textarea::-moz-placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\ninput::placeholder,textarea::placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\n::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n}\n::-webkit-date-and-time-value {\n    min-height: 1.5em;\n    text-align: inherit;\n}\n::-webkit-datetime-edit {\n    display: inline-flex;\n}\n::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {\n    padding-top: 0;\n    padding-bottom: 0;\n}\nselect {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\");\n    background-position: right 0.5rem center;\n    background-repeat: no-repeat;\n    background-size: 1.5em 1.5em;\n    padding-right: 2.5rem;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n}\n[multiple],[size]:where(select:not([size=\"1\"])) {\n    background-image: initial;\n    background-position: initial;\n    background-repeat: unset;\n    background-size: initial;\n    padding-right: 0.75rem;\n    -webkit-print-color-adjust: unset;\n            print-color-adjust: unset;\n}\n[type='checkbox'],[type='radio'] {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    padding: 0;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n    display: inline-block;\n    vertical-align: middle;\n    background-origin: border-box;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n    flex-shrink: 0;\n    height: 1rem;\n    width: 1rem;\n    color: #2563eb;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    --tw-shadow: 0 0 #0000;\n}\n[type='checkbox'] {\n    border-radius: 0px;\n}\n[type='radio'] {\n    border-radius: 100%;\n}\n[type='checkbox']:focus,[type='radio']:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 2px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n}\n[type='checkbox']:checked,[type='radio']:checked {\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n[type='checkbox']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='radio']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='radio']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='checkbox']:indeterminate {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\");\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:indeterminate {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='file'] {\n    background: unset;\n    border-color: inherit;\n    border-width: 0;\n    border-radius: 0;\n    padding: 0;\n    font-size: unset;\n    line-height: inherit;\n}\n[type='file']:focus {\n    outline: 1px solid ButtonText;\n    outline: 1px auto -webkit-focus-ring-color;\n}\n*, ::before, ::after {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n::backdrop {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n.container {\n    width: 100%;\n}\n@media (min-width: 640px) {\n    .container {\n        max-width: 640px;\n    }\n}\n@media (min-width: 768px) {\n    .container {\n        max-width: 768px;\n    }\n}\n@media (min-width: 1024px) {\n    .container {\n        max-width: 1024px;\n    }\n}\n@media (min-width: 1280px) {\n    .container {\n        max-width: 1280px;\n    }\n}\n@media (min-width: 1536px) {\n    .container {\n        max-width: 1536px;\n    }\n}\n.visible {\n    visibility: visible;\n}\n.fixed {\n    position: fixed;\n}\n.absolute {\n    position: absolute;\n}\n.relative {\n    position: relative;\n}\n.bottom-12 {\n    bottom: 3rem;\n}\n.left-0 {\n    left: 0px;\n}\n.left-\\[-12px\\] {\n    left: -12px;\n}\n.right-4 {\n    right: 1rem;\n}\n.z-10 {\n    z-index: 10;\n}\n.z-50 {\n    z-index: 50;\n}\n.my-1 {\n    margin-top: 0.25rem;\n    margin-bottom: 0.25rem;\n}\n.my-2 {\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n}\n.my-4 {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n.-mb-px {\n    margin-bottom: -1px;\n}\n.mb-2 {\n    margin-bottom: 0.5rem;\n}\n.mb-4 {\n    margin-bottom: 1rem;\n}\n.me-2 {\n    margin-inline-end: 0.5rem;\n}\n.ml-2 {\n    margin-left: 0.5rem;\n}\n.mr-0 {\n    margin-right: 0px;\n}\n.mr-0\\.5 {\n    margin-right: 0.125rem;\n}\n.mr-2 {\n    margin-right: 0.5rem;\n}\n.ms-2 {\n    margin-inline-start: 0.5rem;\n}\n.mt-0 {\n    margin-top: 0px;\n}\n.mt-0\\.5 {\n    margin-top: 0.125rem;\n}\n.mt-1 {\n    margin-top: 0.25rem;\n}\n.mt-1\\.5 {\n    margin-top: 0.375rem;\n}\n.mt-2 {\n    margin-top: 0.5rem;\n}\n.mt-2\\.5 {\n    margin-top: 0.625rem;\n}\n.mt-4 {\n    margin-top: 1rem;\n}\n.block {\n    display: block;\n}\n.inline-block {\n    display: inline-block;\n}\n.flex {\n    display: flex;\n}\n.inline-flex {\n    display: inline-flex;\n}\n.grid {\n    display: grid;\n}\n.hidden {\n    display: none;\n}\n.size-5 {\n    width: 1.25rem;\n    height: 1.25rem;\n}\n.h-0 {\n    height: 0px;\n}\n.h-12 {\n    height: 3rem;\n}\n.h-16 {\n    height: 4rem;\n}\n.h-3 {\n    height: 0.75rem;\n}\n.h-5 {\n    height: 1.25rem;\n}\n.h-6 {\n    height: 1.5rem;\n}\n.h-\\[1px\\] {\n    height: 1px;\n}\n.h-\\[50px\\] {\n    height: 50px;\n}\n.h-full {\n    height: 100%;\n}\n.max-h-72 {\n    max-height: 18rem;\n}\n.min-h-10 {\n    min-height: 2.5rem;\n}\n.min-h-12 {\n    min-height: 3rem;\n}\n.min-h-14 {\n    min-height: 3.5rem;\n}\n.w-0 {\n    width: 0px;\n}\n.w-16 {\n    width: 4rem;\n}\n.w-3 {\n    width: 0.75rem;\n}\n.w-5 {\n    width: 1.25rem;\n}\n.w-6 {\n    width: 1.5rem;\n}\n.w-80 {\n    width: 20rem;\n}\n.w-full {\n    width: 100%;\n}\n.w-px {\n    width: 1px;\n}\n.flex-1 {\n    flex: 1 1 0%;\n}\n.flex-none {\n    flex: none;\n}\n.shrink-0 {\n    flex-shrink: 0;\n}\n.grow {\n    flex-grow: 1;\n}\n.rotate-90 {\n    --tw-rotate: 90deg;\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.transform {\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n@keyframes spin {\n    to {\n        transform: rotate(360deg);\n    }\n}\n.animate-spin {\n    animation: spin 1s linear infinite;\n}\n.cursor-default {\n    cursor: default;\n}\n.cursor-not-allowed {\n    cursor: not-allowed;\n}\n.cursor-pointer {\n    cursor: pointer;\n}\n.select-none {\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n}\n.appearance-none {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n}\n.grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n.flex-row {\n    flex-direction: row;\n}\n.flex-col {\n    flex-direction: column;\n}\n.flex-wrap {\n    flex-wrap: wrap;\n}\n.items-center {\n    align-items: center;\n}\n.justify-end {\n    justify-content: flex-end;\n}\n.justify-center {\n    justify-content: center;\n}\n.gap-1 {\n    gap: 0.25rem;\n}\n.gap-2 {\n    gap: 0.5rem;\n}\n.gap-6 {\n    gap: 1.5rem;\n}\n.space-x-1 > :not([hidden]) ~ :not([hidden]) {\n    --tw-space-x-reverse: 0;\n    margin-right: calc(0.25rem * var(--tw-space-x-reverse));\n    margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));\n}\n.place-self-end {\n    place-self: end;\n}\n.self-center {\n    align-self: center;\n}\n.overflow-y-auto {\n    overflow-y: auto;\n}\n.truncate {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n.rounded {\n    border-radius: 0.25rem;\n}\n.rounded-full {\n    border-radius: 9999px;\n}\n.rounded-md {\n    border-radius: 0.375rem;\n}\n.rounded-sm {\n    border-radius: 0.125rem;\n}\n.rounded-r-sm {\n    border-top-right-radius: 0.125rem;\n    border-bottom-right-radius: 0.125rem;\n}\n.border {\n    border-width: 1px;\n}\n.border-2 {\n    border-width: 2px;\n}\n.border-b {\n    border-bottom-width: 1px;\n}\n.border-b-2 {\n    border-bottom-width: 2px;\n}\n.border-b-\\[10px\\] {\n    border-bottom-width: 10px;\n}\n.border-r-\\[12px\\] {\n    border-right-width: 12px;\n}\n.border-t-\\[10px\\] {\n    border-top-width: 10px;\n}\n.border-solid {\n    border-style: solid;\n}\n.border-dashed {\n    border-style: dashed;\n}\n.border-blue-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.border-gray-200 {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.border-gray-300 {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.border-gray-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.border-gray-800 {\n    --tw-border-opacity: 1;\n    border-color: rgb(31 41 55 / var(--tw-border-opacity));\n}\n.border-pink-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.border-transparent {\n    border-color: transparent;\n}\n.border-b-transparent {\n    border-bottom-color: transparent;\n}\n.border-r-white {\n    --tw-border-opacity: 1;\n    border-right-color: rgb(255 255 255 / var(--tw-border-opacity));\n}\n.border-t-transparent {\n    border-top-color: transparent;\n}\n.bg-amber-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(245 158 11 / var(--tw-bg-opacity));\n}\n.bg-black {\n    --tw-bg-opacity: 1;\n    background-color: rgb(0 0 0 / var(--tw-bg-opacity));\n}\n.bg-blue-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(59 130 246 / var(--tw-bg-opacity));\n}\n.bg-cyan-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(6 182 212 / var(--tw-bg-opacity));\n}\n.bg-emerald-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(16 185 129 / var(--tw-bg-opacity));\n}\n.bg-fuchsia-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(217 70 239 / var(--tw-bg-opacity));\n}\n.bg-gray-100 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.bg-gray-200 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(229 231 235 / var(--tw-bg-opacity));\n}\n.bg-gray-300 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 213 219 / var(--tw-bg-opacity));\n}\n.bg-green-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(34 197 94 / var(--tw-bg-opacity));\n}\n.bg-indigo-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.bg-lime-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(132 204 22 / var(--tw-bg-opacity));\n}\n.bg-orange-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n.bg-pink-100 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(252 231 243 / var(--tw-bg-opacity));\n}\n.bg-pink-200 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(251 207 232 / var(--tw-bg-opacity));\n}\n.bg-pink-300 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(249 168 212 / var(--tw-bg-opacity));\n}\n.bg-pink-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 72 153 / var(--tw-bg-opacity));\n}\n.bg-purple-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(168 85 247 / var(--tw-bg-opacity));\n}\n.bg-red-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.bg-rose-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(244 63 94 / var(--tw-bg-opacity));\n}\n.bg-sky-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(14 165 233 / var(--tw-bg-opacity));\n}\n.bg-teal-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(20 184 166 / var(--tw-bg-opacity));\n}\n.bg-violet-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(139 92 246 / var(--tw-bg-opacity));\n}\n.bg-white {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.bg-yellow-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(234 179 8 / var(--tw-bg-opacity));\n}\n.p-0 {\n    padding: 0px;\n}\n.p-0\\.5 {\n    padding: 0.125rem;\n}\n.p-4 {\n    padding: 1rem;\n}\n.p-6 {\n    padding: 1.5rem;\n}\n.px-1 {\n    padding-left: 0.25rem;\n    padding-right: 0.25rem;\n}\n.px-1\\.5 {\n    padding-left: 0.375rem;\n    padding-right: 0.375rem;\n}\n.px-2 {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.px-2\\.5 {\n    padding-left: 0.625rem;\n    padding-right: 0.625rem;\n}\n.px-4 {\n    padding-left: 1rem;\n    padding-right: 1rem;\n}\n.py-1 {\n    padding-top: 0.25rem;\n    padding-bottom: 0.25rem;\n}\n.py-1\\.5 {\n    padding-top: 0.375rem;\n    padding-bottom: 0.375rem;\n}\n.py-2 {\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n}\n.py-3 {\n    padding-top: 0.75rem;\n    padding-bottom: 0.75rem;\n}\n.py-4 {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n}\n.py-6 {\n    padding-top: 1.5rem;\n    padding-bottom: 1.5rem;\n}\n.pb-0 {\n    padding-bottom: 0px;\n}\n.pb-0\\.5 {\n    padding-bottom: 0.125rem;\n}\n.pb-2 {\n    padding-bottom: 0.5rem;\n}\n.pb-4 {\n    padding-bottom: 1rem;\n}\n.pl-1 {\n    padding-left: 0.25rem;\n}\n.pl-2 {\n    padding-left: 0.5rem;\n}\n.pl-2\\.5 {\n    padding-left: 0.625rem;\n}\n.pl-8 {\n    padding-left: 2rem;\n}\n.pr-2 {\n    padding-right: 0.5rem;\n}\n.pt-2 {\n    padding-top: 0.5rem;\n}\n.pt-4 {\n    padding-top: 1rem;\n}\n.text-justify {\n    text-align: justify;\n}\n.align-middle {\n    vertical-align: middle;\n}\n.text-sm {\n    font-size: 0.875rem;\n    line-height: 1.25rem;\n}\n.text-xl {\n    font-size: 1.25rem;\n    line-height: 1.75rem;\n}\n.text-xs {\n    font-size: 0.75rem;\n    line-height: 1rem;\n}\n.font-bold {\n    font-weight: 700;\n}\n.font-medium {\n    font-weight: 500;\n}\n.font-normal {\n    font-weight: 400;\n}\n.uppercase {\n    text-transform: uppercase;\n}\n.italic {\n    font-style: italic;\n}\n.leading-tight {\n    line-height: 1.25;\n}\n.tracking-wide {\n    letter-spacing: 0.025em;\n}\n.text-amber-500 {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.text-black {\n    --tw-text-opacity: 1;\n    color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-blue-500 {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.text-cyan-500 {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.text-emerald-500 {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.text-fuchsia-500 {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.text-gray-300 {\n    --tw-text-opacity: 1;\n    color: rgb(209 213 219 / var(--tw-text-opacity));\n}\n.text-gray-400 {\n    --tw-text-opacity: 1;\n    color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.text-gray-500 {\n    --tw-text-opacity: 1;\n    color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.text-gray-600 {\n    --tw-text-opacity: 1;\n    color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.text-gray-700 {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.text-green-500 {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.text-indigo-500 {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.text-lime-500 {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.text-orange-500 {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.text-pink-500 {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.text-pink-900 {\n    --tw-text-opacity: 1;\n    color: rgb(131 24 67 / var(--tw-text-opacity));\n}\n.text-purple-500 {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.text-red-500 {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.text-rose-500 {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.text-sky-500 {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.text-teal-500 {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.text-violet-500 {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.text-white {\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-yellow-500 {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.text-opacity-0 {\n    --tw-text-opacity: 0;\n}\n.opacity-25 {\n    opacity: 0.25;\n}\n.opacity-75 {\n    opacity: 0.75;\n}\n.shadow-lg {\n    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-md {\n    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);\n    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-sm {\n    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.ring {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.drop-shadow-lg {\n    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.filter {\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.transition {\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.transition-all {\n    transition-property: all;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.duration-200 {\n    transition-duration: 200ms;\n}\n.duration-300 {\n    transition-duration: 300ms;\n}\n.\\@container {\n    container-type: inline-size;\n}\n.hover\\:cursor-pointer:hover {\n    cursor: pointer;\n}\n.hover\\:border-gray-300:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.hover\\:border-gray-400:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(156 163 175 / var(--tw-border-opacity));\n}\n.hover\\:bg-amber-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 243 199 / var(--tw-bg-opacity));\n}\n.hover\\:bg-blue-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(219 234 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-cyan-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(207 250 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-emerald-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 250 229 / var(--tw-bg-opacity));\n}\n.hover\\:bg-fuchsia-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(250 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(55 65 81 / var(--tw-bg-opacity));\n}\n.hover\\:bg-green-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(220 252 231 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 231 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-lime-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 252 203 / var(--tw-bg-opacity));\n}\n.hover\\:bg-orange-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 237 213 / var(--tw-bg-opacity));\n}\n.hover\\:bg-pink-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(252 231 243 / var(--tw-bg-opacity));\n}\n.hover\\:bg-pink-200:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(251 207 232 / var(--tw-bg-opacity));\n}\n.hover\\:bg-purple-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 226 226 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-200:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 202 202 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(185 28 28 / var(--tw-bg-opacity));\n}\n.hover\\:bg-rose-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 228 230 / var(--tw-bg-opacity));\n}\n.hover\\:bg-sky-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 242 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-teal-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(204 251 241 / var(--tw-bg-opacity));\n}\n.hover\\:bg-violet-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(237 233 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-yellow-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 249 195 / var(--tw-bg-opacity));\n}\n.hover\\:text-amber-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.hover\\:text-blue-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.hover\\:text-cyan-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.hover\\:text-emerald-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.hover\\:text-fuchsia-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-700:hover {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.hover\\:text-green-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.hover\\:text-indigo-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.hover\\:text-lime-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.hover\\:text-orange-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.hover\\:text-pink-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.hover\\:text-purple-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.hover\\:text-red-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.hover\\:text-red-600:hover {\n    --tw-text-opacity: 1;\n    color: rgb(220 38 38 / var(--tw-text-opacity));\n}\n.hover\\:text-rose-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.hover\\:text-sky-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.hover\\:text-teal-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.hover\\:text-violet-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.hover\\:text-yellow-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.hover\\:underline:hover {\n    text-decoration-line: underline;\n}\n.focus\\:border-amber-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(245 158 11 / var(--tw-border-opacity));\n}\n.focus\\:border-blue-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.focus\\:border-cyan-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(6 182 212 / var(--tw-border-opacity));\n}\n.focus\\:border-emerald-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(16 185 129 / var(--tw-border-opacity));\n}\n.focus\\:border-fuchsia-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(217 70 239 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-200:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.focus\\:border-green-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(34 197 94 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(99 102 241 / var(--tw-border-opacity));\n}\n.focus\\:border-lime-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(132 204 22 / var(--tw-border-opacity));\n}\n.focus\\:border-orange-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(249 115 22 / var(--tw-border-opacity));\n}\n.focus\\:border-pink-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.focus\\:border-purple-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(168 85 247 / var(--tw-border-opacity));\n}\n.focus\\:border-red-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(239 68 68 / var(--tw-border-opacity));\n}\n.focus\\:border-rose-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(244 63 94 / var(--tw-border-opacity));\n}\n.focus\\:border-sky-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(14 165 233 / var(--tw-border-opacity));\n}\n.focus\\:border-teal-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(20 184 166 / var(--tw-border-opacity));\n}\n.focus\\:border-violet-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(139 92 246 / var(--tw-border-opacity));\n}\n.focus\\:border-yellow-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(234 179 8 / var(--tw-border-opacity));\n}\n.focus\\:bg-white:focus {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.focus\\:outline-none:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n}\n.focus\\:ring:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-0:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-amber-500\\/20:focus {\n    --tw-ring-color: rgb(245 158 11 / 0.2);\n}\n.focus\\:ring-blue-500\\/20:focus {\n    --tw-ring-color: rgb(59 130 246 / 0.2);\n}\n.focus\\:ring-cyan-500\\/20:focus {\n    --tw-ring-color: rgb(6 182 212 / 0.2);\n}\n.focus\\:ring-emerald-500\\/20:focus {\n    --tw-ring-color: rgb(16 185 129 / 0.2);\n}\n.focus\\:ring-fuchsia-500\\/20:focus {\n    --tw-ring-color: rgb(217 70 239 / 0.2);\n}\n.focus\\:ring-green-500\\/20:focus {\n    --tw-ring-color: rgb(34 197 94 / 0.2);\n}\n.focus\\:ring-indigo-500\\/20:focus {\n    --tw-ring-color: rgb(99 102 241 / 0.2);\n}\n.focus\\:ring-lime-500\\/20:focus {\n    --tw-ring-color: rgb(132 204 22 / 0.2);\n}\n.focus\\:ring-orange-500\\/20:focus {\n    --tw-ring-color: rgb(249 115 22 / 0.2);\n}\n.focus\\:ring-pink-500\\/20:focus {\n    --tw-ring-color: rgb(236 72 153 / 0.2);\n}\n.focus\\:ring-purple-500\\/20:focus {\n    --tw-ring-color: rgb(168 85 247 / 0.2);\n}\n.focus\\:ring-red-500\\/20:focus {\n    --tw-ring-color: rgb(239 68 68 / 0.2);\n}\n.focus\\:ring-rose-500\\/20:focus {\n    --tw-ring-color: rgb(244 63 94 / 0.2);\n}\n.focus\\:ring-sky-500\\/20:focus {\n    --tw-ring-color: rgb(14 165 233 / 0.2);\n}\n.focus\\:ring-teal-500\\/20:focus {\n    --tw-ring-color: rgb(20 184 166 / 0.2);\n}\n.focus\\:ring-violet-500\\/20:focus {\n    --tw-ring-color: rgb(139 92 246 / 0.2);\n}\n.focus\\:ring-yellow-500\\/20:focus {\n    --tw-ring-color: rgb(234 179 8 / 0.2);\n}\n.focus-visible\\:ring-2:focus-visible {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus-visible\\:ring-pink-500:focus-visible {\n    --tw-ring-opacity: 1;\n    --tw-ring-color: rgb(236 72 153 / var(--tw-ring-opacity));\n}\n.focus-visible\\:ring-offset-2:focus-visible {\n    --tw-ring-offset-width: 2px;\n}\n.disabled\\:opacity-50:disabled {\n    opacity: 0.5;\n}\n@media (min-width: 768px) {\n    .md\\:w-2\\/3 {\n        width: 66.666667%;\n    }\n}\n";
+var css_248z = "/* styles.css */\n[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    border-radius: 0px;\n    padding-top: 0.5rem;\n    padding-right: 0.75rem;\n    padding-bottom: 0.5rem;\n    padding-left: 0.75rem;\n    font-size: 1rem;\n    line-height: 1.5rem;\n    --tw-shadow: 0 0 #0000;\n}\n[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n    border-color: #2563eb;\n}\ninput::-moz-placeholder, textarea::-moz-placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\ninput::placeholder,textarea::placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\n::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n}\n::-webkit-date-and-time-value {\n    min-height: 1.5em;\n    text-align: inherit;\n}\n::-webkit-datetime-edit {\n    display: inline-flex;\n}\n::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {\n    padding-top: 0;\n    padding-bottom: 0;\n}\nselect {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\");\n    background-position: right 0.5rem center;\n    background-repeat: no-repeat;\n    background-size: 1.5em 1.5em;\n    padding-right: 2.5rem;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n}\n[multiple],[size]:where(select:not([size=\"1\"])) {\n    background-image: initial;\n    background-position: initial;\n    background-repeat: unset;\n    background-size: initial;\n    padding-right: 0.75rem;\n    -webkit-print-color-adjust: unset;\n            print-color-adjust: unset;\n}\n[type='checkbox'],[type='radio'] {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    padding: 0;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n    display: inline-block;\n    vertical-align: middle;\n    background-origin: border-box;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n    flex-shrink: 0;\n    height: 1rem;\n    width: 1rem;\n    color: #2563eb;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    --tw-shadow: 0 0 #0000;\n}\n[type='checkbox'] {\n    border-radius: 0px;\n}\n[type='radio'] {\n    border-radius: 100%;\n}\n[type='checkbox']:focus,[type='radio']:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 2px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n}\n[type='checkbox']:checked,[type='radio']:checked {\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n[type='checkbox']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='radio']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='radio']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='checkbox']:indeterminate {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\");\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:indeterminate {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='file'] {\n    background: unset;\n    border-color: inherit;\n    border-width: 0;\n    border-radius: 0;\n    padding: 0;\n    font-size: unset;\n    line-height: inherit;\n}\n[type='file']:focus {\n    outline: 1px solid ButtonText;\n    outline: 1px auto -webkit-focus-ring-color;\n}\n*, ::before, ::after {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n::backdrop {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n.container {\n    width: 100%;\n}\n@media (min-width: 640px) {\n    .container {\n        max-width: 640px;\n    }\n}\n@media (min-width: 768px) {\n    .container {\n        max-width: 768px;\n    }\n}\n@media (min-width: 1024px) {\n    .container {\n        max-width: 1024px;\n    }\n}\n@media (min-width: 1280px) {\n    .container {\n        max-width: 1280px;\n    }\n}\n@media (min-width: 1536px) {\n    .container {\n        max-width: 1536px;\n    }\n}\n.fixed {\n    position: fixed;\n}\n.absolute {\n    position: absolute;\n}\n.relative {\n    position: relative;\n}\n.bottom-12 {\n    bottom: 3rem;\n}\n.right-4 {\n    right: 1rem;\n}\n.z-10 {\n    z-index: 10;\n}\n.my-1 {\n    margin-top: 0.25rem;\n    margin-bottom: 0.25rem;\n}\n.my-2 {\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n}\n.my-4 {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n.-mb-px {\n    margin-bottom: -1px;\n}\n.mb-4 {\n    margin-bottom: 1rem;\n}\n.me-2 {\n    margin-inline-end: 0.5rem;\n}\n.ml-2 {\n    margin-left: 0.5rem;\n}\n.mr-0 {\n    margin-right: 0px;\n}\n.mr-0\\.5 {\n    margin-right: 0.125rem;\n}\n.mt-0 {\n    margin-top: 0px;\n}\n.mt-0\\.5 {\n    margin-top: 0.125rem;\n}\n.mt-1 {\n    margin-top: 0.25rem;\n}\n.mt-1\\.5 {\n    margin-top: 0.375rem;\n}\n.mt-2 {\n    margin-top: 0.5rem;\n}\n.mt-2\\.5 {\n    margin-top: 0.625rem;\n}\n.block {\n    display: block;\n}\n.inline-block {\n    display: inline-block;\n}\n.flex {\n    display: flex;\n}\n.inline-flex {\n    display: inline-flex;\n}\n.grid {\n    display: grid;\n}\n.hidden {\n    display: none;\n}\n.h-16 {\n    height: 4rem;\n}\n.h-3 {\n    height: 0.75rem;\n}\n.h-5 {\n    height: 1.25rem;\n}\n.h-6 {\n    height: 1.5rem;\n}\n.h-full {\n    height: 100%;\n}\n.max-h-72 {\n    max-height: 18rem;\n}\n.w-16 {\n    width: 4rem;\n}\n.w-3 {\n    width: 0.75rem;\n}\n.w-5 {\n    width: 1.25rem;\n}\n.w-6 {\n    width: 1.5rem;\n}\n.w-full {\n    width: 100%;\n}\n.w-px {\n    width: 1px;\n}\n.flex-none {\n    flex: none;\n}\n.shrink-0 {\n    flex-shrink: 0;\n}\n.grow {\n    flex-grow: 1;\n}\n.rotate-90 {\n    --tw-rotate: 90deg;\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.transform {\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n@keyframes spin {\n    to {\n        transform: rotate(360deg);\n    }\n}\n.animate-spin {\n    animation: spin 1s linear infinite;\n}\n.cursor-default {\n    cursor: default;\n}\n.cursor-not-allowed {\n    cursor: not-allowed;\n}\n.cursor-pointer {\n    cursor: pointer;\n}\n.select-none {\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n}\n.appearance-none {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n}\n.grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n.flex-row {\n    flex-direction: row;\n}\n.flex-wrap {\n    flex-wrap: wrap;\n}\n.items-center {\n    align-items: center;\n}\n.justify-end {\n    justify-content: flex-end;\n}\n.justify-center {\n    justify-content: center;\n}\n.gap-1 {\n    gap: 0.25rem;\n}\n.gap-2 {\n    gap: 0.5rem;\n}\n.gap-6 {\n    gap: 1.5rem;\n}\n.space-x-1 > :not([hidden]) ~ :not([hidden]) {\n    --tw-space-x-reverse: 0;\n    margin-right: calc(0.25rem * var(--tw-space-x-reverse));\n    margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));\n}\n.place-self-end {\n    place-self: end;\n}\n.overflow-y-auto {\n    overflow-y: auto;\n}\n.truncate {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n.rounded {\n    border-radius: 0.25rem;\n}\n.rounded-full {\n    border-radius: 9999px;\n}\n.rounded-sm {\n    border-radius: 0.125rem;\n}\n.rounded-r-sm {\n    border-top-right-radius: 0.125rem;\n    border-bottom-right-radius: 0.125rem;\n}\n.border {\n    border-width: 1px;\n}\n.border-b {\n    border-bottom-width: 1px;\n}\n.border-b-2 {\n    border-bottom-width: 2px;\n}\n.border-solid {\n    border-style: solid;\n}\n.border-blue-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.border-gray-200 {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.border-gray-300 {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.border-gray-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.border-pink-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.bg-amber-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(245 158 11 / var(--tw-bg-opacity));\n}\n.bg-black {\n    --tw-bg-opacity: 1;\n    background-color: rgb(0 0 0 / var(--tw-bg-opacity));\n}\n.bg-blue-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(59 130 246 / var(--tw-bg-opacity));\n}\n.bg-cyan-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(6 182 212 / var(--tw-bg-opacity));\n}\n.bg-emerald-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(16 185 129 / var(--tw-bg-opacity));\n}\n.bg-fuchsia-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(217 70 239 / var(--tw-bg-opacity));\n}\n.bg-gray-100 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.bg-gray-200 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(229 231 235 / var(--tw-bg-opacity));\n}\n.bg-gray-300 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 213 219 / var(--tw-bg-opacity));\n}\n.bg-green-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(34 197 94 / var(--tw-bg-opacity));\n}\n.bg-indigo-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.bg-lime-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(132 204 22 / var(--tw-bg-opacity));\n}\n.bg-orange-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n.bg-pink-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 72 153 / var(--tw-bg-opacity));\n}\n.bg-purple-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(168 85 247 / var(--tw-bg-opacity));\n}\n.bg-red-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.bg-rose-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(244 63 94 / var(--tw-bg-opacity));\n}\n.bg-sky-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(14 165 233 / var(--tw-bg-opacity));\n}\n.bg-teal-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(20 184 166 / var(--tw-bg-opacity));\n}\n.bg-violet-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(139 92 246 / var(--tw-bg-opacity));\n}\n.bg-white {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.bg-yellow-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(234 179 8 / var(--tw-bg-opacity));\n}\n.p-0 {\n    padding: 0px;\n}\n.p-0\\.5 {\n    padding: 0.125rem;\n}\n.p-4 {\n    padding: 1rem;\n}\n.px-1 {\n    padding-left: 0.25rem;\n    padding-right: 0.25rem;\n}\n.px-1\\.5 {\n    padding-left: 0.375rem;\n    padding-right: 0.375rem;\n}\n.px-2 {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.px-2\\.5 {\n    padding-left: 0.625rem;\n    padding-right: 0.625rem;\n}\n.px-4 {\n    padding-left: 1rem;\n    padding-right: 1rem;\n}\n.py-1 {\n    padding-top: 0.25rem;\n    padding-bottom: 0.25rem;\n}\n.py-1\\.5 {\n    padding-top: 0.375rem;\n    padding-bottom: 0.375rem;\n}\n.py-2 {\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n}\n.py-3 {\n    padding-top: 0.75rem;\n    padding-bottom: 0.75rem;\n}\n.py-4 {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n}\n.py-6 {\n    padding-top: 1.5rem;\n    padding-bottom: 1.5rem;\n}\n.pb-0 {\n    padding-bottom: 0px;\n}\n.pb-0\\.5 {\n    padding-bottom: 0.125rem;\n}\n.pb-2 {\n    padding-bottom: 0.5rem;\n}\n.pb-4 {\n    padding-bottom: 1rem;\n}\n.pl-1 {\n    padding-left: 0.25rem;\n}\n.pl-2 {\n    padding-left: 0.5rem;\n}\n.pl-2\\.5 {\n    padding-left: 0.625rem;\n}\n.pl-8 {\n    padding-left: 2rem;\n}\n.pr-2 {\n    padding-right: 0.5rem;\n}\n.pt-2 {\n    padding-top: 0.5rem;\n}\n.text-sm {\n    font-size: 0.875rem;\n    line-height: 1.25rem;\n}\n.text-xl {\n    font-size: 1.25rem;\n    line-height: 1.75rem;\n}\n.font-bold {\n    font-weight: 700;\n}\n.leading-tight {\n    line-height: 1.25;\n}\n.text-amber-500 {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.text-black {\n    --tw-text-opacity: 1;\n    color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-blue-500 {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.text-cyan-500 {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.text-emerald-500 {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.text-fuchsia-500 {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.text-gray-300 {\n    --tw-text-opacity: 1;\n    color: rgb(209 213 219 / var(--tw-text-opacity));\n}\n.text-gray-400 {\n    --tw-text-opacity: 1;\n    color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.text-gray-500 {\n    --tw-text-opacity: 1;\n    color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.text-gray-600 {\n    --tw-text-opacity: 1;\n    color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.text-gray-700 {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.text-green-500 {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.text-indigo-500 {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.text-lime-500 {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.text-orange-500 {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.text-pink-500 {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.text-purple-500 {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.text-red-500 {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.text-rose-500 {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.text-sky-500 {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.text-teal-500 {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.text-violet-500 {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.text-white {\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-yellow-500 {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.text-opacity-0 {\n    --tw-text-opacity: 0;\n}\n.opacity-25 {\n    opacity: 0.25;\n}\n.opacity-75 {\n    opacity: 0.75;\n}\n.shadow-lg {\n    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-sm {\n    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.ring {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.drop-shadow-lg {\n    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.filter {\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.transition {\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.transition-all {\n    transition-property: all;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.duration-200 {\n    transition-duration: 200ms;\n}\n.duration-300 {\n    transition-duration: 300ms;\n}\n.\\@container {\n    container-type: inline-size;\n}\n.hover\\:cursor-pointer:hover {\n    cursor: pointer;\n}\n.hover\\:border-gray-300:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.hover\\:border-gray-400:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(156 163 175 / var(--tw-border-opacity));\n}\n.hover\\:bg-amber-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 243 199 / var(--tw-bg-opacity));\n}\n.hover\\:bg-blue-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(219 234 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-cyan-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(207 250 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-emerald-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 250 229 / var(--tw-bg-opacity));\n}\n.hover\\:bg-fuchsia-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(250 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(55 65 81 / var(--tw-bg-opacity));\n}\n.hover\\:bg-green-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(220 252 231 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 231 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-lime-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 252 203 / var(--tw-bg-opacity));\n}\n.hover\\:bg-orange-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 237 213 / var(--tw-bg-opacity));\n}\n.hover\\:bg-pink-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(252 231 243 / var(--tw-bg-opacity));\n}\n.hover\\:bg-purple-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 226 226 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-200:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 202 202 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(185 28 28 / var(--tw-bg-opacity));\n}\n.hover\\:bg-rose-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 228 230 / var(--tw-bg-opacity));\n}\n.hover\\:bg-sky-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 242 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-teal-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(204 251 241 / var(--tw-bg-opacity));\n}\n.hover\\:bg-violet-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(237 233 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-yellow-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 249 195 / var(--tw-bg-opacity));\n}\n.hover\\:text-amber-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.hover\\:text-blue-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.hover\\:text-cyan-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.hover\\:text-emerald-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.hover\\:text-fuchsia-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-700:hover {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.hover\\:text-green-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.hover\\:text-indigo-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.hover\\:text-lime-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.hover\\:text-orange-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.hover\\:text-pink-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.hover\\:text-purple-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.hover\\:text-red-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.hover\\:text-red-600:hover {\n    --tw-text-opacity: 1;\n    color: rgb(220 38 38 / var(--tw-text-opacity));\n}\n.hover\\:text-rose-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.hover\\:text-sky-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.hover\\:text-teal-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.hover\\:text-violet-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.hover\\:text-yellow-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.focus\\:border-amber-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(245 158 11 / var(--tw-border-opacity));\n}\n.focus\\:border-blue-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.focus\\:border-cyan-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(6 182 212 / var(--tw-border-opacity));\n}\n.focus\\:border-emerald-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(16 185 129 / var(--tw-border-opacity));\n}\n.focus\\:border-fuchsia-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(217 70 239 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-200:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.focus\\:border-green-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(34 197 94 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(99 102 241 / var(--tw-border-opacity));\n}\n.focus\\:border-lime-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(132 204 22 / var(--tw-border-opacity));\n}\n.focus\\:border-orange-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(249 115 22 / var(--tw-border-opacity));\n}\n.focus\\:border-pink-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.focus\\:border-purple-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(168 85 247 / var(--tw-border-opacity));\n}\n.focus\\:border-red-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(239 68 68 / var(--tw-border-opacity));\n}\n.focus\\:border-rose-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(244 63 94 / var(--tw-border-opacity));\n}\n.focus\\:border-sky-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(14 165 233 / var(--tw-border-opacity));\n}\n.focus\\:border-teal-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(20 184 166 / var(--tw-border-opacity));\n}\n.focus\\:border-violet-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(139 92 246 / var(--tw-border-opacity));\n}\n.focus\\:border-yellow-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(234 179 8 / var(--tw-border-opacity));\n}\n.focus\\:bg-white:focus {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.focus\\:outline-none:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n}\n.focus\\:ring:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-0:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-amber-500\\/20:focus {\n    --tw-ring-color: rgb(245 158 11 / 0.2);\n}\n.focus\\:ring-blue-500\\/20:focus {\n    --tw-ring-color: rgb(59 130 246 / 0.2);\n}\n.focus\\:ring-cyan-500\\/20:focus {\n    --tw-ring-color: rgb(6 182 212 / 0.2);\n}\n.focus\\:ring-emerald-500\\/20:focus {\n    --tw-ring-color: rgb(16 185 129 / 0.2);\n}\n.focus\\:ring-fuchsia-500\\/20:focus {\n    --tw-ring-color: rgb(217 70 239 / 0.2);\n}\n.focus\\:ring-green-500\\/20:focus {\n    --tw-ring-color: rgb(34 197 94 / 0.2);\n}\n.focus\\:ring-indigo-500\\/20:focus {\n    --tw-ring-color: rgb(99 102 241 / 0.2);\n}\n.focus\\:ring-lime-500\\/20:focus {\n    --tw-ring-color: rgb(132 204 22 / 0.2);\n}\n.focus\\:ring-orange-500\\/20:focus {\n    --tw-ring-color: rgb(249 115 22 / 0.2);\n}\n.focus\\:ring-pink-500\\/20:focus {\n    --tw-ring-color: rgb(236 72 153 / 0.2);\n}\n.focus\\:ring-purple-500\\/20:focus {\n    --tw-ring-color: rgb(168 85 247 / 0.2);\n}\n.focus\\:ring-red-500\\/20:focus {\n    --tw-ring-color: rgb(239 68 68 / 0.2);\n}\n.focus\\:ring-rose-500\\/20:focus {\n    --tw-ring-color: rgb(244 63 94 / 0.2);\n}\n.focus\\:ring-sky-500\\/20:focus {\n    --tw-ring-color: rgb(14 165 233 / 0.2);\n}\n.focus\\:ring-teal-500\\/20:focus {\n    --tw-ring-color: rgb(20 184 166 / 0.2);\n}\n.focus\\:ring-violet-500\\/20:focus {\n    --tw-ring-color: rgb(139 92 246 / 0.2);\n}\n.focus\\:ring-yellow-500\\/20:focus {\n    --tw-ring-color: rgb(234 179 8 / 0.2);\n}\n.disabled\\:opacity-50:disabled {\n    opacity: 0.5;\n}\n";
 styleInject(css_248z);
 
 var isCheckBoxInput = (element)=>element.type === 'checkbox';
@@ -244,14 +244,6 @@ var appendErrors = (name, validateAllFieldCriteria, errors, type, message)=>vali
             [type]: message || true
         }
     } : {};
-var generateId = ()=>{
-    const d = typeof performance === 'undefined' ? Date.now() : performance.now() * 1000;
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c)=>{
-        const r = (Math.random() * 16 + d) % 16 | 0;
-        return (c == 'x' ? r : r & 0x3 | 0x8).toString(16);
-    });
-};
-var getFocusFieldName = (name, index, options = {})=>options.shouldFocus || isUndefined(options.shouldFocus) ? options.focusName || `${name}.${isUndefined(options.focusIndex) ? index : options.focusIndex}.` : '';
 var getValidationModes = (mode)=>({
         isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
         isOnBlur: mode === VALIDATION_MODE.onBlur,
@@ -497,50 +489,6 @@ var validateField = async (field, formValues, validateAllFieldCriteria, shouldUs
     setCustomValidity(true);
     return error;
 };
-var appendAt = (data, value1)=>[
-        ...data,
-        ...convertToArrayPayload(value1)
-    ];
-var fillEmptyArray = (value1)=>Array.isArray(value1) ? value1.map(()=>undefined) : undefined;
-function insert(data, index, value1) {
-    return [
-        ...data.slice(0, index),
-        ...convertToArrayPayload(value1),
-        ...data.slice(index)
-    ];
-}
-var moveArrayAt = (data, from, to)=>{
-    if (!Array.isArray(data)) {
-        return [];
-    }
-    if (isUndefined(data[to])) {
-        data[to] = undefined;
-    }
-    data.splice(to, 0, data.splice(from, 1)[0]);
-    return data;
-};
-var prependAt = (data, value1)=>[
-        ...convertToArrayPayload(value1),
-        ...convertToArrayPayload(data)
-    ];
-function removeAtIndexes(data, indexes) {
-    let i = 0;
-    const temp = [
-        ...data
-    ];
-    for (const index of indexes){
-        temp.splice(index - i, 1);
-        i++;
-    }
-    return compact(temp).length ? temp : [];
-}
-var removeArrayAt = (data, index)=>isUndefined(index) ? [] : removeAtIndexes(data, convertToArrayPayload(index).sort((a, b)=>a - b));
-var swapArrayAt = (data, indexA, indexB)=>{
-    [data[indexA], data[indexB]] = [
-        data[indexB],
-        data[indexA]
-    ];
-};
 function baseGet(object, updatePath) {
     const length = updatePath.slice(0, -1).length;
     let index = 0;
@@ -571,280 +519,6 @@ function unset(object, path) {
         unset(object, paths.slice(0, -1));
     }
     return object;
-}
-var updateAt = (fieldValues, index, value1)=>{
-    fieldValues[index] = value1;
-    return fieldValues;
-};
-/**
- * A custom hook that exposes convenient methods to perform operations with a list of dynamic inputs that need to be appended, updated, removed etc. • [Demo](https://codesandbox.io/s/react-hook-form-usefieldarray-ssugn) • [Video](https://youtu.be/4MrbfGSFY2A)
- *
- * @remarks
- * [API](https://react-hook-form.com/docs/usefieldarray) • [Demo](https://codesandbox.io/s/react-hook-form-usefieldarray-ssugn)
- *
- * @param props - useFieldArray props
- *
- * @returns methods - functions to manipulate with the Field Arrays (dynamic inputs) {@link UseFieldArrayReturn}
- *
- * @example
- * ```tsx
- * function App() {
- *   const { register, control, handleSubmit, reset, trigger, setError } = useForm({
- *     defaultValues: {
- *       test: []
- *     }
- *   });
- *   const { fields, append } = useFieldArray({
- *     control,
- *     name: "test"
- *   });
- *
- *   return (
- *     <form onSubmit={handleSubmit(data => console.log(data))}>
- *       {fields.map((item, index) => (
- *          <input key={item.id} {...register(`test.${index}.firstName`)}  />
- *       ))}
- *       <button type="button" onClick={() => append({ firstName: "bill" })}>
- *         append
- *       </button>
- *       <input type="submit" />
- *     </form>
- *   );
- * }
- * ```
- */ function useFieldArray(props) {
-    const methods = useFormContext();
-    const { control = methods.control, name, keyName = 'id', shouldUnregister } = props;
-    const [fields, setFields] = React__default.useState(control._getFieldArray(name));
-    const ids = React__default.useRef(control._getFieldArray(name).map(generateId));
-    const _fieldIds = React__default.useRef(fields);
-    const _name = React__default.useRef(name);
-    const _actioned = React__default.useRef(false);
-    _name.current = name;
-    _fieldIds.current = fields;
-    control._names.array.add(name);
-    props.rules && control.register(name, props.rules);
-    useSubscribe({
-        next: ({ values, name: fieldArrayName })=>{
-            if (fieldArrayName === _name.current || !fieldArrayName) {
-                const fieldValues = get(values, _name.current);
-                if (Array.isArray(fieldValues)) {
-                    setFields(fieldValues);
-                    ids.current = fieldValues.map(generateId);
-                }
-            }
-        },
-        subject: control._subjects.array
-    });
-    const updateValues = React__default.useCallback((updatedFieldArrayValues)=>{
-        _actioned.current = true;
-        control._updateFieldArray(name, updatedFieldArrayValues);
-    }, [
-        control,
-        name
-    ]);
-    const append = (value1, options)=>{
-        const appendValue = convertToArrayPayload(cloneObject(value1));
-        const updatedFieldArrayValues = appendAt(control._getFieldArray(name), appendValue);
-        control._names.focus = getFocusFieldName(name, updatedFieldArrayValues.length - 1, options);
-        ids.current = appendAt(ids.current, appendValue.map(generateId));
-        updateValues(updatedFieldArrayValues);
-        setFields(updatedFieldArrayValues);
-        control._updateFieldArray(name, updatedFieldArrayValues, appendAt, {
-            argA: fillEmptyArray(value1)
-        });
-    };
-    const prepend = (value1, options)=>{
-        const prependValue = convertToArrayPayload(cloneObject(value1));
-        const updatedFieldArrayValues = prependAt(control._getFieldArray(name), prependValue);
-        control._names.focus = getFocusFieldName(name, 0, options);
-        ids.current = prependAt(ids.current, prependValue.map(generateId));
-        updateValues(updatedFieldArrayValues);
-        setFields(updatedFieldArrayValues);
-        control._updateFieldArray(name, updatedFieldArrayValues, prependAt, {
-            argA: fillEmptyArray(value1)
-        });
-    };
-    const remove = (index)=>{
-        const updatedFieldArrayValues = removeArrayAt(control._getFieldArray(name), index);
-        ids.current = removeArrayAt(ids.current, index);
-        updateValues(updatedFieldArrayValues);
-        setFields(updatedFieldArrayValues);
-        control._updateFieldArray(name, updatedFieldArrayValues, removeArrayAt, {
-            argA: index
-        });
-    };
-    const insert$1 = (index, value1, options)=>{
-        const insertValue = convertToArrayPayload(cloneObject(value1));
-        const updatedFieldArrayValues = insert(control._getFieldArray(name), index, insertValue);
-        control._names.focus = getFocusFieldName(name, index, options);
-        ids.current = insert(ids.current, index, insertValue.map(generateId));
-        updateValues(updatedFieldArrayValues);
-        setFields(updatedFieldArrayValues);
-        control._updateFieldArray(name, updatedFieldArrayValues, insert, {
-            argA: index,
-            argB: fillEmptyArray(value1)
-        });
-    };
-    const swap = (indexA, indexB)=>{
-        const updatedFieldArrayValues = control._getFieldArray(name);
-        swapArrayAt(updatedFieldArrayValues, indexA, indexB);
-        swapArrayAt(ids.current, indexA, indexB);
-        updateValues(updatedFieldArrayValues);
-        setFields(updatedFieldArrayValues);
-        control._updateFieldArray(name, updatedFieldArrayValues, swapArrayAt, {
-            argA: indexA,
-            argB: indexB
-        }, false);
-    };
-    const move = (from, to)=>{
-        const updatedFieldArrayValues = control._getFieldArray(name);
-        moveArrayAt(updatedFieldArrayValues, from, to);
-        moveArrayAt(ids.current, from, to);
-        updateValues(updatedFieldArrayValues);
-        setFields(updatedFieldArrayValues);
-        control._updateFieldArray(name, updatedFieldArrayValues, moveArrayAt, {
-            argA: from,
-            argB: to
-        }, false);
-    };
-    const update = (index, value1)=>{
-        const updateValue = cloneObject(value1);
-        const updatedFieldArrayValues = updateAt(control._getFieldArray(name), index, updateValue);
-        ids.current = [
-            ...updatedFieldArrayValues
-        ].map((item, i)=>!item || i === index ? generateId() : ids.current[i]);
-        updateValues(updatedFieldArrayValues);
-        setFields([
-            ...updatedFieldArrayValues
-        ]);
-        control._updateFieldArray(name, updatedFieldArrayValues, updateAt, {
-            argA: index,
-            argB: updateValue
-        }, true, false);
-    };
-    const replace = (value1)=>{
-        const updatedFieldArrayValues = convertToArrayPayload(cloneObject(value1));
-        ids.current = updatedFieldArrayValues.map(generateId);
-        updateValues([
-            ...updatedFieldArrayValues
-        ]);
-        setFields([
-            ...updatedFieldArrayValues
-        ]);
-        control._updateFieldArray(name, [
-            ...updatedFieldArrayValues
-        ], (data)=>data, {}, true, false);
-    };
-    React__default.useEffect(()=>{
-        control._state.action = false;
-        isWatched(name, control._names) && control._subjects.state.next({
-            ...control._formState
-        });
-        if (_actioned.current && (!getValidationModes(control._options.mode).isOnSubmit || control._formState.isSubmitted)) {
-            if (control._options.resolver) {
-                control._executeSchema([
-                    name
-                ]).then((result)=>{
-                    const error = get(result.errors, name);
-                    const existingError = get(control._formState.errors, name);
-                    if (existingError ? !error && existingError.type || error && (existingError.type !== error.type || existingError.message !== error.message) : error && error.type) {
-                        error ? set(control._formState.errors, name, error) : unset(control._formState.errors, name);
-                        control._subjects.state.next({
-                            errors: control._formState.errors
-                        });
-                    }
-                });
-            } else {
-                const field = get(control._fields, name);
-                if (field && field._f && !(getValidationModes(control._options.reValidateMode).isOnSubmit && getValidationModes(control._options.mode).isOnSubmit)) {
-                    validateField(field, control._formValues, control._options.criteriaMode === VALIDATION_MODE.all, control._options.shouldUseNativeValidation, true).then((error)=>!isEmptyObject(error) && control._subjects.state.next({
-                            errors: updateFieldArrayRootError(control._formState.errors, error, name)
-                        }));
-                }
-            }
-        }
-        control._subjects.values.next({
-            name,
-            values: {
-                ...control._formValues
-            }
-        });
-        control._names.focus && iterateFieldsByAction(control._fields, (ref, key)=>{
-            if (control._names.focus && key.startsWith(control._names.focus) && ref.focus) {
-                ref.focus();
-                return 1;
-            }
-            return;
-        });
-        control._names.focus = '';
-        control._updateValid();
-        _actioned.current = false;
-    }, [
-        fields,
-        name,
-        control
-    ]);
-    React__default.useEffect(()=>{
-        !get(control._formValues, name) && control._updateFieldArray(name);
-        return ()=>{
-            (control._options.shouldUnregister || shouldUnregister) && control.unregister(name);
-        };
-    }, [
-        name,
-        control,
-        keyName,
-        shouldUnregister
-    ]);
-    return {
-        swap: React__default.useCallback(swap, [
-            updateValues,
-            name,
-            control
-        ]),
-        move: React__default.useCallback(move, [
-            updateValues,
-            name,
-            control
-        ]),
-        prepend: React__default.useCallback(prepend, [
-            updateValues,
-            name,
-            control
-        ]),
-        append: React__default.useCallback(append, [
-            updateValues,
-            name,
-            control
-        ]),
-        remove: React__default.useCallback(remove, [
-            updateValues,
-            name,
-            control
-        ]),
-        insert: React__default.useCallback(insert$1, [
-            updateValues,
-            name,
-            control
-        ]),
-        update: React__default.useCallback(update, [
-            updateValues,
-            name,
-            control
-        ]),
-        replace: React__default.useCallback(replace, [
-            updateValues,
-            name,
-            control
-        ]),
-        fields: React__default.useMemo(()=>fields.map((field, index)=>({
-                    ...field,
-                    [keyName]: ids.current[index] || generateId()
-                })), [
-            fields,
-            keyName
-        ])
-    };
 }
 var createSubject = ()=>{
     let _observers = [];
@@ -1979,197 +1653,6 @@ function createFormControl(props = {}, flushRootRender) {
     _formControl.current.formState = getProxyFormState(formState, control);
     return _formControl.current;
 }
-
-// Unique ID creation requires a high quality random # generator. In the browser we therefore
-// require the crypto API and do not support built-in fallback to lower quality random number
-// generators (like Math.random()).
-let getRandomValues;
-const rnds8 = new Uint8Array(16);
-function rng() {
-    // lazy load so that environments that need to polyfill have a chance to do so
-    if (!getRandomValues) {
-        // getRandomValues needs to be invoked in a context where "this" is a Crypto implementation.
-        getRandomValues = typeof crypto !== 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
-        if (!getRandomValues) {
-            throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
-        }
-    }
-    return getRandomValues(rnds8);
-}
-
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */ const byteToHex = [];
-for(let i = 0; i < 256; ++i){
-    byteToHex.push((i + 0x100).toString(16).slice(1));
-}
-function unsafeStringify(arr, offset = 0) {
-    // Note: Be careful editing this code!  It's been tuned for performance
-    // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
-    return byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]];
-}
-
-const randomUUID = typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID.bind(crypto);
-var native = {
-    randomUUID
-};
-
-function v4(options, buf, offset) {
-    if (native.randomUUID && !buf && !options) {
-        return native.randomUUID();
-    }
-    options = options || {};
-    const rnds = options.random || (options.rng || rng)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-    rnds[6] = rnds[6] & 0x0f | 0x40;
-    rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
-    if (buf) {
-        offset = offset || 0;
-        for(let i = 0; i < 16; ++i){
-            buf[offset + i] = rnds[i];
-        }
-        return buf;
-    }
-    return unsafeStringify(rnds);
-}
-
-const ItemSelectedContext = createContext(undefined);
-const ItemSelectedContextProvider = (props)=>{
-    const [item, selectItem] = useState(undefined);
-    const _selectItem = useCallback$1((item)=>{
-        selectItem(item);
-    }, [
-        selectItem
-    ]);
-    const contextValue = useMemo$1(()=>({
-            item,
-            selectItem: _selectItem
-        }), [
-        item,
-        selectItem
-    ]);
-    return React__default.createElement(ItemSelectedContext.Provider, {
-        value: contextValue
-    }, props.children);
-};
-
-const useItemSelected = ()=>{
-    const ctx = useContext(ItemSelectedContext);
-    if (!ctx) {
-        throw new Error('ItemsSelected context needs ItemsSelectedContextProvider in order to be used');
-    }
-    console.log('use Item selected hook rendered');
-    const _selectItem = useCallback$1((item)=>{
-        console.log('click received', item);
-        ctx.selectItem(item);
-    }, [
-        ctx.selectItem
-    ]);
-    return {
-        selectItem: _selectItem,
-        item: ctx.item
-    };
-};
-
-const useBaseItem = (props)=>{
-    console.log('hook re rendered', props.type);
-    const { selectItem, item } = useItemSelected();
-    const isSelected = (item === null || item === void 0 ? void 0 : item.id) === props.id;
-    const handleClick = useCallback$1((event)=>{
-        event.stopPropagation();
-        if (props.isEditing && (item === null || item === void 0 ? void 0 : item.id) !== props.id) {
-            console.log('clicked');
-            selectItem(props);
-            console.log('selected', props.id);
-            console.log('current select', item);
-        }
-    }, [
-        props,
-        selectItem
-    ]);
-    const baseStyles = useMemo$1(()=>{
-        return isSelected ? 'border border-solid border-blue-500 my-2' : '';
-    }, [
-        isSelected
-    ]);
-    return {
-        handleClick,
-        baseStyles
-    };
-};
-
-const compareFormComponent = (prevProps, nextProps)=>{
-    // console.log(
-    //   copyObjectExcludeProperties(prevProps, ['children']),
-    //   copyObjectExcludeProperties(nextProps, ['children'])
-    // );
-    Object.keys(prevProps).forEach((key)=>{
-        if (typeof prevProps[key] === 'function') {
-            console.error(`${prevProps.type} contains a function in its properties. This can lead to problems with re-rendering. Please check the ${key} parameter.`);
-        }
-    });
-    return JSON.stringify(copyObjectExcludeProperties(prevProps, [
-        'children'
-    ])) === JSON.stringify(copyObjectExcludeProperties(nextProps, [
-        'children'
-    ]));
-};
-function copyObjectExcludeProperties(obj, excludedProps) {
-    const newObj = {};
-    for(const key in obj){
-        if (!excludedProps.includes(key)) {
-            newObj[key] = obj[key];
-        }
-    }
-    return newObj;
-}
-
-const Title = (props)=>{
-    const { handleClick, baseStyles } = useBaseItem(props);
-    console.log('title has been rendered');
-    return React__default.createElement("p", {
-        onClick: handleClick,
-        className: `${baseStyles} font-bold text-xl py-4 flex flex-row items-center `
-    }, props.props.label);
-};
-var Title$1 = React__default.memo(Title, compareFormComponent);
-
-const Card = (props)=>{
-    const { handleClick, baseStyles } = useBaseItem(props);
-    console.log('card has been rendered');
-    return React__default.createElement("div", {
-        onClick: handleClick,
-        className: `
-      ${baseStyles}
-      my-4 w-full rounded shadow-lg bg-white pt-2 pb-2 px-4 @container`
-    }, React__default.createElement("div", {
-        className: "grid"
-    }, props.children));
-};
-var Card$1 = React__default.memo(Card, compareFormComponent);
-
-const Select$1 = (props)=>{
-    var _a, _b, _c;
-    const { handleClick, baseStyles } = useBaseItem(props);
-    const [name, _] = useState(props.detailed ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}` : (_a = props.props.name) !== null && _a !== void 0 ? _a : '-');
-    const { register, formState: { errors } } = useFormContext();
-    return React__default.createElement("div", {
-        className: `${baseStyles} `,
-        onClick: handleClick
-    }, React__default.createElement("label", {
-        className: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-        htmlFor: name
-    }, props.props.label), React__default.createElement("div", {
-        className: "relative"
-    }, React__default.createElement("input", Object.assign({}, register(name, Object.assign({}, props.props.validations)), {
-        // {...props}
-        placeholder: props.props.placeholder,
-        className: "appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-    }))), React__default.createElement("p", {
-        className: "text-red-500 text-xs italic pt-2"
-    }, (_c = (_b = errors[name]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString()));
-};
-var Input = React__default.memo(Select$1, compareFormComponent);
 
 function _typeof(o) {
     "@babel/helpers - typeof";
@@ -12108,207 +11591,162 @@ const DragDropContextProvider = ({ children, onDragEnd })=>{
     }, children));
 };
 
-function Add(props) {
-    // Context
-    const useDragDropContext = useContext(DragDropContext);
-    if (!useDragDropContext) {
-        throw new Error('DragDrop Context is not implemented');
-    }
-    useEffect(()=>{
-        if (props.parent.id && props.id && !isNaN(props.position)) {
-            useDragDropContext.addDropable({
-                parent: props.parent.id,
-                id: props.id,
-                position: props.position
-            });
-        }
-    }, [
-        props.parent,
-        props.id,
-        props.position
-    ]);
-    if (props.parent.type === 'container') {
-        return React__default.createElement(React__default.Fragment, null);
-    }
-    return React__default.createElement("div", {
-        className: ""
-    }, React__default.createElement("div", {
-        className: "rounded-md relative"
-    }, React__default.createElement(ConnectedDroppable$1, {
-        droppableId: props.id
-    }, (provided, snapshot)=>React__default.createElement("div", {
-            ref: provided.innerRef,
-            className: `droppable-area transition-all h-[1px] ${snapshot.isDraggingOver ? 'bg-pink-300 h-[50px]' : 'bg-pink-200'}`
-        }, provided.placeholder))));
-}
+const FormContext = createContext();
+const FormContextProvider = ({ children, onDragEnd })=>{
+    const [item, setItem] = useState('Sin item ');
+    const selectItem = (item)=>{
+        setItem(item);
+    };
+    const selectedItem = ()=>{
+        return item;
+    };
+    const values = {
+        selectItem,
+        selectedItem
+    };
+    return React__default.createElement(FormContext.Provider, {
+        value: values
+    }, React__default.createElement(DragDropContextProvider, {
+        onDragEnd: onDragEnd
+    }, children));
+};
 
-const Tabs = (props)=>{
-    // Hooks
-    const { handleClick, baseStyles } = useBaseItem(props);
-    // States
-    console.log('tab has been rendered', new Date());
-    // Methods
-    // Render
+const useItem = (props)=>{
+    const ctx = useContext(FormContext);
+    if (!ctx) {
+        throw new Error('Cannot find Form context provider');
+    }
+    const handleClick = (event)=>{
+        event.stopPropagation();
+        console.log('clicked', props.name);
+        ctx.selectItem(props.name);
+    };
+    return {
+        handleClick,
+        item: ctx.selectedItem(),
+        baseStyles: `${ctx.selectedItem() === props.name ? 'border border-solid border-blue-500 my-2' : ''}`
+    };
+};
+
+const Title = (props)=>{
+    const { handleClick, baseStyles } = useItem({
+        name: 'title'
+    });
+    console.log('title has been rendered');
+    return React__default.createElement("p", {
+        onClick: handleClick,
+        className: `${baseStyles} font-bold text-xl py-4 flex flex-row items-center `
+    }, props.props.label);
+};
+var Title$1 = React__default.memo(Title);
+
+const Card = (props)=>{
+    const { handleClick, baseStyles } = useItem({
+        name: 'card'
+    });
+    console.log('card has been rendered');
     return React__default.createElement("div", {
         onClick: handleClick,
-        className: `${baseStyles} min-h-12`
+        className: `
+      ${baseStyles}
+      my-4 w-full rounded shadow-lg bg-white pt-2 pb-2 px-4 @container`
+    }, React__default.createElement("div", {
+        className: "grid"
+    }, props.children));
+};
+var Card$1 = React__default.memo(Card);
+
+// Unique ID creation requires a high quality random # generator. In the browser we therefore
+// require the crypto API and do not support built-in fallback to lower quality random number
+// generators (like Math.random()).
+let getRandomValues;
+const rnds8 = new Uint8Array(16);
+function rng() {
+    // lazy load so that environments that need to polyfill have a chance to do so
+    if (!getRandomValues) {
+        // getRandomValues needs to be invoked in a context where "this" is a Crypto implementation.
+        getRandomValues = typeof crypto !== 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
+        if (!getRandomValues) {
+            throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
+        }
+    }
+    return getRandomValues(rnds8);
+}
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */ const byteToHex = [];
+for(let i = 0; i < 256; ++i){
+    byteToHex.push((i + 0x100).toString(16).slice(1));
+}
+function unsafeStringify(arr, offset = 0) {
+    // Note: Be careful editing this code!  It's been tuned for performance
+    // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+    return byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]];
+}
+
+const randomUUID = typeof crypto !== 'undefined' && crypto.randomUUID && crypto.randomUUID.bind(crypto);
+var native = {
+    randomUUID
+};
+
+function v4(options, buf, offset) {
+    if (native.randomUUID && !buf && !options) {
+        return native.randomUUID();
+    }
+    options = options || {};
+    const rnds = options.random || (options.rng || rng)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+    rnds[6] = rnds[6] & 0x0f | 0x40;
+    rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+    if (buf) {
+        offset = offset || 0;
+        for(let i = 0; i < 16; ++i){
+            buf[offset + i] = rnds[i];
+        }
+        return buf;
+    }
+    return unsafeStringify(rnds);
+}
+
+const Input = ()=>{
+    const { handleClick, baseStyles } = useItem({
+        name: 'input'
+    });
+    console.log('input container redered');
+    const inputRef = useRef(v4());
+    const { register, formState: { errors } } = useFormContext();
+    return React__default.createElement("div", {
+        className: `${baseStyles} `,
+        onClick: handleClick
+    }, React__default.createElement("div", {
+        className: "relative"
+    }, React__default.createElement("input", Object.assign({}, register(`${inputRef.current}-name`), {
+        className: "appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+    }))));
+};
+
+const Tabs = (props)=>{
+    const { handleClick, baseStyles } = useItem({
+        name: 'tab'
+    });
+    const [activeTab, setActiveTab] = useState(0);
+    return React__default.createElement("div", {
+        className: `${baseStyles}`,
+        onClick: handleClick
     }, React__default.createElement("div", {
         className: "border-b border-gray-200"
     }, React__default.createElement("nav", {
         className: "-mb-px flex gap-6",
         "aria-label": "Tabs"
     }, props.props.children.map((tab, index)=>React__default.createElement("a", {
-            key: v4(),
+            onClick: ()=>setActiveTab(index),
             className: `
-                ${0 === index ? 'font-msedium  text-black  border-pink-500' : ' text-gray-500  hover:text-gray-700 hover:border-gray-300'}
+                ${activeTab === index ? 'font-msedium  text-black  border-pink-500' : ' text-gray-500  hover:text-gray-700 hover:border-gray-300'}
                 shrink-0 border-b-2  px-1 pb-4 hover:cursor-pointer text-md  `
-        }, tab.props.label)))), props.props.children.map((tab, index)=>{
-        return React__default.createElement("div", {
-            key: v4(),
-            className: `${0 === index ? 'block' : 'hidden'} p-4`
-        }, props.children);
-    }));
-};
-
-const Select = (props)=>{
-    var _a, _b, _c;
-    const { handleClick, baseStyles } = useBaseItem(props);
-    const [name, setName] = useState(props.props.name || '-');
-    // States
-    const [query, setQuery] = useState('');
-    const [filteredOptions, setFilteredOptions] = useState((_a = props.props.options) === null || _a === void 0 ? void 0 : _a.filter((i)=>i.value != 'add'));
-    const [isOpen, setIsOpen] = useState(false);
-    // Refs
-    const wrapperRef = useRef(null);
-    // Contexts
-    const { register, setValue, trigger, formState: { errors } } = useFormContext();
-    // Effects
-    useEffect(()=>{
-        const handleClickOutside = (event)=>{
-            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return ()=>{
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [
-        wrapperRef
-    ]);
-    const handleInputChange = (e)=>{
-        var _a;
-        const inputValue = e.target.value;
-        setQuery(inputValue);
-        const filtered = (_a = props.props.options) === null || _a === void 0 ? void 0 : _a.filter((option)=>option.label.toLowerCase().includes(inputValue.toLowerCase()));
-        setFilteredOptions(filtered);
-        setIsOpen(true);
-    };
-    const handleOptionSelect = (option)=>{
-        setQuery(option.label);
-        setIsOpen(false);
-        setValue(name, option.value);
-        trigger(name);
-    // if (props.dependingForm) {
-    //   props.test(option.value);
-    // }
-    };
-    return React__default.createElement("div", {
-        onClick: handleClick,
-        className: `${baseStyles} y-2 relative`,
-        ref: wrapperRef
-    }, React__default.createElement("label", {
-        className: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-        htmlFor: name
-    }, props.props.label), React__default.createElement("div", null, React__default.createElement("input", Object.assign({}, register(name, Object.assign({}, props.props.validations)), {
-        type: "text",
-        className: "appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500",
-        placeholder: "Buscar...",
-        value: query,
-        autoComplete: "off",
-        onChange: handleInputChange,
-        onClick: ()=>setIsOpen(true)
-    })), isOpen && React__default.createElement("ul", {
-        className: "hover:cursor-pointer absolute z-10 left-0 w-full mt-2 border rounded bg-white shadow-md"
-    }, filteredOptions === null || filteredOptions === void 0 ? void 0 : filteredOptions.map((option, index)=>React__default.createElement("li", {
-            key: index,
-            className: "py-2 px-4 cursor-pointer hover:bg-pink-200",
-            onClick: ()=>handleOptionSelect(option)
-        }, option.label))), React__default.createElement("p", {
-        className: "text-red-500 text-xs italic pt-2"
-    }, (_c = (_b = errors[name]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString())));
-};
-
-function TextArea(props) {
-    var _a, _b, _c;
-    const { handleClick, baseStyles } = useBaseItem(props);
-    const { register, formState: { errors } } = useFormContext();
-    const [name, _] = useState(props.detailed ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}` : (_a = props.props.name) !== null && _a !== void 0 ? _a : '-');
-    return React__default.createElement("div", {
-        onClick: handleClick,
-        className: "py-2"
-    }, React__default.createElement("label", {
-        className: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-        htmlFor: name
-    }, props.props.label), React__default.createElement("div", {
-        className: "relative"
-    }, React__default.createElement("textarea", Object.assign({}, register(name, Object.assign({}, props.props.validations)), {
-        // {...props}
-        placeholder: props.props.placeholder,
-        className: "appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-    }))), React__default.createElement("p", {
-        className: "text-red-500 text-xs italic pt-2"
-    }, (_c = (_b = errors[name]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString()));
-}
-
-const Paragraph = (props)=>{
-    const { handleClick, baseStyles } = useBaseItem(props);
-    return React__default.createElement("p", {
-        onClick: handleClick,
-        className: `${baseStyles} font-medium text-md py-4 `
-    }, props.props.text);
-};
-
-const Button = (props)=>{
-    return React__default.createElement("button", {
-        className: "mt-4 h-12 flex-1 self-center rounded-md border border-transparent bg-pink-100 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2",
-        type: "submit"
-    }, props.props.label);
-};
-
-const Detailed = (props)=>{
-    const { control, getValues, formState: { errors } } = useFormContext();
-    const { handleClick, baseStyles } = useBaseItem(props);
-    const { append, remove } = useFieldArray({
-        control,
-        name: props.props.name
-    });
-    const addItem = ()=>{
-        append({});
-    };
-    const removeItem = (position)=>{
-        remove(position);
-    };
-    return React__default.createElement("div", {
-        onClick: handleClick,
-        className: `${baseStyles} `
-    }, React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
-        className: `${props.isEditing ? 'border border-dashed min-h-10 py-2 my-2 border-gray-800' : ''} `
-    }, Array(props.isEditing || !getValues(props.props.name) ? 1 : getValues(props.props.name).length).fill('').map((_, index)=>{
-        return React__default.createElement(React__default.Fragment, null, React__default.createElement("div", null, props.children[0] && React__default.cloneElement(props.children[0]), props.children[1] && React__default.cloneElement(props.children[1], {
-            detailed: {
-                name: props.props.name,
-                index
-            }
-        })), React__default.createElement("button", {
-            onClick: ()=>removeItem(index),
-            className: "mb-4 h-12 flex-1 self-center rounded-md border border-transparent bg-pink-100 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-500 focus-visible:ring-offset-2",
-            type: "button"
-        }, "Eliminar"));
-    }))), !props.isEditing && React__default.createElement("div", {
-        className: "hover:cursor-pointer hover:underline",
-        onClick: addItem
-    }, "Agregar un item"));
+        }, tab.props.label)))), props.props.children.map((tab, index)=>React__default.createElement("div", {
+            className: `${activeTab === index ? 'block' : 'hidden'} p-4`
+        }, React__default.createElement(Input, null))));
 };
 
 const Root = (props)=>{
@@ -12316,41 +11754,20 @@ const Root = (props)=>{
         className: ``
     }, props.children);
 };
-var Root$1 = React__default.memo(Root, compareFormComponent);
+var Root$1 = React__default.memo(Root);
 
-const Container = (props)=>{
-    const { handleClick, baseStyles } = useBaseItem(props);
-    return React__default.createElement("div", {
-        className: `${baseStyles} w-full grid gap-2`,
-        style: {
-            gridTemplateColumns: `repeat(${props.props.size}, minmax(0, 1fr))`
-        },
-        onClick: handleClick
-    }, props === null || props === void 0 ? void 0 : props.children, props.isEditing && React__default.createElement("div", {
-        className: "pt-4 pb-4 flex flex-col justify-center min-h-14"
-    }, React__default.createElement(Add, {
-        parent: {
-            id: props.id || '',
-            type: 'root'
-        },
-        id: v4(),
-        key: v4(),
-        position: 0
-    })));
-};
-var Container$1 = React__default.memo(Container, compareFormComponent);
-
+// import Container from '../Container';
 const componentMapping = {
     root: Root$1,
     title: Title$1,
     card: Card$1,
     input: Input,
-    paragraph: Paragraph,
-    textarea: TextArea,
-    container: Container$1,
-    select: Select,
-    detailed: Detailed,
-    button: Button,
+    // paragraph: Paragraph,
+    // textarea: TextArea,
+    // container: Container,
+    // select: Select,
+    // detailed: Detailed,
+    // button: Button,
     tabs: Tabs,
     tab: Root$1
 };
@@ -12369,15 +11786,12 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
                 position: index,
                 detailed: detailed
             };
-            return React__default.createElement(React__default.Fragment, null, React__default.createElement(Component, Object.assign({}, commonProps), isEditing && item.props.children ? React__default.createElement(Add, {
-                parent: {
-                    id: item.id || '',
-                    type: item.type
-                },
-                id: v4(),
-                key: v4(),
-                position: 0
-            }) : null, React__default.createElement(Reenderizer, {
+            return React__default.createElement(React__default.Fragment, null, React__default.createElement(Component, Object.assign({}, commonProps), isEditing && item.props.children ? React__default.createElement(React__default.Fragment, null) : //   parent={{ id: item.id || '', type: item.type }}
+            //   id={uuidv4()}
+            //   key={uuidv4()}
+            //   position={0}
+            // />
+            null, React__default.createElement(Reenderizer, {
                 detailed: detailed,
                 data: item.props.children,
                 isEditing: isEditing,
@@ -12385,15 +11799,13 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
                     id: item.id || '',
                     type: item.type
                 }
-            })), isEditing && (!item.props.children || data.length == index + 1 && item.type !== 'tab' && item.type !== 'root') ? React__default.createElement(Add, {
-                parent: {
-                    id: (parent === null || parent === void 0 ? void 0 : parent.id) || '',
-                    type: (parent === null || parent === void 0 ? void 0 : parent.type) || ''
-                },
-                id: v4(),
-                key: v4(),
-                position: index + 1
-            }) : null);
+            })), isEditing && (!item.props.children || data.length == index + 1 && item.type !== 'tab' && item.type !== 'root') ? // <Add
+            //   parent={{ id: parent?.id || '', type: parent?.type || '' }}
+            //   id={uuidv4()}
+            //   key={uuidv4()}
+            //   position={index + 1}
+            // />
+            React__default.createElement(React__default.Fragment, null) : null);
         }
         // If no corresponding component is found, you can return a default or handle it as needed
         return React__default.createElement("div", {
@@ -12403,38 +11815,23 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
 };
 
 const Form = (props)=>{
-    // Extraer.
-    const fixTab = (data)=>{
-        if (data) {
-            if (data.type === 'tabs' && data.props.children) {
-                return {
-                    tabs: data.props.children.map((i)=>({
-                            label: i.props.label
-                        }))
-                };
-            }
-            return data.props;
-        }
-    };
+    const [sum, setSum] = useState(0);
     // Hooks
-    const form = useForm({
-        defaultValues: fixTab(props.data)
-    });
+    const form = useForm({});
     const handleSubmit = (data)=>{
-        // FIXME: Se queda submitting despues de que se envia
-        // if (!form.formState.isSubmitting) {
-        props.onSubmit(Object.assign({}, data));
-    // }
+        console.log(data);
     };
-    return React__default.createElement(FormProvider, Object.assign({}, form), React__default.createElement("form", {
+    return React__default.createElement(FormContextProvider, null, React__default.createElement(FormProvider, Object.assign({}, form), React__default.createElement("form", {
         onSubmit: form.handleSubmit((data)=>handleSubmit(data))
     }, React__default.createElement(Reenderizer, {
         data: props.form,
         isEditing: props.isEditing
-    }), props.children));
+    })), React__default.createElement("p", null, sum), React__default.createElement("button", {
+        onClick: ()=>setSum((prev)=>prev + 1)
+    }, "Boton ")));
 };
 
-var formOptions = {
+var ItemList = {
     options: [
         {
             value: 'title',
@@ -12487,7 +11884,7 @@ const NewItem = (props)=>{
     }, (provided)=>React__default.createElement("div", {
             ref: provided.innerRef,
             className: "droppable-area grid grid-cols-2 gap-2"
-        }, formOptions.options.map((element, index)=>{
+        }, ItemList.options.map((element, index)=>{
             return React__default.createElement(PublicDraggable, {
                 key: element.value,
                 draggableId: element.value,
@@ -12869,7 +12266,7 @@ const formMapping = {
 const PropertyEditor = (props)=>{
     // States
     const [form, setForm] = useState([]);
-    const { selectItem } = useItemSelected();
+    // const { selectItem } = useItemSelected();
     useEffect(()=>{
         setForm(null);
         setTimeout(()=>{
@@ -12880,10 +12277,10 @@ const PropertyEditor = (props)=>{
         props.item
     ]);
     const deleteItem = ()=>{
-        try {
-            props.deleteItem(props.item);
-            selectItem(null);
-        } catch (error) {}
+    // try {
+    //   props.deleteItem(props.item);
+    //   selectItem(null);
+    // } catch (error) {}
     };
     if (!form) return React__default.createElement(React__default.Fragment, null);
     return React__default.createElement(Form, {
@@ -12906,53 +12303,28 @@ const PropertyEditor = (props)=>{
 
 const ItemProperties = (props)=>{
     // Hooks
-    const { item, selectItem } = useItemSelected();
+    // const { item, selectItem } = useItemSelected();
+    const item = useRef(undefined);
     const _beforeSubmit = (data)=>{
-        if (item) {
-            const d = Object.assign({
-                id: item.id
-            }, data);
-            if (Object.keys(d).includes('children')) {
-                d.children = d.children.map((i)=>i.id);
-            }
-            props.onSubmit(d);
-            return;
-        }
-        throw new Error('Item is not setted before save');
+    // if (item) {
+    //   const d = { id: item.id, ...data };
+    //   if (Object.keys(d).includes('children')) {
+    //     d.children = d.children.map((i: NDataFormElement<any>) => i.id);
+    //   }
+    //   props.onSubmit(d);
+    //   return;
+    // }
+    // throw new Error('Item is not setted before save');
     };
     return React__default.createElement("div", null, item ? React__default.createElement(PropertyEditor, {
         item: item,
-        onSubmit: (data)=>_beforeSubmit(data),
+        onSubmit: (data)=>_beforeSubmit(),
         deleteItem: props.deleteItem
     }) : React__default.createElement(NewItem, null), React__default.createElement("button", {
-        onClick: ()=>selectItem(undefined),
+        // onClick={() => selectItem(undefined)}
         title: "Contact Sale",
         className: "fixed z-90 bottom-12 right-4\n        w-16 h-16 rounded-full  drop-shadow-lg\n        bg-pink-500 text-white font-bold"
     }, "+"));
-};
-
-const FormContext = createContext(undefined);
-const FormContextProvider = ({ children, onDragEnd })=>{
-    const [activeTabs, setActiveTabs] = useState();
-    const setActiveTab = (activeTab, tab)=>{
-        console.log(activeTab, tab);
-        setActiveTabs((prev)=>Object.assign(Object.assign({}, prev), {
-                [tab]: activeTab
-            }));
-    };
-    const getActiveTab = (tabID)=>{
-        var _a;
-        return (_a = activeTabs === null || activeTabs === void 0 ? void 0 : activeTabs[tabID]) !== null && _a !== void 0 ? _a : 0;
-    };
-    const values = {
-        getActiveTab,
-        setActiveTab
-    };
-    return React__default.createElement(FormContext.Provider, {
-        value: values
-    }, React__default.createElement(DragDropContextProvider, {
-        onDragEnd: onDragEnd
-    }, React__default.createElement(ItemSelectedContextProvider, null, children)));
 };
 
 export { Form, FormContextProvider, ItemProperties };

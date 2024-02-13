@@ -1,42 +1,36 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { DragDropContextProvider } from './DragDropContext';
-import { ItemSelectedContextProvider } from './ItemSelectedContext';
+import React, { createContext, useState } from 'react';
+import {
+  DragDropContextProvider,
+  DragDropContextProvider,
+} from './DragDropContextProvider';
 
-export type FormContextProps = {
-  getActiveTab: (tabID: string) => number;
-  setActiveTab: (activeTab: number, tab: string) => void;
-};
+const FormContext = createContext();
 
-const FormContext = createContext<FormContextProps | undefined>(undefined);
-
-export interface FormContextProvider {
+interface FormContextProvider {
   children: React.ReactNode;
   onDragEnd: (e: any) => void;
 }
 
-type activeTabType = { [key: string]: number };
-
 const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
-  const [activeTabs, setActiveTabs] = useState<activeTabType>();
+  const [item, setItem] = useState('Sin item ');
 
-  const setActiveTab = (activeTab: number, tab: string) => {
-    console.log(activeTab, tab);
-    setActiveTabs((prev) => ({ ...prev, [tab]: activeTab }));
+  const selectItem = (item) => {
+    setItem(item);
   };
 
-  const getActiveTab = (tabID: string) => {
-    return activeTabs?.[tabID] ?? 0;
+  const selectedItem = () => {
+    return item;
   };
 
   const values = {
-    getActiveTab,
-    setActiveTab,
+    selectItem,
+    selectedItem,
   };
 
   return (
     <FormContext.Provider value={values}>
       <DragDropContextProvider onDragEnd={onDragEnd}>
-        <ItemSelectedContextProvider>{children}</ItemSelectedContextProvider>
+        {children}
       </DragDropContextProvider>
     </FormContext.Provider>
   );

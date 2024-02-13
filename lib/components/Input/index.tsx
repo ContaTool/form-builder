@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+
+import { v4 as uuidv4 } from 'uuid';
+
+import useItem from '../../hooks/useItem';
 import { useFormContext } from 'react-hook-form';
-import type { RegisterOptions } from 'react-hook-form';
-import { useBaseItem } from '../../hooks/useBaseItem';
-import { compareFormComponent } from '../../helpers';
 
-interface InputProps {
-  name?: string;
-  label?: string;
-  placeholder?: string;
-  validations?: RegisterOptions;
-}
+const Input = () => {
+  const { handleClick, baseStyles } = useItem({ name: 'input' });
 
-const Select = (props: NDataFormElement<InputProps>) => {
-  const { handleClick, baseStyles } = useBaseItem(props);
-  const [name, _] = useState<string>(
-    props.detailed
-      ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}`
-      : props.props.name ?? '-'
-  );
+  console.log('input container redered');
+
+  const inputRef = useRef(uuidv4());
 
   const {
     register,
@@ -26,27 +19,14 @@ const Select = (props: NDataFormElement<InputProps>) => {
 
   return (
     <div className={`${baseStyles} `} onClick={handleClick}>
-      <label
-        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        htmlFor={name}
-      >
-        {props.props.label}
-      </label>
       <div className="relative">
         <input
-          {...register(name, { ...props.props.validations })}
-          // {...props}
-
-          placeholder={props.props.placeholder}
+          {...register(`${inputRef.current}-name`)}
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         />
       </div>
-
-      <p className="text-red-500 text-xs italic pt-2">
-        {errors[name]?.message?.toString()}
-      </p>
     </div>
   );
 };
 
-export default React.memo(Select, compareFormComponent);
+export default Input;

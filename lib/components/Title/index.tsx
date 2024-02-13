@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useBaseItem } from '../../hooks/useBaseItem';
-import { Tooltip } from '../Tooltip';
-import { compareFormComponent } from '../../helpers';
+import useItem from '../../hooks/useItem';
+
+// import { Tooltip } from '../Tooltip';
 
 interface TitleProps {
   label?: string;
@@ -9,7 +9,7 @@ interface TitleProps {
 }
 
 const Title = (props: NDataFormElement<TitleProps>) => {
-  const { handleClick, baseStyles } = useBaseItem(props);
+  const { handleClick, baseStyles } = useItem({ name: 'title' });
 
   console.log('title has been rendered');
 
@@ -23,4 +23,4 @@ const Title = (props: NDataFormElement<TitleProps>) => {
   );
 };
 
-export default React.memo(Title, compareFormComponent);
+export default React.memo(Title);

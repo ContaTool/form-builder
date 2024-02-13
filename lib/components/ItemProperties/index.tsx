@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 
 import New from './New';
 import { PropertyEditor } from './PropertyEditor';
-import { useItemSelected } from '../../hooks/useItemSelected';
+// import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {
   onSubmit: (data: any) => void;
@@ -11,20 +11,19 @@ interface ItemPropertiesProps {
 
 const ItemProperties = (props: ItemPropertiesProps) => {
   // Hooks
-  const { item, selectItem } = useItemSelected();
+  // const { item, selectItem } = useItemSelected();
+  const item = useRef(undefined);
 
   const _beforeSubmit = (data: any) => {
-    if (item) {
-      const d = { id: item.id, ...data };
-
-      if (Object.keys(d).includes('children')) {
-        d.children = d.children.map((i: NDataFormElement<any>) => i.id);
-      }
-
-      props.onSubmit(d);
-      return;
-    }
-    throw new Error('Item is not setted before save');
+    // if (item) {
+    //   const d = { id: item.id, ...data };
+    //   if (Object.keys(d).includes('children')) {
+    //     d.children = d.children.map((i: NDataFormElement<any>) => i.id);
+    //   }
+    //   props.onSubmit(d);
+    //   return;
+    // }
+    // throw new Error('Item is not setted before save');
   };
 
   return (
@@ -39,7 +38,7 @@ const ItemProperties = (props: ItemPropertiesProps) => {
         <New />
       )}
       <button
-        onClick={() => selectItem(undefined)}
+        // onClick={() => selectItem(undefined)}
         title="Contact Sale"
         className="fixed z-90 bottom-12 right-4
         w-16 h-16 rounded-full  drop-shadow-lg

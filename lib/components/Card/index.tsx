@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
-import { useItemSelected } from '../../hooks/useItemSelected';
-import { useBaseItem } from '../../hooks/useBaseItem';
-import { compareFormComponent } from '../../helpers';
+import useItem from '../../hooks/useItem';
 
 interface Props {}
 
@@ -10,7 +8,7 @@ interface CardProps extends NDataFormElement<Props> {
 }
 
 const Card = (props: CardProps) => {
-  const { handleClick, baseStyles } = useBaseItem(props);
+  const { handleClick, baseStyles } = useItem({ name: 'card' });
 
   console.log('card has been rendered');
 
@@ -26,4 +24,4 @@ const Card = (props: CardProps) => {
   );
 };
 
-export default React.memo(Card, compareFormComponent);
+export default React.memo(Card);

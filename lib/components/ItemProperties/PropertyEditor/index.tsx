@@ -7,7 +7,7 @@ import cardForm from '../forms/cardForm';
 import paragraphForm from '../forms/paragraphForm';
 import containerForm from '../forms/containerForm';
 import inputForm from '../forms/inputForm';
-import { useItemSelected } from '../../../hooks/useItemSelected';
+// import { useItemSelected } from '../../../hooks/useItemSelected';
 import selectForm from '../forms/selectForm';
 import tabsForm from '../forms/tabsForm';
 import detailedForm from '../forms/detailedForm';
@@ -34,7 +34,7 @@ const formMapping: { [key: string]: any } = {
 export const PropertyEditor = (props: PropertyEditorProps) => {
   // States
   const [form, setForm] = useState<NDataFormElement<any>[] | null>([]);
-  const { selectItem } = useItemSelected();
+  // const { selectItem } = useItemSelected();
 
   useEffect(() => {
     setForm(null);
@@ -44,10 +44,10 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
   }, [props.item]);
 
   const deleteItem = () => {
-    try {
-      props.deleteItem(props.item);
-      selectItem(null);
-    } catch (error) {}
+    // try {
+    //   props.deleteItem(props.item);
+    //   selectItem(null);
+    // } catch (error) {}
   };
 
   if (!form) return <></>;
