@@ -27,1632 +27,8 @@ function styleInject(css, ref) {
     }
 }
 
-var css_248z = "/* styles.css */\n[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    border-radius: 0px;\n    padding-top: 0.5rem;\n    padding-right: 0.75rem;\n    padding-bottom: 0.5rem;\n    padding-left: 0.75rem;\n    font-size: 1rem;\n    line-height: 1.5rem;\n    --tw-shadow: 0 0 #0000;\n}\n[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n    border-color: #2563eb;\n}\ninput::-moz-placeholder, textarea::-moz-placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\ninput::placeholder,textarea::placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\n::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n}\n::-webkit-date-and-time-value {\n    min-height: 1.5em;\n    text-align: inherit;\n}\n::-webkit-datetime-edit {\n    display: inline-flex;\n}\n::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {\n    padding-top: 0;\n    padding-bottom: 0;\n}\nselect {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\");\n    background-position: right 0.5rem center;\n    background-repeat: no-repeat;\n    background-size: 1.5em 1.5em;\n    padding-right: 2.5rem;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n}\n[multiple],[size]:where(select:not([size=\"1\"])) {\n    background-image: initial;\n    background-position: initial;\n    background-repeat: unset;\n    background-size: initial;\n    padding-right: 0.75rem;\n    -webkit-print-color-adjust: unset;\n            print-color-adjust: unset;\n}\n[type='checkbox'],[type='radio'] {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    padding: 0;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n    display: inline-block;\n    vertical-align: middle;\n    background-origin: border-box;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n    flex-shrink: 0;\n    height: 1rem;\n    width: 1rem;\n    color: #2563eb;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    --tw-shadow: 0 0 #0000;\n}\n[type='checkbox'] {\n    border-radius: 0px;\n}\n[type='radio'] {\n    border-radius: 100%;\n}\n[type='checkbox']:focus,[type='radio']:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 2px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n}\n[type='checkbox']:checked,[type='radio']:checked {\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n[type='checkbox']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='radio']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='radio']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='checkbox']:indeterminate {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\");\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:indeterminate {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='file'] {\n    background: unset;\n    border-color: inherit;\n    border-width: 0;\n    border-radius: 0;\n    padding: 0;\n    font-size: unset;\n    line-height: inherit;\n}\n[type='file']:focus {\n    outline: 1px solid ButtonText;\n    outline: 1px auto -webkit-focus-ring-color;\n}\n*, ::before, ::after {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n::backdrop {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n.container {\n    width: 100%;\n}\n@media (min-width: 640px) {\n    .container {\n        max-width: 640px;\n    }\n}\n@media (min-width: 768px) {\n    .container {\n        max-width: 768px;\n    }\n}\n@media (min-width: 1024px) {\n    .container {\n        max-width: 1024px;\n    }\n}\n@media (min-width: 1280px) {\n    .container {\n        max-width: 1280px;\n    }\n}\n@media (min-width: 1536px) {\n    .container {\n        max-width: 1536px;\n    }\n}\n.fixed {\n    position: fixed;\n}\n.absolute {\n    position: absolute;\n}\n.relative {\n    position: relative;\n}\n.bottom-12 {\n    bottom: 3rem;\n}\n.right-4 {\n    right: 1rem;\n}\n.z-10 {\n    z-index: 10;\n}\n.my-1 {\n    margin-top: 0.25rem;\n    margin-bottom: 0.25rem;\n}\n.my-2 {\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n}\n.my-4 {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n.-mb-px {\n    margin-bottom: -1px;\n}\n.mb-4 {\n    margin-bottom: 1rem;\n}\n.me-2 {\n    margin-inline-end: 0.5rem;\n}\n.ml-2 {\n    margin-left: 0.5rem;\n}\n.mr-0 {\n    margin-right: 0px;\n}\n.mr-0\\.5 {\n    margin-right: 0.125rem;\n}\n.mt-0 {\n    margin-top: 0px;\n}\n.mt-0\\.5 {\n    margin-top: 0.125rem;\n}\n.mt-1 {\n    margin-top: 0.25rem;\n}\n.mt-1\\.5 {\n    margin-top: 0.375rem;\n}\n.mt-2 {\n    margin-top: 0.5rem;\n}\n.mt-2\\.5 {\n    margin-top: 0.625rem;\n}\n.block {\n    display: block;\n}\n.inline-block {\n    display: inline-block;\n}\n.flex {\n    display: flex;\n}\n.inline-flex {\n    display: inline-flex;\n}\n.grid {\n    display: grid;\n}\n.hidden {\n    display: none;\n}\n.h-16 {\n    height: 4rem;\n}\n.h-3 {\n    height: 0.75rem;\n}\n.h-5 {\n    height: 1.25rem;\n}\n.h-6 {\n    height: 1.5rem;\n}\n.h-full {\n    height: 100%;\n}\n.max-h-72 {\n    max-height: 18rem;\n}\n.w-16 {\n    width: 4rem;\n}\n.w-3 {\n    width: 0.75rem;\n}\n.w-5 {\n    width: 1.25rem;\n}\n.w-6 {\n    width: 1.5rem;\n}\n.w-full {\n    width: 100%;\n}\n.w-px {\n    width: 1px;\n}\n.flex-none {\n    flex: none;\n}\n.shrink-0 {\n    flex-shrink: 0;\n}\n.grow {\n    flex-grow: 1;\n}\n.rotate-90 {\n    --tw-rotate: 90deg;\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.transform {\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n@keyframes spin {\n    to {\n        transform: rotate(360deg);\n    }\n}\n.animate-spin {\n    animation: spin 1s linear infinite;\n}\n.cursor-default {\n    cursor: default;\n}\n.cursor-not-allowed {\n    cursor: not-allowed;\n}\n.cursor-pointer {\n    cursor: pointer;\n}\n.select-none {\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n}\n.appearance-none {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n}\n.grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n.flex-row {\n    flex-direction: row;\n}\n.flex-wrap {\n    flex-wrap: wrap;\n}\n.items-center {\n    align-items: center;\n}\n.justify-end {\n    justify-content: flex-end;\n}\n.justify-center {\n    justify-content: center;\n}\n.gap-1 {\n    gap: 0.25rem;\n}\n.gap-2 {\n    gap: 0.5rem;\n}\n.gap-6 {\n    gap: 1.5rem;\n}\n.space-x-1 > :not([hidden]) ~ :not([hidden]) {\n    --tw-space-x-reverse: 0;\n    margin-right: calc(0.25rem * var(--tw-space-x-reverse));\n    margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));\n}\n.place-self-end {\n    place-self: end;\n}\n.overflow-y-auto {\n    overflow-y: auto;\n}\n.truncate {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n.rounded {\n    border-radius: 0.25rem;\n}\n.rounded-full {\n    border-radius: 9999px;\n}\n.rounded-sm {\n    border-radius: 0.125rem;\n}\n.rounded-r-sm {\n    border-top-right-radius: 0.125rem;\n    border-bottom-right-radius: 0.125rem;\n}\n.border {\n    border-width: 1px;\n}\n.border-b {\n    border-bottom-width: 1px;\n}\n.border-b-2 {\n    border-bottom-width: 2px;\n}\n.border-solid {\n    border-style: solid;\n}\n.border-blue-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.border-gray-200 {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.border-gray-300 {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.border-gray-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.border-pink-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.bg-amber-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(245 158 11 / var(--tw-bg-opacity));\n}\n.bg-black {\n    --tw-bg-opacity: 1;\n    background-color: rgb(0 0 0 / var(--tw-bg-opacity));\n}\n.bg-blue-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(59 130 246 / var(--tw-bg-opacity));\n}\n.bg-cyan-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(6 182 212 / var(--tw-bg-opacity));\n}\n.bg-emerald-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(16 185 129 / var(--tw-bg-opacity));\n}\n.bg-fuchsia-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(217 70 239 / var(--tw-bg-opacity));\n}\n.bg-gray-100 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.bg-gray-200 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(229 231 235 / var(--tw-bg-opacity));\n}\n.bg-gray-300 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 213 219 / var(--tw-bg-opacity));\n}\n.bg-green-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(34 197 94 / var(--tw-bg-opacity));\n}\n.bg-indigo-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.bg-lime-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(132 204 22 / var(--tw-bg-opacity));\n}\n.bg-orange-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n.bg-pink-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 72 153 / var(--tw-bg-opacity));\n}\n.bg-purple-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(168 85 247 / var(--tw-bg-opacity));\n}\n.bg-red-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.bg-rose-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(244 63 94 / var(--tw-bg-opacity));\n}\n.bg-sky-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(14 165 233 / var(--tw-bg-opacity));\n}\n.bg-teal-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(20 184 166 / var(--tw-bg-opacity));\n}\n.bg-violet-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(139 92 246 / var(--tw-bg-opacity));\n}\n.bg-white {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.bg-yellow-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(234 179 8 / var(--tw-bg-opacity));\n}\n.p-0 {\n    padding: 0px;\n}\n.p-0\\.5 {\n    padding: 0.125rem;\n}\n.p-4 {\n    padding: 1rem;\n}\n.px-1 {\n    padding-left: 0.25rem;\n    padding-right: 0.25rem;\n}\n.px-1\\.5 {\n    padding-left: 0.375rem;\n    padding-right: 0.375rem;\n}\n.px-2 {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.px-2\\.5 {\n    padding-left: 0.625rem;\n    padding-right: 0.625rem;\n}\n.px-4 {\n    padding-left: 1rem;\n    padding-right: 1rem;\n}\n.py-1 {\n    padding-top: 0.25rem;\n    padding-bottom: 0.25rem;\n}\n.py-1\\.5 {\n    padding-top: 0.375rem;\n    padding-bottom: 0.375rem;\n}\n.py-2 {\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n}\n.py-3 {\n    padding-top: 0.75rem;\n    padding-bottom: 0.75rem;\n}\n.py-4 {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n}\n.py-6 {\n    padding-top: 1.5rem;\n    padding-bottom: 1.5rem;\n}\n.pb-0 {\n    padding-bottom: 0px;\n}\n.pb-0\\.5 {\n    padding-bottom: 0.125rem;\n}\n.pb-2 {\n    padding-bottom: 0.5rem;\n}\n.pb-4 {\n    padding-bottom: 1rem;\n}\n.pl-1 {\n    padding-left: 0.25rem;\n}\n.pl-2 {\n    padding-left: 0.5rem;\n}\n.pl-2\\.5 {\n    padding-left: 0.625rem;\n}\n.pl-8 {\n    padding-left: 2rem;\n}\n.pr-2 {\n    padding-right: 0.5rem;\n}\n.pt-2 {\n    padding-top: 0.5rem;\n}\n.text-sm {\n    font-size: 0.875rem;\n    line-height: 1.25rem;\n}\n.text-xl {\n    font-size: 1.25rem;\n    line-height: 1.75rem;\n}\n.font-bold {\n    font-weight: 700;\n}\n.leading-tight {\n    line-height: 1.25;\n}\n.text-amber-500 {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.text-black {\n    --tw-text-opacity: 1;\n    color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-blue-500 {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.text-cyan-500 {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.text-emerald-500 {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.text-fuchsia-500 {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.text-gray-300 {\n    --tw-text-opacity: 1;\n    color: rgb(209 213 219 / var(--tw-text-opacity));\n}\n.text-gray-400 {\n    --tw-text-opacity: 1;\n    color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.text-gray-500 {\n    --tw-text-opacity: 1;\n    color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.text-gray-600 {\n    --tw-text-opacity: 1;\n    color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.text-gray-700 {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.text-green-500 {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.text-indigo-500 {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.text-lime-500 {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.text-orange-500 {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.text-pink-500 {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.text-purple-500 {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.text-red-500 {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.text-rose-500 {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.text-sky-500 {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.text-teal-500 {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.text-violet-500 {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.text-white {\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-yellow-500 {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.text-opacity-0 {\n    --tw-text-opacity: 0;\n}\n.opacity-25 {\n    opacity: 0.25;\n}\n.opacity-75 {\n    opacity: 0.75;\n}\n.shadow-lg {\n    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-sm {\n    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.ring {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.drop-shadow-lg {\n    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.filter {\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.transition {\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.transition-all {\n    transition-property: all;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.duration-200 {\n    transition-duration: 200ms;\n}\n.duration-300 {\n    transition-duration: 300ms;\n}\n.\\@container {\n    container-type: inline-size;\n}\n.hover\\:cursor-pointer:hover {\n    cursor: pointer;\n}\n.hover\\:border-gray-300:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.hover\\:border-gray-400:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(156 163 175 / var(--tw-border-opacity));\n}\n.hover\\:bg-amber-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 243 199 / var(--tw-bg-opacity));\n}\n.hover\\:bg-blue-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(219 234 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-cyan-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(207 250 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-emerald-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 250 229 / var(--tw-bg-opacity));\n}\n.hover\\:bg-fuchsia-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(250 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(55 65 81 / var(--tw-bg-opacity));\n}\n.hover\\:bg-green-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(220 252 231 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 231 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-lime-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 252 203 / var(--tw-bg-opacity));\n}\n.hover\\:bg-orange-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 237 213 / var(--tw-bg-opacity));\n}\n.hover\\:bg-pink-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(252 231 243 / var(--tw-bg-opacity));\n}\n.hover\\:bg-purple-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 226 226 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-200:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 202 202 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(185 28 28 / var(--tw-bg-opacity));\n}\n.hover\\:bg-rose-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 228 230 / var(--tw-bg-opacity));\n}\n.hover\\:bg-sky-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 242 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-teal-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(204 251 241 / var(--tw-bg-opacity));\n}\n.hover\\:bg-violet-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(237 233 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-yellow-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 249 195 / var(--tw-bg-opacity));\n}\n.hover\\:text-amber-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.hover\\:text-blue-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.hover\\:text-cyan-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.hover\\:text-emerald-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.hover\\:text-fuchsia-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-700:hover {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.hover\\:text-green-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.hover\\:text-indigo-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.hover\\:text-lime-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.hover\\:text-orange-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.hover\\:text-pink-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.hover\\:text-purple-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.hover\\:text-red-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.hover\\:text-red-600:hover {\n    --tw-text-opacity: 1;\n    color: rgb(220 38 38 / var(--tw-text-opacity));\n}\n.hover\\:text-rose-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.hover\\:text-sky-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.hover\\:text-teal-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.hover\\:text-violet-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.hover\\:text-yellow-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.focus\\:border-amber-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(245 158 11 / var(--tw-border-opacity));\n}\n.focus\\:border-blue-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.focus\\:border-cyan-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(6 182 212 / var(--tw-border-opacity));\n}\n.focus\\:border-emerald-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(16 185 129 / var(--tw-border-opacity));\n}\n.focus\\:border-fuchsia-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(217 70 239 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-200:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.focus\\:border-green-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(34 197 94 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(99 102 241 / var(--tw-border-opacity));\n}\n.focus\\:border-lime-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(132 204 22 / var(--tw-border-opacity));\n}\n.focus\\:border-orange-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(249 115 22 / var(--tw-border-opacity));\n}\n.focus\\:border-pink-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.focus\\:border-purple-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(168 85 247 / var(--tw-border-opacity));\n}\n.focus\\:border-red-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(239 68 68 / var(--tw-border-opacity));\n}\n.focus\\:border-rose-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(244 63 94 / var(--tw-border-opacity));\n}\n.focus\\:border-sky-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(14 165 233 / var(--tw-border-opacity));\n}\n.focus\\:border-teal-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(20 184 166 / var(--tw-border-opacity));\n}\n.focus\\:border-violet-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(139 92 246 / var(--tw-border-opacity));\n}\n.focus\\:border-yellow-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(234 179 8 / var(--tw-border-opacity));\n}\n.focus\\:bg-white:focus {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.focus\\:outline-none:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n}\n.focus\\:ring:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-0:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-amber-500\\/20:focus {\n    --tw-ring-color: rgb(245 158 11 / 0.2);\n}\n.focus\\:ring-blue-500\\/20:focus {\n    --tw-ring-color: rgb(59 130 246 / 0.2);\n}\n.focus\\:ring-cyan-500\\/20:focus {\n    --tw-ring-color: rgb(6 182 212 / 0.2);\n}\n.focus\\:ring-emerald-500\\/20:focus {\n    --tw-ring-color: rgb(16 185 129 / 0.2);\n}\n.focus\\:ring-fuchsia-500\\/20:focus {\n    --tw-ring-color: rgb(217 70 239 / 0.2);\n}\n.focus\\:ring-green-500\\/20:focus {\n    --tw-ring-color: rgb(34 197 94 / 0.2);\n}\n.focus\\:ring-indigo-500\\/20:focus {\n    --tw-ring-color: rgb(99 102 241 / 0.2);\n}\n.focus\\:ring-lime-500\\/20:focus {\n    --tw-ring-color: rgb(132 204 22 / 0.2);\n}\n.focus\\:ring-orange-500\\/20:focus {\n    --tw-ring-color: rgb(249 115 22 / 0.2);\n}\n.focus\\:ring-pink-500\\/20:focus {\n    --tw-ring-color: rgb(236 72 153 / 0.2);\n}\n.focus\\:ring-purple-500\\/20:focus {\n    --tw-ring-color: rgb(168 85 247 / 0.2);\n}\n.focus\\:ring-red-500\\/20:focus {\n    --tw-ring-color: rgb(239 68 68 / 0.2);\n}\n.focus\\:ring-rose-500\\/20:focus {\n    --tw-ring-color: rgb(244 63 94 / 0.2);\n}\n.focus\\:ring-sky-500\\/20:focus {\n    --tw-ring-color: rgb(14 165 233 / 0.2);\n}\n.focus\\:ring-teal-500\\/20:focus {\n    --tw-ring-color: rgb(20 184 166 / 0.2);\n}\n.focus\\:ring-violet-500\\/20:focus {\n    --tw-ring-color: rgb(139 92 246 / 0.2);\n}\n.focus\\:ring-yellow-500\\/20:focus {\n    --tw-ring-color: rgb(234 179 8 / 0.2);\n}\n.disabled\\:opacity-50:disabled {\n    opacity: 0.5;\n}\n";
+var css_248z = "/* styles.css */\n[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    border-radius: 0px;\n    padding-top: 0.5rem;\n    padding-right: 0.75rem;\n    padding-bottom: 0.5rem;\n    padding-left: 0.75rem;\n    font-size: 1rem;\n    line-height: 1.5rem;\n    --tw-shadow: 0 0 #0000;\n}\n[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n    border-color: #2563eb;\n}\ninput::-moz-placeholder, textarea::-moz-placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\ninput::placeholder,textarea::placeholder {\n    color: #6b7280;\n    opacity: 1;\n}\n::-webkit-datetime-edit-fields-wrapper {\n    padding: 0;\n}\n::-webkit-date-and-time-value {\n    min-height: 1.5em;\n    text-align: inherit;\n}\n::-webkit-datetime-edit {\n    display: inline-flex;\n}\n::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {\n    padding-top: 0;\n    padding-bottom: 0;\n}\nselect {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\");\n    background-position: right 0.5rem center;\n    background-repeat: no-repeat;\n    background-size: 1.5em 1.5em;\n    padding-right: 2.5rem;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n}\n[multiple],[size]:where(select:not([size=\"1\"])) {\n    background-image: initial;\n    background-position: initial;\n    background-repeat: unset;\n    background-size: initial;\n    padding-right: 0.75rem;\n    -webkit-print-color-adjust: unset;\n            print-color-adjust: unset;\n}\n[type='checkbox'],[type='radio'] {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    padding: 0;\n    -webkit-print-color-adjust: exact;\n            print-color-adjust: exact;\n    display: inline-block;\n    vertical-align: middle;\n    background-origin: border-box;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n    flex-shrink: 0;\n    height: 1rem;\n    width: 1rem;\n    color: #2563eb;\n    background-color: #fff;\n    border-color: #6b7280;\n    border-width: 1px;\n    --tw-shadow: 0 0 #0000;\n}\n[type='checkbox'] {\n    border-radius: 0px;\n}\n[type='radio'] {\n    border-radius: 100%;\n}\n[type='checkbox']:focus,[type='radio']:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n    --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);\n    --tw-ring-offset-width: 2px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: #2563eb;\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);\n}\n[type='checkbox']:checked,[type='radio']:checked {\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n[type='checkbox']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='radio']:checked {\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n@media (forced-colors: active)  {\n    [type='radio']:checked {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='checkbox']:indeterminate {\n    background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e\");\n    border-color: transparent;\n    background-color: currentColor;\n    background-size: 100% 100%;\n    background-position: center;\n    background-repeat: no-repeat;\n}\n@media (forced-colors: active)  {\n    [type='checkbox']:indeterminate {\n        -webkit-appearance: auto;\n           -moz-appearance: auto;\n                appearance: auto;\n    }\n}\n[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {\n    border-color: transparent;\n    background-color: currentColor;\n}\n[type='file'] {\n    background: unset;\n    border-color: inherit;\n    border-width: 0;\n    border-radius: 0;\n    padding: 0;\n    font-size: unset;\n    line-height: inherit;\n}\n[type='file']:focus {\n    outline: 1px solid ButtonText;\n    outline: 1px auto -webkit-focus-ring-color;\n}\n*, ::before, ::after {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n::backdrop {\n    --tw-border-spacing-x: 0;\n    --tw-border-spacing-y: 0;\n    --tw-translate-x: 0;\n    --tw-translate-y: 0;\n    --tw-rotate: 0;\n    --tw-skew-x: 0;\n    --tw-skew-y: 0;\n    --tw-scale-x: 1;\n    --tw-scale-y: 1;\n    --tw-pan-x:  ;\n    --tw-pan-y:  ;\n    --tw-pinch-zoom:  ;\n    --tw-scroll-snap-strictness: proximity;\n    --tw-gradient-from-position:  ;\n    --tw-gradient-via-position:  ;\n    --tw-gradient-to-position:  ;\n    --tw-ordinal:  ;\n    --tw-slashed-zero:  ;\n    --tw-numeric-figure:  ;\n    --tw-numeric-spacing:  ;\n    --tw-numeric-fraction:  ;\n    --tw-ring-inset:  ;\n    --tw-ring-offset-width: 0px;\n    --tw-ring-offset-color: #fff;\n    --tw-ring-color: rgb(59 130 246 / 0.5);\n    --tw-ring-offset-shadow: 0 0 #0000;\n    --tw-ring-shadow: 0 0 #0000;\n    --tw-shadow: 0 0 #0000;\n    --tw-shadow-colored: 0 0 #0000;\n    --tw-blur:  ;\n    --tw-brightness:  ;\n    --tw-contrast:  ;\n    --tw-grayscale:  ;\n    --tw-hue-rotate:  ;\n    --tw-invert:  ;\n    --tw-saturate:  ;\n    --tw-sepia:  ;\n    --tw-drop-shadow:  ;\n    --tw-backdrop-blur:  ;\n    --tw-backdrop-brightness:  ;\n    --tw-backdrop-contrast:  ;\n    --tw-backdrop-grayscale:  ;\n    --tw-backdrop-hue-rotate:  ;\n    --tw-backdrop-invert:  ;\n    --tw-backdrop-opacity:  ;\n    --tw-backdrop-saturate:  ;\n    --tw-backdrop-sepia:  ;\n}\n.container {\n    width: 100%;\n}\n@media (min-width: 640px) {\n    .container {\n        max-width: 640px;\n    }\n}\n@media (min-width: 768px) {\n    .container {\n        max-width: 768px;\n    }\n}\n@media (min-width: 1024px) {\n    .container {\n        max-width: 1024px;\n    }\n}\n@media (min-width: 1280px) {\n    .container {\n        max-width: 1280px;\n    }\n}\n@media (min-width: 1536px) {\n    .container {\n        max-width: 1536px;\n    }\n}\n.fixed {\n    position: fixed;\n}\n.absolute {\n    position: absolute;\n}\n.relative {\n    position: relative;\n}\n.bottom-12 {\n    bottom: 3rem;\n}\n.right-4 {\n    right: 1rem;\n}\n.z-10 {\n    z-index: 10;\n}\n.my-1 {\n    margin-top: 0.25rem;\n    margin-bottom: 0.25rem;\n}\n.my-2 {\n    margin-top: 0.5rem;\n    margin-bottom: 0.5rem;\n}\n.my-4 {\n    margin-top: 1rem;\n    margin-bottom: 1rem;\n}\n.-mb-px {\n    margin-bottom: -1px;\n}\n.mb-2 {\n    margin-bottom: 0.5rem;\n}\n.mb-4 {\n    margin-bottom: 1rem;\n}\n.me-2 {\n    margin-inline-end: 0.5rem;\n}\n.ml-2 {\n    margin-left: 0.5rem;\n}\n.mr-0 {\n    margin-right: 0px;\n}\n.mr-0\\.5 {\n    margin-right: 0.125rem;\n}\n.mt-0 {\n    margin-top: 0px;\n}\n.mt-0\\.5 {\n    margin-top: 0.125rem;\n}\n.mt-1 {\n    margin-top: 0.25rem;\n}\n.mt-1\\.5 {\n    margin-top: 0.375rem;\n}\n.mt-2 {\n    margin-top: 0.5rem;\n}\n.mt-2\\.5 {\n    margin-top: 0.625rem;\n}\n.block {\n    display: block;\n}\n.inline-block {\n    display: inline-block;\n}\n.flex {\n    display: flex;\n}\n.inline-flex {\n    display: inline-flex;\n}\n.grid {\n    display: grid;\n}\n.hidden {\n    display: none;\n}\n.h-16 {\n    height: 4rem;\n}\n.h-3 {\n    height: 0.75rem;\n}\n.h-5 {\n    height: 1.25rem;\n}\n.h-6 {\n    height: 1.5rem;\n}\n.h-\\[1px\\] {\n    height: 1px;\n}\n.h-\\[50px\\] {\n    height: 50px;\n}\n.h-full {\n    height: 100%;\n}\n.max-h-72 {\n    max-height: 18rem;\n}\n.w-16 {\n    width: 4rem;\n}\n.w-3 {\n    width: 0.75rem;\n}\n.w-5 {\n    width: 1.25rem;\n}\n.w-6 {\n    width: 1.5rem;\n}\n.w-full {\n    width: 100%;\n}\n.w-px {\n    width: 1px;\n}\n.flex-none {\n    flex: none;\n}\n.shrink-0 {\n    flex-shrink: 0;\n}\n.grow {\n    flex-grow: 1;\n}\n.rotate-90 {\n    --tw-rotate: 90deg;\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.transform {\n    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n@keyframes spin {\n    to {\n        transform: rotate(360deg);\n    }\n}\n.animate-spin {\n    animation: spin 1s linear infinite;\n}\n.cursor-default {\n    cursor: default;\n}\n.cursor-not-allowed {\n    cursor: not-allowed;\n}\n.cursor-pointer {\n    cursor: pointer;\n}\n.select-none {\n    -webkit-user-select: none;\n       -moz-user-select: none;\n            user-select: none;\n}\n.appearance-none {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n}\n.grid-cols-2 {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n}\n.flex-row {\n    flex-direction: row;\n}\n.flex-wrap {\n    flex-wrap: wrap;\n}\n.items-center {\n    align-items: center;\n}\n.justify-end {\n    justify-content: flex-end;\n}\n.justify-center {\n    justify-content: center;\n}\n.gap-1 {\n    gap: 0.25rem;\n}\n.gap-2 {\n    gap: 0.5rem;\n}\n.gap-6 {\n    gap: 1.5rem;\n}\n.space-x-1 > :not([hidden]) ~ :not([hidden]) {\n    --tw-space-x-reverse: 0;\n    margin-right: calc(0.25rem * var(--tw-space-x-reverse));\n    margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));\n}\n.place-self-end {\n    place-self: end;\n}\n.overflow-y-auto {\n    overflow-y: auto;\n}\n.truncate {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n}\n.rounded {\n    border-radius: 0.25rem;\n}\n.rounded-full {\n    border-radius: 9999px;\n}\n.rounded-md {\n    border-radius: 0.375rem;\n}\n.rounded-sm {\n    border-radius: 0.125rem;\n}\n.rounded-r-sm {\n    border-top-right-radius: 0.125rem;\n    border-bottom-right-radius: 0.125rem;\n}\n.border {\n    border-width: 1px;\n}\n.border-b {\n    border-bottom-width: 1px;\n}\n.border-b-2 {\n    border-bottom-width: 2px;\n}\n.border-solid {\n    border-style: solid;\n}\n.border-blue-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.border-gray-200 {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.border-gray-300 {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.border-gray-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.border-pink-500 {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.bg-amber-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(245 158 11 / var(--tw-bg-opacity));\n}\n.bg-black {\n    --tw-bg-opacity: 1;\n    background-color: rgb(0 0 0 / var(--tw-bg-opacity));\n}\n.bg-blue-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(59 130 246 / var(--tw-bg-opacity));\n}\n.bg-cyan-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(6 182 212 / var(--tw-bg-opacity));\n}\n.bg-emerald-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(16 185 129 / var(--tw-bg-opacity));\n}\n.bg-fuchsia-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(217 70 239 / var(--tw-bg-opacity));\n}\n.bg-gray-100 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 244 246 / var(--tw-bg-opacity));\n}\n.bg-gray-200 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(229 231 235 / var(--tw-bg-opacity));\n}\n.bg-gray-300 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 213 219 / var(--tw-bg-opacity));\n}\n.bg-green-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(34 197 94 / var(--tw-bg-opacity));\n}\n.bg-indigo-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(99 102 241 / var(--tw-bg-opacity));\n}\n.bg-lime-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(132 204 22 / var(--tw-bg-opacity));\n}\n.bg-orange-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(249 115 22 / var(--tw-bg-opacity));\n}\n.bg-pink-200 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(251 207 232 / var(--tw-bg-opacity));\n}\n.bg-pink-300 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(249 168 212 / var(--tw-bg-opacity));\n}\n.bg-pink-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 72 153 / var(--tw-bg-opacity));\n}\n.bg-purple-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(168 85 247 / var(--tw-bg-opacity));\n}\n.bg-red-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(239 68 68 / var(--tw-bg-opacity));\n}\n.bg-rose-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(244 63 94 / var(--tw-bg-opacity));\n}\n.bg-sky-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(14 165 233 / var(--tw-bg-opacity));\n}\n.bg-teal-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(20 184 166 / var(--tw-bg-opacity));\n}\n.bg-violet-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(139 92 246 / var(--tw-bg-opacity));\n}\n.bg-white {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.bg-yellow-500 {\n    --tw-bg-opacity: 1;\n    background-color: rgb(234 179 8 / var(--tw-bg-opacity));\n}\n.p-0 {\n    padding: 0px;\n}\n.p-0\\.5 {\n    padding: 0.125rem;\n}\n.p-4 {\n    padding: 1rem;\n}\n.px-1 {\n    padding-left: 0.25rem;\n    padding-right: 0.25rem;\n}\n.px-1\\.5 {\n    padding-left: 0.375rem;\n    padding-right: 0.375rem;\n}\n.px-2 {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n}\n.px-2\\.5 {\n    padding-left: 0.625rem;\n    padding-right: 0.625rem;\n}\n.px-4 {\n    padding-left: 1rem;\n    padding-right: 1rem;\n}\n.py-1 {\n    padding-top: 0.25rem;\n    padding-bottom: 0.25rem;\n}\n.py-1\\.5 {\n    padding-top: 0.375rem;\n    padding-bottom: 0.375rem;\n}\n.py-2 {\n    padding-top: 0.5rem;\n    padding-bottom: 0.5rem;\n}\n.py-3 {\n    padding-top: 0.75rem;\n    padding-bottom: 0.75rem;\n}\n.py-4 {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n}\n.py-6 {\n    padding-top: 1.5rem;\n    padding-bottom: 1.5rem;\n}\n.pb-0 {\n    padding-bottom: 0px;\n}\n.pb-0\\.5 {\n    padding-bottom: 0.125rem;\n}\n.pb-2 {\n    padding-bottom: 0.5rem;\n}\n.pb-4 {\n    padding-bottom: 1rem;\n}\n.pl-1 {\n    padding-left: 0.25rem;\n}\n.pl-2 {\n    padding-left: 0.5rem;\n}\n.pl-2\\.5 {\n    padding-left: 0.625rem;\n}\n.pl-8 {\n    padding-left: 2rem;\n}\n.pr-2 {\n    padding-right: 0.5rem;\n}\n.pt-2 {\n    padding-top: 0.5rem;\n}\n.text-sm {\n    font-size: 0.875rem;\n    line-height: 1.25rem;\n}\n.text-xl {\n    font-size: 1.25rem;\n    line-height: 1.75rem;\n}\n.text-xs {\n    font-size: 0.75rem;\n    line-height: 1rem;\n}\n.font-bold {\n    font-weight: 700;\n}\n.uppercase {\n    text-transform: uppercase;\n}\n.italic {\n    font-style: italic;\n}\n.leading-tight {\n    line-height: 1.25;\n}\n.tracking-wide {\n    letter-spacing: 0.025em;\n}\n.text-amber-500 {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.text-black {\n    --tw-text-opacity: 1;\n    color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-blue-500 {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.text-cyan-500 {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.text-emerald-500 {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.text-fuchsia-500 {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.text-gray-300 {\n    --tw-text-opacity: 1;\n    color: rgb(209 213 219 / var(--tw-text-opacity));\n}\n.text-gray-400 {\n    --tw-text-opacity: 1;\n    color: rgb(156 163 175 / var(--tw-text-opacity));\n}\n.text-gray-500 {\n    --tw-text-opacity: 1;\n    color: rgb(107 114 128 / var(--tw-text-opacity));\n}\n.text-gray-600 {\n    --tw-text-opacity: 1;\n    color: rgb(75 85 99 / var(--tw-text-opacity));\n}\n.text-gray-700 {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.text-green-500 {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.text-indigo-500 {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.text-lime-500 {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.text-orange-500 {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.text-pink-500 {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.text-purple-500 {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.text-red-500 {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.text-rose-500 {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.text-sky-500 {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.text-teal-500 {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.text-violet-500 {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.text-white {\n    --tw-text-opacity: 1;\n    color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-yellow-500 {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.text-opacity-0 {\n    --tw-text-opacity: 0;\n}\n.opacity-25 {\n    opacity: 0.25;\n}\n.opacity-75 {\n    opacity: 0.75;\n}\n.shadow-lg {\n    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);\n    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.shadow-sm {\n    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);\n    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);\n    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}\n.ring {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.drop-shadow-lg {\n    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.filter {\n    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.transition {\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.transition-all {\n    transition-property: all;\n    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n    transition-duration: 150ms;\n}\n.duration-200 {\n    transition-duration: 200ms;\n}\n.duration-300 {\n    transition-duration: 300ms;\n}\n.\\@container {\n    container-type: inline-size;\n}\n.hover\\:cursor-pointer:hover {\n    cursor: pointer;\n}\n.hover\\:border-gray-300:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(209 213 219 / var(--tw-border-opacity));\n}\n.hover\\:border-gray-400:hover {\n    --tw-border-opacity: 1;\n    border-color: rgb(156 163 175 / var(--tw-border-opacity));\n}\n.hover\\:bg-amber-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 243 199 / var(--tw-bg-opacity));\n}\n.hover\\:bg-blue-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(219 234 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-cyan-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(207 250 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-emerald-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(209 250 229 / var(--tw-bg-opacity));\n}\n.hover\\:bg-fuchsia-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(250 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-gray-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(55 65 81 / var(--tw-bg-opacity));\n}\n.hover\\:bg-green-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(220 252 231 / var(--tw-bg-opacity));\n}\n.hover\\:bg-indigo-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 231 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-lime-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(236 252 203 / var(--tw-bg-opacity));\n}\n.hover\\:bg-orange-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 237 213 / var(--tw-bg-opacity));\n}\n.hover\\:bg-pink-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(252 231 243 / var(--tw-bg-opacity));\n}\n.hover\\:bg-purple-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(243 232 255 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 226 226 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-200:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 202 202 / var(--tw-bg-opacity));\n}\n.hover\\:bg-red-700:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(185 28 28 / var(--tw-bg-opacity));\n}\n.hover\\:bg-rose-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 228 230 / var(--tw-bg-opacity));\n}\n.hover\\:bg-sky-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(224 242 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-teal-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(204 251 241 / var(--tw-bg-opacity));\n}\n.hover\\:bg-violet-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(237 233 254 / var(--tw-bg-opacity));\n}\n.hover\\:bg-yellow-100:hover {\n    --tw-bg-opacity: 1;\n    background-color: rgb(254 249 195 / var(--tw-bg-opacity));\n}\n.hover\\:text-amber-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(245 158 11 / var(--tw-text-opacity));\n}\n.hover\\:text-blue-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(59 130 246 / var(--tw-text-opacity));\n}\n.hover\\:text-cyan-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(6 182 212 / var(--tw-text-opacity));\n}\n.hover\\:text-emerald-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(16 185 129 / var(--tw-text-opacity));\n}\n.hover\\:text-fuchsia-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(217 70 239 / var(--tw-text-opacity));\n}\n.hover\\:text-gray-700:hover {\n    --tw-text-opacity: 1;\n    color: rgb(55 65 81 / var(--tw-text-opacity));\n}\n.hover\\:text-green-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(34 197 94 / var(--tw-text-opacity));\n}\n.hover\\:text-indigo-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(99 102 241 / var(--tw-text-opacity));\n}\n.hover\\:text-lime-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(132 204 22 / var(--tw-text-opacity));\n}\n.hover\\:text-orange-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(249 115 22 / var(--tw-text-opacity));\n}\n.hover\\:text-pink-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(236 72 153 / var(--tw-text-opacity));\n}\n.hover\\:text-purple-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(168 85 247 / var(--tw-text-opacity));\n}\n.hover\\:text-red-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(239 68 68 / var(--tw-text-opacity));\n}\n.hover\\:text-red-600:hover {\n    --tw-text-opacity: 1;\n    color: rgb(220 38 38 / var(--tw-text-opacity));\n}\n.hover\\:text-rose-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(244 63 94 / var(--tw-text-opacity));\n}\n.hover\\:text-sky-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(14 165 233 / var(--tw-text-opacity));\n}\n.hover\\:text-teal-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(20 184 166 / var(--tw-text-opacity));\n}\n.hover\\:text-violet-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(139 92 246 / var(--tw-text-opacity));\n}\n.hover\\:text-yellow-500:hover {\n    --tw-text-opacity: 1;\n    color: rgb(234 179 8 / var(--tw-text-opacity));\n}\n.focus\\:border-amber-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(245 158 11 / var(--tw-border-opacity));\n}\n.focus\\:border-blue-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(59 130 246 / var(--tw-border-opacity));\n}\n.focus\\:border-cyan-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(6 182 212 / var(--tw-border-opacity));\n}\n.focus\\:border-emerald-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(16 185 129 / var(--tw-border-opacity));\n}\n.focus\\:border-fuchsia-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(217 70 239 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-200:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(229 231 235 / var(--tw-border-opacity));\n}\n.focus\\:border-gray-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(107 114 128 / var(--tw-border-opacity));\n}\n.focus\\:border-green-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(34 197 94 / var(--tw-border-opacity));\n}\n.focus\\:border-indigo-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(99 102 241 / var(--tw-border-opacity));\n}\n.focus\\:border-lime-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(132 204 22 / var(--tw-border-opacity));\n}\n.focus\\:border-orange-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(249 115 22 / var(--tw-border-opacity));\n}\n.focus\\:border-pink-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(236 72 153 / var(--tw-border-opacity));\n}\n.focus\\:border-purple-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(168 85 247 / var(--tw-border-opacity));\n}\n.focus\\:border-red-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(239 68 68 / var(--tw-border-opacity));\n}\n.focus\\:border-rose-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(244 63 94 / var(--tw-border-opacity));\n}\n.focus\\:border-sky-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(14 165 233 / var(--tw-border-opacity));\n}\n.focus\\:border-teal-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(20 184 166 / var(--tw-border-opacity));\n}\n.focus\\:border-violet-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(139 92 246 / var(--tw-border-opacity));\n}\n.focus\\:border-yellow-500:focus {\n    --tw-border-opacity: 1;\n    border-color: rgb(234 179 8 / var(--tw-border-opacity));\n}\n.focus\\:bg-white:focus {\n    --tw-bg-opacity: 1;\n    background-color: rgb(255 255 255 / var(--tw-bg-opacity));\n}\n.focus\\:outline-none:focus {\n    outline: 2px solid transparent;\n    outline-offset: 2px;\n}\n.focus\\:ring:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-0:focus {\n    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);\n    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);\n    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);\n}\n.focus\\:ring-amber-500\\/20:focus {\n    --tw-ring-color: rgb(245 158 11 / 0.2);\n}\n.focus\\:ring-blue-500\\/20:focus {\n    --tw-ring-color: rgb(59 130 246 / 0.2);\n}\n.focus\\:ring-cyan-500\\/20:focus {\n    --tw-ring-color: rgb(6 182 212 / 0.2);\n}\n.focus\\:ring-emerald-500\\/20:focus {\n    --tw-ring-color: rgb(16 185 129 / 0.2);\n}\n.focus\\:ring-fuchsia-500\\/20:focus {\n    --tw-ring-color: rgb(217 70 239 / 0.2);\n}\n.focus\\:ring-green-500\\/20:focus {\n    --tw-ring-color: rgb(34 197 94 / 0.2);\n}\n.focus\\:ring-indigo-500\\/20:focus {\n    --tw-ring-color: rgb(99 102 241 / 0.2);\n}\n.focus\\:ring-lime-500\\/20:focus {\n    --tw-ring-color: rgb(132 204 22 / 0.2);\n}\n.focus\\:ring-orange-500\\/20:focus {\n    --tw-ring-color: rgb(249 115 22 / 0.2);\n}\n.focus\\:ring-pink-500\\/20:focus {\n    --tw-ring-color: rgb(236 72 153 / 0.2);\n}\n.focus\\:ring-purple-500\\/20:focus {\n    --tw-ring-color: rgb(168 85 247 / 0.2);\n}\n.focus\\:ring-red-500\\/20:focus {\n    --tw-ring-color: rgb(239 68 68 / 0.2);\n}\n.focus\\:ring-rose-500\\/20:focus {\n    --tw-ring-color: rgb(244 63 94 / 0.2);\n}\n.focus\\:ring-sky-500\\/20:focus {\n    --tw-ring-color: rgb(14 165 233 / 0.2);\n}\n.focus\\:ring-teal-500\\/20:focus {\n    --tw-ring-color: rgb(20 184 166 / 0.2);\n}\n.focus\\:ring-violet-500\\/20:focus {\n    --tw-ring-color: rgb(139 92 246 / 0.2);\n}\n.focus\\:ring-yellow-500\\/20:focus {\n    --tw-ring-color: rgb(234 179 8 / 0.2);\n}\n.disabled\\:opacity-50:disabled {\n    opacity: 0.5;\n}\n";
 styleInject(css_248z);
-
-var isCheckBoxInput = (element)=>element.type === 'checkbox';
-var isDateObject = (value1)=>value1 instanceof Date;
-var isNullOrUndefined = (value1)=>value1 == null;
-const isObjectType = (value1)=>typeof value1 === 'object';
-var isObject = (value1)=>!isNullOrUndefined(value1) && !Array.isArray(value1) && isObjectType(value1) && !isDateObject(value1);
-var getEventValue = (event)=>isObject(event) && event.target ? isCheckBoxInput(event.target) ? event.target.checked : event.target.value : event;
-var getNodeParentName = (name)=>name.substring(0, name.search(/\.\d+(\.|$)/)) || name;
-var isNameInFieldArray = (names, name)=>names.has(getNodeParentName(name));
-var isPlainObject$2 = (tempObject)=>{
-    const prototypeCopy = tempObject.constructor && tempObject.constructor.prototype;
-    return isObject(prototypeCopy) && prototypeCopy.hasOwnProperty('isPrototypeOf');
-};
-var isWeb = typeof window !== 'undefined' && typeof window.HTMLElement !== 'undefined' && typeof document !== 'undefined';
-function cloneObject(data) {
-    let copy;
-    const isArray = Array.isArray(data);
-    if (data instanceof Date) {
-        copy = new Date(data);
-    } else if (data instanceof Set) {
-        copy = new Set(data);
-    } else if (!(isWeb && (data instanceof Blob || data instanceof FileList)) && (isArray || isObject(data))) {
-        copy = isArray ? [] : {};
-        if (!isArray && !isPlainObject$2(data)) {
-            copy = data;
-        } else {
-            for(const key in data){
-                if (data.hasOwnProperty(key)) {
-                    copy[key] = cloneObject(data[key]);
-                }
-            }
-        }
-    } else {
-        return data;
-    }
-    return copy;
-}
-var compact = (value1)=>Array.isArray(value1) ? value1.filter(Boolean) : [];
-var isUndefined = (val)=>val === undefined;
-var get = (object, path, defaultValue)=>{
-    if (!path || !isObject(object)) {
-        return defaultValue;
-    }
-    const result = compact(path.split(/[,[\].]+?/)).reduce((result, key)=>isNullOrUndefined(result) ? result : result[key], object);
-    return isUndefined(result) || result === object ? isUndefined(object[path]) ? defaultValue : object[path] : result;
-};
-var isBoolean$1 = (value1)=>typeof value1 === 'boolean';
-const EVENTS = {
-    BLUR: 'blur',
-    FOCUS_OUT: 'focusout',
-    CHANGE: 'change'
-};
-const VALIDATION_MODE = {
-    onBlur: 'onBlur',
-    onChange: 'onChange',
-    onSubmit: 'onSubmit',
-    onTouched: 'onTouched',
-    all: 'all'
-};
-const INPUT_VALIDATION_RULES = {
-    max: 'max',
-    min: 'min',
-    maxLength: 'maxLength',
-    minLength: 'minLength',
-    pattern: 'pattern',
-    required: 'required',
-    validate: 'validate'
-};
-const HookFormContext = React__default.createContext(null);
-/**
- * This custom hook allows you to access the form context. useFormContext is intended to be used in deeply nested structures, where it would become inconvenient to pass the context as a prop. To be used with {@link FormProvider}.
- *
- * @remarks
- * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
- *
- * @returns return all useForm methods
- *
- * @example
- * ```tsx
- * function App() {
- *   const methods = useForm();
- *   const onSubmit = data => console.log(data);
- *
- *   return (
- *     <FormProvider {...methods} >
- *       <form onSubmit={methods.handleSubmit(onSubmit)}>
- *         <NestedInput />
- *         <input type="submit" />
- *       </form>
- *     </FormProvider>
- *   );
- * }
- *
- *  function NestedInput() {
- *   const { register } = useFormContext(); // retrieve all hook methods
- *   return <input {...register("test")} />;
- * }
- * ```
- */ const useFormContext = ()=>React__default.useContext(HookFormContext);
-/**
- * A provider component that propagates the `useForm` methods to all children components via [React Context](https://reactjs.org/docs/context.html) API. To be used with {@link useFormContext}.
- *
- * @remarks
- * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
- *
- * @param props - all useForm methods
- *
- * @example
- * ```tsx
- * function App() {
- *   const methods = useForm();
- *   const onSubmit = data => console.log(data);
- *
- *   return (
- *     <FormProvider {...methods} >
- *       <form onSubmit={methods.handleSubmit(onSubmit)}>
- *         <NestedInput />
- *         <input type="submit" />
- *       </form>
- *     </FormProvider>
- *   );
- * }
- *
- *  function NestedInput() {
- *   const { register } = useFormContext(); // retrieve all hook methods
- *   return <input {...register("test")} />;
- * }
- * ```
- */ const FormProvider = (props)=>{
-    const { children, ...data } = props;
-    return React__default.createElement(HookFormContext.Provider, {
-        value: data
-    }, children);
-};
-var getProxyFormState = (formState, control, localProxyFormState, isRoot = true)=>{
-    const result = {
-        defaultValues: control._defaultValues
-    };
-    for(const key in formState){
-        Object.defineProperty(result, key, {
-            get: ()=>{
-                const _key = key;
-                if (control._proxyFormState[_key] !== VALIDATION_MODE.all) {
-                    control._proxyFormState[_key] = !isRoot || VALIDATION_MODE.all;
-                }
-                localProxyFormState && (localProxyFormState[_key] = true);
-                return formState[_key];
-            }
-        });
-    }
-    return result;
-};
-var isEmptyObject = (value1)=>isObject(value1) && !Object.keys(value1).length;
-var shouldRenderFormState = (formStateData, _proxyFormState, updateFormState, isRoot)=>{
-    updateFormState(formStateData);
-    const { name, ...formState } = formStateData;
-    return isEmptyObject(formState) || Object.keys(formState).length >= Object.keys(_proxyFormState).length || Object.keys(formState).find((key)=>_proxyFormState[key] === (!isRoot || VALIDATION_MODE.all));
-};
-var convertToArrayPayload = (value1)=>Array.isArray(value1) ? value1 : [
-        value1
-    ];
-function useSubscribe(props) {
-    const _props = React__default.useRef(props);
-    _props.current = props;
-    React__default.useEffect(()=>{
-        const subscription = !props.disabled && _props.current.subject && _props.current.subject.subscribe({
-            next: _props.current.next
-        });
-        return ()=>{
-            subscription && subscription.unsubscribe();
-        };
-    }, [
-        props.disabled
-    ]);
-}
-var isString = (value1)=>typeof value1 === 'string';
-var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue)=>{
-    if (isString(names)) {
-        isGlobal && _names.watch.add(names);
-        return get(formValues, names, defaultValue);
-    }
-    if (Array.isArray(names)) {
-        return names.map((fieldName)=>(isGlobal && _names.watch.add(fieldName), get(formValues, fieldName)));
-    }
-    isGlobal && (_names.watchAll = true);
-    return formValues;
-};
-var isKey = (value1)=>/^\w*$/.test(value1);
-var stringToPath = (input)=>compact(input.replace(/["|']|\]/g, '').split(/\.|\[/));
-var set = (object, path, value1)=>{
-    let index = -1;
-    const tempPath = isKey(path) ? [
-        path
-    ] : stringToPath(path);
-    const length = tempPath.length;
-    const lastIndex = length - 1;
-    while(++index < length){
-        const key = tempPath[index];
-        let newValue = value1;
-        if (index !== lastIndex) {
-            const objValue = object[key];
-            newValue = isObject(objValue) || Array.isArray(objValue) ? objValue : !isNaN(+tempPath[index + 1]) ? [] : {};
-        }
-        object[key] = newValue;
-        object = object[key];
-    }
-    return object;
-};
-var appendErrors = (name, validateAllFieldCriteria, errors, type, message)=>validateAllFieldCriteria ? {
-        ...errors[name],
-        types: {
-            ...errors[name] && errors[name].types ? errors[name].types : {},
-            [type]: message || true
-        }
-    } : {};
-var getValidationModes = (mode)=>({
-        isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
-        isOnBlur: mode === VALIDATION_MODE.onBlur,
-        isOnChange: mode === VALIDATION_MODE.onChange,
-        isOnAll: mode === VALIDATION_MODE.all,
-        isOnTouch: mode === VALIDATION_MODE.onTouched
-    });
-var isWatched = (name, _names, isBlurEvent)=>!isBlurEvent && (_names.watchAll || _names.watch.has(name) || [
-        ..._names.watch
-    ].some((watchName)=>name.startsWith(watchName) && /^\.\w+/.test(name.slice(watchName.length))));
-const iterateFieldsByAction = (fields, action, fieldsNames, abortEarly)=>{
-    for (const key of fieldsNames || Object.keys(fields)){
-        const field = get(fields, key);
-        if (field) {
-            const { _f, ...currentField } = field;
-            if (_f) {
-                if (_f.refs && _f.refs[0] && action(_f.refs[0], key) && !abortEarly) {
-                    break;
-                } else if (_f.ref && action(_f.ref, _f.name) && !abortEarly) {
-                    break;
-                } else {
-                    iterateFieldsByAction(currentField, action);
-                }
-            } else if (isObject(currentField)) {
-                iterateFieldsByAction(currentField, action);
-            }
-        }
-    }
-};
-var updateFieldArrayRootError = (errors, error, name)=>{
-    const fieldArrayErrors = compact(get(errors, name));
-    set(fieldArrayErrors, 'root', error[name]);
-    set(errors, name, fieldArrayErrors);
-    return errors;
-};
-var isFileInput = (element)=>element.type === 'file';
-var isFunction = (value1)=>typeof value1 === 'function';
-var isHTMLElement = (value1)=>{
-    if (!isWeb) {
-        return false;
-    }
-    const owner = value1 ? value1.ownerDocument : 0;
-    return value1 instanceof (owner && owner.defaultView ? owner.defaultView.HTMLElement : HTMLElement);
-};
-var isMessage = (value1)=>isString(value1);
-var isRadioInput = (element)=>element.type === 'radio';
-var isRegex = (value1)=>value1 instanceof RegExp;
-const defaultResult = {
-    value: false,
-    isValid: false
-};
-const validResult = {
-    value: true,
-    isValid: true
-};
-var getCheckboxValue = (options)=>{
-    if (Array.isArray(options)) {
-        if (options.length > 1) {
-            const values = options.filter((option)=>option && option.checked && !option.disabled).map((option)=>option.value);
-            return {
-                value: values,
-                isValid: !!values.length
-            };
-        }
-        return options[0].checked && !options[0].disabled ? options[0].attributes && !isUndefined(options[0].attributes.value) ? isUndefined(options[0].value) || options[0].value === '' ? validResult : {
-            value: options[0].value,
-            isValid: true
-        } : validResult : defaultResult;
-    }
-    return defaultResult;
-};
-const defaultReturn = {
-    isValid: false,
-    value: null
-};
-var getRadioValue = (options)=>Array.isArray(options) ? options.reduce((previous, option)=>option && option.checked && !option.disabled ? {
-            isValid: true,
-            value: option.value
-        } : previous, defaultReturn) : defaultReturn;
-function getValidateError(result, ref, type = 'validate') {
-    if (isMessage(result) || Array.isArray(result) && result.every(isMessage) || isBoolean$1(result) && !result) {
-        return {
-            type,
-            message: isMessage(result) ? result : '',
-            ref
-        };
-    }
-}
-var getValueAndMessage = (validationData)=>isObject(validationData) && !isRegex(validationData) ? validationData : {
-        value: validationData,
-        message: ''
-    };
-var validateField = async (field, formValues, validateAllFieldCriteria, shouldUseNativeValidation, isFieldArray)=>{
-    const { ref, refs, required, maxLength, minLength, min, max, pattern, validate, name, valueAsNumber, mount, disabled } = field._f;
-    const inputValue = get(formValues, name);
-    if (!mount || disabled) {
-        return {};
-    }
-    const inputRef = refs ? refs[0] : ref;
-    const setCustomValidity = (message)=>{
-        if (shouldUseNativeValidation && inputRef.reportValidity) {
-            inputRef.setCustomValidity(isBoolean$1(message) ? '' : message || '');
-            inputRef.reportValidity();
-        }
-    };
-    const error = {};
-    const isRadio = isRadioInput(ref);
-    const isCheckBox = isCheckBoxInput(ref);
-    const isRadioOrCheckbox = isRadio || isCheckBox;
-    const isEmpty = (valueAsNumber || isFileInput(ref)) && isUndefined(ref.value) && isUndefined(inputValue) || isHTMLElement(ref) && ref.value === '' || inputValue === '' || Array.isArray(inputValue) && !inputValue.length;
-    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
-    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength)=>{
-        const message = exceedMax ? maxLengthMessage : minLengthMessage;
-        error[name] = {
-            type: exceedMax ? maxType : minType,
-            message,
-            ref,
-            ...appendErrorsCurry(exceedMax ? maxType : minType, message)
-        };
-    };
-    if (isFieldArray ? !Array.isArray(inputValue) || !inputValue.length : required && (!isRadioOrCheckbox && (isEmpty || isNullOrUndefined(inputValue)) || isBoolean$1(inputValue) && !inputValue || isCheckBox && !getCheckboxValue(refs).isValid || isRadio && !getRadioValue(refs).isValid)) {
-        const { value: value1, message } = isMessage(required) ? {
-            value: !!required,
-            message: required
-        } : getValueAndMessage(required);
-        if (value1) {
-            error[name] = {
-                type: INPUT_VALIDATION_RULES.required,
-                message,
-                ref: inputRef,
-                ...appendErrorsCurry(INPUT_VALIDATION_RULES.required, message)
-            };
-            if (!validateAllFieldCriteria) {
-                setCustomValidity(message);
-                return error;
-            }
-        }
-    }
-    if (!isEmpty && (!isNullOrUndefined(min) || !isNullOrUndefined(max))) {
-        let exceedMax;
-        let exceedMin;
-        const maxOutput = getValueAndMessage(max);
-        const minOutput = getValueAndMessage(min);
-        if (!isNullOrUndefined(inputValue) && !isNaN(inputValue)) {
-            const valueNumber = ref.valueAsNumber || (inputValue ? +inputValue : inputValue);
-            if (!isNullOrUndefined(maxOutput.value)) {
-                exceedMax = valueNumber > maxOutput.value;
-            }
-            if (!isNullOrUndefined(minOutput.value)) {
-                exceedMin = valueNumber < minOutput.value;
-            }
-        } else {
-            const valueDate = ref.valueAsDate || new Date(inputValue);
-            const convertTimeToDate = (time)=>new Date(new Date().toDateString() + ' ' + time);
-            const isTime = ref.type == 'time';
-            const isWeek = ref.type == 'week';
-            if (isString(maxOutput.value) && inputValue) {
-                exceedMax = isTime ? convertTimeToDate(inputValue) > convertTimeToDate(maxOutput.value) : isWeek ? inputValue > maxOutput.value : valueDate > new Date(maxOutput.value);
-            }
-            if (isString(minOutput.value) && inputValue) {
-                exceedMin = isTime ? convertTimeToDate(inputValue) < convertTimeToDate(minOutput.value) : isWeek ? inputValue < minOutput.value : valueDate < new Date(minOutput.value);
-            }
-        }
-        if (exceedMax || exceedMin) {
-            getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
-            if (!validateAllFieldCriteria) {
-                setCustomValidity(error[name].message);
-                return error;
-            }
-        }
-    }
-    if ((maxLength || minLength) && !isEmpty && (isString(inputValue) || isFieldArray && Array.isArray(inputValue))) {
-        const maxLengthOutput = getValueAndMessage(maxLength);
-        const minLengthOutput = getValueAndMessage(minLength);
-        const exceedMax = !isNullOrUndefined(maxLengthOutput.value) && inputValue.length > +maxLengthOutput.value;
-        const exceedMin = !isNullOrUndefined(minLengthOutput.value) && inputValue.length < +minLengthOutput.value;
-        if (exceedMax || exceedMin) {
-            getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
-            if (!validateAllFieldCriteria) {
-                setCustomValidity(error[name].message);
-                return error;
-            }
-        }
-    }
-    if (pattern && !isEmpty && isString(inputValue)) {
-        const { value: patternValue, message } = getValueAndMessage(pattern);
-        if (isRegex(patternValue) && !inputValue.match(patternValue)) {
-            error[name] = {
-                type: INPUT_VALIDATION_RULES.pattern,
-                message,
-                ref,
-                ...appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message)
-            };
-            if (!validateAllFieldCriteria) {
-                setCustomValidity(message);
-                return error;
-            }
-        }
-    }
-    if (validate) {
-        if (isFunction(validate)) {
-            const result = await validate(inputValue, formValues);
-            const validateError = getValidateError(result, inputRef);
-            if (validateError) {
-                error[name] = {
-                    ...validateError,
-                    ...appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message)
-                };
-                if (!validateAllFieldCriteria) {
-                    setCustomValidity(validateError.message);
-                    return error;
-                }
-            }
-        } else if (isObject(validate)) {
-            let validationResult = {};
-            for(const key in validate){
-                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
-                    break;
-                }
-                const validateError = getValidateError(await validate[key](inputValue, formValues), inputRef, key);
-                if (validateError) {
-                    validationResult = {
-                        ...validateError,
-                        ...appendErrorsCurry(key, validateError.message)
-                    };
-                    setCustomValidity(validateError.message);
-                    if (validateAllFieldCriteria) {
-                        error[name] = validationResult;
-                    }
-                }
-            }
-            if (!isEmptyObject(validationResult)) {
-                error[name] = {
-                    ref: inputRef,
-                    ...validationResult
-                };
-                if (!validateAllFieldCriteria) {
-                    return error;
-                }
-            }
-        }
-    }
-    setCustomValidity(true);
-    return error;
-};
-function baseGet(object, updatePath) {
-    const length = updatePath.slice(0, -1).length;
-    let index = 0;
-    while(index < length){
-        object = isUndefined(object) ? index++ : object[updatePath[index++]];
-    }
-    return object;
-}
-function isEmptyArray(obj) {
-    for(const key in obj){
-        if (obj.hasOwnProperty(key) && !isUndefined(obj[key])) {
-            return false;
-        }
-    }
-    return true;
-}
-function unset(object, path) {
-    const paths = Array.isArray(path) ? path : isKey(path) ? [
-        path
-    ] : stringToPath(path);
-    const childObject = paths.length === 1 ? object : baseGet(object, paths);
-    const index = paths.length - 1;
-    const key = paths[index];
-    if (childObject) {
-        delete childObject[key];
-    }
-    if (index !== 0 && (isObject(childObject) && isEmptyObject(childObject) || Array.isArray(childObject) && isEmptyArray(childObject))) {
-        unset(object, paths.slice(0, -1));
-    }
-    return object;
-}
-var createSubject = ()=>{
-    let _observers = [];
-    const next = (value1)=>{
-        for (const observer of _observers){
-            observer.next && observer.next(value1);
-        }
-    };
-    const subscribe = (observer)=>{
-        _observers.push(observer);
-        return {
-            unsubscribe: ()=>{
-                _observers = _observers.filter((o)=>o !== observer);
-            }
-        };
-    };
-    const unsubscribe = ()=>{
-        _observers = [];
-    };
-    return {
-        get observers () {
-            return _observers;
-        },
-        next,
-        subscribe,
-        unsubscribe
-    };
-};
-var isPrimitive = (value1)=>isNullOrUndefined(value1) || !isObjectType(value1);
-function deepEqual(object1, object2) {
-    if (isPrimitive(object1) || isPrimitive(object2)) {
-        return object1 === object2;
-    }
-    if (isDateObject(object1) && isDateObject(object2)) {
-        return object1.getTime() === object2.getTime();
-    }
-    const keys1 = Object.keys(object1);
-    const keys2 = Object.keys(object2);
-    if (keys1.length !== keys2.length) {
-        return false;
-    }
-    for (const key of keys1){
-        const val1 = object1[key];
-        if (!keys2.includes(key)) {
-            return false;
-        }
-        if (key !== 'ref') {
-            const val2 = object2[key];
-            if (isDateObject(val1) && isDateObject(val2) || isObject(val1) && isObject(val2) || Array.isArray(val1) && Array.isArray(val2) ? !deepEqual(val1, val2) : val1 !== val2) {
-                return false;
-            }
-        }
-    }
-    return true;
-}
-var isMultipleSelect = (element)=>element.type === `select-multiple`;
-var isRadioOrCheckbox = (ref)=>isRadioInput(ref) || isCheckBoxInput(ref);
-var live = (ref)=>isHTMLElement(ref) && ref.isConnected;
-var objectHasFunction = (data)=>{
-    for(const key in data){
-        if (isFunction(data[key])) {
-            return true;
-        }
-    }
-    return false;
-};
-function markFieldsDirty(data, fields = {}) {
-    const isParentNodeArray = Array.isArray(data);
-    if (isObject(data) || isParentNodeArray) {
-        for(const key in data){
-            if (Array.isArray(data[key]) || isObject(data[key]) && !objectHasFunction(data[key])) {
-                fields[key] = Array.isArray(data[key]) ? [] : {};
-                markFieldsDirty(data[key], fields[key]);
-            } else if (!isNullOrUndefined(data[key])) {
-                fields[key] = true;
-            }
-        }
-    }
-    return fields;
-}
-function getDirtyFieldsFromDefaultValues(data, formValues, dirtyFieldsFromValues) {
-    const isParentNodeArray = Array.isArray(data);
-    if (isObject(data) || isParentNodeArray) {
-        for(const key in data){
-            if (Array.isArray(data[key]) || isObject(data[key]) && !objectHasFunction(data[key])) {
-                if (isUndefined(formValues) || isPrimitive(dirtyFieldsFromValues[key])) {
-                    dirtyFieldsFromValues[key] = Array.isArray(data[key]) ? markFieldsDirty(data[key], []) : {
-                        ...markFieldsDirty(data[key])
-                    };
-                } else {
-                    getDirtyFieldsFromDefaultValues(data[key], isNullOrUndefined(formValues) ? {} : formValues[key], dirtyFieldsFromValues[key]);
-                }
-            } else {
-                dirtyFieldsFromValues[key] = !deepEqual(data[key], formValues[key]);
-            }
-        }
-    }
-    return dirtyFieldsFromValues;
-}
-var getDirtyFields = (defaultValues, formValues)=>getDirtyFieldsFromDefaultValues(defaultValues, formValues, markFieldsDirty(formValues));
-var getFieldValueAs = (value1, { valueAsNumber, valueAsDate, setValueAs })=>isUndefined(value1) ? value1 : valueAsNumber ? value1 === '' ? NaN : value1 ? +value1 : value1 : valueAsDate && isString(value1) ? new Date(value1) : setValueAs ? setValueAs(value1) : value1;
-function getFieldValue(_f) {
-    const ref = _f.ref;
-    if (_f.refs ? _f.refs.every((ref)=>ref.disabled) : ref.disabled) {
-        return;
-    }
-    if (isFileInput(ref)) {
-        return ref.files;
-    }
-    if (isRadioInput(ref)) {
-        return getRadioValue(_f.refs).value;
-    }
-    if (isMultipleSelect(ref)) {
-        return [
-            ...ref.selectedOptions
-        ].map(({ value: value1 })=>value1);
-    }
-    if (isCheckBoxInput(ref)) {
-        return getCheckboxValue(_f.refs).value;
-    }
-    return getFieldValueAs(isUndefined(ref.value) ? _f.ref.value : ref.value, _f);
-}
-var getResolverOptions = (fieldsNames, _fields, criteriaMode, shouldUseNativeValidation)=>{
-    const fields = {};
-    for (const name of fieldsNames){
-        const field = get(_fields, name);
-        field && set(fields, name, field._f);
-    }
-    return {
-        criteriaMode,
-        names: [
-            ...fieldsNames
-        ],
-        fields,
-        shouldUseNativeValidation
-    };
-};
-var getRuleValue = (rule)=>isUndefined(rule) ? rule : isRegex(rule) ? rule.source : isObject(rule) ? isRegex(rule.value) ? rule.value.source : rule.value : rule;
-var hasValidation = (options)=>options.mount && (options.required || options.min || options.max || options.maxLength || options.minLength || options.pattern || options.validate);
-function schemaErrorLookup(errors, _fields, name) {
-    const error = get(errors, name);
-    if (error || isKey(name)) {
-        return {
-            error,
-            name
-        };
-    }
-    const names = name.split('.');
-    while(names.length){
-        const fieldName = names.join('.');
-        const field = get(_fields, fieldName);
-        const foundError = get(errors, fieldName);
-        if (field && !Array.isArray(field) && name !== fieldName) {
-            return {
-                name
-            };
-        }
-        if (foundError && foundError.type) {
-            return {
-                name: fieldName,
-                error: foundError
-            };
-        }
-        names.pop();
-    }
-    return {
-        name
-    };
-}
-var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode)=>{
-    if (mode.isOnAll) {
-        return false;
-    } else if (!isSubmitted && mode.isOnTouch) {
-        return !(isTouched || isBlurEvent);
-    } else if (isSubmitted ? reValidateMode.isOnBlur : mode.isOnBlur) {
-        return !isBlurEvent;
-    } else if (isSubmitted ? reValidateMode.isOnChange : mode.isOnChange) {
-        return isBlurEvent;
-    }
-    return true;
-};
-var unsetEmptyArray = (ref, name)=>!compact(get(ref, name)).length && unset(ref, name);
-const defaultOptions = {
-    mode: VALIDATION_MODE.onSubmit,
-    reValidateMode: VALIDATION_MODE.onChange,
-    shouldFocusError: true
-};
-function createFormControl(props = {}, flushRootRender) {
-    let _options = {
-        ...defaultOptions,
-        ...props
-    };
-    let _formState = {
-        submitCount: 0,
-        isDirty: false,
-        isLoading: isFunction(_options.defaultValues),
-        isValidating: false,
-        isSubmitted: false,
-        isSubmitting: false,
-        isSubmitSuccessful: false,
-        isValid: false,
-        touchedFields: {},
-        dirtyFields: {},
-        errors: _options.errors || {},
-        disabled: _options.disabled || false
-    };
-    let _fields = {};
-    let _defaultValues = isObject(_options.values) || isObject(_options.defaultValues) ? cloneObject(_options.values || _options.defaultValues) || {} : {};
-    let _formValues = _options.shouldUnregister ? {} : cloneObject(_defaultValues);
-    let _state = {
-        action: false,
-        mount: false,
-        watch: false
-    };
-    let _names = {
-        mount: new Set(),
-        unMount: new Set(),
-        array: new Set(),
-        watch: new Set()
-    };
-    let delayErrorCallback;
-    let timer = 0;
-    const _proxyFormState = {
-        isDirty: false,
-        dirtyFields: false,
-        touchedFields: false,
-        isValidating: false,
-        isValid: false,
-        errors: false
-    };
-    const _subjects = {
-        values: createSubject(),
-        array: createSubject(),
-        state: createSubject()
-    };
-    const validationModeBeforeSubmit = getValidationModes(_options.mode);
-    const validationModeAfterSubmit = getValidationModes(_options.reValidateMode);
-    const shouldDisplayAllAssociatedErrors = _options.criteriaMode === VALIDATION_MODE.all;
-    const debounce = (callback)=>(wait)=>{
-            clearTimeout(timer);
-            timer = setTimeout(callback, wait);
-        };
-    const _updateValid = async (shouldUpdateValid)=>{
-        if (_proxyFormState.isValid || shouldUpdateValid) {
-            const isValid = _options.resolver ? isEmptyObject((await _executeSchema()).errors) : await executeBuiltInValidation(_fields, true);
-            if (isValid !== _formState.isValid) {
-                _subjects.state.next({
-                    isValid
-                });
-            }
-        }
-    };
-    const _updateIsValidating = (value1)=>_proxyFormState.isValidating && _subjects.state.next({
-            isValidating: value1
-        });
-    const _updateFieldArray = (name, values = [], method, args, shouldSetValues = true, shouldUpdateFieldsAndState = true)=>{
-        if (args && method) {
-            _state.action = true;
-            if (shouldUpdateFieldsAndState && Array.isArray(get(_fields, name))) {
-                const fieldValues = method(get(_fields, name), args.argA, args.argB);
-                shouldSetValues && set(_fields, name, fieldValues);
-            }
-            if (shouldUpdateFieldsAndState && Array.isArray(get(_formState.errors, name))) {
-                const errors = method(get(_formState.errors, name), args.argA, args.argB);
-                shouldSetValues && set(_formState.errors, name, errors);
-                unsetEmptyArray(_formState.errors, name);
-            }
-            if (_proxyFormState.touchedFields && shouldUpdateFieldsAndState && Array.isArray(get(_formState.touchedFields, name))) {
-                const touchedFields = method(get(_formState.touchedFields, name), args.argA, args.argB);
-                shouldSetValues && set(_formState.touchedFields, name, touchedFields);
-            }
-            if (_proxyFormState.dirtyFields) {
-                _formState.dirtyFields = getDirtyFields(_defaultValues, _formValues);
-            }
-            _subjects.state.next({
-                name,
-                isDirty: _getDirty(name, values),
-                dirtyFields: _formState.dirtyFields,
-                errors: _formState.errors,
-                isValid: _formState.isValid
-            });
-        } else {
-            set(_formValues, name, values);
-        }
-    };
-    const updateErrors = (name, error)=>{
-        set(_formState.errors, name, error);
-        _subjects.state.next({
-            errors: _formState.errors
-        });
-    };
-    const _setErrors = (errors)=>{
-        _formState.errors = errors;
-        _subjects.state.next({
-            errors: _formState.errors,
-            isValid: false
-        });
-    };
-    const updateValidAndValue = (name, shouldSkipSetValueAs, value1, ref)=>{
-        const field = get(_fields, name);
-        if (field) {
-            const defaultValue = get(_formValues, name, isUndefined(value1) ? get(_defaultValues, name) : value1);
-            isUndefined(defaultValue) || ref && ref.defaultChecked || shouldSkipSetValueAs ? set(_formValues, name, shouldSkipSetValueAs ? defaultValue : getFieldValue(field._f)) : setFieldValue(name, defaultValue);
-            _state.mount && _updateValid();
-        }
-    };
-    const updateTouchAndDirty = (name, fieldValue, isBlurEvent, shouldDirty, shouldRender)=>{
-        let shouldUpdateField = false;
-        let isPreviousDirty = false;
-        const output = {
-            name
-        };
-        const disabledField = !!(get(_fields, name) && get(_fields, name)._f.disabled);
-        if (!isBlurEvent || shouldDirty) {
-            if (_proxyFormState.isDirty) {
-                isPreviousDirty = _formState.isDirty;
-                _formState.isDirty = output.isDirty = _getDirty();
-                shouldUpdateField = isPreviousDirty !== output.isDirty;
-            }
-            const isCurrentFieldPristine = disabledField || deepEqual(get(_defaultValues, name), fieldValue);
-            isPreviousDirty = !!(!disabledField && get(_formState.dirtyFields, name));
-            isCurrentFieldPristine || disabledField ? unset(_formState.dirtyFields, name) : set(_formState.dirtyFields, name, true);
-            output.dirtyFields = _formState.dirtyFields;
-            shouldUpdateField = shouldUpdateField || _proxyFormState.dirtyFields && isPreviousDirty !== !isCurrentFieldPristine;
-        }
-        if (isBlurEvent) {
-            const isPreviousFieldTouched = get(_formState.touchedFields, name);
-            if (!isPreviousFieldTouched) {
-                set(_formState.touchedFields, name, isBlurEvent);
-                output.touchedFields = _formState.touchedFields;
-                shouldUpdateField = shouldUpdateField || _proxyFormState.touchedFields && isPreviousFieldTouched !== isBlurEvent;
-            }
-        }
-        shouldUpdateField && shouldRender && _subjects.state.next(output);
-        return shouldUpdateField ? output : {};
-    };
-    const shouldRenderByError = (name, isValid, error, fieldState)=>{
-        const previousFieldError = get(_formState.errors, name);
-        const shouldUpdateValid = _proxyFormState.isValid && isBoolean$1(isValid) && _formState.isValid !== isValid;
-        if (props.delayError && error) {
-            delayErrorCallback = debounce(()=>updateErrors(name, error));
-            delayErrorCallback(props.delayError);
-        } else {
-            clearTimeout(timer);
-            delayErrorCallback = null;
-            error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
-        }
-        if ((error ? !deepEqual(previousFieldError, error) : previousFieldError) || !isEmptyObject(fieldState) || shouldUpdateValid) {
-            const updatedFormState = {
-                ...fieldState,
-                ...shouldUpdateValid && isBoolean$1(isValid) ? {
-                    isValid
-                } : {},
-                errors: _formState.errors,
-                name
-            };
-            _formState = {
-                ..._formState,
-                ...updatedFormState
-            };
-            _subjects.state.next(updatedFormState);
-        }
-        _updateIsValidating(false);
-    };
-    const _executeSchema = async (name)=>_options.resolver(_formValues, _options.context, getResolverOptions(name || _names.mount, _fields, _options.criteriaMode, _options.shouldUseNativeValidation));
-    const executeSchemaAndUpdateState = async (names)=>{
-        const { errors } = await _executeSchema(names);
-        if (names) {
-            for (const name of names){
-                const error = get(errors, name);
-                error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
-            }
-        } else {
-            _formState.errors = errors;
-        }
-        return errors;
-    };
-    const executeBuiltInValidation = async (fields, shouldOnlyCheckValid, context = {
-        valid: true
-    })=>{
-        for(const name in fields){
-            const field = fields[name];
-            if (field) {
-                const { _f, ...fieldValue } = field;
-                if (_f) {
-                    const isFieldArrayRoot = _names.array.has(_f.name);
-                    const fieldError = await validateField(field, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation && !shouldOnlyCheckValid, isFieldArrayRoot);
-                    if (fieldError[_f.name]) {
-                        context.valid = false;
-                        if (shouldOnlyCheckValid) {
-                            break;
-                        }
-                    }
-                    !shouldOnlyCheckValid && (get(fieldError, _f.name) ? isFieldArrayRoot ? updateFieldArrayRootError(_formState.errors, fieldError, _f.name) : set(_formState.errors, _f.name, fieldError[_f.name]) : unset(_formState.errors, _f.name));
-                }
-                fieldValue && await executeBuiltInValidation(fieldValue, shouldOnlyCheckValid, context);
-            }
-        }
-        return context.valid;
-    };
-    const _removeUnmounted = ()=>{
-        for (const name of _names.unMount){
-            const field = get(_fields, name);
-            field && (field._f.refs ? field._f.refs.every((ref)=>!live(ref)) : !live(field._f.ref)) && unregister(name);
-        }
-        _names.unMount = new Set();
-    };
-    const _getDirty = (name, data)=>(name && data && set(_formValues, name, data), !deepEqual(getValues(), _defaultValues));
-    const _getWatch = (names, defaultValue, isGlobal)=>generateWatchOutput(names, _names, {
-            ..._state.mount ? _formValues : isUndefined(defaultValue) ? _defaultValues : isString(names) ? {
-                [names]: defaultValue
-            } : defaultValue
-        }, isGlobal, defaultValue);
-    const _getFieldArray = (name)=>compact(get(_state.mount ? _formValues : _defaultValues, name, props.shouldUnregister ? get(_defaultValues, name, []) : []));
-    const setFieldValue = (name, value1, options = {})=>{
-        const field = get(_fields, name);
-        let fieldValue = value1;
-        if (field) {
-            const fieldReference = field._f;
-            if (fieldReference) {
-                !fieldReference.disabled && set(_formValues, name, getFieldValueAs(value1, fieldReference));
-                fieldValue = isHTMLElement(fieldReference.ref) && isNullOrUndefined(value1) ? '' : value1;
-                if (isMultipleSelect(fieldReference.ref)) {
-                    [
-                        ...fieldReference.ref.options
-                    ].forEach((optionRef)=>optionRef.selected = fieldValue.includes(optionRef.value));
-                } else if (fieldReference.refs) {
-                    if (isCheckBoxInput(fieldReference.ref)) {
-                        fieldReference.refs.length > 1 ? fieldReference.refs.forEach((checkboxRef)=>(!checkboxRef.defaultChecked || !checkboxRef.disabled) && (checkboxRef.checked = Array.isArray(fieldValue) ? !!fieldValue.find((data)=>data === checkboxRef.value) : fieldValue === checkboxRef.value)) : fieldReference.refs[0] && (fieldReference.refs[0].checked = !!fieldValue);
-                    } else {
-                        fieldReference.refs.forEach((radioRef)=>radioRef.checked = radioRef.value === fieldValue);
-                    }
-                } else if (isFileInput(fieldReference.ref)) {
-                    fieldReference.ref.value = '';
-                } else {
-                    fieldReference.ref.value = fieldValue;
-                    if (!fieldReference.ref.type) {
-                        _subjects.values.next({
-                            name,
-                            values: {
-                                ..._formValues
-                            }
-                        });
-                    }
-                }
-            }
-        }
-        (options.shouldDirty || options.shouldTouch) && updateTouchAndDirty(name, fieldValue, options.shouldTouch, options.shouldDirty, true);
-        options.shouldValidate && trigger(name);
-    };
-    const setValues = (name, value1, options)=>{
-        for(const fieldKey in value1){
-            const fieldValue = value1[fieldKey];
-            const fieldName = `${name}.${fieldKey}`;
-            const field = get(_fields, fieldName);
-            (_names.array.has(name) || !isPrimitive(fieldValue) || field && !field._f) && !isDateObject(fieldValue) ? setValues(fieldName, fieldValue, options) : setFieldValue(fieldName, fieldValue, options);
-        }
-    };
-    const setValue = (name, value1, options = {})=>{
-        const field = get(_fields, name);
-        const isFieldArray = _names.array.has(name);
-        const cloneValue = cloneObject(value1);
-        set(_formValues, name, cloneValue);
-        if (isFieldArray) {
-            _subjects.array.next({
-                name,
-                values: {
-                    ..._formValues
-                }
-            });
-            if ((_proxyFormState.isDirty || _proxyFormState.dirtyFields) && options.shouldDirty) {
-                _subjects.state.next({
-                    name,
-                    dirtyFields: getDirtyFields(_defaultValues, _formValues),
-                    isDirty: _getDirty(name, cloneValue)
-                });
-            }
-        } else {
-            field && !field._f && !isNullOrUndefined(cloneValue) ? setValues(name, cloneValue, options) : setFieldValue(name, cloneValue, options);
-        }
-        isWatched(name, _names) && _subjects.state.next({
-            ..._formState
-        });
-        _subjects.values.next({
-            name,
-            values: {
-                ..._formValues
-            }
-        });
-        !_state.mount && flushRootRender();
-    };
-    const onChange = async (event)=>{
-        const target = event.target;
-        let name = target.name;
-        let isFieldValueUpdated = true;
-        const field = get(_fields, name);
-        const getCurrentFieldValue = ()=>target.type ? getFieldValue(field._f) : getEventValue(event);
-        const _updateIsFieldValueUpdated = (fieldValue)=>{
-            isFieldValueUpdated = Number.isNaN(fieldValue) || fieldValue === get(_formValues, name, fieldValue);
-        };
-        if (field) {
-            let error;
-            let isValid;
-            const fieldValue = getCurrentFieldValue();
-            const isBlurEvent = event.type === EVENTS.BLUR || event.type === EVENTS.FOCUS_OUT;
-            const shouldSkipValidation = !hasValidation(field._f) && !_options.resolver && !get(_formState.errors, name) && !field._f.deps || skipValidation(isBlurEvent, get(_formState.touchedFields, name), _formState.isSubmitted, validationModeAfterSubmit, validationModeBeforeSubmit);
-            const watched = isWatched(name, _names, isBlurEvent);
-            set(_formValues, name, fieldValue);
-            if (isBlurEvent) {
-                field._f.onBlur && field._f.onBlur(event);
-                delayErrorCallback && delayErrorCallback(0);
-            } else if (field._f.onChange) {
-                field._f.onChange(event);
-            }
-            const fieldState = updateTouchAndDirty(name, fieldValue, isBlurEvent, false);
-            const shouldRender = !isEmptyObject(fieldState) || watched;
-            !isBlurEvent && _subjects.values.next({
-                name,
-                type: event.type,
-                values: {
-                    ..._formValues
-                }
-            });
-            if (shouldSkipValidation) {
-                _proxyFormState.isValid && _updateValid();
-                return shouldRender && _subjects.state.next({
-                    name,
-                    ...watched ? {} : fieldState
-                });
-            }
-            !isBlurEvent && watched && _subjects.state.next({
-                ..._formState
-            });
-            _updateIsValidating(true);
-            if (_options.resolver) {
-                const { errors } = await _executeSchema([
-                    name
-                ]);
-                _updateIsFieldValueUpdated(fieldValue);
-                if (isFieldValueUpdated) {
-                    const previousErrorLookupResult = schemaErrorLookup(_formState.errors, _fields, name);
-                    const errorLookupResult = schemaErrorLookup(errors, _fields, previousErrorLookupResult.name || name);
-                    error = errorLookupResult.error;
-                    name = errorLookupResult.name;
-                    isValid = isEmptyObject(errors);
-                }
-            } else {
-                error = (await validateField(field, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation))[name];
-                _updateIsFieldValueUpdated(fieldValue);
-                if (isFieldValueUpdated) {
-                    if (error) {
-                        isValid = false;
-                    } else if (_proxyFormState.isValid) {
-                        isValid = await executeBuiltInValidation(_fields, true);
-                    }
-                }
-            }
-            if (isFieldValueUpdated) {
-                field._f.deps && trigger(field._f.deps);
-                shouldRenderByError(name, isValid, error, fieldState);
-            }
-        }
-    };
-    const _focusInput = (ref, key)=>{
-        if (get(_formState.errors, key) && ref.focus) {
-            ref.focus();
-            return 1;
-        }
-        return;
-    };
-    const trigger = async (name, options = {})=>{
-        let isValid;
-        let validationResult;
-        const fieldNames = convertToArrayPayload(name);
-        _updateIsValidating(true);
-        if (_options.resolver) {
-            const errors = await executeSchemaAndUpdateState(isUndefined(name) ? name : fieldNames);
-            isValid = isEmptyObject(errors);
-            validationResult = name ? !fieldNames.some((name)=>get(errors, name)) : isValid;
-        } else if (name) {
-            validationResult = (await Promise.all(fieldNames.map(async (fieldName)=>{
-                const field = get(_fields, fieldName);
-                return await executeBuiltInValidation(field && field._f ? {
-                    [fieldName]: field
-                } : field);
-            }))).every(Boolean);
-            !(!validationResult && !_formState.isValid) && _updateValid();
-        } else {
-            validationResult = isValid = await executeBuiltInValidation(_fields);
-        }
-        _subjects.state.next({
-            ...!isString(name) || _proxyFormState.isValid && isValid !== _formState.isValid ? {} : {
-                name
-            },
-            ..._options.resolver || !name ? {
-                isValid
-            } : {},
-            errors: _formState.errors,
-            isValidating: false
-        });
-        options.shouldFocus && !validationResult && iterateFieldsByAction(_fields, _focusInput, name ? fieldNames : _names.mount);
-        return validationResult;
-    };
-    const getValues = (fieldNames)=>{
-        const values = {
-            ..._defaultValues,
-            ..._state.mount ? _formValues : {}
-        };
-        return isUndefined(fieldNames) ? values : isString(fieldNames) ? get(values, fieldNames) : fieldNames.map((name)=>get(values, name));
-    };
-    const getFieldState = (name, formState)=>({
-            invalid: !!get((formState || _formState).errors, name),
-            isDirty: !!get((formState || _formState).dirtyFields, name),
-            isTouched: !!get((formState || _formState).touchedFields, name),
-            error: get((formState || _formState).errors, name)
-        });
-    const clearErrors = (name)=>{
-        name && convertToArrayPayload(name).forEach((inputName)=>unset(_formState.errors, inputName));
-        _subjects.state.next({
-            errors: name ? _formState.errors : {}
-        });
-    };
-    const setError = (name, error, options)=>{
-        const ref = (get(_fields, name, {
-            _f: {}
-        })._f || {}).ref;
-        set(_formState.errors, name, {
-            ...error,
-            ref
-        });
-        _subjects.state.next({
-            name,
-            errors: _formState.errors,
-            isValid: false
-        });
-        options && options.shouldFocus && ref && ref.focus && ref.focus();
-    };
-    const watch = (name, defaultValue)=>isFunction(name) ? _subjects.values.subscribe({
-            next: (payload)=>name(_getWatch(undefined, defaultValue), payload)
-        }) : _getWatch(name, defaultValue, true);
-    const unregister = (name, options = {})=>{
-        for (const fieldName of name ? convertToArrayPayload(name) : _names.mount){
-            _names.mount.delete(fieldName);
-            _names.array.delete(fieldName);
-            if (!options.keepValue) {
-                unset(_fields, fieldName);
-                unset(_formValues, fieldName);
-            }
-            !options.keepError && unset(_formState.errors, fieldName);
-            !options.keepDirty && unset(_formState.dirtyFields, fieldName);
-            !options.keepTouched && unset(_formState.touchedFields, fieldName);
-            !_options.shouldUnregister && !options.keepDefaultValue && unset(_defaultValues, fieldName);
-        }
-        _subjects.values.next({
-            values: {
-                ..._formValues
-            }
-        });
-        _subjects.state.next({
-            ..._formState,
-            ...!options.keepDirty ? {} : {
-                isDirty: _getDirty()
-            }
-        });
-        !options.keepIsValid && _updateValid();
-    };
-    const _updateDisabledField = ({ disabled, name, field, fields, value: value1 })=>{
-        if (isBoolean$1(disabled)) {
-            const inputValue = disabled ? undefined : isUndefined(value1) ? getFieldValue(field ? field._f : get(fields, name)._f) : value1;
-            set(_formValues, name, inputValue);
-            updateTouchAndDirty(name, inputValue, false, false, true);
-        }
-    };
-    const register = (name, options = {})=>{
-        let field = get(_fields, name);
-        const disabledIsDefined = isBoolean$1(options.disabled);
-        set(_fields, name, {
-            ...field || {},
-            _f: {
-                ...field && field._f ? field._f : {
-                    ref: {
-                        name
-                    }
-                },
-                name,
-                mount: true,
-                ...options
-            }
-        });
-        _names.mount.add(name);
-        if (field) {
-            _updateDisabledField({
-                field,
-                disabled: options.disabled,
-                name,
-                value: options.value
-            });
-        } else {
-            updateValidAndValue(name, true, options.value);
-        }
-        return {
-            ...disabledIsDefined ? {
-                disabled: options.disabled
-            } : {},
-            ..._options.progressive ? {
-                required: !!options.required,
-                min: getRuleValue(options.min),
-                max: getRuleValue(options.max),
-                minLength: getRuleValue(options.minLength),
-                maxLength: getRuleValue(options.maxLength),
-                pattern: getRuleValue(options.pattern)
-            } : {},
-            name,
-            onChange,
-            onBlur: onChange,
-            ref: (ref)=>{
-                if (ref) {
-                    register(name, options);
-                    field = get(_fields, name);
-                    const fieldRef = isUndefined(ref.value) ? ref.querySelectorAll ? ref.querySelectorAll('input,select,textarea')[0] || ref : ref : ref;
-                    const radioOrCheckbox = isRadioOrCheckbox(fieldRef);
-                    const refs = field._f.refs || [];
-                    if (radioOrCheckbox ? refs.find((option)=>option === fieldRef) : fieldRef === field._f.ref) {
-                        return;
-                    }
-                    set(_fields, name, {
-                        _f: {
-                            ...field._f,
-                            ...radioOrCheckbox ? {
-                                refs: [
-                                    ...refs.filter(live),
-                                    fieldRef,
-                                    ...Array.isArray(get(_defaultValues, name)) ? [
-                                        {}
-                                    ] : []
-                                ],
-                                ref: {
-                                    type: fieldRef.type,
-                                    name
-                                }
-                            } : {
-                                ref: fieldRef
-                            }
-                        }
-                    });
-                    updateValidAndValue(name, false, undefined, fieldRef);
-                } else {
-                    field = get(_fields, name, {});
-                    if (field._f) {
-                        field._f.mount = false;
-                    }
-                    (_options.shouldUnregister || options.shouldUnregister) && !(isNameInFieldArray(_names.array, name) && _state.action) && _names.unMount.add(name);
-                }
-            }
-        };
-    };
-    const _focusError = ()=>_options.shouldFocusError && iterateFieldsByAction(_fields, _focusInput, _names.mount);
-    const _disableForm = (disabled)=>{
-        if (isBoolean$1(disabled)) {
-            _subjects.state.next({
-                disabled
-            });
-            iterateFieldsByAction(_fields, (ref, name)=>{
-                let requiredDisabledState = disabled;
-                const currentField = get(_fields, name);
-                if (currentField && isBoolean$1(currentField._f.disabled)) {
-                    requiredDisabledState || (requiredDisabledState = currentField._f.disabled);
-                }
-                ref.disabled = requiredDisabledState;
-            }, 0, false);
-        }
-    };
-    const handleSubmit = (onValid, onInvalid)=>async (e)=>{
-            let onValidError = undefined;
-            if (e) {
-                e.preventDefault && e.preventDefault();
-                e.persist && e.persist();
-            }
-            let fieldValues = cloneObject(_formValues);
-            _subjects.state.next({
-                isSubmitting: true
-            });
-            if (_options.resolver) {
-                const { errors, values } = await _executeSchema();
-                _formState.errors = errors;
-                fieldValues = values;
-            } else {
-                await executeBuiltInValidation(_fields);
-            }
-            unset(_formState.errors, 'root');
-            if (isEmptyObject(_formState.errors)) {
-                _subjects.state.next({
-                    errors: {}
-                });
-                try {
-                    await onValid(fieldValues, e);
-                } catch (error) {
-                    onValidError = error;
-                }
-            } else {
-                if (onInvalid) {
-                    await onInvalid({
-                        ..._formState.errors
-                    }, e);
-                }
-                _focusError();
-                setTimeout(_focusError);
-            }
-            _subjects.state.next({
-                isSubmitted: true,
-                isSubmitting: false,
-                isSubmitSuccessful: isEmptyObject(_formState.errors) && !onValidError,
-                submitCount: _formState.submitCount + 1,
-                errors: _formState.errors
-            });
-            if (onValidError) {
-                throw onValidError;
-            }
-        };
-    const resetField = (name, options = {})=>{
-        if (get(_fields, name)) {
-            if (isUndefined(options.defaultValue)) {
-                setValue(name, cloneObject(get(_defaultValues, name)));
-            } else {
-                setValue(name, options.defaultValue);
-                set(_defaultValues, name, cloneObject(options.defaultValue));
-            }
-            if (!options.keepTouched) {
-                unset(_formState.touchedFields, name);
-            }
-            if (!options.keepDirty) {
-                unset(_formState.dirtyFields, name);
-                _formState.isDirty = options.defaultValue ? _getDirty(name, cloneObject(get(_defaultValues, name))) : _getDirty();
-            }
-            if (!options.keepError) {
-                unset(_formState.errors, name);
-                _proxyFormState.isValid && _updateValid();
-            }
-            _subjects.state.next({
-                ..._formState
-            });
-        }
-    };
-    const _reset = (formValues, keepStateOptions = {})=>{
-        const updatedValues = formValues ? cloneObject(formValues) : _defaultValues;
-        const cloneUpdatedValues = cloneObject(updatedValues);
-        const values = formValues && !isEmptyObject(formValues) ? cloneUpdatedValues : _defaultValues;
-        if (!keepStateOptions.keepDefaultValues) {
-            _defaultValues = updatedValues;
-        }
-        if (!keepStateOptions.keepValues) {
-            if (keepStateOptions.keepDirtyValues) {
-                for (const fieldName of _names.mount){
-                    get(_formState.dirtyFields, fieldName) ? set(values, fieldName, get(_formValues, fieldName)) : setValue(fieldName, get(values, fieldName));
-                }
-            } else {
-                if (isWeb && isUndefined(formValues)) {
-                    for (const name of _names.mount){
-                        const field = get(_fields, name);
-                        if (field && field._f) {
-                            const fieldReference = Array.isArray(field._f.refs) ? field._f.refs[0] : field._f.ref;
-                            if (isHTMLElement(fieldReference)) {
-                                const form = fieldReference.closest('form');
-                                if (form) {
-                                    form.reset();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                _fields = {};
-            }
-            _formValues = props.shouldUnregister ? keepStateOptions.keepDefaultValues ? cloneObject(_defaultValues) : {} : cloneObject(values);
-            _subjects.array.next({
-                values: {
-                    ...values
-                }
-            });
-            _subjects.values.next({
-                values: {
-                    ...values
-                }
-            });
-        }
-        _names = {
-            mount: new Set(),
-            unMount: new Set(),
-            array: new Set(),
-            watch: new Set(),
-            watchAll: false,
-            focus: ''
-        };
-        !_state.mount && flushRootRender();
-        _state.mount = !_proxyFormState.isValid || !!keepStateOptions.keepIsValid || !!keepStateOptions.keepDirtyValues;
-        _state.watch = !!props.shouldUnregister;
-        _subjects.state.next({
-            submitCount: keepStateOptions.keepSubmitCount ? _formState.submitCount : 0,
-            isDirty: keepStateOptions.keepDirty ? _formState.isDirty : !!(keepStateOptions.keepDefaultValues && !deepEqual(formValues, _defaultValues)),
-            isSubmitted: keepStateOptions.keepIsSubmitted ? _formState.isSubmitted : false,
-            dirtyFields: keepStateOptions.keepDirtyValues ? keepStateOptions.keepDefaultValues && _formValues ? getDirtyFields(_defaultValues, _formValues) : _formState.dirtyFields : keepStateOptions.keepDefaultValues && formValues ? getDirtyFields(_defaultValues, formValues) : {},
-            touchedFields: keepStateOptions.keepTouched ? _formState.touchedFields : {},
-            errors: keepStateOptions.keepErrors ? _formState.errors : {},
-            isSubmitSuccessful: keepStateOptions.keepIsSubmitSuccessful ? _formState.isSubmitSuccessful : false,
-            isSubmitting: false
-        });
-    };
-    const reset = (formValues, keepStateOptions)=>_reset(isFunction(formValues) ? formValues(_formValues) : formValues, keepStateOptions);
-    const setFocus = (name, options = {})=>{
-        const field = get(_fields, name);
-        const fieldReference = field && field._f;
-        if (fieldReference) {
-            const fieldRef = fieldReference.refs ? fieldReference.refs[0] : fieldReference.ref;
-            if (fieldRef.focus) {
-                fieldRef.focus();
-                options.shouldSelect && fieldRef.select();
-            }
-        }
-    };
-    const _updateFormState = (updatedFormState)=>{
-        _formState = {
-            ..._formState,
-            ...updatedFormState
-        };
-    };
-    const _resetDefaultValues = ()=>isFunction(_options.defaultValues) && _options.defaultValues().then((values)=>{
-            reset(values, _options.resetOptions);
-            _subjects.state.next({
-                isLoading: false
-            });
-        });
-    return {
-        control: {
-            register,
-            unregister,
-            getFieldState,
-            handleSubmit,
-            setError,
-            _executeSchema,
-            _getWatch,
-            _getDirty,
-            _updateValid,
-            _removeUnmounted,
-            _updateFieldArray,
-            _updateDisabledField,
-            _getFieldArray,
-            _reset,
-            _resetDefaultValues,
-            _updateFormState,
-            _disableForm,
-            _subjects,
-            _proxyFormState,
-            _setErrors,
-            get _fields () {
-                return _fields;
-            },
-            get _formValues () {
-                return _formValues;
-            },
-            get _state () {
-                return _state;
-            },
-            set _state (value){
-                _state = value;
-            },
-            get _defaultValues () {
-                return _defaultValues;
-            },
-            get _names () {
-                return _names;
-            },
-            set _names (value){
-                _names = value;
-            },
-            get _formState () {
-                return _formState;
-            },
-            set _formState (value){
-                _formState = value;
-            },
-            get _options () {
-                return _options;
-            },
-            set _options (value){
-                _options = {
-                    ..._options,
-                    ...value
-                };
-            }
-        },
-        trigger,
-        register,
-        handleSubmit,
-        watch,
-        setValue,
-        getValues,
-        reset,
-        resetField,
-        clearErrors,
-        unregister,
-        setError,
-        setFocus,
-        getFieldState
-    };
-}
-/**
- * Custom hook to manage the entire form.
- *
- * @remarks
- * [API](https://react-hook-form.com/docs/useform) • [Demo](https://codesandbox.io/s/react-hook-form-get-started-ts-5ksmm) • [Video](https://www.youtube.com/watch?v=RkXv4AXXC_4)
- *
- * @param props - form configuration and validation parameters.
- *
- * @returns methods - individual functions to manage the form state. {@link UseFormReturn}
- *
- * @example
- * ```tsx
- * function App() {
- *   const { register, handleSubmit, watch, formState: { errors } } = useForm();
- *   const onSubmit = data => console.log(data);
- *
- *   console.log(watch("example"));
- *
- *   return (
- *     <form onSubmit={handleSubmit(onSubmit)}>
- *       <input defaultValue="test" {...register("example")} />
- *       <input {...register("exampleRequired", { required: true })} />
- *       {errors.exampleRequired && <span>This field is required</span>}
- *       <button>Submit</button>
- *     </form>
- *   );
- * }
- * ```
- */ function useForm(props = {}) {
-    const _formControl = React__default.useRef();
-    const _values = React__default.useRef();
-    const [formState, updateFormState] = React__default.useState({
-        isDirty: false,
-        isValidating: false,
-        isLoading: isFunction(props.defaultValues),
-        isSubmitted: false,
-        isSubmitting: false,
-        isSubmitSuccessful: false,
-        isValid: false,
-        submitCount: 0,
-        dirtyFields: {},
-        touchedFields: {},
-        errors: props.errors || {},
-        disabled: props.disabled || false,
-        defaultValues: isFunction(props.defaultValues) ? undefined : props.defaultValues
-    });
-    if (!_formControl.current) {
-        _formControl.current = {
-            ...createFormControl(props, ()=>updateFormState((formState)=>({
-                        ...formState
-                    }))),
-            formState
-        };
-    }
-    const control = _formControl.current.control;
-    control._options = props;
-    useSubscribe({
-        subject: control._subjects.state,
-        next: (value1)=>{
-            if (shouldRenderFormState(value1, control._proxyFormState, control._updateFormState, true)) {
-                updateFormState({
-                    ...control._formState
-                });
-            }
-        }
-    });
-    React__default.useEffect(()=>control._disableForm(props.disabled), [
-        control,
-        props.disabled
-    ]);
-    React__default.useEffect(()=>{
-        if (control._proxyFormState.isDirty) {
-            const isDirty = control._getDirty();
-            if (isDirty !== formState.isDirty) {
-                control._subjects.state.next({
-                    isDirty
-                });
-            }
-        }
-    }, [
-        control,
-        formState.isDirty
-    ]);
-    React__default.useEffect(()=>{
-        if (props.values && !deepEqual(props.values, _values.current)) {
-            control._reset(props.values, control._options.resetOptions);
-            _values.current = props.values;
-            updateFormState((state)=>({
-                    ...state
-                }));
-        } else {
-            control._resetDefaultValues();
-        }
-    }, [
-        props.values,
-        control
-    ]);
-    React__default.useEffect(()=>{
-        if (props.errors) {
-            control._setErrors(props.errors);
-        }
-    }, [
-        props.errors,
-        control
-    ]);
-    React__default.useEffect(()=>{
-        if (!control._state.mount) {
-            control._updateValid();
-            control._state.mount = true;
-        }
-        if (control._state.watch) {
-            control._state.watch = false;
-            control._subjects.state.next({
-                ...control._formState
-            });
-        }
-        control._removeUnmounted();
-    });
-    React__default.useEffect(()=>{
-        props.shouldUnregister && control._subjects.values.next({
-            values: control._getWatch()
-        });
-    }, [
-        props.shouldUnregister,
-        control
-    ]);
-    _formControl.current.formState = getProxyFormState(formState, control);
-    return _formControl.current;
-}
 
 function _typeof(o) {
     "@babel/helpers - typeof";
@@ -1747,7 +123,7 @@ var ActionTypes = {
 /**
  * @param {any} obj The object to inspect.
  * @returns {boolean} True if the argument appears to be a plain object.
- */ function isPlainObject$1(obj) {
+ */ function isPlainObject$2(obj) {
     if (typeof obj !== 'object' || obj === null) return false;
     var proto = obj;
     while(Object.getPrototypeOf(proto) !== null){
@@ -1826,7 +202,7 @@ function kindOf(val) {
  *
  * `import { legacy_createStore as createStore} from 'redux'`
  *
- */ function createStore$1(reducer, preloadedState, enhancer) {
+ */ function createStore$2(reducer, preloadedState, enhancer) {
     var _ref2;
     if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
         throw new Error(process.env.NODE_ENV === "production" ? formatProdErrorMessage(0) : 'It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function. See https://redux.js.org/tutorials/fundamentals/part-4-store#creating-a-store-with-enhancers for an example.');
@@ -1839,7 +215,7 @@ function kindOf(val) {
         if (typeof enhancer !== 'function') {
             throw new Error(process.env.NODE_ENV === "production" ? formatProdErrorMessage(1) : "Expected the enhancer to be a function. Instead, received: '" + kindOf(enhancer) + "'");
         }
-        return enhancer(createStore$1)(reducer, preloadedState);
+        return enhancer(createStore$2)(reducer, preloadedState);
     }
     if (typeof reducer !== 'function') {
         throw new Error(process.env.NODE_ENV === "production" ? formatProdErrorMessage(2) : "Expected the root reducer to be a function. Instead, received: '" + kindOf(reducer) + "'");
@@ -1941,7 +317,7 @@ function kindOf(val) {
    * Note that, if you use a custom middleware, it may wrap `dispatch()` to
    * return something else (for example, a Promise you can await).
    */ function dispatch(action) {
-        if (!isPlainObject$1(action)) {
+        if (!isPlainObject$2(action)) {
             throw new Error(process.env.NODE_ENV === "production" ? formatProdErrorMessage(7) : "Actions must be plain objects. Instead, the actual type was: '" + kindOf(action) + "'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions. See https://redux.js.org/tutorials/fundamentals/part-4-store#middleware and https://redux.js.org/tutorials/fundamentals/part-6-async-logic#using-the-redux-thunk-middleware for examples.");
         }
         if (typeof action.type === 'undefined') {
@@ -2419,13 +795,22 @@ function requireUseSyncExternalStoreShim_development () {
 	return useSyncExternalStoreShim_development;
 }
 
-if (process.env.NODE_ENV === 'production') {
-    shim.exports = requireUseSyncExternalStoreShim_production_min();
-} else {
-    shim.exports = requireUseSyncExternalStoreShim_development();
+var hasRequiredShim;
+
+function requireShim () {
+	if (hasRequiredShim) return shim.exports;
+	hasRequiredShim = 1;
+	if (process.env.NODE_ENV === 'production') {
+	    shim.exports = requireUseSyncExternalStoreShim_production_min();
+	} else {
+	    shim.exports = requireUseSyncExternalStoreShim_development();
+	}
+	return shim.exports;
 }
 
-var shimExports = shim.exports;
+var shimExports = requireShim();
+
+var withSelector = {exports: {}};
 
 var withSelector_production_min = {};
 
@@ -2444,7 +829,7 @@ var hasRequiredWithSelector_production_min;
 function requireWithSelector_production_min () {
 	if (hasRequiredWithSelector_production_min) return withSelector_production_min;
 	hasRequiredWithSelector_production_min = 1;
-	var h = React__default, n = shimExports;
+	var h = React__default, n = requireShim();
 	function p(a, b) {
 	    return a === b && (0 !== a || 1 / a === 1 / b) || a !== a && b !== b;
 	}
@@ -2528,7 +913,7 @@ function requireWithSelector_development () {
 	            __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
 	        }
 	        var React = React__default;
-	        var shim = shimExports;
+	        var shim = requireShim();
 	        /**
 	 * inlined Object.is polyfill to avoid requiring consumers ship their own
 	 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
@@ -2643,10 +1028,13 @@ function requireWithSelector_development () {
 }
 
 if (process.env.NODE_ENV === 'production') {
-    requireWithSelector_production_min();
+    withSelector.exports = requireWithSelector_production_min();
 } else {
-    requireWithSelector_development();
+    withSelector.exports = requireWithSelector_development();
 }
+
+var withSelectorExports = withSelector.exports;
+var useSyncExternalStoreExports = /*@__PURE__*/getDefaultExportFromCjs(withSelectorExports);
 
 // Default to a dummy "batch" implementation that just runs the callback
 function defaultNoopBatch(callback) {
@@ -3517,7 +1905,7 @@ function bindActionCreators(actionCreators, dispatch) {
 /**
  * @param {any} obj The object to inspect.
  * @returns {boolean} True if the argument appears to be a plain object.
- */ function isPlainObject(obj) {
+ */ function isPlainObject$1(obj) {
     if (typeof obj !== 'object' || obj === null) return false;
     let proto = Object.getPrototypeOf(obj);
     if (proto === null) return true;
@@ -3529,7 +1917,7 @@ function bindActionCreators(actionCreators, dispatch) {
 }
 
 function verifyPlainObject(value, displayName, methodName) {
-    if (!isPlainObject(value)) {
+    if (!isPlainObject$1(value)) {
         warning$1(`${methodName}() in ${displayName} must return a plain object. Instead received ${value}.`);
     }
 }
@@ -7363,7 +5751,7 @@ var pendingDrop$1 = pendingDrop;
 const composeEnhancers = process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
     name: '@hello-pangea/dnd'
 }) : compose;
-var createStore = ({ dimensionMarshal, focusMarshal, styleMarshal, getResponders, announce, autoScroller })=>createStore$1(reducer, composeEnhancers(applyMiddleware(style(styleMarshal), dimensionMarshalStopper(dimensionMarshal), lift(dimensionMarshal), drop, dropAnimationFinish, dropAnimationFlushOnScroll, pendingDrop$1, autoScroll(autoScroller), scrollListener$1, focus(focusMarshal), responders(getResponders, announce))));
+var createStore$1 = ({ dimensionMarshal, focusMarshal, styleMarshal, getResponders, announce, autoScroller })=>createStore$2(reducer, composeEnhancers(applyMiddleware(style(styleMarshal), dimensionMarshalStopper(dimensionMarshal), lift(dimensionMarshal), drop, dropAnimationFinish, dropAnimationFlushOnScroll, pendingDrop$1, autoScroll(autoScroller), scrollListener$1, focus(focusMarshal), responders(getResponders, announce))));
 const clean$1 = ()=>({
         additions: {},
         removals: {},
@@ -8802,7 +7190,7 @@ function usePrevious(current) {
     });
     return ref;
 }
-function create() {
+function create$1() {
     let lock = null;
     function isClaimed() {
         return Boolean(lock);
@@ -9889,7 +8277,7 @@ function useSensorMarshal({ contextId, store, registry, customSensors, enableDef
         ...enableDefaultSensors ? defaultSensors : [],
         ...customSensors || []
     ];
-    const lockAPI = useState(()=>create())[0];
+    const lockAPI = useState(()=>create$1())[0];
     const tryAbandonLock = useCallback(function tryAbandonLock(previous, current) {
         if (isDragging(previous) && !isDragging(current)) {
             lockAPI.tryAbandon();
@@ -10068,7 +8456,7 @@ function App(props) {
         getAutoScrollerOptions
     ]);
     const focusMarshal = useFocusMarshal(contextId);
-    const store = useMemo(()=>createStore({
+    const store = useMemo(()=>createStore$1({
             announce,
             autoScroller,
             dimensionMarshal,
@@ -11171,7 +9559,7 @@ const Placeholder = (props)=>{
     });
 };
 var Placeholder$1 = React__default.memo(Placeholder);
-function isBoolean(value) {
+function isBoolean$1(value) {
     return typeof value === 'boolean';
 }
 function runChecks(args, checks) {
@@ -11183,9 +9571,9 @@ const shared = [
         !(typeof props.droppableId === 'string') ? process.env.NODE_ENV !== "production" ? invariant(false, `A Droppable requires a [string] droppableId. Provided: [${typeof props.droppableId}]`) : invariant(false) : void 0;
     },
     function boolean({ props }) {
-        !isBoolean(props.isDropDisabled) ? process.env.NODE_ENV !== "production" ? invariant(false, 'isDropDisabled must be a boolean') : invariant(false) : void 0;
-        !isBoolean(props.isCombineEnabled) ? process.env.NODE_ENV !== "production" ? invariant(false, 'isCombineEnabled must be a boolean') : invariant(false) : void 0;
-        !isBoolean(props.ignoreContainerClipping) ? process.env.NODE_ENV !== "production" ? invariant(false, 'ignoreContainerClipping must be a boolean') : invariant(false) : void 0;
+        !isBoolean$1(props.isDropDisabled) ? process.env.NODE_ENV !== "production" ? invariant(false, 'isDropDisabled must be a boolean') : invariant(false) : void 0;
+        !isBoolean$1(props.isCombineEnabled) ? process.env.NODE_ENV !== "production" ? invariant(false, 'isCombineEnabled must be a boolean') : invariant(false) : void 0;
+        !isBoolean$1(props.ignoreContainerClipping) ? process.env.NODE_ENV !== "production" ? invariant(false, 'ignoreContainerClipping must be a boolean') : invariant(false) : void 0;
     },
     function ref({ getDroppableRef }) {
         checkIsValidInnerRef(getDroppableRef());
@@ -11591,11 +9979,109 @@ const DragDropContextProvider = ({ children, onDragEnd })=>{
     }, children));
 };
 
+const createStoreImpl = (createState)=>{
+    let state;
+    const listeners = /* @__PURE__ */ new Set();
+    const setState = (partial, replace)=>{
+        const nextState = typeof partial === "function" ? partial(state) : partial;
+        if (!Object.is(nextState, state)) {
+            const previousState = state;
+            state = (replace != null ? replace : typeof nextState !== "object" || nextState === null) ? nextState : Object.assign({}, state, nextState);
+            listeners.forEach((listener)=>listener(state, previousState));
+        }
+    };
+    const getState = ()=>state;
+    const getInitialState = ()=>initialState;
+    const subscribe = (listener)=>{
+        listeners.add(listener);
+        return ()=>listeners.delete(listener);
+    };
+    const destroy = ()=>{
+        if ((import.meta.env ? import.meta.env.MODE : void 0) !== "production") {
+            console.warn("[DEPRECATED] The `destroy` method will be unsupported in a future version. Instead use unsubscribe function returned by subscribe. Everything will be garbage-collected if store is garbage-collected.");
+        }
+        listeners.clear();
+    };
+    const api = {
+        setState,
+        getState,
+        getInitialState,
+        subscribe,
+        destroy
+    };
+    const initialState = state = createState(setState, getState, api);
+    return api;
+};
+const createStore = (createState)=>createState ? createStoreImpl(createState) : createStoreImpl;
+
+const { useDebugValue } = React__default;
+const { useSyncExternalStoreWithSelector } = useSyncExternalStoreExports;
+let didWarnAboutEqualityFn = false;
+const identity = (arg)=>arg;
+function useStore$1(api, selector = identity, equalityFn) {
+    if ((import.meta.env ? import.meta.env.MODE : void 0) !== "production" && equalityFn && !didWarnAboutEqualityFn) {
+        console.warn("[DEPRECATED] Use `createWithEqualityFn` instead of `create` or use `useStoreWithEqualityFn` instead of `useStore`. They can be imported from 'zustand/traditional'. https://github.com/pmndrs/zustand/discussions/1937");
+        didWarnAboutEqualityFn = true;
+    }
+    const slice = useSyncExternalStoreWithSelector(api.subscribe, api.getState, api.getServerState || api.getInitialState, selector, equalityFn);
+    useDebugValue(slice);
+    return slice;
+}
+const createImpl = (createState)=>{
+    if ((import.meta.env ? import.meta.env.MODE : void 0) !== "production" && typeof createState !== "function") {
+        console.warn("[DEPRECATED] Passing a vanilla store will be unsupported in a future version. Instead use `import { useStore } from 'zustand'`.");
+    }
+    const api = typeof createState === "function" ? createStore(createState) : createState;
+    const useBoundStore = (selector, equalityFn)=>useStore$1(api, selector, equalityFn);
+    Object.assign(useBoundStore, api);
+    return useBoundStore;
+};
+const create = (createState)=>createState ? createImpl(createState) : createImpl;
+
+const useStore = create((set)=>({
+        bears: 0,
+        increasePopulation: ()=>set((state)=>({
+                    bears: state.bears + 1
+                })),
+        removeAllBears: ()=>set({
+                bears: 0
+            }),
+        // Real world - at, least on try
+        form: [],
+        setForm: (newForm)=>set({
+                form: newForm
+            })
+    }));
+
+function findNodeById(obj, id) {
+    // Verifica si el objeto actual tiene el id buscado
+    if (obj.id === id) {
+        return obj;
+    }
+    // Verifica si el objeto actual tiene la propiedad "props" y es un array
+    if (obj.props && Array.isArray(obj.props.children)) {
+        // Itera sobre los hijos y realiza una búsqueda recursiva
+        for (let child of obj.props.children){
+            // Llama recursivamente a la función para cada hijo
+            const found = findNodeById(child, id);
+            // Si se encuentra el nodo, devuelve el resultado
+            if (found) {
+                return found;
+            }
+        }
+    }
+    // Si no se encuentra en el objeto actual ni en sus hijos, devuelve null
+    return null;
+}
+
 const FormContext = createContext();
 const FormContextProvider = ({ children, onDragEnd })=>{
-    const [item, setItem] = useState('Sin item ');
+    const [item, setItem] = useState(null);
+    const formData = useStore((state)=>state.form);
     const selectItem = (item)=>{
-        setItem(item);
+        console.log('current selected item', item, formData);
+        console.log('node founded', findNodeById(formData[0], item === null || item === void 0 ? void 0 : item.item));
+        setItem(findNodeById(formData[0], item.item));
     };
     const selectedItem = ()=>{
         return item;
@@ -11612,39 +10098,31 @@ const FormContextProvider = ({ children, onDragEnd })=>{
 };
 
 const useItem = (props)=>{
+    var _a;
     const ctx = useContext(FormContext);
     if (!ctx) {
         throw new Error('Cannot find Form context provider');
     }
     const handleClick = (event)=>{
         event.stopPropagation();
-        console.log('clicked', props.name);
-        ctx.selectItem(props.name);
+        if (props.item) {
+            console.log('clicked', props.item);
+            ctx.selectItem(props);
+        }
     };
     return {
         handleClick,
         item: ctx.selectedItem(),
-        baseStyles: `${ctx.selectedItem() === props.name ? 'border border-solid border-blue-500 my-2' : ''}`
+        baseStyles: `${((_a = ctx.selectedItem()) === null || _a === void 0 ? void 0 : _a.id) === props.item ? 'border border-solid border-blue-500 my-2' : ''}`
     };
 };
 
-const Title = (props)=>{
-    const { handleClick, baseStyles } = useItem({
-        name: 'title'
-    });
-    console.log('title has been rendered');
-    return React__default.createElement("p", {
-        onClick: handleClick,
-        className: `${baseStyles} font-bold text-xl py-4 flex flex-row items-center `
-    }, props.props.label);
-};
-var Title$1 = React__default.memo(Title);
-
 const Card = (props)=>{
     const { handleClick, baseStyles } = useItem({
-        name: 'card'
+        item: props.id,
+        type: props.type
     });
-    console.log('card has been rendered');
+    console.log('card has been rendered', props);
     return React__default.createElement("div", {
         onClick: handleClick,
         className: `
@@ -11655,6 +10133,1630 @@ const Card = (props)=>{
     }, props.children));
 };
 var Card$1 = React__default.memo(Card);
+
+var isCheckBoxInput = (element)=>element.type === 'checkbox';
+var isDateObject = (value1)=>value1 instanceof Date;
+var isNullOrUndefined = (value1)=>value1 == null;
+const isObjectType = (value1)=>typeof value1 === 'object';
+var isObject = (value1)=>!isNullOrUndefined(value1) && !Array.isArray(value1) && isObjectType(value1) && !isDateObject(value1);
+var getEventValue = (event)=>isObject(event) && event.target ? isCheckBoxInput(event.target) ? event.target.checked : event.target.value : event;
+var getNodeParentName = (name)=>name.substring(0, name.search(/\.\d+(\.|$)/)) || name;
+var isNameInFieldArray = (names, name)=>names.has(getNodeParentName(name));
+var isPlainObject = (tempObject)=>{
+    const prototypeCopy = tempObject.constructor && tempObject.constructor.prototype;
+    return isObject(prototypeCopy) && prototypeCopy.hasOwnProperty('isPrototypeOf');
+};
+var isWeb = typeof window !== 'undefined' && typeof window.HTMLElement !== 'undefined' && typeof document !== 'undefined';
+function cloneObject(data) {
+    let copy;
+    const isArray = Array.isArray(data);
+    if (data instanceof Date) {
+        copy = new Date(data);
+    } else if (data instanceof Set) {
+        copy = new Set(data);
+    } else if (!(isWeb && (data instanceof Blob || data instanceof FileList)) && (isArray || isObject(data))) {
+        copy = isArray ? [] : {};
+        if (!isArray && !isPlainObject(data)) {
+            copy = data;
+        } else {
+            for(const key in data){
+                if (data.hasOwnProperty(key)) {
+                    copy[key] = cloneObject(data[key]);
+                }
+            }
+        }
+    } else {
+        return data;
+    }
+    return copy;
+}
+var compact = (value1)=>Array.isArray(value1) ? value1.filter(Boolean) : [];
+var isUndefined = (val)=>val === undefined;
+var get = (object, path, defaultValue)=>{
+    if (!path || !isObject(object)) {
+        return defaultValue;
+    }
+    const result = compact(path.split(/[,[\].]+?/)).reduce((result, key)=>isNullOrUndefined(result) ? result : result[key], object);
+    return isUndefined(result) || result === object ? isUndefined(object[path]) ? defaultValue : object[path] : result;
+};
+var isBoolean = (value1)=>typeof value1 === 'boolean';
+const EVENTS = {
+    BLUR: 'blur',
+    FOCUS_OUT: 'focusout',
+    CHANGE: 'change'
+};
+const VALIDATION_MODE = {
+    onBlur: 'onBlur',
+    onChange: 'onChange',
+    onSubmit: 'onSubmit',
+    onTouched: 'onTouched',
+    all: 'all'
+};
+const INPUT_VALIDATION_RULES = {
+    max: 'max',
+    min: 'min',
+    maxLength: 'maxLength',
+    minLength: 'minLength',
+    pattern: 'pattern',
+    required: 'required',
+    validate: 'validate'
+};
+const HookFormContext = React__default.createContext(null);
+/**
+ * This custom hook allows you to access the form context. useFormContext is intended to be used in deeply nested structures, where it would become inconvenient to pass the context as a prop. To be used with {@link FormProvider}.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
+ *
+ * @returns return all useForm methods
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const methods = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   return (
+ *     <FormProvider {...methods} >
+ *       <form onSubmit={methods.handleSubmit(onSubmit)}>
+ *         <NestedInput />
+ *         <input type="submit" />
+ *       </form>
+ *     </FormProvider>
+ *   );
+ * }
+ *
+ *  function NestedInput() {
+ *   const { register } = useFormContext(); // retrieve all hook methods
+ *   return <input {...register("test")} />;
+ * }
+ * ```
+ */ const useFormContext = ()=>React__default.useContext(HookFormContext);
+/**
+ * A provider component that propagates the `useForm` methods to all children components via [React Context](https://reactjs.org/docs/context.html) API. To be used with {@link useFormContext}.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useformcontext) • [Demo](https://codesandbox.io/s/react-hook-form-v7-form-context-ytudi)
+ *
+ * @param props - all useForm methods
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const methods = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   return (
+ *     <FormProvider {...methods} >
+ *       <form onSubmit={methods.handleSubmit(onSubmit)}>
+ *         <NestedInput />
+ *         <input type="submit" />
+ *       </form>
+ *     </FormProvider>
+ *   );
+ * }
+ *
+ *  function NestedInput() {
+ *   const { register } = useFormContext(); // retrieve all hook methods
+ *   return <input {...register("test")} />;
+ * }
+ * ```
+ */ const FormProvider = (props)=>{
+    const { children, ...data } = props;
+    return React__default.createElement(HookFormContext.Provider, {
+        value: data
+    }, children);
+};
+var getProxyFormState = (formState, control, localProxyFormState, isRoot = true)=>{
+    const result = {
+        defaultValues: control._defaultValues
+    };
+    for(const key in formState){
+        Object.defineProperty(result, key, {
+            get: ()=>{
+                const _key = key;
+                if (control._proxyFormState[_key] !== VALIDATION_MODE.all) {
+                    control._proxyFormState[_key] = !isRoot || VALIDATION_MODE.all;
+                }
+                localProxyFormState && (localProxyFormState[_key] = true);
+                return formState[_key];
+            }
+        });
+    }
+    return result;
+};
+var isEmptyObject = (value1)=>isObject(value1) && !Object.keys(value1).length;
+var shouldRenderFormState = (formStateData, _proxyFormState, updateFormState, isRoot)=>{
+    updateFormState(formStateData);
+    const { name, ...formState } = formStateData;
+    return isEmptyObject(formState) || Object.keys(formState).length >= Object.keys(_proxyFormState).length || Object.keys(formState).find((key)=>_proxyFormState[key] === (!isRoot || VALIDATION_MODE.all));
+};
+var convertToArrayPayload = (value1)=>Array.isArray(value1) ? value1 : [
+        value1
+    ];
+function useSubscribe(props) {
+    const _props = React__default.useRef(props);
+    _props.current = props;
+    React__default.useEffect(()=>{
+        const subscription = !props.disabled && _props.current.subject && _props.current.subject.subscribe({
+            next: _props.current.next
+        });
+        return ()=>{
+            subscription && subscription.unsubscribe();
+        };
+    }, [
+        props.disabled
+    ]);
+}
+var isString = (value1)=>typeof value1 === 'string';
+var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue)=>{
+    if (isString(names)) {
+        isGlobal && _names.watch.add(names);
+        return get(formValues, names, defaultValue);
+    }
+    if (Array.isArray(names)) {
+        return names.map((fieldName)=>(isGlobal && _names.watch.add(fieldName), get(formValues, fieldName)));
+    }
+    isGlobal && (_names.watchAll = true);
+    return formValues;
+};
+var isKey = (value1)=>/^\w*$/.test(value1);
+var stringToPath = (input)=>compact(input.replace(/["|']|\]/g, '').split(/\.|\[/));
+var set = (object, path, value1)=>{
+    let index = -1;
+    const tempPath = isKey(path) ? [
+        path
+    ] : stringToPath(path);
+    const length = tempPath.length;
+    const lastIndex = length - 1;
+    while(++index < length){
+        const key = tempPath[index];
+        let newValue = value1;
+        if (index !== lastIndex) {
+            const objValue = object[key];
+            newValue = isObject(objValue) || Array.isArray(objValue) ? objValue : !isNaN(+tempPath[index + 1]) ? [] : {};
+        }
+        object[key] = newValue;
+        object = object[key];
+    }
+    return object;
+};
+var appendErrors = (name, validateAllFieldCriteria, errors, type, message)=>validateAllFieldCriteria ? {
+        ...errors[name],
+        types: {
+            ...errors[name] && errors[name].types ? errors[name].types : {},
+            [type]: message || true
+        }
+    } : {};
+var getValidationModes = (mode)=>({
+        isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
+        isOnBlur: mode === VALIDATION_MODE.onBlur,
+        isOnChange: mode === VALIDATION_MODE.onChange,
+        isOnAll: mode === VALIDATION_MODE.all,
+        isOnTouch: mode === VALIDATION_MODE.onTouched
+    });
+var isWatched = (name, _names, isBlurEvent)=>!isBlurEvent && (_names.watchAll || _names.watch.has(name) || [
+        ..._names.watch
+    ].some((watchName)=>name.startsWith(watchName) && /^\.\w+/.test(name.slice(watchName.length))));
+const iterateFieldsByAction = (fields, action, fieldsNames, abortEarly)=>{
+    for (const key of fieldsNames || Object.keys(fields)){
+        const field = get(fields, key);
+        if (field) {
+            const { _f, ...currentField } = field;
+            if (_f) {
+                if (_f.refs && _f.refs[0] && action(_f.refs[0], key) && !abortEarly) {
+                    break;
+                } else if (_f.ref && action(_f.ref, _f.name) && !abortEarly) {
+                    break;
+                } else {
+                    iterateFieldsByAction(currentField, action);
+                }
+            } else if (isObject(currentField)) {
+                iterateFieldsByAction(currentField, action);
+            }
+        }
+    }
+};
+var updateFieldArrayRootError = (errors, error, name)=>{
+    const fieldArrayErrors = compact(get(errors, name));
+    set(fieldArrayErrors, 'root', error[name]);
+    set(errors, name, fieldArrayErrors);
+    return errors;
+};
+var isFileInput = (element)=>element.type === 'file';
+var isFunction = (value1)=>typeof value1 === 'function';
+var isHTMLElement = (value1)=>{
+    if (!isWeb) {
+        return false;
+    }
+    const owner = value1 ? value1.ownerDocument : 0;
+    return value1 instanceof (owner && owner.defaultView ? owner.defaultView.HTMLElement : HTMLElement);
+};
+var isMessage = (value1)=>isString(value1);
+var isRadioInput = (element)=>element.type === 'radio';
+var isRegex = (value1)=>value1 instanceof RegExp;
+const defaultResult = {
+    value: false,
+    isValid: false
+};
+const validResult = {
+    value: true,
+    isValid: true
+};
+var getCheckboxValue = (options)=>{
+    if (Array.isArray(options)) {
+        if (options.length > 1) {
+            const values = options.filter((option)=>option && option.checked && !option.disabled).map((option)=>option.value);
+            return {
+                value: values,
+                isValid: !!values.length
+            };
+        }
+        return options[0].checked && !options[0].disabled ? options[0].attributes && !isUndefined(options[0].attributes.value) ? isUndefined(options[0].value) || options[0].value === '' ? validResult : {
+            value: options[0].value,
+            isValid: true
+        } : validResult : defaultResult;
+    }
+    return defaultResult;
+};
+const defaultReturn = {
+    isValid: false,
+    value: null
+};
+var getRadioValue = (options)=>Array.isArray(options) ? options.reduce((previous, option)=>option && option.checked && !option.disabled ? {
+            isValid: true,
+            value: option.value
+        } : previous, defaultReturn) : defaultReturn;
+function getValidateError(result, ref, type = 'validate') {
+    if (isMessage(result) || Array.isArray(result) && result.every(isMessage) || isBoolean(result) && !result) {
+        return {
+            type,
+            message: isMessage(result) ? result : '',
+            ref
+        };
+    }
+}
+var getValueAndMessage = (validationData)=>isObject(validationData) && !isRegex(validationData) ? validationData : {
+        value: validationData,
+        message: ''
+    };
+var validateField = async (field, formValues, validateAllFieldCriteria, shouldUseNativeValidation, isFieldArray)=>{
+    const { ref, refs, required, maxLength, minLength, min, max, pattern, validate, name, valueAsNumber, mount, disabled } = field._f;
+    const inputValue = get(formValues, name);
+    if (!mount || disabled) {
+        return {};
+    }
+    const inputRef = refs ? refs[0] : ref;
+    const setCustomValidity = (message)=>{
+        if (shouldUseNativeValidation && inputRef.reportValidity) {
+            inputRef.setCustomValidity(isBoolean(message) ? '' : message || '');
+            inputRef.reportValidity();
+        }
+    };
+    const error = {};
+    const isRadio = isRadioInput(ref);
+    const isCheckBox = isCheckBoxInput(ref);
+    const isRadioOrCheckbox = isRadio || isCheckBox;
+    const isEmpty = (valueAsNumber || isFileInput(ref)) && isUndefined(ref.value) && isUndefined(inputValue) || isHTMLElement(ref) && ref.value === '' || inputValue === '' || Array.isArray(inputValue) && !inputValue.length;
+    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
+    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength)=>{
+        const message = exceedMax ? maxLengthMessage : minLengthMessage;
+        error[name] = {
+            type: exceedMax ? maxType : minType,
+            message,
+            ref,
+            ...appendErrorsCurry(exceedMax ? maxType : minType, message)
+        };
+    };
+    if (isFieldArray ? !Array.isArray(inputValue) || !inputValue.length : required && (!isRadioOrCheckbox && (isEmpty || isNullOrUndefined(inputValue)) || isBoolean(inputValue) && !inputValue || isCheckBox && !getCheckboxValue(refs).isValid || isRadio && !getRadioValue(refs).isValid)) {
+        const { value: value1, message } = isMessage(required) ? {
+            value: !!required,
+            message: required
+        } : getValueAndMessage(required);
+        if (value1) {
+            error[name] = {
+                type: INPUT_VALIDATION_RULES.required,
+                message,
+                ref: inputRef,
+                ...appendErrorsCurry(INPUT_VALIDATION_RULES.required, message)
+            };
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(message);
+                return error;
+            }
+        }
+    }
+    if (!isEmpty && (!isNullOrUndefined(min) || !isNullOrUndefined(max))) {
+        let exceedMax;
+        let exceedMin;
+        const maxOutput = getValueAndMessage(max);
+        const minOutput = getValueAndMessage(min);
+        if (!isNullOrUndefined(inputValue) && !isNaN(inputValue)) {
+            const valueNumber = ref.valueAsNumber || (inputValue ? +inputValue : inputValue);
+            if (!isNullOrUndefined(maxOutput.value)) {
+                exceedMax = valueNumber > maxOutput.value;
+            }
+            if (!isNullOrUndefined(minOutput.value)) {
+                exceedMin = valueNumber < minOutput.value;
+            }
+        } else {
+            const valueDate = ref.valueAsDate || new Date(inputValue);
+            const convertTimeToDate = (time)=>new Date(new Date().toDateString() + ' ' + time);
+            const isTime = ref.type == 'time';
+            const isWeek = ref.type == 'week';
+            if (isString(maxOutput.value) && inputValue) {
+                exceedMax = isTime ? convertTimeToDate(inputValue) > convertTimeToDate(maxOutput.value) : isWeek ? inputValue > maxOutput.value : valueDate > new Date(maxOutput.value);
+            }
+            if (isString(minOutput.value) && inputValue) {
+                exceedMin = isTime ? convertTimeToDate(inputValue) < convertTimeToDate(minOutput.value) : isWeek ? inputValue < minOutput.value : valueDate < new Date(minOutput.value);
+            }
+        }
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(error[name].message);
+                return error;
+            }
+        }
+    }
+    if ((maxLength || minLength) && !isEmpty && (isString(inputValue) || isFieldArray && Array.isArray(inputValue))) {
+        const maxLengthOutput = getValueAndMessage(maxLength);
+        const minLengthOutput = getValueAndMessage(minLength);
+        const exceedMax = !isNullOrUndefined(maxLengthOutput.value) && inputValue.length > +maxLengthOutput.value;
+        const exceedMin = !isNullOrUndefined(minLengthOutput.value) && inputValue.length < +minLengthOutput.value;
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(error[name].message);
+                return error;
+            }
+        }
+    }
+    if (pattern && !isEmpty && isString(inputValue)) {
+        const { value: patternValue, message } = getValueAndMessage(pattern);
+        if (isRegex(patternValue) && !inputValue.match(patternValue)) {
+            error[name] = {
+                type: INPUT_VALIDATION_RULES.pattern,
+                message,
+                ref,
+                ...appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message)
+            };
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(message);
+                return error;
+            }
+        }
+    }
+    if (validate) {
+        if (isFunction(validate)) {
+            const result = await validate(inputValue, formValues);
+            const validateError = getValidateError(result, inputRef);
+            if (validateError) {
+                error[name] = {
+                    ...validateError,
+                    ...appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message)
+                };
+                if (!validateAllFieldCriteria) {
+                    setCustomValidity(validateError.message);
+                    return error;
+                }
+            }
+        } else if (isObject(validate)) {
+            let validationResult = {};
+            for(const key in validate){
+                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
+                    break;
+                }
+                const validateError = getValidateError(await validate[key](inputValue, formValues), inputRef, key);
+                if (validateError) {
+                    validationResult = {
+                        ...validateError,
+                        ...appendErrorsCurry(key, validateError.message)
+                    };
+                    setCustomValidity(validateError.message);
+                    if (validateAllFieldCriteria) {
+                        error[name] = validationResult;
+                    }
+                }
+            }
+            if (!isEmptyObject(validationResult)) {
+                error[name] = {
+                    ref: inputRef,
+                    ...validationResult
+                };
+                if (!validateAllFieldCriteria) {
+                    return error;
+                }
+            }
+        }
+    }
+    setCustomValidity(true);
+    return error;
+};
+function baseGet(object, updatePath) {
+    const length = updatePath.slice(0, -1).length;
+    let index = 0;
+    while(index < length){
+        object = isUndefined(object) ? index++ : object[updatePath[index++]];
+    }
+    return object;
+}
+function isEmptyArray(obj) {
+    for(const key in obj){
+        if (obj.hasOwnProperty(key) && !isUndefined(obj[key])) {
+            return false;
+        }
+    }
+    return true;
+}
+function unset(object, path) {
+    const paths = Array.isArray(path) ? path : isKey(path) ? [
+        path
+    ] : stringToPath(path);
+    const childObject = paths.length === 1 ? object : baseGet(object, paths);
+    const index = paths.length - 1;
+    const key = paths[index];
+    if (childObject) {
+        delete childObject[key];
+    }
+    if (index !== 0 && (isObject(childObject) && isEmptyObject(childObject) || Array.isArray(childObject) && isEmptyArray(childObject))) {
+        unset(object, paths.slice(0, -1));
+    }
+    return object;
+}
+var createSubject = ()=>{
+    let _observers = [];
+    const next = (value1)=>{
+        for (const observer of _observers){
+            observer.next && observer.next(value1);
+        }
+    };
+    const subscribe = (observer)=>{
+        _observers.push(observer);
+        return {
+            unsubscribe: ()=>{
+                _observers = _observers.filter((o)=>o !== observer);
+            }
+        };
+    };
+    const unsubscribe = ()=>{
+        _observers = [];
+    };
+    return {
+        get observers () {
+            return _observers;
+        },
+        next,
+        subscribe,
+        unsubscribe
+    };
+};
+var isPrimitive = (value1)=>isNullOrUndefined(value1) || !isObjectType(value1);
+function deepEqual(object1, object2) {
+    if (isPrimitive(object1) || isPrimitive(object2)) {
+        return object1 === object2;
+    }
+    if (isDateObject(object1) && isDateObject(object2)) {
+        return object1.getTime() === object2.getTime();
+    }
+    const keys1 = Object.keys(object1);
+    const keys2 = Object.keys(object2);
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+    for (const key of keys1){
+        const val1 = object1[key];
+        if (!keys2.includes(key)) {
+            return false;
+        }
+        if (key !== 'ref') {
+            const val2 = object2[key];
+            if (isDateObject(val1) && isDateObject(val2) || isObject(val1) && isObject(val2) || Array.isArray(val1) && Array.isArray(val2) ? !deepEqual(val1, val2) : val1 !== val2) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+var isMultipleSelect = (element)=>element.type === `select-multiple`;
+var isRadioOrCheckbox = (ref)=>isRadioInput(ref) || isCheckBoxInput(ref);
+var live = (ref)=>isHTMLElement(ref) && ref.isConnected;
+var objectHasFunction = (data)=>{
+    for(const key in data){
+        if (isFunction(data[key])) {
+            return true;
+        }
+    }
+    return false;
+};
+function markFieldsDirty(data, fields = {}) {
+    const isParentNodeArray = Array.isArray(data);
+    if (isObject(data) || isParentNodeArray) {
+        for(const key in data){
+            if (Array.isArray(data[key]) || isObject(data[key]) && !objectHasFunction(data[key])) {
+                fields[key] = Array.isArray(data[key]) ? [] : {};
+                markFieldsDirty(data[key], fields[key]);
+            } else if (!isNullOrUndefined(data[key])) {
+                fields[key] = true;
+            }
+        }
+    }
+    return fields;
+}
+function getDirtyFieldsFromDefaultValues(data, formValues, dirtyFieldsFromValues) {
+    const isParentNodeArray = Array.isArray(data);
+    if (isObject(data) || isParentNodeArray) {
+        for(const key in data){
+            if (Array.isArray(data[key]) || isObject(data[key]) && !objectHasFunction(data[key])) {
+                if (isUndefined(formValues) || isPrimitive(dirtyFieldsFromValues[key])) {
+                    dirtyFieldsFromValues[key] = Array.isArray(data[key]) ? markFieldsDirty(data[key], []) : {
+                        ...markFieldsDirty(data[key])
+                    };
+                } else {
+                    getDirtyFieldsFromDefaultValues(data[key], isNullOrUndefined(formValues) ? {} : formValues[key], dirtyFieldsFromValues[key]);
+                }
+            } else {
+                dirtyFieldsFromValues[key] = !deepEqual(data[key], formValues[key]);
+            }
+        }
+    }
+    return dirtyFieldsFromValues;
+}
+var getDirtyFields = (defaultValues, formValues)=>getDirtyFieldsFromDefaultValues(defaultValues, formValues, markFieldsDirty(formValues));
+var getFieldValueAs = (value1, { valueAsNumber, valueAsDate, setValueAs })=>isUndefined(value1) ? value1 : valueAsNumber ? value1 === '' ? NaN : value1 ? +value1 : value1 : valueAsDate && isString(value1) ? new Date(value1) : setValueAs ? setValueAs(value1) : value1;
+function getFieldValue(_f) {
+    const ref = _f.ref;
+    if (_f.refs ? _f.refs.every((ref)=>ref.disabled) : ref.disabled) {
+        return;
+    }
+    if (isFileInput(ref)) {
+        return ref.files;
+    }
+    if (isRadioInput(ref)) {
+        return getRadioValue(_f.refs).value;
+    }
+    if (isMultipleSelect(ref)) {
+        return [
+            ...ref.selectedOptions
+        ].map(({ value: value1 })=>value1);
+    }
+    if (isCheckBoxInput(ref)) {
+        return getCheckboxValue(_f.refs).value;
+    }
+    return getFieldValueAs(isUndefined(ref.value) ? _f.ref.value : ref.value, _f);
+}
+var getResolverOptions = (fieldsNames, _fields, criteriaMode, shouldUseNativeValidation)=>{
+    const fields = {};
+    for (const name of fieldsNames){
+        const field = get(_fields, name);
+        field && set(fields, name, field._f);
+    }
+    return {
+        criteriaMode,
+        names: [
+            ...fieldsNames
+        ],
+        fields,
+        shouldUseNativeValidation
+    };
+};
+var getRuleValue = (rule)=>isUndefined(rule) ? rule : isRegex(rule) ? rule.source : isObject(rule) ? isRegex(rule.value) ? rule.value.source : rule.value : rule;
+var hasValidation = (options)=>options.mount && (options.required || options.min || options.max || options.maxLength || options.minLength || options.pattern || options.validate);
+function schemaErrorLookup(errors, _fields, name) {
+    const error = get(errors, name);
+    if (error || isKey(name)) {
+        return {
+            error,
+            name
+        };
+    }
+    const names = name.split('.');
+    while(names.length){
+        const fieldName = names.join('.');
+        const field = get(_fields, fieldName);
+        const foundError = get(errors, fieldName);
+        if (field && !Array.isArray(field) && name !== fieldName) {
+            return {
+                name
+            };
+        }
+        if (foundError && foundError.type) {
+            return {
+                name: fieldName,
+                error: foundError
+            };
+        }
+        names.pop();
+    }
+    return {
+        name
+    };
+}
+var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode)=>{
+    if (mode.isOnAll) {
+        return false;
+    } else if (!isSubmitted && mode.isOnTouch) {
+        return !(isTouched || isBlurEvent);
+    } else if (isSubmitted ? reValidateMode.isOnBlur : mode.isOnBlur) {
+        return !isBlurEvent;
+    } else if (isSubmitted ? reValidateMode.isOnChange : mode.isOnChange) {
+        return isBlurEvent;
+    }
+    return true;
+};
+var unsetEmptyArray = (ref, name)=>!compact(get(ref, name)).length && unset(ref, name);
+const defaultOptions = {
+    mode: VALIDATION_MODE.onSubmit,
+    reValidateMode: VALIDATION_MODE.onChange,
+    shouldFocusError: true
+};
+function createFormControl(props = {}, flushRootRender) {
+    let _options = {
+        ...defaultOptions,
+        ...props
+    };
+    let _formState = {
+        submitCount: 0,
+        isDirty: false,
+        isLoading: isFunction(_options.defaultValues),
+        isValidating: false,
+        isSubmitted: false,
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        touchedFields: {},
+        dirtyFields: {},
+        errors: _options.errors || {},
+        disabled: _options.disabled || false
+    };
+    let _fields = {};
+    let _defaultValues = isObject(_options.values) || isObject(_options.defaultValues) ? cloneObject(_options.values || _options.defaultValues) || {} : {};
+    let _formValues = _options.shouldUnregister ? {} : cloneObject(_defaultValues);
+    let _state = {
+        action: false,
+        mount: false,
+        watch: false
+    };
+    let _names = {
+        mount: new Set(),
+        unMount: new Set(),
+        array: new Set(),
+        watch: new Set()
+    };
+    let delayErrorCallback;
+    let timer = 0;
+    const _proxyFormState = {
+        isDirty: false,
+        dirtyFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false
+    };
+    const _subjects = {
+        values: createSubject(),
+        array: createSubject(),
+        state: createSubject()
+    };
+    const validationModeBeforeSubmit = getValidationModes(_options.mode);
+    const validationModeAfterSubmit = getValidationModes(_options.reValidateMode);
+    const shouldDisplayAllAssociatedErrors = _options.criteriaMode === VALIDATION_MODE.all;
+    const debounce = (callback)=>(wait)=>{
+            clearTimeout(timer);
+            timer = setTimeout(callback, wait);
+        };
+    const _updateValid = async (shouldUpdateValid)=>{
+        if (_proxyFormState.isValid || shouldUpdateValid) {
+            const isValid = _options.resolver ? isEmptyObject((await _executeSchema()).errors) : await executeBuiltInValidation(_fields, true);
+            if (isValid !== _formState.isValid) {
+                _subjects.state.next({
+                    isValid
+                });
+            }
+        }
+    };
+    const _updateIsValidating = (value1)=>_proxyFormState.isValidating && _subjects.state.next({
+            isValidating: value1
+        });
+    const _updateFieldArray = (name, values = [], method, args, shouldSetValues = true, shouldUpdateFieldsAndState = true)=>{
+        if (args && method) {
+            _state.action = true;
+            if (shouldUpdateFieldsAndState && Array.isArray(get(_fields, name))) {
+                const fieldValues = method(get(_fields, name), args.argA, args.argB);
+                shouldSetValues && set(_fields, name, fieldValues);
+            }
+            if (shouldUpdateFieldsAndState && Array.isArray(get(_formState.errors, name))) {
+                const errors = method(get(_formState.errors, name), args.argA, args.argB);
+                shouldSetValues && set(_formState.errors, name, errors);
+                unsetEmptyArray(_formState.errors, name);
+            }
+            if (_proxyFormState.touchedFields && shouldUpdateFieldsAndState && Array.isArray(get(_formState.touchedFields, name))) {
+                const touchedFields = method(get(_formState.touchedFields, name), args.argA, args.argB);
+                shouldSetValues && set(_formState.touchedFields, name, touchedFields);
+            }
+            if (_proxyFormState.dirtyFields) {
+                _formState.dirtyFields = getDirtyFields(_defaultValues, _formValues);
+            }
+            _subjects.state.next({
+                name,
+                isDirty: _getDirty(name, values),
+                dirtyFields: _formState.dirtyFields,
+                errors: _formState.errors,
+                isValid: _formState.isValid
+            });
+        } else {
+            set(_formValues, name, values);
+        }
+    };
+    const updateErrors = (name, error)=>{
+        set(_formState.errors, name, error);
+        _subjects.state.next({
+            errors: _formState.errors
+        });
+    };
+    const _setErrors = (errors)=>{
+        _formState.errors = errors;
+        _subjects.state.next({
+            errors: _formState.errors,
+            isValid: false
+        });
+    };
+    const updateValidAndValue = (name, shouldSkipSetValueAs, value1, ref)=>{
+        const field = get(_fields, name);
+        if (field) {
+            const defaultValue = get(_formValues, name, isUndefined(value1) ? get(_defaultValues, name) : value1);
+            isUndefined(defaultValue) || ref && ref.defaultChecked || shouldSkipSetValueAs ? set(_formValues, name, shouldSkipSetValueAs ? defaultValue : getFieldValue(field._f)) : setFieldValue(name, defaultValue);
+            _state.mount && _updateValid();
+        }
+    };
+    const updateTouchAndDirty = (name, fieldValue, isBlurEvent, shouldDirty, shouldRender)=>{
+        let shouldUpdateField = false;
+        let isPreviousDirty = false;
+        const output = {
+            name
+        };
+        const disabledField = !!(get(_fields, name) && get(_fields, name)._f.disabled);
+        if (!isBlurEvent || shouldDirty) {
+            if (_proxyFormState.isDirty) {
+                isPreviousDirty = _formState.isDirty;
+                _formState.isDirty = output.isDirty = _getDirty();
+                shouldUpdateField = isPreviousDirty !== output.isDirty;
+            }
+            const isCurrentFieldPristine = disabledField || deepEqual(get(_defaultValues, name), fieldValue);
+            isPreviousDirty = !!(!disabledField && get(_formState.dirtyFields, name));
+            isCurrentFieldPristine || disabledField ? unset(_formState.dirtyFields, name) : set(_formState.dirtyFields, name, true);
+            output.dirtyFields = _formState.dirtyFields;
+            shouldUpdateField = shouldUpdateField || _proxyFormState.dirtyFields && isPreviousDirty !== !isCurrentFieldPristine;
+        }
+        if (isBlurEvent) {
+            const isPreviousFieldTouched = get(_formState.touchedFields, name);
+            if (!isPreviousFieldTouched) {
+                set(_formState.touchedFields, name, isBlurEvent);
+                output.touchedFields = _formState.touchedFields;
+                shouldUpdateField = shouldUpdateField || _proxyFormState.touchedFields && isPreviousFieldTouched !== isBlurEvent;
+            }
+        }
+        shouldUpdateField && shouldRender && _subjects.state.next(output);
+        return shouldUpdateField ? output : {};
+    };
+    const shouldRenderByError = (name, isValid, error, fieldState)=>{
+        const previousFieldError = get(_formState.errors, name);
+        const shouldUpdateValid = _proxyFormState.isValid && isBoolean(isValid) && _formState.isValid !== isValid;
+        if (props.delayError && error) {
+            delayErrorCallback = debounce(()=>updateErrors(name, error));
+            delayErrorCallback(props.delayError);
+        } else {
+            clearTimeout(timer);
+            delayErrorCallback = null;
+            error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
+        }
+        if ((error ? !deepEqual(previousFieldError, error) : previousFieldError) || !isEmptyObject(fieldState) || shouldUpdateValid) {
+            const updatedFormState = {
+                ...fieldState,
+                ...shouldUpdateValid && isBoolean(isValid) ? {
+                    isValid
+                } : {},
+                errors: _formState.errors,
+                name
+            };
+            _formState = {
+                ..._formState,
+                ...updatedFormState
+            };
+            _subjects.state.next(updatedFormState);
+        }
+        _updateIsValidating(false);
+    };
+    const _executeSchema = async (name)=>_options.resolver(_formValues, _options.context, getResolverOptions(name || _names.mount, _fields, _options.criteriaMode, _options.shouldUseNativeValidation));
+    const executeSchemaAndUpdateState = async (names)=>{
+        const { errors } = await _executeSchema(names);
+        if (names) {
+            for (const name of names){
+                const error = get(errors, name);
+                error ? set(_formState.errors, name, error) : unset(_formState.errors, name);
+            }
+        } else {
+            _formState.errors = errors;
+        }
+        return errors;
+    };
+    const executeBuiltInValidation = async (fields, shouldOnlyCheckValid, context = {
+        valid: true
+    })=>{
+        for(const name in fields){
+            const field = fields[name];
+            if (field) {
+                const { _f, ...fieldValue } = field;
+                if (_f) {
+                    const isFieldArrayRoot = _names.array.has(_f.name);
+                    const fieldError = await validateField(field, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation && !shouldOnlyCheckValid, isFieldArrayRoot);
+                    if (fieldError[_f.name]) {
+                        context.valid = false;
+                        if (shouldOnlyCheckValid) {
+                            break;
+                        }
+                    }
+                    !shouldOnlyCheckValid && (get(fieldError, _f.name) ? isFieldArrayRoot ? updateFieldArrayRootError(_formState.errors, fieldError, _f.name) : set(_formState.errors, _f.name, fieldError[_f.name]) : unset(_formState.errors, _f.name));
+                }
+                fieldValue && await executeBuiltInValidation(fieldValue, shouldOnlyCheckValid, context);
+            }
+        }
+        return context.valid;
+    };
+    const _removeUnmounted = ()=>{
+        for (const name of _names.unMount){
+            const field = get(_fields, name);
+            field && (field._f.refs ? field._f.refs.every((ref)=>!live(ref)) : !live(field._f.ref)) && unregister(name);
+        }
+        _names.unMount = new Set();
+    };
+    const _getDirty = (name, data)=>(name && data && set(_formValues, name, data), !deepEqual(getValues(), _defaultValues));
+    const _getWatch = (names, defaultValue, isGlobal)=>generateWatchOutput(names, _names, {
+            ..._state.mount ? _formValues : isUndefined(defaultValue) ? _defaultValues : isString(names) ? {
+                [names]: defaultValue
+            } : defaultValue
+        }, isGlobal, defaultValue);
+    const _getFieldArray = (name)=>compact(get(_state.mount ? _formValues : _defaultValues, name, props.shouldUnregister ? get(_defaultValues, name, []) : []));
+    const setFieldValue = (name, value1, options = {})=>{
+        const field = get(_fields, name);
+        let fieldValue = value1;
+        if (field) {
+            const fieldReference = field._f;
+            if (fieldReference) {
+                !fieldReference.disabled && set(_formValues, name, getFieldValueAs(value1, fieldReference));
+                fieldValue = isHTMLElement(fieldReference.ref) && isNullOrUndefined(value1) ? '' : value1;
+                if (isMultipleSelect(fieldReference.ref)) {
+                    [
+                        ...fieldReference.ref.options
+                    ].forEach((optionRef)=>optionRef.selected = fieldValue.includes(optionRef.value));
+                } else if (fieldReference.refs) {
+                    if (isCheckBoxInput(fieldReference.ref)) {
+                        fieldReference.refs.length > 1 ? fieldReference.refs.forEach((checkboxRef)=>(!checkboxRef.defaultChecked || !checkboxRef.disabled) && (checkboxRef.checked = Array.isArray(fieldValue) ? !!fieldValue.find((data)=>data === checkboxRef.value) : fieldValue === checkboxRef.value)) : fieldReference.refs[0] && (fieldReference.refs[0].checked = !!fieldValue);
+                    } else {
+                        fieldReference.refs.forEach((radioRef)=>radioRef.checked = radioRef.value === fieldValue);
+                    }
+                } else if (isFileInput(fieldReference.ref)) {
+                    fieldReference.ref.value = '';
+                } else {
+                    fieldReference.ref.value = fieldValue;
+                    if (!fieldReference.ref.type) {
+                        _subjects.values.next({
+                            name,
+                            values: {
+                                ..._formValues
+                            }
+                        });
+                    }
+                }
+            }
+        }
+        (options.shouldDirty || options.shouldTouch) && updateTouchAndDirty(name, fieldValue, options.shouldTouch, options.shouldDirty, true);
+        options.shouldValidate && trigger(name);
+    };
+    const setValues = (name, value1, options)=>{
+        for(const fieldKey in value1){
+            const fieldValue = value1[fieldKey];
+            const fieldName = `${name}.${fieldKey}`;
+            const field = get(_fields, fieldName);
+            (_names.array.has(name) || !isPrimitive(fieldValue) || field && !field._f) && !isDateObject(fieldValue) ? setValues(fieldName, fieldValue, options) : setFieldValue(fieldName, fieldValue, options);
+        }
+    };
+    const setValue = (name, value1, options = {})=>{
+        const field = get(_fields, name);
+        const isFieldArray = _names.array.has(name);
+        const cloneValue = cloneObject(value1);
+        set(_formValues, name, cloneValue);
+        if (isFieldArray) {
+            _subjects.array.next({
+                name,
+                values: {
+                    ..._formValues
+                }
+            });
+            if ((_proxyFormState.isDirty || _proxyFormState.dirtyFields) && options.shouldDirty) {
+                _subjects.state.next({
+                    name,
+                    dirtyFields: getDirtyFields(_defaultValues, _formValues),
+                    isDirty: _getDirty(name, cloneValue)
+                });
+            }
+        } else {
+            field && !field._f && !isNullOrUndefined(cloneValue) ? setValues(name, cloneValue, options) : setFieldValue(name, cloneValue, options);
+        }
+        isWatched(name, _names) && _subjects.state.next({
+            ..._formState
+        });
+        _subjects.values.next({
+            name,
+            values: {
+                ..._formValues
+            }
+        });
+        !_state.mount && flushRootRender();
+    };
+    const onChange = async (event)=>{
+        const target = event.target;
+        let name = target.name;
+        let isFieldValueUpdated = true;
+        const field = get(_fields, name);
+        const getCurrentFieldValue = ()=>target.type ? getFieldValue(field._f) : getEventValue(event);
+        const _updateIsFieldValueUpdated = (fieldValue)=>{
+            isFieldValueUpdated = Number.isNaN(fieldValue) || fieldValue === get(_formValues, name, fieldValue);
+        };
+        if (field) {
+            let error;
+            let isValid;
+            const fieldValue = getCurrentFieldValue();
+            const isBlurEvent = event.type === EVENTS.BLUR || event.type === EVENTS.FOCUS_OUT;
+            const shouldSkipValidation = !hasValidation(field._f) && !_options.resolver && !get(_formState.errors, name) && !field._f.deps || skipValidation(isBlurEvent, get(_formState.touchedFields, name), _formState.isSubmitted, validationModeAfterSubmit, validationModeBeforeSubmit);
+            const watched = isWatched(name, _names, isBlurEvent);
+            set(_formValues, name, fieldValue);
+            if (isBlurEvent) {
+                field._f.onBlur && field._f.onBlur(event);
+                delayErrorCallback && delayErrorCallback(0);
+            } else if (field._f.onChange) {
+                field._f.onChange(event);
+            }
+            const fieldState = updateTouchAndDirty(name, fieldValue, isBlurEvent, false);
+            const shouldRender = !isEmptyObject(fieldState) || watched;
+            !isBlurEvent && _subjects.values.next({
+                name,
+                type: event.type,
+                values: {
+                    ..._formValues
+                }
+            });
+            if (shouldSkipValidation) {
+                _proxyFormState.isValid && _updateValid();
+                return shouldRender && _subjects.state.next({
+                    name,
+                    ...watched ? {} : fieldState
+                });
+            }
+            !isBlurEvent && watched && _subjects.state.next({
+                ..._formState
+            });
+            _updateIsValidating(true);
+            if (_options.resolver) {
+                const { errors } = await _executeSchema([
+                    name
+                ]);
+                _updateIsFieldValueUpdated(fieldValue);
+                if (isFieldValueUpdated) {
+                    const previousErrorLookupResult = schemaErrorLookup(_formState.errors, _fields, name);
+                    const errorLookupResult = schemaErrorLookup(errors, _fields, previousErrorLookupResult.name || name);
+                    error = errorLookupResult.error;
+                    name = errorLookupResult.name;
+                    isValid = isEmptyObject(errors);
+                }
+            } else {
+                error = (await validateField(field, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation))[name];
+                _updateIsFieldValueUpdated(fieldValue);
+                if (isFieldValueUpdated) {
+                    if (error) {
+                        isValid = false;
+                    } else if (_proxyFormState.isValid) {
+                        isValid = await executeBuiltInValidation(_fields, true);
+                    }
+                }
+            }
+            if (isFieldValueUpdated) {
+                field._f.deps && trigger(field._f.deps);
+                shouldRenderByError(name, isValid, error, fieldState);
+            }
+        }
+    };
+    const _focusInput = (ref, key)=>{
+        if (get(_formState.errors, key) && ref.focus) {
+            ref.focus();
+            return 1;
+        }
+        return;
+    };
+    const trigger = async (name, options = {})=>{
+        let isValid;
+        let validationResult;
+        const fieldNames = convertToArrayPayload(name);
+        _updateIsValidating(true);
+        if (_options.resolver) {
+            const errors = await executeSchemaAndUpdateState(isUndefined(name) ? name : fieldNames);
+            isValid = isEmptyObject(errors);
+            validationResult = name ? !fieldNames.some((name)=>get(errors, name)) : isValid;
+        } else if (name) {
+            validationResult = (await Promise.all(fieldNames.map(async (fieldName)=>{
+                const field = get(_fields, fieldName);
+                return await executeBuiltInValidation(field && field._f ? {
+                    [fieldName]: field
+                } : field);
+            }))).every(Boolean);
+            !(!validationResult && !_formState.isValid) && _updateValid();
+        } else {
+            validationResult = isValid = await executeBuiltInValidation(_fields);
+        }
+        _subjects.state.next({
+            ...!isString(name) || _proxyFormState.isValid && isValid !== _formState.isValid ? {} : {
+                name
+            },
+            ..._options.resolver || !name ? {
+                isValid
+            } : {},
+            errors: _formState.errors,
+            isValidating: false
+        });
+        options.shouldFocus && !validationResult && iterateFieldsByAction(_fields, _focusInput, name ? fieldNames : _names.mount);
+        return validationResult;
+    };
+    const getValues = (fieldNames)=>{
+        const values = {
+            ..._defaultValues,
+            ..._state.mount ? _formValues : {}
+        };
+        return isUndefined(fieldNames) ? values : isString(fieldNames) ? get(values, fieldNames) : fieldNames.map((name)=>get(values, name));
+    };
+    const getFieldState = (name, formState)=>({
+            invalid: !!get((formState || _formState).errors, name),
+            isDirty: !!get((formState || _formState).dirtyFields, name),
+            isTouched: !!get((formState || _formState).touchedFields, name),
+            error: get((formState || _formState).errors, name)
+        });
+    const clearErrors = (name)=>{
+        name && convertToArrayPayload(name).forEach((inputName)=>unset(_formState.errors, inputName));
+        _subjects.state.next({
+            errors: name ? _formState.errors : {}
+        });
+    };
+    const setError = (name, error, options)=>{
+        const ref = (get(_fields, name, {
+            _f: {}
+        })._f || {}).ref;
+        set(_formState.errors, name, {
+            ...error,
+            ref
+        });
+        _subjects.state.next({
+            name,
+            errors: _formState.errors,
+            isValid: false
+        });
+        options && options.shouldFocus && ref && ref.focus && ref.focus();
+    };
+    const watch = (name, defaultValue)=>isFunction(name) ? _subjects.values.subscribe({
+            next: (payload)=>name(_getWatch(undefined, defaultValue), payload)
+        }) : _getWatch(name, defaultValue, true);
+    const unregister = (name, options = {})=>{
+        for (const fieldName of name ? convertToArrayPayload(name) : _names.mount){
+            _names.mount.delete(fieldName);
+            _names.array.delete(fieldName);
+            if (!options.keepValue) {
+                unset(_fields, fieldName);
+                unset(_formValues, fieldName);
+            }
+            !options.keepError && unset(_formState.errors, fieldName);
+            !options.keepDirty && unset(_formState.dirtyFields, fieldName);
+            !options.keepTouched && unset(_formState.touchedFields, fieldName);
+            !_options.shouldUnregister && !options.keepDefaultValue && unset(_defaultValues, fieldName);
+        }
+        _subjects.values.next({
+            values: {
+                ..._formValues
+            }
+        });
+        _subjects.state.next({
+            ..._formState,
+            ...!options.keepDirty ? {} : {
+                isDirty: _getDirty()
+            }
+        });
+        !options.keepIsValid && _updateValid();
+    };
+    const _updateDisabledField = ({ disabled, name, field, fields, value: value1 })=>{
+        if (isBoolean(disabled)) {
+            const inputValue = disabled ? undefined : isUndefined(value1) ? getFieldValue(field ? field._f : get(fields, name)._f) : value1;
+            set(_formValues, name, inputValue);
+            updateTouchAndDirty(name, inputValue, false, false, true);
+        }
+    };
+    const register = (name, options = {})=>{
+        let field = get(_fields, name);
+        const disabledIsDefined = isBoolean(options.disabled);
+        set(_fields, name, {
+            ...field || {},
+            _f: {
+                ...field && field._f ? field._f : {
+                    ref: {
+                        name
+                    }
+                },
+                name,
+                mount: true,
+                ...options
+            }
+        });
+        _names.mount.add(name);
+        if (field) {
+            _updateDisabledField({
+                field,
+                disabled: options.disabled,
+                name,
+                value: options.value
+            });
+        } else {
+            updateValidAndValue(name, true, options.value);
+        }
+        return {
+            ...disabledIsDefined ? {
+                disabled: options.disabled
+            } : {},
+            ..._options.progressive ? {
+                required: !!options.required,
+                min: getRuleValue(options.min),
+                max: getRuleValue(options.max),
+                minLength: getRuleValue(options.minLength),
+                maxLength: getRuleValue(options.maxLength),
+                pattern: getRuleValue(options.pattern)
+            } : {},
+            name,
+            onChange,
+            onBlur: onChange,
+            ref: (ref)=>{
+                if (ref) {
+                    register(name, options);
+                    field = get(_fields, name);
+                    const fieldRef = isUndefined(ref.value) ? ref.querySelectorAll ? ref.querySelectorAll('input,select,textarea')[0] || ref : ref : ref;
+                    const radioOrCheckbox = isRadioOrCheckbox(fieldRef);
+                    const refs = field._f.refs || [];
+                    if (radioOrCheckbox ? refs.find((option)=>option === fieldRef) : fieldRef === field._f.ref) {
+                        return;
+                    }
+                    set(_fields, name, {
+                        _f: {
+                            ...field._f,
+                            ...radioOrCheckbox ? {
+                                refs: [
+                                    ...refs.filter(live),
+                                    fieldRef,
+                                    ...Array.isArray(get(_defaultValues, name)) ? [
+                                        {}
+                                    ] : []
+                                ],
+                                ref: {
+                                    type: fieldRef.type,
+                                    name
+                                }
+                            } : {
+                                ref: fieldRef
+                            }
+                        }
+                    });
+                    updateValidAndValue(name, false, undefined, fieldRef);
+                } else {
+                    field = get(_fields, name, {});
+                    if (field._f) {
+                        field._f.mount = false;
+                    }
+                    (_options.shouldUnregister || options.shouldUnregister) && !(isNameInFieldArray(_names.array, name) && _state.action) && _names.unMount.add(name);
+                }
+            }
+        };
+    };
+    const _focusError = ()=>_options.shouldFocusError && iterateFieldsByAction(_fields, _focusInput, _names.mount);
+    const _disableForm = (disabled)=>{
+        if (isBoolean(disabled)) {
+            _subjects.state.next({
+                disabled
+            });
+            iterateFieldsByAction(_fields, (ref, name)=>{
+                let requiredDisabledState = disabled;
+                const currentField = get(_fields, name);
+                if (currentField && isBoolean(currentField._f.disabled)) {
+                    requiredDisabledState || (requiredDisabledState = currentField._f.disabled);
+                }
+                ref.disabled = requiredDisabledState;
+            }, 0, false);
+        }
+    };
+    const handleSubmit = (onValid, onInvalid)=>async (e)=>{
+            let onValidError = undefined;
+            if (e) {
+                e.preventDefault && e.preventDefault();
+                e.persist && e.persist();
+            }
+            let fieldValues = cloneObject(_formValues);
+            _subjects.state.next({
+                isSubmitting: true
+            });
+            if (_options.resolver) {
+                const { errors, values } = await _executeSchema();
+                _formState.errors = errors;
+                fieldValues = values;
+            } else {
+                await executeBuiltInValidation(_fields);
+            }
+            unset(_formState.errors, 'root');
+            if (isEmptyObject(_formState.errors)) {
+                _subjects.state.next({
+                    errors: {}
+                });
+                try {
+                    await onValid(fieldValues, e);
+                } catch (error) {
+                    onValidError = error;
+                }
+            } else {
+                if (onInvalid) {
+                    await onInvalid({
+                        ..._formState.errors
+                    }, e);
+                }
+                _focusError();
+                setTimeout(_focusError);
+            }
+            _subjects.state.next({
+                isSubmitted: true,
+                isSubmitting: false,
+                isSubmitSuccessful: isEmptyObject(_formState.errors) && !onValidError,
+                submitCount: _formState.submitCount + 1,
+                errors: _formState.errors
+            });
+            if (onValidError) {
+                throw onValidError;
+            }
+        };
+    const resetField = (name, options = {})=>{
+        if (get(_fields, name)) {
+            if (isUndefined(options.defaultValue)) {
+                setValue(name, cloneObject(get(_defaultValues, name)));
+            } else {
+                setValue(name, options.defaultValue);
+                set(_defaultValues, name, cloneObject(options.defaultValue));
+            }
+            if (!options.keepTouched) {
+                unset(_formState.touchedFields, name);
+            }
+            if (!options.keepDirty) {
+                unset(_formState.dirtyFields, name);
+                _formState.isDirty = options.defaultValue ? _getDirty(name, cloneObject(get(_defaultValues, name))) : _getDirty();
+            }
+            if (!options.keepError) {
+                unset(_formState.errors, name);
+                _proxyFormState.isValid && _updateValid();
+            }
+            _subjects.state.next({
+                ..._formState
+            });
+        }
+    };
+    const _reset = (formValues, keepStateOptions = {})=>{
+        const updatedValues = formValues ? cloneObject(formValues) : _defaultValues;
+        const cloneUpdatedValues = cloneObject(updatedValues);
+        const values = formValues && !isEmptyObject(formValues) ? cloneUpdatedValues : _defaultValues;
+        if (!keepStateOptions.keepDefaultValues) {
+            _defaultValues = updatedValues;
+        }
+        if (!keepStateOptions.keepValues) {
+            if (keepStateOptions.keepDirtyValues) {
+                for (const fieldName of _names.mount){
+                    get(_formState.dirtyFields, fieldName) ? set(values, fieldName, get(_formValues, fieldName)) : setValue(fieldName, get(values, fieldName));
+                }
+            } else {
+                if (isWeb && isUndefined(formValues)) {
+                    for (const name of _names.mount){
+                        const field = get(_fields, name);
+                        if (field && field._f) {
+                            const fieldReference = Array.isArray(field._f.refs) ? field._f.refs[0] : field._f.ref;
+                            if (isHTMLElement(fieldReference)) {
+                                const form = fieldReference.closest('form');
+                                if (form) {
+                                    form.reset();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                _fields = {};
+            }
+            _formValues = props.shouldUnregister ? keepStateOptions.keepDefaultValues ? cloneObject(_defaultValues) : {} : cloneObject(values);
+            _subjects.array.next({
+                values: {
+                    ...values
+                }
+            });
+            _subjects.values.next({
+                values: {
+                    ...values
+                }
+            });
+        }
+        _names = {
+            mount: new Set(),
+            unMount: new Set(),
+            array: new Set(),
+            watch: new Set(),
+            watchAll: false,
+            focus: ''
+        };
+        !_state.mount && flushRootRender();
+        _state.mount = !_proxyFormState.isValid || !!keepStateOptions.keepIsValid || !!keepStateOptions.keepDirtyValues;
+        _state.watch = !!props.shouldUnregister;
+        _subjects.state.next({
+            submitCount: keepStateOptions.keepSubmitCount ? _formState.submitCount : 0,
+            isDirty: keepStateOptions.keepDirty ? _formState.isDirty : !!(keepStateOptions.keepDefaultValues && !deepEqual(formValues, _defaultValues)),
+            isSubmitted: keepStateOptions.keepIsSubmitted ? _formState.isSubmitted : false,
+            dirtyFields: keepStateOptions.keepDirtyValues ? keepStateOptions.keepDefaultValues && _formValues ? getDirtyFields(_defaultValues, _formValues) : _formState.dirtyFields : keepStateOptions.keepDefaultValues && formValues ? getDirtyFields(_defaultValues, formValues) : {},
+            touchedFields: keepStateOptions.keepTouched ? _formState.touchedFields : {},
+            errors: keepStateOptions.keepErrors ? _formState.errors : {},
+            isSubmitSuccessful: keepStateOptions.keepIsSubmitSuccessful ? _formState.isSubmitSuccessful : false,
+            isSubmitting: false
+        });
+    };
+    const reset = (formValues, keepStateOptions)=>_reset(isFunction(formValues) ? formValues(_formValues) : formValues, keepStateOptions);
+    const setFocus = (name, options = {})=>{
+        const field = get(_fields, name);
+        const fieldReference = field && field._f;
+        if (fieldReference) {
+            const fieldRef = fieldReference.refs ? fieldReference.refs[0] : fieldReference.ref;
+            if (fieldRef.focus) {
+                fieldRef.focus();
+                options.shouldSelect && fieldRef.select();
+            }
+        }
+    };
+    const _updateFormState = (updatedFormState)=>{
+        _formState = {
+            ..._formState,
+            ...updatedFormState
+        };
+    };
+    const _resetDefaultValues = ()=>isFunction(_options.defaultValues) && _options.defaultValues().then((values)=>{
+            reset(values, _options.resetOptions);
+            _subjects.state.next({
+                isLoading: false
+            });
+        });
+    return {
+        control: {
+            register,
+            unregister,
+            getFieldState,
+            handleSubmit,
+            setError,
+            _executeSchema,
+            _getWatch,
+            _getDirty,
+            _updateValid,
+            _removeUnmounted,
+            _updateFieldArray,
+            _updateDisabledField,
+            _getFieldArray,
+            _reset,
+            _resetDefaultValues,
+            _updateFormState,
+            _disableForm,
+            _subjects,
+            _proxyFormState,
+            _setErrors,
+            get _fields () {
+                return _fields;
+            },
+            get _formValues () {
+                return _formValues;
+            },
+            get _state () {
+                return _state;
+            },
+            set _state (value){
+                _state = value;
+            },
+            get _defaultValues () {
+                return _defaultValues;
+            },
+            get _names () {
+                return _names;
+            },
+            set _names (value){
+                _names = value;
+            },
+            get _formState () {
+                return _formState;
+            },
+            set _formState (value){
+                _formState = value;
+            },
+            get _options () {
+                return _options;
+            },
+            set _options (value){
+                _options = {
+                    ..._options,
+                    ...value
+                };
+            }
+        },
+        trigger,
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        getValues,
+        reset,
+        resetField,
+        clearErrors,
+        unregister,
+        setError,
+        setFocus,
+        getFieldState
+    };
+}
+/**
+ * Custom hook to manage the entire form.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useform) • [Demo](https://codesandbox.io/s/react-hook-form-get-started-ts-5ksmm) • [Video](https://www.youtube.com/watch?v=RkXv4AXXC_4)
+ *
+ * @param props - form configuration and validation parameters.
+ *
+ * @returns methods - individual functions to manage the form state. {@link UseFormReturn}
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   console.log(watch("example"));
+ *
+ *   return (
+ *     <form onSubmit={handleSubmit(onSubmit)}>
+ *       <input defaultValue="test" {...register("example")} />
+ *       <input {...register("exampleRequired", { required: true })} />
+ *       {errors.exampleRequired && <span>This field is required</span>}
+ *       <button>Submit</button>
+ *     </form>
+ *   );
+ * }
+ * ```
+ */ function useForm(props = {}) {
+    const _formControl = React__default.useRef();
+    const _values = React__default.useRef();
+    const [formState, updateFormState] = React__default.useState({
+        isDirty: false,
+        isValidating: false,
+        isLoading: isFunction(props.defaultValues),
+        isSubmitted: false,
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        submitCount: 0,
+        dirtyFields: {},
+        touchedFields: {},
+        errors: props.errors || {},
+        disabled: props.disabled || false,
+        defaultValues: isFunction(props.defaultValues) ? undefined : props.defaultValues
+    });
+    if (!_formControl.current) {
+        _formControl.current = {
+            ...createFormControl(props, ()=>updateFormState((formState)=>({
+                        ...formState
+                    }))),
+            formState
+        };
+    }
+    const control = _formControl.current.control;
+    control._options = props;
+    useSubscribe({
+        subject: control._subjects.state,
+        next: (value1)=>{
+            if (shouldRenderFormState(value1, control._proxyFormState, control._updateFormState, true)) {
+                updateFormState({
+                    ...control._formState
+                });
+            }
+        }
+    });
+    React__default.useEffect(()=>control._disableForm(props.disabled), [
+        control,
+        props.disabled
+    ]);
+    React__default.useEffect(()=>{
+        if (control._proxyFormState.isDirty) {
+            const isDirty = control._getDirty();
+            if (isDirty !== formState.isDirty) {
+                control._subjects.state.next({
+                    isDirty
+                });
+            }
+        }
+    }, [
+        control,
+        formState.isDirty
+    ]);
+    React__default.useEffect(()=>{
+        if (props.values && !deepEqual(props.values, _values.current)) {
+            control._reset(props.values, control._options.resetOptions);
+            _values.current = props.values;
+            updateFormState((state)=>({
+                    ...state
+                }));
+        } else {
+            control._resetDefaultValues();
+        }
+    }, [
+        props.values,
+        control
+    ]);
+    React__default.useEffect(()=>{
+        if (props.errors) {
+            control._setErrors(props.errors);
+        }
+    }, [
+        props.errors,
+        control
+    ]);
+    React__default.useEffect(()=>{
+        if (!control._state.mount) {
+            control._updateValid();
+            control._state.mount = true;
+        }
+        if (control._state.watch) {
+            control._state.watch = false;
+            control._subjects.state.next({
+                ...control._formState
+            });
+        }
+        control._removeUnmounted();
+    });
+    React__default.useEffect(()=>{
+        props.shouldUnregister && control._subjects.values.next({
+            values: control._getWatch()
+        });
+    }, [
+        props.shouldUnregister,
+        control
+    ]);
+    _formControl.current.formState = getProxyFormState(formState, control);
+    return _formControl.current;
+}
 
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
 // require the crypto API and do not support built-in fallback to lower quality random number
@@ -11709,26 +11811,81 @@ function v4(options, buf, offset) {
     return unsafeStringify(rnds);
 }
 
-const Input = ()=>{
+const Title = (props)=>{
     const { handleClick, baseStyles } = useItem({
-        name: 'input'
+        item: props.id,
+        type: props.type
     });
-    console.log('input container redered');
-    const inputRef = useRef(v4());
+    console.log('title has been rendered', props);
+    return React__default.createElement("p", {
+        onClick: handleClick,
+        className: `${baseStyles} font-bold text-xl py-4 flex flex-row items-center `
+    }, props.props.label);
+};
+var Title$1 = React__default.memo(Title);
+
+const Input = (props)=>{
+    var _a, _b, _c;
+    const name = useRef((_a = props.props.name) !== null && _a !== void 0 ? _a : '');
+    const { handleClick, baseStyles } = useItem({
+        item: props.id,
+        type: props.type
+    });
+    console.log('input container redered', props);
     const { register, formState: { errors } } = useFormContext();
     return React__default.createElement("div", {
         className: `${baseStyles} `,
         onClick: handleClick
     }, React__default.createElement("div", {
         className: "relative"
-    }, React__default.createElement("input", Object.assign({}, register(`${inputRef.current}-name`), {
+    }, React__default.createElement("label", {
+        className: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+        htmlFor: name.current
+    }, props.props.label), React__default.createElement("input", Object.assign({}, register(name.current, Object.assign({}, props.props.validations)), {
         className: "appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-    }))));
+    })), React__default.createElement("p", {
+        className: "text-red-500 text-xs italic pt-2"
+    }, (_c = (_b = errors[name.current]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString())));
 };
+
+function Add(props) {
+    // Context
+    const useDragDropContext = useContext(DragDropContext);
+    if (!useDragDropContext) {
+        throw new Error('DragDrop Context is not implemented');
+    }
+    useEffect(()=>{
+        if (props.parent.id && props.id && !isNaN(props.position)) {
+            useDragDropContext.addDropable({
+                parent: props.parent.id,
+                id: props.id,
+                position: props.position
+            });
+        }
+    }, [
+        props.parent,
+        props.id,
+        props.position
+    ]);
+    if (props.parent.type === 'container') {
+        return React__default.createElement(React__default.Fragment, null);
+    }
+    return React__default.createElement("div", {
+        className: ""
+    }, React__default.createElement("div", {
+        className: "rounded-md relative"
+    }, React__default.createElement(ConnectedDroppable$1, {
+        droppableId: props.id
+    }, (provided, snapshot)=>React__default.createElement("div", {
+            ref: provided.innerRef,
+            className: `droppable-area transition-all h-[1px] ${snapshot.isDraggingOver ? 'bg-pink-300 h-[50px]' : 'bg-pink-200'}`
+        }, provided.placeholder))));
+}
 
 const Tabs = (props)=>{
     const { handleClick, baseStyles } = useItem({
-        name: 'tab'
+        item: props.id,
+        type: props.type
     });
     const [activeTab, setActiveTab] = useState(0);
     return React__default.createElement("div", {
@@ -11744,9 +11901,21 @@ const Tabs = (props)=>{
             className: `
                 ${activeTab === index ? 'font-msedium  text-black  border-pink-500' : ' text-gray-500  hover:text-gray-700 hover:border-gray-300'}
                 shrink-0 border-b-2  px-1 pb-4 hover:cursor-pointer text-md  `
-        }, tab.props.label)))), props.props.children.map((tab, index)=>React__default.createElement("div", {
+        }, tab.props.label)))), props.props.children.map((tab, index)=>{
+        var _a;
+        return React__default.createElement("div", {
             className: `${activeTab === index ? 'block' : 'hidden'} p-4`
-        }, React__default.createElement(Input, null))));
+        }, React__default.createElement(Reenderizer, {
+            data: [
+                tab
+            ],
+            isEditing: (_a = props.isEditing) !== null && _a !== void 0 ? _a : false,
+            parent: {
+                type: 'tabs',
+                id: props.id || ''
+            }
+        }));
+    }));
 };
 
 const Root = (props)=>{
@@ -11786,12 +11955,15 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
                 position: index,
                 detailed: detailed
             };
-            return React__default.createElement(React__default.Fragment, null, React__default.createElement(Component, Object.assign({}, commonProps), isEditing && item.props.children ? React__default.createElement(React__default.Fragment, null) : //   parent={{ id: item.id || '', type: item.type }}
-            //   id={uuidv4()}
-            //   key={uuidv4()}
-            //   position={0}
-            // />
-            null, React__default.createElement(Reenderizer, {
+            return React__default.createElement(React__default.Fragment, null, React__default.createElement(Component, Object.assign({}, commonProps), isEditing && item.props.children ? React__default.createElement(Add, {
+                parent: {
+                    id: item.id || '',
+                    type: item.type
+                },
+                id: v4(),
+                key: v4(),
+                position: 0
+            }) : null, React__default.createElement(Reenderizer, {
                 detailed: detailed,
                 data: item.props.children,
                 isEditing: isEditing,
@@ -11799,13 +11971,15 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
                     id: item.id || '',
                     type: item.type
                 }
-            })), isEditing && (!item.props.children || data.length == index + 1 && item.type !== 'tab' && item.type !== 'root') ? // <Add
-            //   parent={{ id: parent?.id || '', type: parent?.type || '' }}
-            //   id={uuidv4()}
-            //   key={uuidv4()}
-            //   position={index + 1}
-            // />
-            React__default.createElement(React__default.Fragment, null) : null);
+            })), isEditing && (!item.props.children || data.length == index + 1 && item.type !== 'tab' && item.type !== 'root') ? React__default.createElement(Add, {
+                parent: {
+                    id: item.id || '',
+                    type: item.type
+                },
+                id: v4(),
+                key: v4(),
+                position: 0
+            }) : null);
         }
         // If no corresponding component is found, you can return a default or handle it as needed
         return React__default.createElement("div", {
@@ -11815,20 +11989,33 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
 };
 
 const Form = (props)=>{
-    const [sum, setSum] = useState(0);
+    var _a;
+    useState(0);
+    console.log('Received form', props);
     // Hooks
-    const form = useForm({});
+    useStore((state)=>state.form);
+    const setForm = useStore((state)=>state.setForm);
+    const form = useForm({
+        defaultValues: (_a = props.defaultValues) === null || _a === void 0 ? void 0 : _a.props
+    });
+    console.log('default values', props.defaultValues);
+    useEffect(()=>{
+        if (props.isEditing) {
+            setForm(props.form);
+        }
+    }, [
+        props.form
+    ]);
+    // Properties
     const handleSubmit = (data)=>{
         console.log(data);
     };
-    return React__default.createElement(FormContextProvider, null, React__default.createElement(FormProvider, Object.assign({}, form), React__default.createElement("form", {
+    return React__default.createElement(FormProvider, Object.assign({}, form), React__default.createElement("form", {
         onSubmit: form.handleSubmit((data)=>handleSubmit(data))
     }, React__default.createElement(Reenderizer, {
         data: props.form,
         isEditing: props.isEditing
-    })), React__default.createElement("p", null, sum), React__default.createElement("button", {
-        onClick: ()=>setSum((prev)=>prev + 1)
-    }, "Boton ")));
+    })));
 };
 
 var ItemList = {
@@ -12266,29 +12453,35 @@ const formMapping = {
 const PropertyEditor = (props)=>{
     // States
     const [form, setForm] = useState([]);
-    // const { selectItem } = useItemSelected();
+    const ctx = useContext(FormContext);
+    if (!ctx) {
+        throw new Error('Cannot find Form context provider');
+    }
     useEffect(()=>{
         setForm(null);
         setTimeout(()=>{
             var _a;
-            setForm(formMapping[(_a = props.item) === null || _a === void 0 ? void 0 : _a.type]);
+            setForm(formMapping[(_a = ctx.selectedItem()) === null || _a === void 0 ? void 0 : _a.type]);
         }, 1);
     }, [
-        props.item
+        ctx.selectedItem
     ]);
     const deleteItem = ()=>{
     // try {
     //   props.deleteItem(props.item);
     //   selectItem(null);
     // } catch (error) {}
+    //
+    //
+    // Buscar y eliminar por el id
     };
     if (!form) return React__default.createElement(React__default.Fragment, null);
     return React__default.createElement(Form, {
+        propertyEditor: true,
         isEditing: false,
         form: form,
         onSubmit: props.onSubmit,
-        // isSubmitting={handleIsSubmitting}
-        data: props.item
+        defaultValues: ctx.selectedItem()
     }, React__default.createElement("div", {
         className: "flex flex-row justify-end"
     }, React__default.createElement("button", {
@@ -12303,8 +12496,16 @@ const PropertyEditor = (props)=>{
 
 const ItemProperties = (props)=>{
     // Hooks
-    // const { item, selectItem } = useItemSelected();
-    const item = useRef(undefined);
+    const ctx = useContext(FormContext);
+    console.log('el contexto es ', ctx);
+    if (!ctx) {
+        throw new Error('Cannot find Form context provider');
+    }
+    useEffect(()=>{
+        console.log('cambio el contexto ', ctx.selectedItem());
+    }, [
+        ctx.selectedItem()
+    ]);
     const _beforeSubmit = (data)=>{
     // if (item) {
     //   const d = { id: item.id, ...data };
@@ -12316,16 +12517,14 @@ const ItemProperties = (props)=>{
     // }
     // throw new Error('Item is not setted before save');
     };
-    return React__default.createElement("div", null, item ? React__default.createElement(PropertyEditor, {
-        item: item,
-        onSubmit: (data)=>_beforeSubmit(),
-        deleteItem: props.deleteItem
+    return React__default.createElement("div", null, ctx.selectedItem() ? React__default.createElement(PropertyEditor, {
+        onSubmit: _beforeSubmit
     }) : React__default.createElement(NewItem, null), React__default.createElement("button", {
-        // onClick={() => selectItem(undefined)}
+        onClick: ()=>ctx.selectItem(null),
         title: "Contact Sale",
         className: "fixed z-90 bottom-12 right-4\n        w-16 h-16 rounded-full  drop-shadow-lg\n        bg-pink-500 text-white font-bold"
     }, "+"));
 };
 
-export { Form, FormContextProvider, ItemProperties };
+export { Card$1 as Card, Form, FormContextProvider, ItemProperties };
 //# sourceMappingURL=index.js.map

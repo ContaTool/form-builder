@@ -10,14 +10,16 @@ const useItem = (props) => {
 
   const handleClick = (event) => {
     event.stopPropagation();
-    console.log('clicked', props.name);
-    ctx.selectItem(props.name);
+    if (props.item) {
+      console.log('clicked', props.item);
+      ctx.selectItem(props);
+    }
   };
 
   return {
     handleClick,
     item: ctx.selectedItem(),
-    baseStyles: `${ctx.selectedItem() === props.name ? 'border border-solid border-blue-500 my-2' : ''}`,
+    baseStyles: `${ctx.selectedItem()?.id === props.item ? 'border border-solid border-blue-500 my-2' : ''}`,
   };
 };
 

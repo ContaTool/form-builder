@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
 import useItem from '../../hooks/useItem';
 
-interface Props {}
+interface Props extends React.ComponentPropsWithoutRef<'div'> {}
 
 interface CardProps extends NDataFormElement<Props> {
   children: JSX.Element;
 }
 
 const Card = (props: CardProps) => {
-  const { handleClick, baseStyles } = useItem({ name: 'card' });
+  const { handleClick, baseStyles } = useItem({
+    item: props.id,
+    type: props.type,
+  });
 
-  console.log('card has been rendered');
+  console.log('card has been rendered', props);
 
   return (
     <div

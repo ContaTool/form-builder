@@ -1,8 +1,7 @@
 import React, { createContext, useState } from 'react';
-import {
-  DragDropContextProvider,
-  DragDropContextProvider,
-} from './DragDropContextProvider';
+import { DragDropContextProvider } from './DragDropContextProvider';
+import { useStore } from '../hooks/useStore';
+import { findNodeById } from '../helpers';
 
 const FormContext = createContext();
 
@@ -12,10 +11,13 @@ interface FormContextProvider {
 }
 
 const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
-  const [item, setItem] = useState('Sin item ');
+  const [item, setItem] = useState<{ id: string; type: string } | null>(null);
+  const formData = useStore((state) => state.form);
 
   const selectItem = (item) => {
-    setItem(item);
+    console.log('current selected item', item, formData);
+    console.log('node founded', findNodeById(formData[0], item?.item));
+    setItem(findNodeById(formData[0], item.item));
   };
 
   const selectedItem = () => {

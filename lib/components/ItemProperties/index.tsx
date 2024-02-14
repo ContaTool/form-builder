@@ -2,17 +2,26 @@ import React, { useState, useContext, useEffect, useRef } from 'react';
 
 import New from './New';
 import { PropertyEditor } from './PropertyEditor';
+import { FormContext } from '../../context/FormContext';
 // import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {
   onSubmit: (data: any) => void;
-  deleteItem: (data: NDataFormElement<any>) => void;
 }
 
 const ItemProperties = (props: ItemPropertiesProps) => {
   // Hooks
-  // const { item, selectItem } = useItemSelected();
-  const item = useRef(undefined);
+  const ctx = useContext(FormContext);
+
+  console.log('el contexto es ', ctx);
+
+  if (!ctx) {
+    throw new Error('Cannot find Form context provider');
+  }
+
+  useEffect(() => {
+    console.log('cambio el contexto ', ctx.selectedItem());
+  }, [ctx.selectedItem()]);
 
   const _beforeSubmit = (data: any) => {
     // if (item) {
@@ -28,17 +37,13 @@ const ItemProperties = (props: ItemPropertiesProps) => {
 
   return (
     <div>
-      {item ? (
-        <PropertyEditor
-          item={item}
-          onSubmit={(data) => _beforeSubmit(data)}
-          deleteItem={props.deleteItem}
-        />
+      {ctx.selectedItem() ? (
+        <PropertyEditor onSubmit={_beforeSubmit} />
       ) : (
         <New />
       )}
       <button
-        // onClick={() => selectItem(undefined)}
+        onClick={() => ctx.selectItem(null)}
         title="Contact Sale"
         className="fixed z-90 bottom-12 right-4
         w-16 h-16 rounded-full  drop-shadow-lg

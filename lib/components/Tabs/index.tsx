@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 
 import Input from '../Input';
+import Reenderizer from '../Reenderizer';
 import useItem from '../../hooks/useItem';
 
 type Tabs = {};
 
 const Tabs = (props: Tabs) => {
-  const { handleClick, baseStyles } = useItem({ name: 'tab' });
+  const { handleClick, baseStyles } = useItem({
+    item: props.id,
+    type: props.type,
+  });
   const [activeTab, setActiveTab] = useState<number>(0);
 
   return (
@@ -34,7 +38,11 @@ const Tabs = (props: Tabs) => {
       {/* Childrens */}
       {props.props.children.map((tab, index) => (
         <div className={`${activeTab === index ? 'block' : 'hidden'} p-4`}>
-          <Input />
+          <Reenderizer
+            data={[tab]}
+            isEditing={props.isEditing ?? false}
+            parent={{ type: 'tabs', id: props.id || '' }}
+          ></Reenderizer>
         </div>
       ))}
     </div>

@@ -1,32 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { FormProvider, useForm } from 'react-hook-form';
-import Input from '../Input';
-import { FormContextProvider } from '../../context/FormContext';
-import Tabs from '../Tabs';
-import Reenderizer from '../Reenderizer';
 
-const Form = (props) => {
+import Reenderizer from '../Reenderizer';
+import { useStore } from '../../hooks/useStore';
+
+interface Form {
+  form: any;
+  defaultValues: any;
+}
+
+const Form = (props: Form) => {
   const [sum, setSum] = useState<number>(0);
 
-  // Hooks
-  const form = useForm({});
+  console.log('Received form', props);
 
+  // Hooks
+  const formData = useStore((state) => state.form);
+  const setForm = useStore((state) => state.setForm);
+
+  const form = useForm({
+    defaultValues: props.defaultValues?.props,
+  });
+
+  console.log('default values', props.defaultValues);
+
+  useEffect(() => {
+    if (props.isEditing) {
+      setForm(props.form);
+    }
+  }, [props.form]);
+
+  // Properties
   const handleSubmit = (data) => {
     console.log(data);
   };
 
   return (
-    <FormContextProvider>
-      <FormProvider {...form}>
-        <form onSubmit={form.handleSubmit((data) => handleSubmit(data))}>
-          <Reenderizer data={props.form} isEditing={props.isEditing} />
-          {/* {props.children} */}
-        </form>
-        <p>{sum}</p>
-        <button onClick={() => setSum((prev) => prev + 1)}>Boton </button>
-      </FormProvider>
-    </FormContextProvider>
+    <FormProvider {...form}>
+      <form onSubmit={form.handleSubmit((data) => handleSubmit(data))}>
+        <Reenderizer data={props.form} isEditing={props.isEditing} />
+      </form>
+      {/* <p>{sum}</p>
+      <button onClick={() => setSum((prev) => prev + 1)}>Boton </button> */}
+    </FormProvider>
   );
 };
 

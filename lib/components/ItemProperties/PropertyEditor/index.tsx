@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import titleForm from '../forms/titleForm';
 
@@ -13,10 +13,10 @@ import tabsForm from '../forms/tabsForm';
 import detailedForm from '../forms/detailedForm';
 import textAreaForm from '../forms/textAreaForm';
 
+import { FormContext } from '../../../context/FormContext';
+
 interface PropertyEditorProps {
-  item: NDataFormElement<any>;
   onSubmit: (data: any) => void;
-  deleteItem: (data: NDataFormElement<any>) => void;
 }
 
 const formMapping: { [key: string]: any } = {
@@ -34,31 +34,38 @@ const formMapping: { [key: string]: any } = {
 export const PropertyEditor = (props: PropertyEditorProps) => {
   // States
   const [form, setForm] = useState<NDataFormElement<any>[] | null>([]);
-  // const { selectItem } = useItemSelected();
+  const ctx = useContext(FormContext);
+
+  if (!ctx) {
+    throw new Error('Cannot find Form context provider');
+  }
 
   useEffect(() => {
     setForm(null);
     setTimeout(() => {
-      setForm(formMapping[props.item?.type]);
+      setForm(formMapping[ctx.selectedItem()?.type]);
     }, 1);
-  }, [props.item]);
+  }, [ctx.selectedItem]);
 
   const deleteItem = () => {
     // try {
     //   props.deleteItem(props.item);
     //   selectItem(null);
     // } catch (error) {}
+    //
+    //
+    // Buscar y eliminar por el id
   };
 
   if (!form) return <></>;
 
   return (
     <Form
+      propertyEditor={true}
       isEditing={false}
       form={form}
       onSubmit={props.onSubmit}
-      // isSubmitting={handleIsSubmitting}
-      data={props.item}
+      defaultValues={ctx.selectedItem()}
     >
       <div className="flex flex-row justify-end">
         <button
