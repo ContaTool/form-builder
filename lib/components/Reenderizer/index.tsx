@@ -6,24 +6,23 @@ import Card from '../Card';
 import Input from '../Input';
 import Add from '../Add';
 import Tabs from '../Tabs';
-// import Select from '../Select';
-// import TextArea from '../TextArea';
-// import Paragraph from '../Paragraph';
-// import Button from '../Button';
-// import Detailed from '../Detailed';
 import Root from '../Root';
-// import Container from '../Container';
+import Paragraph from '../Paragraph';
+import Select from '../Select';
+import TextArea from '../TextArea';
+import Container from '../Container';
+import Detailed from '../Detailed';
 
 const componentMapping: { [key: string]: React.ComponentType<any> } = {
   root: Root,
   title: Title,
   card: Card,
   input: Input,
-  // paragraph: Paragraph,
-  // textarea: TextArea,
-  // container: Container,
-  // select: Select,
-  // detailed: Detailed,
+  paragraph: Paragraph,
+  textarea: TextArea,
+  container: Container,
+  select: Select,
+  detailed: Detailed,
   // button: Button,
   tabs: Tabs,
   tab: Root,

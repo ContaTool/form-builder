@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import useItem from '../../hooks/useItem';
 
-// import { Tooltip } from '../Tooltip';
+import { Tooltip } from '../Tooltip';
 
 interface TitleProps {
   label?: string;
@@ -14,14 +14,13 @@ const Title = (props: NDataFormElement<TitleProps>) => {
     type: props.type,
   });
 
-  console.log('title has been rendered', props);
-
   return (
     <p
       onClick={handleClick}
       className={`${baseStyles} font-bold text-xl py-4 flex flex-row items-center `}
     >
       {props.props.label}
+      <Tooltip text={props.props.guide_text ?? ''} />
     </p>
   );
 };
