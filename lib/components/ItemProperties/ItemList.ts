@@ -10,9 +10,9 @@ export default {
     { value: 'select', label: 'Selector' },
     { value: 'detailed', label: 'Detallado' },
     { value: 'textarea', label: 'Area de texto' },
-    // { value: 'tabs', label: 'Tab' },
+    { value: 'checkbox', label: 'Checkbox' },
+    { value: 'radio', label: 'Selector unico' },
+    { value: 'subtitle', label: 'Subtitulo' },
     // { value: 'input_date', label: 'Campo de Fecha' },
-    // { value: 'checkbox', label: 'Checkbox' },
-    // { value: 'radio_button', label: 'Selector unico' },
   ],
 };

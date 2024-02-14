@@ -14,6 +14,9 @@ import detailedForm from '../forms/detailedForm';
 import textAreaForm from '../forms/textAreaForm';
 
 import { FormContext } from '../../../context/FormContext';
+import radioForm from '../forms/radioForm';
+import checkboxForm from '../forms/checkboxForm';
+import subtitleForm from '../forms/subtitleForm';
 
 interface PropertyEditorProps {
   onSubmit: (data: any) => void;
@@ -30,6 +33,9 @@ const formMapping: { [key: string]: any } = {
   tabs: tabsForm,
   detailed: detailedForm,
   textarea: textAreaForm,
+  radio: radioForm,
+  checkbox: checkboxForm,
+  subtitle: subtitleForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

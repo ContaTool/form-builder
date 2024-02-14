@@ -8,7 +8,7 @@ interface TitleProps {
   guide_text?: string;
 }
 
-const Title = (props: NDataFormElement<TitleProps>) => {
+const SubTitle = (props: NDataFormElement<TitleProps>) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
@@ -26,4 +26,4 @@ const Title = (props: NDataFormElement<TitleProps>) => {
   );
 };
 
-export default React.memo(Title);
+export default React.memo(SubTitle);
