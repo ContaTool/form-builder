@@ -23,6 +23,7 @@ const Detailed = (props: DetailedProps) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
 
   const { append, remove } = useFieldArray({

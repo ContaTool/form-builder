@@ -32,6 +32,7 @@ export const useDragDrop = (props: useDragDropProps) => {
 
   const onDragEnd: OnDragEndResponder = (e) => {
     setIsDragging(false);
+    console.log('drag end?');
     const d = e.destination?.droppableId;
     if (d) {
       props.onDragEnd({ ...findDropableByID(d), type: e.draggableId });

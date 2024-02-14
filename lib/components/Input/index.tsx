@@ -17,9 +17,8 @@ const Input = (props: NDataFormElement<InputProps>) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
-
-  console.log('input container redered', props);
 
   const {
     register,

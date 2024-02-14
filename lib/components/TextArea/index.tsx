@@ -14,6 +14,7 @@ export default function TextArea(props: NDataFormElement<TextAreaProps>) {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
 
   const {
@@ -28,7 +29,7 @@ export default function TextArea(props: NDataFormElement<TextAreaProps>) {
   );
 
   return (
-    <div onClick={handleClick} className="py-2">
+    <div onClick={handleClick} className={`${baseStyles} py-2`}>
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
         htmlFor={name}

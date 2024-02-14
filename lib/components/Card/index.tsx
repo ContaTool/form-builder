@@ -11,6 +11,7 @@ const Card = (props: CardProps) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
 
   console.log('card has been rendered', props);

@@ -26,7 +26,7 @@ declare global {
 
   // Nuevas interfaces.
   type NDataFormElement<T> = {
-    id?: string;
+    id: string;
     key?: string;
     type: string;
     props: T;

@@ -86,10 +86,10 @@ const Reenderizer = ({
                   item.type !== 'tab' &&
                   item.type !== 'root')) ? (
                 <Add
-                  parent={{ id: item.id || '', type: item.type }}
+                  parent={{ id: parent?.id || '', type: parent?.type || '' }}
                   id={uuidv4()}
                   key={uuidv4()}
-                  position={0}
+                  position={index + 1}
                 />
               ) : null}
             </>

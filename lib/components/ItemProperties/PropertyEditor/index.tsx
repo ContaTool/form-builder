@@ -7,7 +7,7 @@ import cardForm from '../forms/cardForm';
 import paragraphForm from '../forms/paragraphForm';
 import containerForm from '../forms/containerForm';
 import inputForm from '../forms/inputForm';
-// import { useItemSelected } from '../../../hooks/useItemSelected';
+
 import selectForm from '../forms/selectForm';
 import tabsForm from '../forms/tabsForm';
 import detailedForm from '../forms/detailedForm';
@@ -17,6 +17,7 @@ import { FormContext } from '../../../context/FormContext';
 
 interface PropertyEditorProps {
   onSubmit: (data: any) => void;
+  deleteItem: (id: string) => void;
 }
 
 const formMapping: { [key: string]: any } = {
@@ -47,16 +48,6 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
     }, 1);
   }, [ctx.selectedItem]);
 
-  const deleteItem = () => {
-    // try {
-    //   props.deleteItem(props.item);
-    //   selectItem(null);
-    // } catch (error) {}
-    //
-    //
-    // Buscar y eliminar por el id
-  };
-
   if (!form) return <></>;
 
   return (
@@ -69,7 +60,7 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
     >
       <div className="flex flex-row justify-end">
         <button
-          onClick={deleteItem}
+          onClick={props.deleteItem}
           className="mb-4 disabled:opacity-50 place-self-end bg-red-500
           hover:bg-red-700 text-white font-bold py-2 px-4 rounded
             inline-flex items-center me-2"

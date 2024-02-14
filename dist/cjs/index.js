@@ -9963,6 +9963,7 @@ const useDragDrop = (props)=>{
     const onDragEnd = (e)=>{
         var _a;
         setIsDragging(false);
+        console.log('drag end?');
         const d = (_a = e.destination) === null || _a === void 0 ? void 0 : _a.droppableId;
         if (d) {
             props.onDragEnd(Object.assign(Object.assign({}, findDropableByID(d)), {
@@ -10124,9 +10125,15 @@ const FormContextProvider = ({ children, onDragEnd })=>{
     const [item, setItem] = React.useState(null);
     const formData = useStore((state)=>state.form);
     const selectItem = (item)=>{
-        console.log('current selected item', item, formData);
-        console.log('node founded', findNodeById(formData[0], item === null || item === void 0 ? void 0 : item.item));
-        setItem(findNodeById(formData[0], item.item));
+        if (item) {
+            // console.log('current selected item', item, formData);
+            // console.log('node founded', findNodeById(formData[0], item?.item));
+            setItem(Object.assign(Object.assign({}, findNodeById(formData[0], item.item)), {
+                parent: item.parent
+            }));
+            return;
+        }
+        setItem(null);
     };
     const selectedItem = ()=>{
         return item;
@@ -10151,7 +10158,7 @@ const useItem = (props)=>{
     const handleClick = (event)=>{
         event.stopPropagation();
         if (props.item) {
-            console.log('clicked', props.item);
+            console.log('clicked', props);
             ctx.selectItem(props);
         }
     };
@@ -10165,7 +10172,8 @@ const useItem = (props)=>{
 const Card = (props)=>{
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     console.log('card has been rendered', props);
     return React.createElement("div", {
@@ -12215,14 +12223,16 @@ const Tooltip = (props)=>{
 
 const Title = (props)=>{
     var _a;
+    console.log('title', props);
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
-    return React.createElement("p", {
+    return React.createElement("div", {
         onClick: handleClick,
         className: `${baseStyles} font-bold text-xl py-4 flex flex-row items-center `
-    }, props.props.label, React.createElement(Tooltip, {
+    }, React.createElement("p", null, props.props.label), React.createElement(Tooltip, {
         text: (_a = props.props.guide_text) !== null && _a !== void 0 ? _a : ''
     }));
 };
@@ -12233,9 +12243,9 @@ const Input = (props)=>{
     const name = React.useRef((_a = props.props.name) !== null && _a !== void 0 ? _a : '');
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
-    console.log('input container redered', props);
     const { register, formState: { errors } } = useFormContext();
     return React.createElement("div", {
         className: `${baseStyles} `,
@@ -12289,7 +12299,8 @@ function Add(props) {
 const Tabs = (props)=>{
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     const [activeTab, setActiveTab] = React.useState(0);
     return React.createElement("div", {
@@ -12332,7 +12343,8 @@ var Root$1 = React.memo(Root);
 const Paragraph = (props)=>{
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     return React.createElement("p", {
         onClick: handleClick,
@@ -12344,7 +12356,8 @@ const Select = (props)=>{
     var _a, _b, _c;
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     const [name, setName] = React.useState(props.props.name || '-');
     // States
@@ -12416,13 +12429,14 @@ function TextArea(props) {
     var _a, _b, _c;
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     const { register, formState: { errors } } = useFormContext();
     const [name, _] = React.useState(props.detailed ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}` : (_a = props.props.name) !== null && _a !== void 0 ? _a : '-');
     return React.createElement("div", {
         onClick: handleClick,
-        className: "py-2"
+        className: `${baseStyles} py-2`
     }, React.createElement("label", {
         className: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
         htmlFor: name
@@ -12440,7 +12454,8 @@ function TextArea(props) {
 const Container = (props)=>{
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     return React.createElement("div", {
         className: `${baseStyles} w-full grid gap-2`,
@@ -12466,7 +12481,8 @@ const Detailed = (props)=>{
     const { control, getValues, formState: { errors } } = useFormContext();
     const { handleClick, baseStyles } = useItem({
         item: props.id,
-        type: props.type
+        type: props.type,
+        parent: props.parent
     });
     const { append, remove } = useFieldArray({
         control,
@@ -12547,12 +12563,12 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
                 }
             })), isEditing && (!item.props.children || data.length == index + 1 && item.type !== 'tab' && item.type !== 'root') ? React.createElement(Add, {
                 parent: {
-                    id: item.id || '',
-                    type: item.type
+                    id: (parent === null || parent === void 0 ? void 0 : parent.id) || '',
+                    type: (parent === null || parent === void 0 ? void 0 : parent.type) || ''
                 },
                 id: v4(),
                 key: v4(),
-                position: 0
+                position: index + 1
             }) : null);
         }
         // If no corresponding component is found, you can return a default or handle it as needed
@@ -12583,13 +12599,14 @@ const Form = (props)=>{
     // Properties
     const handleSubmit = (data)=>{
         console.log(data);
+        props.onSubmit(Object.assign({}, data));
     };
     return React.createElement(FormProvider, Object.assign({}, form), React.createElement("form", {
         onSubmit: form.handleSubmit((data)=>handleSubmit(data))
     }, React.createElement(Reenderizer, {
         data: props.form,
         isEditing: props.isEditing
-    })));
+    }), props.children));
 };
 
 var ItemList = {
@@ -13040,15 +13057,6 @@ const PropertyEditor = (props)=>{
     }, [
         ctx.selectedItem
     ]);
-    const deleteItem = ()=>{
-    // try {
-    //   props.deleteItem(props.item);
-    //   selectItem(null);
-    // } catch (error) {}
-    //
-    //
-    // Buscar y eliminar por el id
-    };
     if (!form) return React.createElement(React.Fragment, null);
     return React.createElement(Form, {
         propertyEditor: true,
@@ -13059,7 +13067,7 @@ const PropertyEditor = (props)=>{
     }, React.createElement("div", {
         className: "flex flex-row justify-end"
     }, React.createElement("button", {
-        onClick: deleteItem,
+        onClick: props.deleteItem,
         className: "mb-4 disabled:opacity-50 place-self-end bg-red-500\n          hover:bg-red-700 text-white font-bold py-2 px-4 rounded\n            inline-flex items-center me-2",
         type: "button"
     }, "Eliminar"), React.createElement("button", {
@@ -13069,29 +13077,40 @@ const PropertyEditor = (props)=>{
 };
 
 const ItemProperties = (props)=>{
-    // Hooks
+    // Context
     const ctx = React.useContext(FormContext);
-    console.log('el contexto es ', ctx);
     if (!ctx) {
         throw new Error('Cannot find Form context provider');
     }
-    React.useEffect(()=>{
-        console.log('cambio el contexto ', ctx.selectedItem());
-    }, [
-        ctx.selectedItem()
-    ]);
+    // Hooks
+    useStore((state)=>state.form);
     const _beforeSubmit = (data)=>{
-    // if (item) {
-    //   const d = { id: item.id, ...data };
-    //   if (Object.keys(d).includes('children')) {
-    //     d.children = d.children.map((i: NDataFormElement<any>) => i.id);
-    //   }
-    //   props.onSubmit(d);
-    //   return;
-    // }
-    // throw new Error('Item is not setted before save');
+        const item = ctx.selectedItem();
+        console.log('item', item);
+        if (item) {
+            const d = Object.assign({
+                id: item.id
+            }, data);
+            if (Object.keys(d).includes('children')) {
+                d.children = d.children.map((i)=>i.id);
+            }
+            props.onSubmit(d);
+            return;
+        }
+        throw new Error('Item is not setted before save');
+    };
+    const _deleteItem = ()=>{
+        try {
+            console.log('delete called', ctx.selectedItem());
+            props.deleteItem(Object.assign({}, ctx.selectedItem()));
+            ctx.selectItem(null);
+        } catch (error) {
+            console.log('error', error);
+        }
+    // Buscar y eliminar por el id
     };
     return React.createElement("div", null, ctx.selectedItem() ? React.createElement(PropertyEditor, {
+        deleteItem: _deleteItem,
         onSubmit: _beforeSubmit
     }) : React.createElement(NewItem, null), React.createElement("button", {
         onClick: ()=>ctx.selectItem(null),

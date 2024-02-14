@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import Input from '../Input';
 import Reenderizer from '../Reenderizer';
 import useItem from '../../hooks/useItem';
 
@@ -10,6 +9,7 @@ const Tabs = (props: Tabs) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
   const [activeTab, setActiveTab] = useState<number>(0);
 

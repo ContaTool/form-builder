@@ -1,7 +1,13 @@
 import { useContext } from 'react';
 import { FormContext } from '../context/FormContext';
 
-const useItem = (props) => {
+type useItemProps = {
+  item: string;
+  type: string;
+  parent: any;
+};
+
+const useItem = (props: useItemProps) => {
   const ctx = useContext(FormContext);
 
   if (!ctx) {
@@ -11,7 +17,7 @@ const useItem = (props) => {
   const handleClick = (event) => {
     event.stopPropagation();
     if (props.item) {
-      console.log('clicked', props.item);
+      console.log('clicked', props);
       ctx.selectItem(props);
     }
   };

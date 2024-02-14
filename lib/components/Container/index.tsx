@@ -19,6 +19,7 @@ const Container = (props: ContainerProps) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
 
   return (

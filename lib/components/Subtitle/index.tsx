@@ -9,7 +9,6 @@ interface TitleProps {
 }
 
 const Title = (props: NDataFormElement<TitleProps>) => {
-  console.log('title', props);
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
@@ -17,13 +16,13 @@ const Title = (props: NDataFormElement<TitleProps>) => {
   });
 
   return (
-    <div
+    <p
       onClick={handleClick}
-      className={`${baseStyles} font-bold text-xl py-4 flex flex-row items-center `}
+      className={`${baseStyles} font-bold text-md py-4 flex flex-row items-center `}
     >
-      <p>{props.props.label}</p>
+      {props.props.label}
       <Tooltip text={props.props.guide_text ?? ''} />
-    </div>
+    </p>
   );
 };
 

@@ -3,42 +3,57 @@ import React, { useState, useContext, useEffect, useRef } from 'react';
 import New from './New';
 import { PropertyEditor } from './PropertyEditor';
 import { FormContext } from '../../context/FormContext';
+import { findParentNodeById } from '../../helpers';
+import { useStore } from '../../hooks/useStore';
 // import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {
   onSubmit: (data: any) => void;
+  deleteItem: (id: string) => void;
 }
 
 const ItemProperties = (props: ItemPropertiesProps) => {
-  // Hooks
+  // Context
   const ctx = useContext(FormContext);
-
-  console.log('el contexto es ', ctx);
-
   if (!ctx) {
     throw new Error('Cannot find Form context provider');
   }
 
-  useEffect(() => {
-    console.log('cambio el contexto ', ctx.selectedItem());
-  }, [ctx.selectedItem()]);
+  // Hooks
+  const formData = useStore((state) => state.form);
 
   const _beforeSubmit = (data: any) => {
-    // if (item) {
-    //   const d = { id: item.id, ...data };
-    //   if (Object.keys(d).includes('children')) {
-    //     d.children = d.children.map((i: NDataFormElement<any>) => i.id);
-    //   }
-    //   props.onSubmit(d);
-    //   return;
-    // }
-    // throw new Error('Item is not setted before save');
+    const item = ctx.selectedItem();
+    console.log('item', item);
+    if (item) {
+      const d = { id: item.id, ...data };
+      if (Object.keys(d).includes('children')) {
+        d.children = d.children.map((i: NDataFormElement<any>) => i.id);
+      }
+      props.onSubmit(d);
+      return;
+    }
+    throw new Error('Item is not setted before save');
+  };
+
+  const _deleteItem = () => {
+    try {
+      console.log('delete called', ctx.selectedItem());
+
+      props.deleteItem({
+        ...ctx.selectedItem(),
+      });
+      ctx.selectItem(null);
+    } catch (error) {
+      console.log('error', error);
+    }
+    // Buscar y eliminar por el id
   };
 
   return (
     <div>
       {ctx.selectedItem() ? (
-        <PropertyEditor onSubmit={_beforeSubmit} />
+        <PropertyEditor deleteItem={_deleteItem} onSubmit={_beforeSubmit} />
       ) : (
         <New />
       )}

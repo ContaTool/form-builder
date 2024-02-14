@@ -19,6 +19,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
+    parent: props.parent,
   });
 
   const [name, setName] = useState<string>(props.props.name || '-');
