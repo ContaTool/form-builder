@@ -49,11 +49,6 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
   }
 
   useEffect(() => {
-    // console.log(
-    //   'selected item',
-    //   ctx.selectedItem(),
-    // )
-    // );
     setForm(null);
     setTimeout(() => {
       setForm(formMapping[ctx.selectedItem()?.type]);
@@ -61,8 +56,6 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
   }, [ctx.selectedItem]);
 
   if (!form) return <></>;
-
-  console.log('reenderizo item properties');
 
   return (
     <Form

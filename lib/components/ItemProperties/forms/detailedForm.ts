@@ -13,6 +13,13 @@ export default [
                   label: 'Editar campo detallado',
                 },
               },
+              {
+                type: 'checkbox',
+                props: {
+                  name: 'totalizar',
+                  label: 'Totalizar',
+                },
+              },
             ],
           },
         },

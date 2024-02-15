@@ -11,7 +11,7 @@ export default {
     { value: 'detailed', label: 'Detallado' },
     { value: 'textarea', label: 'Area de texto' },
     { value: 'checkbox', label: 'Checkbox' },
-    { value: 'radio', label: 'Selector unico' },
+    { value: 'radio_buttons', label: 'Selector unico' },
     { value: 'subtitle', label: 'Subtitulo' },
     // { value: 'input_date', label: 'Campo de Fecha' },
   ],

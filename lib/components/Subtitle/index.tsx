@@ -18,10 +18,12 @@ const SubTitle = (props: NDataFormElement<TitleProps>) => {
   return (
     <p
       onClick={handleClick}
-      className={`${baseStyles} font-bold text-md py-4 flex flex-row items-center `}
+      className={`${baseStyles} font-bold text-sm  flex flex-row items-center `}
     >
       {props.props.label}
-      <Tooltip text={props.props.guide_text ?? ''} />
+      {props.props.guide_text ? (
+        <Tooltip text={props.props.guide_text} />
+      ) : null}
     </p>
   );
 };

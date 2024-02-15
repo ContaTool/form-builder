@@ -14,8 +14,6 @@ const Card = (props: CardProps) => {
     parent: props.parent,
   });
 
-  console.log('card has been rendered', props);
-
   return (
     <div
       onClick={handleClick}

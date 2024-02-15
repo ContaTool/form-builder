@@ -27,6 +27,13 @@ export default [
                   label: 'Placeholder',
                 },
               },
+              {
+                type: 'checkbox',
+                props: {
+                  name: 'numeric',
+                  label: 'Utilizar en las formulas?',
+                },
+              },
             ],
           },
         },

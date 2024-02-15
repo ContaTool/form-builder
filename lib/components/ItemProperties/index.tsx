@@ -1,9 +1,8 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
+import React, { useContext } from 'react';
 
 import New from './New';
 import { PropertyEditor } from './PropertyEditor';
 import { FormContext } from '../../context/FormContext';
-import { findParentNodeById } from '../../helpers';
 import { useStore } from '../../hooks/useStore';
 // import { useItemSelected } from '../../hooks/useItemSelected';
 

@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 import useItem from '../../hooks/useItem';
+import Subtitle from '../SubTitle';
+import {
+  DetailedContext,
+  DetailedContextProvider,
+} from '../../context/DetailedContext';
 
 interface DetailedProps {}
 
 interface Props {
   children: Array<NDataFormElement<any>>;
   name: string;
+  totalizar: boolean;
 }
 
 interface DetailedProps extends NDataFormElement<Props> {
   children: JSX.Element;
-  // props: Props
 }
 
+const DetailedWrapper = (props: DetailedProps) => (
+  <DetailedContextProvider>
+    <Detailed {...props} />
+  </DetailedContextProvider>
+);
+
 const Detailed = (props: DetailedProps) => {
+  // Context //Perfecto para usar el nuevo hook use y hacer el contexto opcional.
+  const detailCtx = useContext(DetailedContext);
+
+  // Hooks
   const {
     control,
     getValues,
@@ -40,12 +55,22 @@ const Detailed = (props: DetailedProps) => {
     remove(position);
   };
 
-  console.log('detailed rendered', props);
-
   return (
     <div onClick={handleClick} className={`${baseStyles} `}>
       <>
         {/* {props.isEditing && <div>Campo Detallado</div>} */}
+
+        {props.props.totalizar ? (
+          <div className="flex flex-col items-end">
+            <Subtitle
+              type="subtitle"
+              props={{
+                label: `Total dinero en la cuenta: ${detailCtx.total()}`,
+              }}
+            />
+          </div>
+        ) : null}
+
         <div
           className={`${props.isEditing ? 'border border-dashed min-h-10 py-2 my-2 border-gray-800' : ''} `}
         >
@@ -90,4 +115,4 @@ const Detailed = (props: DetailedProps) => {
   );
 };
 
-export default Detailed;
+export default DetailedWrapper;

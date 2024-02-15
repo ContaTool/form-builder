@@ -1,18 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import type { RegisterOptions } from 'react-hook-form';
 
 import useItem from '../../hooks/useItem';
 import { useFormContext } from 'react-hook-form';
+import { DetailedContext } from '../../context/DetailedContext';
 
 interface InputProps {
   name?: string;
   label?: string;
   placeholder?: string;
   validations?: RegisterOptions;
+  numeric: boolean;
 }
 
 const Input = (props: NDataFormElement<InputProps>) => {
   // const name = useRef(props.props.name ?? '');
+
+  const detailCtx = useContext(DetailedContext);
 
   const name = useRef<string>(
     props.detailed
@@ -25,6 +29,15 @@ const Input = (props: NDataFormElement<InputProps>) => {
     type: props.type,
     parent: props.parent,
   });
+
+  const _handleChange = (e) => {
+    if (detailCtx && props.detailed && props.props.numeric) {
+      detailCtx.handleInputChange({
+        position: props.detailed.index,
+        value: !isNaN(e.target.value) ? parseFloat(e.target.value) : 0,
+      });
+    }
+  };
 
   const {
     register,
@@ -42,6 +55,7 @@ const Input = (props: NDataFormElement<InputProps>) => {
         </label>
         <input
           {...register(name.current, { ...props.props.validations })}
+          onChange={_handleChange}
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         />
         <p className="text-red-500 text-xs italic pt-2">

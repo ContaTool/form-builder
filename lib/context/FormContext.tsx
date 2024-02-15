@@ -21,7 +21,7 @@ const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
   const selectItem = (item) => {
     if (item) {
       // console.log('current selected item', item, formData);
-      // console.log('node founded', findNodeById(formData[0], item?.item));
+      console.log('node founded', findNodeById(formData[0], item?.item));
       setItem({ ...findNodeById(formData[0], item.item), parent: item.parent });
       return;
     }

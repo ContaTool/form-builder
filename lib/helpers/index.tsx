@@ -56,6 +56,26 @@ export function findNodeById(obj, id) {
   return null;
 }
 
+export function findNodeByTotalizable(node) {
+  // Base case: If the current node is of type "input" and numeric property is true, return it
+  if (node.type === 'input' && node.props && node.props.numeric === true) {
+    return node;
+  }
+
+  // Recursive case: If the current node has children, search through its children
+  if (node.props && node.props.children) {
+    for (let i = 0; i < node.props.children.length; i++) {
+      const result = findNodeByTotalizable(node.props.children[i]);
+      if (result) {
+        return result;
+      }
+    }
+  }
+
+  // If the current node is not what we're looking for and has no children, return null
+  return null;
+}
+
 export function decodeElement(data: NDataFormElement<any>) {
   if (data) {
     if (
@@ -70,4 +90,18 @@ export function decodeElement(data: NDataFormElement<any>) {
     }
     return data.props;
   }
+}
+
+export function isplice(arr, start, deleteCount, ...addItem) {
+  const result = [];
+  if (start > 0) {
+    result.push(...arr.slice(0, start));
+  }
+  result.push(...addItem);
+  const len = result.length - addItem.length;
+  let count = deleteCount <= 0 ? len : len + deleteCount;
+  if (arr[count]) {
+    result.push(...arr.slice(count));
+  }
+  return result;
 }
