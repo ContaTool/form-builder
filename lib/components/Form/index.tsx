@@ -14,19 +14,13 @@ interface Form {
 }
 
 const Form = (props: Form) => {
-  const [sum, setSum] = useState<number>(0);
-
-  console.log('Received form', props);
-
   // Hooks
   const formData = useStore((state) => state.form);
   const setForm = useStore((state) => state.setForm);
 
   const form = useForm({
-    defaultValues: props.defaultValues?.props,
+    defaultValues: props.defaultValues,
   });
-
-  console.log('default values', props.defaultValues);
 
   useEffect(() => {
     if (props.isEditing) {

@@ -12,7 +12,13 @@ interface InputProps {
 }
 
 const Input = (props: NDataFormElement<InputProps>) => {
-  const name = useRef(props.props.name ?? '');
+  // const name = useRef(props.props.name ?? '');
+
+  const name = useRef<string>(
+    props.detailed
+      ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}`
+      : props.props.name ?? '-'
+  );
 
   const { handleClick, baseStyles } = useItem({
     item: props.id,

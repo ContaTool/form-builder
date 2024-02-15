@@ -55,3 +55,19 @@ export function findNodeById(obj, id) {
   // Si no se encuentra en el objeto actual ni en sus hijos, devuelve null
   return null;
 }
+
+export function decodeElement(data: NDataFormElement<any>) {
+  if (data) {
+    if (
+      (data.type === 'tabs' || data.type === 'radio_buttons') &&
+      data.props.children
+    ) {
+      return {
+        options: data.props.children.map((i: any) => ({
+          label: i.props.label,
+        })),
+      };
+    }
+    return data.props;
+  }
+}

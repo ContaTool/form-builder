@@ -16,7 +16,7 @@ export default [
               {
                 type: 'detailed',
                 props: {
-                  name: 'tabs',
+                  name: 'options',
                   children: [
                     {
                       type: 'input',

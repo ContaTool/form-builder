@@ -11,6 +11,7 @@ interface Props {
 
 interface DetailedProps extends NDataFormElement<Props> {
   children: JSX.Element;
+  // props: Props
 }
 
 const Detailed = (props: DetailedProps) => {
@@ -38,6 +39,8 @@ const Detailed = (props: DetailedProps) => {
   const removeItem = (position: number) => {
     remove(position);
   };
+
+  console.log('detailed rendered', props);
 
   return (
     <div onClick={handleClick} className={`${baseStyles} `}>

@@ -10,19 +10,19 @@ export default [
               {
                 type: 'title',
                 props: {
-                  label: 'Editar Tabs',
+                  label: 'Editar Seleccion unica',
                 },
               },
               {
                 type: 'detailed',
                 props: {
-                  name: 'tabs',
+                  name: 'options',
                   children: [
                     {
                       type: 'input',
                       props: {
                         name: 'label',
-                        label: 'Etiqueta ',
+                        label: 'Nombre de la opcion ',
                       },
                     },
                   ],

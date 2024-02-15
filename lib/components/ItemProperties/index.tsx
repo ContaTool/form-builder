@@ -26,6 +26,7 @@ const ItemProperties = (props: ItemPropertiesProps) => {
     const item = ctx.selectedItem();
     console.log('item', item);
     if (item) {
+      ctx.selectItem(null);
       const d = { id: item.id, ...data };
       if (Object.keys(d).includes('children')) {
         d.children = d.children.map((i: NDataFormElement<any>) => i.id);

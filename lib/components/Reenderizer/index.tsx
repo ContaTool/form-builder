@@ -13,8 +13,10 @@ import TextArea from '../TextArea';
 import Container from '../Container';
 import Detailed from '../Detailed';
 import CheckBox from '../Checkbox';
-import RadioButton from '../RadioButton';
 import SubTitle from '../SubTitle';
+
+// import RadioButton from '../RadioButton';
+import RadioContainer from '../RadioButton';
 
 const componentMapping: { [key: string]: React.ComponentType<any> } = {
   root: Root,
@@ -28,7 +30,9 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   select: Select,
   detailed: Detailed,
   checkbox: CheckBox,
-  radio: RadioButton,
+  radio_buttons: RadioContainer,
+  // radio: RadioButton,
+
   // button: Button,
   tabs: Tabs,
   tab: Root,

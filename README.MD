@@ -2,14 +2,15 @@
 
 Components
 -- Subtitle [x]
--- Radio Button []
--- Checkbox []
+-- Checkbox [x]
+-- Radio Button [x]
+    -- Terminar radio [x]
 
 Utilidades.
 -- Drag&Drop [x]
 -- Guardar edicion [x]
 -- Eliminar componente [x]
--- Decode Tab []
+-- Decode Tab y radio[x]
 
 -- Totalizar
 -- Marcar un campo como campo para calculo

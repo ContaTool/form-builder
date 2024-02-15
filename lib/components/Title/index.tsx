@@ -22,7 +22,9 @@ const Title = (props: NDataFormElement<TitleProps>) => {
       className={`${baseStyles} font-bold text-xl py-4 flex flex-row items-center `}
     >
       <p>{props.props.label}</p>
-      <Tooltip text={props.props.guide_text ?? ''} />
+      {props.props.guide_text ? (
+        <Tooltip text={props.props.guide_text} />
+      ) : null}
     </div>
   );
 };

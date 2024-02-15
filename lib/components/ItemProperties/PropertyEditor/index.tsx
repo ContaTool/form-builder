@@ -17,6 +17,7 @@ import { FormContext } from '../../../context/FormContext';
 import radioForm from '../forms/radioForm';
 import checkboxForm from '../forms/checkboxForm';
 import subtitleForm from '../forms/subtitleForm';
+import { decodeElement } from '../../../helpers';
 
 interface PropertyEditorProps {
   onSubmit: (data: any) => void;
@@ -33,7 +34,7 @@ const formMapping: { [key: string]: any } = {
   tabs: tabsForm,
   detailed: detailedForm,
   textarea: textAreaForm,
-  radio: radioForm,
+  radio_buttons: radioForm,
   checkbox: checkboxForm,
   subtitle: subtitleForm,
 };
@@ -48,6 +49,11 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
   }
 
   useEffect(() => {
+    // console.log(
+    //   'selected item',
+    //   ctx.selectedItem(),
+    // )
+    // );
     setForm(null);
     setTimeout(() => {
       setForm(formMapping[ctx.selectedItem()?.type]);
@@ -56,13 +62,15 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
 
   if (!form) return <></>;
 
+  console.log('reenderizo item properties');
+
   return (
     <Form
       propertyEditor={true}
       isEditing={false}
       form={form}
       onSubmit={props.onSubmit}
-      defaultValues={ctx.selectedItem()}
+      defaultValues={decodeElement(ctx.selectedItem())}
     >
       <div className="flex flex-row justify-end">
         <button
