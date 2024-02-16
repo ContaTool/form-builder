@@ -105,3 +105,7 @@ export function isplice(arr, start, deleteCount, ...addItem) {
   }
   return result;
 }
+
+export function numberWithCommas(x: string): string {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}

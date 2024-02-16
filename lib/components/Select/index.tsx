@@ -12,7 +12,7 @@ interface SelectProps {
   name?: string;
   label?: string;
   validations?: RegisterOptions;
-  options?: { value: string; label: string }[];
+  option_values?: { value: string; label: string }[];
 }
 
 const Select = (props: NDataFormElement<SelectProps>) => {
@@ -27,7 +27,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
   // States
   const [query, setQuery] = useState<string>('');
   const [filteredOptions, setFilteredOptions] = useState(
-    props.props.options?.filter((i) => i.value != 'add')
+    props.props.option_values?.filter((i) => i.value != 'add')
   );
   const [isOpen, setIsOpen] = useState(false);
 
@@ -64,7 +64,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
 
-    const filtered = props.props.options?.filter((option) =>
+    const filtered = props.props.option_values?.filter((option) =>
       option.label.toLowerCase().includes(inputValue.toLowerCase())
     );
 

@@ -10124,6 +10124,9 @@ function isplice(arr, start, deleteCount, ...addItem) {
     }
     return result;
 }
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
 
 const FormContext = createContext();
 const FormContextProvider = ({ children, onDragEnd })=>{
@@ -12243,12 +12246,9 @@ var Title$1 = React__default.memo(Title);
 
 const DetailedContext = createContext();
 const DetailedContextProvider = ({ children })=>{
-    // const [total, setTotal] = useState<number>(0);
     const [inputValues, setInputValues] = useState([]);
-    // Función para manejar el cambio de valor de los inputs
+    const [inputName, setinputName] = useState('');
     const handleInputChange = (data)=>{
-        // const newValue = parseFloat(e.target.value);
-        // setTotal((prevTotal) => prevTotal + newValue);
         setInputValues((prev)=>{
             return isplice([
                 ...prev
@@ -12257,18 +12257,22 @@ const DetailedContextProvider = ({ children })=>{
     };
     const getTotal = ()=>{
         if (inputValues.length > 0) {
-            return inputValues.reduce((acc, currentValue)=>acc + currentValue, 0);
+            const sum = inputValues.reduce((acc, currentValue)=>acc + currentValue, 0);
+            if (isNaN(sum)) {
+                return 0;
+            }
+            return numberWithCommas(sum);
         }
         return 0;
     };
-    useEffect(()=>{
-        console.log('new input values', inputValues);
-    }, [
-        inputValues
-    ]);
+    const setInputName = (name)=>{
+        setinputName(name.toLowerCase());
+    };
     const values = {
         handleInputChange,
-        total: getTotal
+        total: getTotal,
+        inputName,
+        setInputName
     };
     return React__default.createElement(DetailedContext.Provider, {
         value: values
@@ -12289,8 +12293,9 @@ const Input = (props)=>{
         if (detailCtx && props.detailed && props.props.numeric) {
             detailCtx.handleInputChange({
                 position: props.detailed.index,
-                value: !isNaN(e.target.value) ? parseFloat(e.target.value) : 0
+                value: !isNaN(e.target.value) ? parseFloat(event.target.value.replace(/[.,]/g, '')) : 0
             });
+            detailCtx.setInputName(props.props.label);
         }
     };
     const { register, formState: { errors } } = useFormContext();
@@ -12418,7 +12423,7 @@ const Select = (props)=>{
     const [name, setName] = useState(props.props.name || '-');
     // States
     const [query, setQuery] = useState('');
-    const [filteredOptions, setFilteredOptions] = useState((_a = props.props.options) === null || _a === void 0 ? void 0 : _a.filter((i)=>i.value != 'add'));
+    const [filteredOptions, setFilteredOptions] = useState((_a = props.props.option_values) === null || _a === void 0 ? void 0 : _a.filter((i)=>i.value != 'add'));
     const [isOpen, setIsOpen] = useState(false);
     // Refs
     const wrapperRef = useRef(null);
@@ -12442,7 +12447,7 @@ const Select = (props)=>{
         var _a;
         const inputValue = e.target.value;
         setQuery(inputValue);
-        const filtered = (_a = props.props.options) === null || _a === void 0 ? void 0 : _a.filter((option)=>option.label.toLowerCase().includes(inputValue.toLowerCase()));
+        const filtered = (_a = props.props.option_values) === null || _a === void 0 ? void 0 : _a.filter((option)=>option.label.toLowerCase().includes(inputValue.toLowerCase()));
         setFilteredOptions(filtered);
         setIsOpen(true);
     };
@@ -12576,9 +12581,10 @@ const Detailed = (props)=>{
     }, React__default.createElement(React__default.Fragment, null, props.props.totalizar ? React__default.createElement("div", {
         className: "flex flex-col items-end"
     }, React__default.createElement(SubTitle$1, {
+        id: crypto.randomUUID(),
         type: "subtitle",
         props: {
-            label: `Total dinero en la cuenta: ${detailCtx.total()}`
+            label: `Total ${detailCtx.inputName}: ${detailCtx.total()}`
         }
     })) : null, React__default.createElement("div", {
         className: `${props.isEditing ? 'border border-dashed min-h-10 py-2 my-2 border-gray-800' : ''} `
@@ -13053,7 +13059,7 @@ var selectForm = [
                             {
                                 type: 'detailed',
                                 props: {
-                                    name: 'options',
+                                    name: 'option_values',
                                     children: [
                                         {
                                             type: 'container',

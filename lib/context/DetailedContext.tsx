@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { isplice } from '../helpers';
+import { isplice, numberWithCommas } from '../helpers';
 
 const DetailedContext = createContext();
 
@@ -8,15 +8,10 @@ interface DetailedContextProvider {
 }
 
 const DetailedContextProvider = ({ children }: DetailedContextProvider) => {
-  // const [total, setTotal] = useState<number>(0);
-
   const [inputValues, setInputValues] = useState<Array<any>>([]);
+  const [inputName, setinputName] = useState<string>('');
 
-  // Función para manejar el cambio de valor de los inputs
   const handleInputChange = (data) => {
-    // const newValue = parseFloat(e.target.value);
-    // setTotal((prevTotal) => prevTotal + newValue);
-
     setInputValues((prev) => {
       return isplice([...prev], data.position, 1, data.value);
     });
@@ -24,16 +19,28 @@ const DetailedContextProvider = ({ children }: DetailedContextProvider) => {
 
   const getTotal = () => {
     if (inputValues.length > 0) {
-      return inputValues.reduce((acc, currentValue) => acc + currentValue, 0);
+      const sum = inputValues.reduce(
+        (acc, currentValue) => acc + currentValue,
+        0
+      );
+      if (isNaN(sum)) {
+        return 0;
+      }
+      return numberWithCommas(sum);
     }
     return 0;
   };
 
-  useEffect(() => {
-    console.log('new input values', inputValues);
-  }, [inputValues]);
+  const setInputName = (name: string) => {
+    setinputName(name.toLowerCase());
+  };
 
-  const values = { handleInputChange, total: getTotal };
+  const values = {
+    handleInputChange,
+    total: getTotal,
+    inputName,
+    setInputName,
+  };
 
   return (
     <DetailedContext.Provider value={values}>

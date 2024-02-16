@@ -63,9 +63,10 @@ const Detailed = (props: DetailedProps) => {
         {props.props.totalizar ? (
           <div className="flex flex-col items-end">
             <Subtitle
+              id={crypto.randomUUID()}
               type="subtitle"
               props={{
-                label: `Total dinero en la cuenta: ${detailCtx.total()}`,
+                label: `Total ${detailCtx.inputName}: ${detailCtx.total()}`,
               }}
             />
           </div>

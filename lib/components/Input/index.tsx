@@ -34,8 +34,12 @@ const Input = (props: NDataFormElement<InputProps>) => {
     if (detailCtx && props.detailed && props.props.numeric) {
       detailCtx.handleInputChange({
         position: props.detailed.index,
-        value: !isNaN(e.target.value) ? parseFloat(e.target.value) : 0,
+        value: !isNaN(e.target.value)
+          ? parseFloat(event.target.value.replace(/[.,]/g, ''))
+          : 0,
       });
+
+      detailCtx.setInputName(props.props.label);
     }
   };
 

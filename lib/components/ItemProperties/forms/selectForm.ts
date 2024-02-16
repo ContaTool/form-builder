@@ -23,7 +23,7 @@ export default [
               {
                 type: 'detailed',
                 props: {
-                  name: 'options',
+                  name: 'option_values',
                   children: [
                     {
                       type: 'container',
