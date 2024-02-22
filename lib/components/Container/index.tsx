@@ -37,7 +37,7 @@ const Container = (props: ContainerProps) => {
             parent={{ id: props.id || '', type: 'root' }}
             id={uuidv4()}
             key={uuidv4()}
-            position={props?.children?.length ?? 0} //FIXME: !props?.children ? 1  || props.children.length  + 1
+            position={1000} //FIXME: !props?.children ? 1  || props.children.length  + 1
           />
         </div>
       )}

@@ -12533,7 +12533,6 @@ function TextArea(props) {
 }
 
 const Container = (props)=>{
-    var _a, _b;
     const { handleClick, baseStyles } = useItem({
         item: props.id,
         type: props.type,
@@ -12554,7 +12553,7 @@ const Container = (props)=>{
         },
         id: v4(),
         key: v4(),
-        position: (_b = (_a = props === null || props === void 0 ? void 0 : props.children) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0
+        position: 1000
     })));
 };
 var Container$1 = React.memo(Container, compareFormComponent);
@@ -12982,7 +12981,7 @@ var containerForm = [
                                 props: {
                                     label: 'Columnas',
                                     name: 'size',
-                                    options: [
+                                    option_values: [
                                         {
                                             value: '1',
                                             label: '1'
