@@ -39,7 +39,7 @@ declare global {
           index: number;
         }
       | undefined;
-    children: JSX.Element;
+    children?: JSX.Element;
   };
 }
 

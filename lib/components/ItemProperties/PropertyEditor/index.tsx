@@ -18,6 +18,7 @@ import radioForm from '../forms/radioForm';
 import checkboxForm from '../forms/checkboxForm';
 import subtitleForm from '../forms/subtitleForm';
 import { decodeElement } from '../../../helpers';
+import totalizeForm from '../forms/totalizeForm';
 
 interface PropertyEditorProps {
   onSubmit: (data: any) => void;
@@ -37,6 +38,7 @@ const formMapping: { [key: string]: any } = {
   radio_buttons: radioForm,
   checkbox: checkboxForm,
   subtitle: subtitleForm,
+  totalize: totalizeForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

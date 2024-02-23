@@ -3,7 +3,8 @@ import type { RegisterOptions } from 'react-hook-form';
 
 import useItem from '../../hooks/useItem';
 import { useFormContext } from 'react-hook-form';
-import { DetailedContext } from '../../context/DetailedContext';
+import { TotalizerContext } from '../../context/TotalizerContext';
+import { Tooltip } from '../Tooltip';
 
 interface InputProps {
   name?: string;
@@ -11,12 +12,13 @@ interface InputProps {
   placeholder?: string;
   validations?: RegisterOptions;
   numeric: boolean;
+  totalize: boolean;
 }
 
 const Input = (props: NDataFormElement<InputProps>) => {
   // const name = useRef(props.props.name ?? '');
 
-  const detailCtx = useContext(DetailedContext);
+  const detailCtx = useContext(TotalizerContext);
 
   const name = useRef<string>(
     props.detailed
@@ -30,16 +32,14 @@ const Input = (props: NDataFormElement<InputProps>) => {
     parent: props.parent,
   });
 
-  const _handleChange = (e) => {
-    if (detailCtx && props.detailed && props.props.numeric) {
+  const _handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (detailCtx && props.props.totalize) {
       detailCtx.handleInputChange({
-        position: props.detailed.index,
+        id: props.id,
         value: !isNaN(e.target.value)
-          ? parseFloat(event.target.value.replace(/[.,]/g, ''))
+          ? parseFloat(e.target.value.replace(/[.,]/g, ''))
           : 0,
       });
-
-      detailCtx.setInputName(props.props.label);
     }
   };
 
@@ -55,7 +55,12 @@ const Input = (props: NDataFormElement<InputProps>) => {
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
           htmlFor={name.current}
         >
-          {props.props.label}
+          <div className="flex flex-row place-items-center h-5 ">
+            {props.props.label}
+            {props.props.guide_text ? (
+              <Tooltip text={props.props.guide_text} />
+            ) : null}
+          </div>
         </label>
         <input
           {...register(name.current, { ...props.props.validations })}

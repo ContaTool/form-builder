@@ -14,6 +14,7 @@ import Container from '../Container';
 import Detailed from '../Detailed';
 import CheckBox from '../Checkbox';
 import SubTitle from '../SubTitle';
+import Totalize from '../Totalize';
 
 // import RadioButton from '../RadioButton';
 import RadioContainer from '../RadioButton';
@@ -31,8 +32,8 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   detailed: Detailed,
   checkbox: CheckBox,
   radio_buttons: RadioContainer,
+  totalize: Totalize,
   // radio: RadioButton,
-
   // button: Button,
   tabs: Tabs,
   tab: Root,

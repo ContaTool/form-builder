@@ -1,17 +1,13 @@
-import React, {
-  ChangeEvent,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 import useItem from '../../hooks/useItem';
+import { Tooltip } from '../Tooltip';
 
 interface SelectProps {
   name?: string;
   label?: string;
   validations?: RegisterOptions;
+  guide_text?: string;
   option_values?: { value: string; label: string }[];
 }
 
@@ -93,7 +89,12 @@ const Select = (props: NDataFormElement<SelectProps>) => {
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
         htmlFor={name}
       >
-        {props.props.label}
+        <div className="flex flex-row place-items-center h-5 ">
+          {props.props.label}
+          {props.props.guide_text ? (
+            <Tooltip text={props.props.guide_text} />
+          ) : null}
+        </div>
       </label>
       <div>
         <input

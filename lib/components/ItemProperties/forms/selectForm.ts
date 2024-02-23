@@ -21,6 +21,13 @@ export default [
                 },
               },
               {
+                type: 'textarea',
+                props: {
+                  name: 'guide_text',
+                  label: 'Texto guia para el usuario',
+                },
+              },
+              {
                 type: 'detailed',
                 props: {
                   name: 'option_values',

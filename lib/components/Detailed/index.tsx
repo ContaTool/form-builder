@@ -3,9 +3,9 @@ import { useFieldArray, useFormContext } from 'react-hook-form';
 import useItem from '../../hooks/useItem';
 import Subtitle from '../SubTitle';
 import {
-  DetailedContext,
-  DetailedContextProvider,
-} from '../../context/DetailedContext';
+  TotalizerContext,
+  TotalizerContextProvider,
+} from '../../context/TotalizerContext';
 
 interface DetailedProps {}
 
@@ -20,14 +20,14 @@ interface DetailedProps extends NDataFormElement<Props> {
 }
 
 const DetailedWrapper = (props: DetailedProps) => (
-  <DetailedContextProvider>
+  <TotalizerContextProvider>
     <Detailed {...props} />
-  </DetailedContextProvider>
+  </TotalizerContextProvider>
 );
 
 const Detailed = (props: DetailedProps) => {
   // Context //Perfecto para usar el nuevo hook use y hacer el contexto opcional.
-  const detailCtx = useContext(DetailedContext);
+  const detailCtx = useContext(TotalizerContext);
 
   // Hooks
   const {
