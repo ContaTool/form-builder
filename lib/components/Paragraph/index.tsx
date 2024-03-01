@@ -15,7 +15,7 @@ const Paragraph = (props: NDataFormElement<ParagraphProps>) => {
   return (
     <p
       onClick={handleClick}
-      className={`${baseStyles} font-medium text-md py-4 `}
+      className={`${baseStyles} m-0 p-0 font-medium text-md`}
     >
       {props.props.text}
     </p>

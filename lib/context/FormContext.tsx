@@ -7,10 +7,15 @@ const FormContext = createContext();
 
 interface FormContextProvider {
   children: React.ReactNode;
-  onDragEnd: (e: any) => void;
+  onDragEnd?: (e: any) => void;
+  isEditing?: boolean;
 }
 
-const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
+const FormContextProvider = ({
+  children,
+  onDragEnd,
+  isEditing,
+}: FormContextProvider) => {
   const [item, setItem] = useState<{
     id: string;
     type: string;
@@ -19,8 +24,7 @@ const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
   const formData = useStore((state) => state.form);
 
   const selectItem = (item) => {
-    if (item) {
-      // console.log('current selected item', item, formData);
+    if (item && isEditing) {
       console.log('node founded', findNodeById(formData[0], item?.item));
       setItem({ ...findNodeById(formData[0], item.item), parent: item.parent });
       return;
@@ -37,13 +41,19 @@ const FormContextProvider = ({ children, onDragEnd }: FormContextProvider) => {
     selectedItem,
   };
 
-  return (
-    <FormContext.Provider value={values}>
-      <DragDropContextProvider onDragEnd={onDragEnd}>
-        {children}
-      </DragDropContextProvider>
-    </FormContext.Provider>
-  );
+  if (onDragEnd) {
+    return (
+      <FormContext.Provider value={values}>
+        <DragDropContextProvider onDragEnd={onDragEnd}>
+          {children}
+        </DragDropContextProvider>
+      </FormContext.Provider>
+    );
+  } else {
+    return (
+      <FormContext.Provider value={values}>{children}</FormContext.Provider>
+    );
+  }
 };
 
 export { FormContext, FormContextProvider };

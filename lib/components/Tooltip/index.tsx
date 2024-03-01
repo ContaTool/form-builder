@@ -8,7 +8,7 @@ const ToolTipSquare = (props: { text: string; show: boolean }) => {
         top: 'calc(-100% - 4px)',
         left: '150%',
       }}
-      className="bg-white text-black p-6 shadow-lg rounded-md w-80 text-justify absolute z-50"
+      className="bg-white text-black pl-4 pr-4 shadow-lg rounded-md w-80 absolute z-50"
     >
       <div
         style={{
@@ -21,7 +21,7 @@ const ToolTipSquare = (props: { text: string; show: boolean }) => {
             border-r-[12px] border-r-white
             border-b-[10px] border-b-transparent"
       ></div>
-      <p className="font-normal text-md">{props.text}</p>
+      <p className="font-normal text-[18px]">{props.text}</p>
     </div>
   );
 };
@@ -29,6 +29,9 @@ const ToolTipSquare = (props: { text: string; show: boolean }) => {
 const InfoIcon = () => {
   return (
     <div
+      style={{
+        border: '2px solid #ababab',
+      }}
       className="
       ms-2 text-sm flex hover:cursor-pointer
       cursor: pointer size-6 rounded-full justify-center align-middle items-center"

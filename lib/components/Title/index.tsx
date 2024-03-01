@@ -18,7 +18,7 @@ const Title = (props: NDataFormElement<TitleProps>) => {
   return (
     <div
       onClick={handleClick}
-      className={`${baseStyles} font-bold text-xl py-4 flex flex-row items-center `}
+      className={`${baseStyles} font-bold text-xl p-0 m-0 flex flex-row items-center `}
     >
       <p>{props.props.label}</p>
       {props.props.guide_text ? (
