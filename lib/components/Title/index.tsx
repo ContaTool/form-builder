@@ -9,7 +9,6 @@ interface TitleProps {
 }
 
 const Title = (props: NDataFormElement<TitleProps>) => {
-  // console.log('title', props);
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,

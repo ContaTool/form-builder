@@ -19,7 +19,7 @@ const Card = (props: CardProps) => {
       onClick={handleClick}
       className={`
       ${baseStyles}
-      my-4 w-full rounded shadow-lg bg-white pt-2 pb-2 px-4 @container`}
+      my-4 w-full rounded shadow-gray-400 shadow-md bg-white pt-2 pb-2 px-4 @container`}
     >
       <div className="grid">{props.children}</div>
     </div>

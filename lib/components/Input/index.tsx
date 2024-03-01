@@ -65,7 +65,9 @@ const Input = (props: NDataFormElement<InputProps>) => {
         <input
           {...register(name.current, { ...props.props.validations })}
           onChange={_handleChange}
-          className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="w-full rounded py-3 px-4
+          border-gray-500 border-2 border-solid
+          focus:ring-transparent focus:border-pink-500"
         />
         <p className="text-red-500 text-xs italic pt-2">
           {errors[name.current]?.message?.toString()}

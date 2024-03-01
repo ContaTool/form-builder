@@ -100,7 +100,9 @@ const Select = (props: NDataFormElement<SelectProps>) => {
         <input
           {...register(name, { ...props.props.validations })}
           type="text"
-          className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="w-full rounded py-3 px-4
+          border-gray-500 border-2 border-solid
+          focus:ring-transparent focus:border-pink-500"
           placeholder="Buscar..."
           value={query}
           autoComplete="off"
@@ -108,7 +110,10 @@ const Select = (props: NDataFormElement<SelectProps>) => {
           onClick={() => setIsOpen(true)}
         />
         {isOpen && (
-          <ul className="hover:cursor-pointer absolute z-10 left-0 w-full mt-2 border rounded bg-white shadow-md">
+          <ul
+            className="
+            list-none p-0 hove1r:cursor-pointer absolute z-10 left-0 w-full mt-2 border rounded bg-white shadow-md"
+          >
             {filteredOptions?.map((option, index) => (
               <li
                 key={index}
