@@ -61,6 +61,14 @@ export default [
                   label: 'Es Totalizable',
                 },
               },
+              {
+                type: 'checkbox',
+                props: {
+                  name: 'validations.required',
+                  label: 'Campo obligatorio',
+                  value: 'Debes rellenar este campo antes de continuar',
+                },
+              },
             ],
           },
         },

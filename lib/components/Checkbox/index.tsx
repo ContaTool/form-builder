@@ -5,6 +5,7 @@ import { RegisterOptions, useFormContext } from 'react-hook-form';
 interface CheckBoxProps {
   label: string;
   name: string;
+  value: string;
   validations?: RegisterOptions;
 }
 
@@ -32,6 +33,7 @@ const CheckBox = (props: NDataFormElement<CheckBoxProps>) => {
         <input
           {...register(name.current, { ...props.props.validations })}
           className="mr-2 leading-tight"
+          value={props.props.value}
           type="checkbox"
         />
         <span className="text-sm">{props.props.label}</span>

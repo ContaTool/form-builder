@@ -5,6 +5,7 @@ import useItem from '../../hooks/useItem';
 import { useFormContext } from 'react-hook-form';
 import { TotalizerContext } from '../../context/TotalizerContext';
 import { Tooltip } from '../Tooltip';
+import { FormContext } from '../../context/FormContext';
 
 interface InputProps {
   name?: string;
@@ -13,18 +14,35 @@ interface InputProps {
   validations?: RegisterOptions;
   numeric: boolean;
   totalize: boolean;
+  format: 'numeric' | 'date' | 'financial' | 'text' | undefined;
 }
 
 const Input = (props: NDataFormElement<InputProps>) => {
   // const name = useRef(props.props.name ?? '');
 
+  // Contexts
   const detailCtx = useContext(TotalizerContext);
+  const formCtx = useContext(FormContext);
 
   const name = useRef<string>(
     props.detailed
       ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}`
       : props.props.name ?? '-'
   );
+
+  // console.log('disable required', formCtx.disableRequired);
+
+  const getInputType = (type: string | undefined) => {
+    if (type === 'numeric' || type === 'financial') {
+      return 'number';
+    }
+
+    if (type === 'date') {
+      return 'date';
+    }
+
+    return 'text';
+  };
 
   const { handleClick, baseStyles } = useItem({
     item: props.id,
@@ -63,13 +81,18 @@ const Input = (props: NDataFormElement<InputProps>) => {
           </div>
         </label>
         <input
-          {...register(name.current, { ...props.props.validations })}
+          {...register(name.current, {
+            ...props.props.validations,
+            required: !formCtx.disableRequired,
+          })}
           onChange={_handleChange}
+          type={getInputType(props.props.format)}
           className="w-full rounded py-3 px-4
           border-gray-500 border-2 border-solid
           focus:ring-transparent focus:border-pink-500"
         />
-        <p className="text-red-500 text-xs italic pt-2">
+
+        <p className="text-red-500 text-xs italic">
           {errors[name.current]?.message?.toString()}
         </p>
       </div>

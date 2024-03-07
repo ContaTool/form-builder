@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import { FormProvider, useForm } from 'react-hook-form';
 
@@ -15,7 +15,7 @@ interface Form {
 
 const Form = (props: Form) => {
   // Hooks
-  const formData = useStore((state) => state.form);
+
   const setForm = useStore((state) => state.setForm);
 
   const form = useForm({
@@ -40,9 +40,6 @@ const Form = (props: Form) => {
         <Reenderizer data={props.form} isEditing={props.isEditing} />
         {props.children}
       </form>
-
-      {/* <p>{sum}</p>
-      <button onClick={() => setSum((prev) => prev + 1)}>Boton </button> */}
     </FormProvider>
   );
 };

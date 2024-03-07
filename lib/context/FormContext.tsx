@@ -9,12 +9,14 @@ interface FormContextProvider {
   children: React.ReactNode;
   onDragEnd?: (e: any) => void;
   isEditing?: boolean;
+  disableRequired: boolean;
 }
 
 const FormContextProvider = ({
   children,
   onDragEnd,
   isEditing,
+  disableRequired,
 }: FormContextProvider) => {
   const [item, setItem] = useState<{
     id: string;
@@ -39,6 +41,7 @@ const FormContextProvider = ({
   const values = {
     selectItem,
     selectedItem,
+    disableRequired,
   };
 
   if (onDragEnd) {

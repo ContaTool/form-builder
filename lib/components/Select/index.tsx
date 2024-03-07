@@ -18,7 +18,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     parent: props.parent,
   });
 
-  const [name, setName] = useState<string>(props.props.name || '-');
+  const [name, _] = useState<string>(props.props.name || '-');
 
   // States
   const [query, setQuery] = useState<string>('');
@@ -35,6 +35,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     register,
     setValue,
     trigger,
+    getValues,
     formState: { errors },
   } = useFormContext();
 
@@ -56,6 +57,15 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     };
   }, [wrapperRef]);
 
+  useEffect(() => {
+    console.log('select', getValues(name));
+    const defaultValue = getValues(name);
+    if (getValues(name) !== '' && filteredOptions) {
+      const d = filteredOptions.find((i) => i.value === defaultValue);
+      setQuery(d?.label ?? '');
+    }
+  }, []);
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setQuery(inputValue);
@@ -73,10 +83,6 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     setIsOpen(false);
     setValue(name, option.value);
     trigger(name);
-
-    // if (props.dependingForm) {
-    //   props.test(option.value);
-    // }
   };
 
   return (

@@ -10136,7 +10136,7 @@ function numberWithCommas(x) {
 }
 
 const FormContext = React.createContext();
-const FormContextProvider = ({ children, onDragEnd, isEditing })=>{
+const FormContextProvider = ({ children, onDragEnd, isEditing, disableRequired })=>{
     const [item, setItem] = React.useState(null);
     const formData = useStore((state)=>state.form);
     const selectItem = (item)=>{
@@ -10154,7 +10154,8 @@ const FormContextProvider = ({ children, onDragEnd, isEditing })=>{
     };
     const values = {
         selectItem,
-        selectedItem
+        selectedItem,
+        disableRequired
     };
     if (onDragEnd) {
         return React.createElement(FormContext.Provider, {
@@ -12296,8 +12297,20 @@ const TotalizerContextProvider = ({ children })=>{
 const Input = (props)=>{
     // const name = useRef(props.props.name ?? '');
     var _a, _b, _c;
+    // Contexts
     const detailCtx = React.useContext(TotalizerContext);
+    const formCtx = React.useContext(FormContext);
     const name = React.useRef(props.detailed ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}` : (_a = props.props.name) !== null && _a !== void 0 ? _a : '-');
+    // console.log('disable required', formCtx.disableRequired);
+    const getInputType = (type)=>{
+        if (type === 'numeric' || type === 'financial') {
+            return 'number';
+        }
+        if (type === 'date') {
+            return 'date';
+        }
+        return 'text';
+    };
     const { handleClick, baseStyles } = useItem({
         item: props.id,
         type: props.type,
@@ -12324,11 +12337,14 @@ const Input = (props)=>{
         className: "flex flex-row place-items-center h-5 "
     }, props.props.label, props.props.guide_text ? React.createElement(Tooltip, {
         text: props.props.guide_text
-    }) : null)), React.createElement("input", Object.assign({}, register(name.current, Object.assign({}, props.props.validations)), {
+    }) : null)), React.createElement("input", Object.assign({}, register(name.current, Object.assign(Object.assign({}, props.props.validations), {
+        required: !formCtx.disableRequired
+    })), {
         onChange: _handleChange,
+        type: getInputType(props.props.format),
         className: "w-full rounded py-3 px-4\n          border-gray-500 border-2 border-solid\n          focus:ring-transparent focus:border-pink-500"
     })), React.createElement("p", {
-        className: "text-red-500 text-xs italic pt-2"
+        className: "text-red-500 text-xs italic"
     }, (_c = (_b = errors[name.current]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString())));
 };
 
@@ -12437,7 +12453,7 @@ const Select = (props)=>{
         type: props.type,
         parent: props.parent
     });
-    const [name, setName] = React.useState(props.props.name || '-');
+    const [name, _] = React.useState(props.props.name || '-');
     // States
     const [query, setQuery] = React.useState('');
     const [filteredOptions, setFilteredOptions] = React.useState((_a = props.props.option_values) === null || _a === void 0 ? void 0 : _a.filter((i)=>i.value != 'add'));
@@ -12445,7 +12461,7 @@ const Select = (props)=>{
     // Refs
     const wrapperRef = React.useRef(null);
     // Contexts
-    const { register, setValue, trigger, formState: { errors } } = useFormContext();
+    const { register, setValue, trigger, getValues, formState: { errors } } = useFormContext();
     // Effects
     React.useEffect(()=>{
         const handleClickOutside = (event)=>{
@@ -12460,6 +12476,15 @@ const Select = (props)=>{
     }, [
         wrapperRef
     ]);
+    React.useEffect(()=>{
+        var _a;
+        console.log('select', getValues(name));
+        const defaultValue = getValues(name);
+        if (getValues(name) !== '' && filteredOptions) {
+            const d = filteredOptions.find((i)=>i.value === defaultValue);
+            setQuery((_a = d === null || d === void 0 ? void 0 : d.label) !== null && _a !== void 0 ? _a : '');
+        }
+    }, []);
     const handleInputChange = (e)=>{
         var _a;
         const inputValue = e.target.value;
@@ -12473,9 +12498,6 @@ const Select = (props)=>{
         setIsOpen(false);
         setValue(name, option.value);
         trigger(name);
-    // if (props.dependingForm) {
-    //   props.test(option.value);
-    // }
     };
     return React.createElement("div", {
         onClick: handleClick,
@@ -12641,6 +12663,7 @@ const CheckBox = (props)=>{
         className: "md:w-2/3 block text-gray-700 font-bold hover:cursor-pointer select-none"
     }, React.createElement("input", Object.assign({}, register(name.current, Object.assign({}, props.props.validations)), {
         className: "mr-2 leading-tight",
+        value: props.props.value,
         type: "checkbox"
     })), React.createElement("span", {
         className: "text-sm"
@@ -12776,7 +12799,6 @@ const Reenderizer = ({ data, isEditing, parent, detailed })=>{
 
 const Form = (props)=>{
     // Hooks
-    useStore((state)=>state.form);
     const setForm = useStore((state)=>state.setForm);
     const form = useForm({
         defaultValues: props.defaultValues
@@ -13113,6 +13135,14 @@ var inputForm = [
                                 props: {
                                     name: 'totalize',
                                     label: 'Es Totalizable'
+                                }
+                            },
+                            {
+                                type: 'checkbox',
+                                props: {
+                                    name: 'validations.required',
+                                    label: 'Campo obligatorio',
+                                    value: 'Debes rellenar este campo antes de continuar'
                                 }
                             }
                         ]
