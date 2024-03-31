@@ -6,6 +6,7 @@ import { useFormContext } from 'react-hook-form';
 import { TotalizerContext } from '../../context/TotalizerContext';
 import { Tooltip } from '../Tooltip';
 import { FormContext } from '../../context/FormContext';
+import FinancialInput from '../FinancialInput';
 
 interface InputProps {
   name?: string;
@@ -80,6 +81,9 @@ const Input = (props: NDataFormElement<InputProps>) => {
             ) : null}
           </div>
         </label>
+
+        {/* <FinancialInput /> */}
+
         <input
           {...register(name.current, {
             ...props.props.validations,
