@@ -131,7 +131,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
             ))}
           </ul>
         )}
-        <p className="text-red-500 text-xs italic pt-2">
+        <p className="text-red-500 text-xs italic">
           {errors[name]?.message?.toString()}
         </p>
       </div>

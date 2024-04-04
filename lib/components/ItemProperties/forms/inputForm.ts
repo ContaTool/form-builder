@@ -18,6 +18,9 @@ export default [
                 props: {
                   name: 'label',
                   label: 'Etiqueta',
+                  validations: {
+                    required: 'Debes llenar este campo para continuar',
+                  },
                 },
               },
               // {
@@ -40,6 +43,47 @@ export default [
                   ],
                 },
               },
+              // {
+              //   type: 'placeholder',
+              //   props: {
+              //     listen: 'format',
+              //     options: {
+              //       texto: {
+              //         children: [
+              //           {
+              //             type: 'textarea',
+              //             props: {
+              //               name: 'zzzzz',
+              //               label: '1',
+              //             },
+              //           },
+              //         ],
+              //       },
+              //       numeric: {
+              //         children: [
+              //           {
+              //             type: 'textarea',
+              //             props: {
+              //               name: '2',
+              //               label: '2',
+              //               validations: {
+              //                 required:
+              //                   'Debes llenar este campo para continuar',
+              //               },
+              //             },
+              //           },
+              //           {
+              //             type: 'textarea',
+              //             props: {
+              //               name: '3',
+              //               label: '3',
+              //             },
+              //           },
+              //         ],
+              //       },
+              //     },
+              //   },
+              // },
               {
                 type: 'textarea',
                 props: {

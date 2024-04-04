@@ -18,6 +18,7 @@ import Totalize from '../Totalize';
 
 // import RadioButton from '../RadioButton';
 import RadioContainer from '../RadioButton';
+import Placeholder from '../Placeholder';
 
 const componentMapping: { [key: string]: React.ComponentType<any> } = {
   root: Root,
@@ -37,6 +38,7 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   // button: Button,
   tabs: Tabs,
   tab: Root,
+  placeholder: Placeholder,
 };
 
 const Reenderizer = ({
@@ -53,8 +55,6 @@ const Reenderizer = ({
     index: number;
   };
 }): JSX.Element => {
-  useEffect(() => {}, []);
-
   return (
     <>
       {data.map((item: NDataFormElement<any>, index: number) => {

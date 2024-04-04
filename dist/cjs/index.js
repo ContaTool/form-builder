@@ -9520,7 +9520,7 @@ const getStyle = ({ isAnimatingOpenOnMount, placeholder, animate })=>{
         transition: animate !== 'none' ? transitions.placeholder : null
     };
 };
-const Placeholder = (props)=>{
+const Placeholder$1 = (props)=>{
     const animateOpenTimerRef = React.useRef(null);
     const tryClearAnimateOpenTimer = useCallback(()=>{
         if (!animateOpenTimerRef.current) {
@@ -9578,7 +9578,7 @@ const Placeholder = (props)=>{
         ref: props.innerRef
     });
 };
-var Placeholder$1 = React.memo(Placeholder);
+var Placeholder$1$1 = React.memo(Placeholder$1);
 function isBoolean$1(value) {
     return typeof value === 'boolean';
 }
@@ -9736,7 +9736,7 @@ const Droppable = (props)=>{
     const placeholder = useMemo(()=>React.createElement(AnimateInOut, {
             on: props.placeholder,
             shouldAnimate: props.shouldAnimatePlaceholder
-        }, ({ onClose, data, animate })=>React.createElement(Placeholder$1, {
+        }, ({ onClose, data, animate })=>React.createElement(Placeholder$1$1, {
                 placeholder: data,
                 onClose: onClose,
                 innerRef: setPlaceholderRef,
@@ -10367,6 +10367,7 @@ var shouldRenderFormState = (formStateData, _proxyFormState, updateFormState, is
 var convertToArrayPayload = (value1)=>Array.isArray(value1) ? value1 : [
         value1
     ];
+var shouldSubscribeByName = (name, signalName, exact)=>!name || !signalName || name === signalName || convertToArrayPayload(name).some((currentName)=>currentName && (exact ? currentName === signalName : currentName.startsWith(signalName) || signalName.startsWith(currentName)));
 function useSubscribe(props) {
     const _props = React.useRef(props);
     _props.current = props;
@@ -10393,6 +10394,39 @@ var generateWatchOutput = (names, _names, formValues, isGlobal, defaultValue)=>{
     isGlobal && (_names.watchAll = true);
     return formValues;
 };
+/**
+ * Custom hook to subscribe to field change and isolate re-rendering at the component level.
+ *
+ * @remarks
+ *
+ * [API](https://react-hook-form.com/docs/usewatch) • [Demo](https://codesandbox.io/s/react-hook-form-v7-ts-usewatch-h9i5e)
+ *
+ * @example
+ * ```tsx
+ * const { control } = useForm();
+ * const values = useWatch({
+ *   name: "fieldName"
+ *   control,
+ * })
+ * ```
+ */ function useWatch(props) {
+    const methods = useFormContext();
+    const { control = methods.control, name, defaultValue, disabled, exact } = props || {};
+    const _name = React.useRef(name);
+    _name.current = name;
+    useSubscribe({
+        disabled,
+        subject: control._subjects.values,
+        next: (formState)=>{
+            if (shouldSubscribeByName(_name.current, formState.name, exact)) {
+                updateValue(cloneObject(generateWatchOutput(_name.current, control._names, formState.values || control._formValues, false, defaultValue)));
+            }
+        }
+    });
+    const [value1, updateValue] = React.useState(control._getWatch(name, defaultValue));
+    React.useEffect(()=>control._removeUnmounted());
+    return value1;
+}
 var isKey = (value1)=>/^\w*$/.test(value1);
 var stringToPath = (input)=>compact(input.replace(/["|']|\]/g, '').split(/\.|\[/));
 var set = (object, path, value1)=>{
@@ -12299,7 +12333,7 @@ const Input = (props)=>{
     var _a, _b, _c;
     // Contexts
     const detailCtx = React.useContext(TotalizerContext);
-    const formCtx = React.useContext(FormContext);
+    React.useContext(FormContext);
     const name = React.useRef(props.detailed ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}` : (_a = props.props.name) !== null && _a !== void 0 ? _a : '-');
     // console.log('disable required', formCtx.disableRequired);
     const getInputType = (type)=>{
@@ -12337,9 +12371,7 @@ const Input = (props)=>{
         className: "flex flex-row place-items-center h-5 "
     }, props.props.label, props.props.guide_text ? React.createElement(Tooltip, {
         text: props.props.guide_text
-    }) : null)), React.createElement("input", Object.assign({}, register(name.current, Object.assign(Object.assign({}, props.props.validations), {
-        required: !formCtx.disableRequired
-    })), {
+    }) : null)), React.createElement("input", Object.assign({}, register(name.current, Object.assign({}, props.props.validations)), {
         onChange: _handleChange,
         type: getInputType(props.props.format),
         className: "w-full rounded py-3 px-4\n          border-gray-500 border-2 border-solid\n          focus:ring-transparent focus:border-pink-500"
@@ -12525,7 +12557,7 @@ const Select = (props)=>{
             className: "py-2 px-4 cursor-pointer hover:bg-pink-200",
             onClick: ()=>handleOptionSelect(option)
         }, option.label))), React.createElement("p", {
-        className: "text-red-500 text-xs italic pt-2"
+        className: "text-red-500 text-xs italic"
     }, (_c = (_b = errors[name]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString())));
 };
 
@@ -12730,6 +12762,40 @@ const RadioButtonContainer = (props)=>{
         }, checkbox.props.label))));
 };
 
+const PlaceHolder = (props)=>{
+    var _a, _b, _c;
+    const [currentInput, setCurrentInput] = React.useState('');
+    // Hooks
+    const { control } = useFormContext();
+    const controlInput = useWatch({
+        control: control,
+        name: props.props.listen
+    });
+    React.useEffect(()=>{
+        // Force clean state before re-render
+        setCurrentInput('');
+        setTimeout(()=>{
+            setCurrentInput(controlInput);
+        }, 1);
+    }, [
+        controlInput
+    ]);
+    if (currentInput) {
+        return React.createElement(Reenderizer, {
+            data: [
+                ...(_b = (_a = props.props.options[currentInput]) === null || _a === void 0 ? void 0 : _a.children) !== null && _b !== void 0 ? _b : []
+            ],
+            isEditing: (_c = props.isEditing) !== null && _c !== void 0 ? _c : false,
+            parent: {
+                type: 'placeholder',
+                id: props.id || ''
+            }
+        });
+    }
+    return null;
+};
+var Placeholder = React.memo(PlaceHolder);
+
 const componentMapping = {
     root: Root$1,
     title: Title$1,
@@ -12747,10 +12813,10 @@ const componentMapping = {
     // radio: RadioButton,
     // button: Button,
     tabs: Tabs,
-    tab: Root$1
+    tab: Root$1,
+    placeholder: Placeholder
 };
 const Reenderizer = ({ data, isEditing, parent, detailed })=>{
-    React.useEffect(()=>{}, []);
     return React.createElement(React.Fragment, null, data.map((item, index)=>{
         const Component = componentMapping[item.type];
         if (Component) {
@@ -13081,7 +13147,10 @@ var inputForm = [
                                 type: 'input',
                                 props: {
                                     name: 'label',
-                                    label: 'Etiqueta'
+                                    label: 'Etiqueta',
+                                    validations: {
+                                        required: 'Debes llenar este campo para continuar'
+                                    }
                                 }
                             },
                             // {
@@ -13116,6 +13185,47 @@ var inputForm = [
                                     ]
                                 }
                             },
+                            // {
+                            //   type: 'placeholder',
+                            //   props: {
+                            //     listen: 'format',
+                            //     options: {
+                            //       texto: {
+                            //         children: [
+                            //           {
+                            //             type: 'textarea',
+                            //             props: {
+                            //               name: 'zzzzz',
+                            //               label: '1',
+                            //             },
+                            //           },
+                            //         ],
+                            //       },
+                            //       numeric: {
+                            //         children: [
+                            //           {
+                            //             type: 'textarea',
+                            //             props: {
+                            //               name: '2',
+                            //               label: '2',
+                            //               validations: {
+                            //                 required:
+                            //                   'Debes llenar este campo para continuar',
+                            //               },
+                            //             },
+                            //           },
+                            //           {
+                            //             type: 'textarea',
+                            //             props: {
+                            //               name: '3',
+                            //               label: '3',
+                            //             },
+                            //           },
+                            //         ],
+                            //       },
+                            //     },
+                            //   },
+                            // },
                             {
                                 type: 'textarea',
                                 props: {

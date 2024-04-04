@@ -87,7 +87,7 @@ const Input = (props: NDataFormElement<InputProps>) => {
         <input
           {...register(name.current, {
             ...props.props.validations,
-            required: !formCtx.disableRequired,
+            // required: !formCtx.disableRequired,
           })}
           onChange={_handleChange}
           type={getInputType(props.props.format)}
