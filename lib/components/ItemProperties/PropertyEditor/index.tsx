@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import titleForm from '../forms/titleForm';
+import placeholderForm from '../forms/placeholderForm';
 
 import Form from '../../Form';
 import cardForm from '../forms/cardForm';
@@ -39,6 +40,7 @@ const formMapping: { [key: string]: any } = {
   checkbox: checkboxForm,
   subtitle: subtitleForm,
   totalize: totalizeForm,
+  placeholder: placeholderForm,
 };
 
 export const PropertyEditor = (props: PropertyEditorProps) => {

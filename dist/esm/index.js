@@ -10101,11 +10101,9 @@ function findNodeById(obj, id) {
 }
 function decodeElement(data) {
     if (data) {
-        if ((data.type === 'tabs' || data.type === 'radio_buttons') && data.props.children) {
+        if ((data.type === 'tabs' || data.type === 'radio_buttons' || data.type === 'placeholder') && data.props.children) {
             return {
-                options: data.props.children.map((i)=>({
-                        label: i.props.label
-                    }))
+                options: data.props.children.map((i)=>Object.assign({}, i.props))
             };
         }
         return data.props;
@@ -12401,6 +12399,9 @@ const Tabs = (props)=>{
         type: props.type,
         parent: props.parent
     });
+    if (!props.props) {
+        throw new Error('Props must to be setted in order to use this element');
+    }
     if (((_a = props.props) === null || _a === void 0 ? void 0 : _a.children.length) == 0) {
         return React__default.createElement("div", {
             onClick: handleClick,
@@ -12742,14 +12743,44 @@ const RadioButtonContainer = (props)=>{
         }, checkbox.props.label))));
 };
 
+const PlaceholderEditor = (props)=>{
+    const [activeTab, setActiveTab] = useState(0);
+    return React__default.createElement("div", {
+        className: `w-full`
+    }, React__default.createElement("div", {
+        className: "border-b border-gray-200"
+    }, React__default.createElement("nav", {
+        className: "-mb-px flex gap-1",
+        "aria-label": "Tabs"
+    }, props.children.map((tab, index)=>React__default.createElement("a", {
+            key: crypto.randomUUID(),
+            onClick: ()=>setActiveTab(index),
+            className: `
+                  ${activeTab === index ? 'font-msedium  text-black  border-gray-500' : ' text-gray-500  hover:text-gray-700 hover:border-gray-300'}
+                  shrink-0 border-b-2  px-1 pb-4 hover:cursor-pointer text-md  `
+        }, tab.props.label)))), props.children.map((tab, index)=>React__default.createElement("div", {
+            className: `${activeTab === index ? 'block' : 'hidden'} p-4`
+        }, React__default.createElement(Reenderizer, {
+            data: [
+                tab
+            ],
+            isEditing: true
+        }))));
+};
+
 const PlaceHolder = (props)=>{
-    var _a, _b, _c;
+    var _a, _b;
     const [currentInput, setCurrentInput] = useState('');
     // Hooks
     const { control } = useFormContext();
     const controlInput = useWatch({
         control: control,
         name: props.props.listen
+    });
+    const { handleClick, baseStyles } = useItem({
+        item: props.id,
+        type: props.type,
+        parent: props.parent
     });
     useEffect(()=>{
         // Force clean state before re-render
@@ -12760,19 +12791,32 @@ const PlaceHolder = (props)=>{
     }, [
         controlInput
     ]);
-    if (currentInput) {
-        return React__default.createElement(Reenderizer, {
-            data: [
-                ...(_b = (_a = props.props.options[currentInput]) === null || _a === void 0 ? void 0 : _a.children) !== null && _b !== void 0 ? _b : []
-            ],
-            isEditing: (_c = props.isEditing) !== null && _c !== void 0 ? _c : false,
-            parent: {
-                type: 'placeholder',
-                id: props.id || ''
+    const prepare = (value)=>{
+        return isNaN(value) ? `"${value}"` : value;
+    };
+    const getTab = (props)=>{
+        const value = 'NO';
+        return props.find((t)=>{
+            const conditional = `${prepare(value)} ${t.props.condicional} ${prepare(t.props.value)} `;
+            // console.log('la condicional', conditional);
+            if (eval(conditional)) {
+                return t;
             }
         });
-    }
-    return null;
+    };
+    return React__default.createElement("div", {
+        onClick: handleClick,
+        className: `${baseStyles} py-2 flex`
+    }, props.isEditing ? React__default.createElement(React__default.Fragment, null, React__default.createElement(PlaceholderEditor, Object.assign({}, props.props))) : React__default.createElement(React__default.Fragment, null, React__default.createElement(Reenderizer, {
+        data: [
+            ...((_a = getTab(props.props.children)) === null || _a === void 0 ? void 0 : _a.props.children) || []
+        ],
+        isEditing: (_b = props.isEditing) !== null && _b !== void 0 ? _b : false,
+        parent: {
+            type: 'placeholder',
+            id: props.id || ''
+        }
+    })));
 };
 var Placeholder = React__default.memo(PlaceHolder);
 
@@ -12790,11 +12834,10 @@ const componentMapping = {
     checkbox: CheckBox,
     radio_buttons: RadioButtonContainer,
     totalize: TotalizeWrapper,
-    // radio: RadioButton,
-    // button: Button,
     tabs: Tabs,
     tab: Root$1,
-    placeholder: Placeholder
+    placeholder: Placeholder,
+    placeholder_tab: Root$1
 };
 const Reenderizer = ({ data, isEditing, parent, detailed })=>{
     return React__default.createElement(React__default.Fragment, null, data.map((item, index)=>{
@@ -12903,7 +12946,6 @@ var ItemList = {
             value: 'select',
             label: 'Selector'
         },
-        // { value: 'detailed', label: 'Detallado' }, FIXME: Totalizar fue destriudo
         {
             value: 'textarea',
             label: 'Area de texto'
@@ -12922,7 +12964,11 @@ var ItemList = {
         },
         {
             value: 'totalize',
-            label: 'Totalizer'
+            label: 'Totalizar'
+        },
+        {
+            value: 'placeholder',
+            label: 'Cont. Condicional'
         }
     ]
 };
@@ -12983,6 +13029,106 @@ var titleForm = [
                                 props: {
                                     name: 'guide_text',
                                     label: 'Texto guia para el usuario'
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+];
+
+var placeholderForm = [
+    {
+        type: 'root',
+        props: {
+            children: [
+                {
+                    type: 'card',
+                    props: {
+                        children: [
+                            {
+                                type: 'title',
+                                props: {
+                                    label: 'Edita placeholder?'
+                                }
+                            },
+                            {
+                                type: 'input',
+                                props: {
+                                    name: 'listen',
+                                    label: 'Escucha cambios de:'
+                                }
+                            },
+                            {
+                                type: 'detailed',
+                                props: {
+                                    name: 'options',
+                                    children: [
+                                        {
+                                            type: 'container',
+                                            props: {
+                                                size: 3,
+                                                children: [
+                                                    {
+                                                        type: 'input',
+                                                        props: {
+                                                            name: 'label',
+                                                            label: 'Etiqueta '
+                                                        }
+                                                    },
+                                                    {
+                                                        type: 'input',
+                                                        props: {
+                                                            name: 'condicional',
+                                                            label: 'Condicional '
+                                                        }
+                                                    },
+                                                    // {
+                                                    //   type: 'select',
+                                                    //   props: {
+                                                    //     name: 'condicional',
+                                                    //     label: 'condicional',
+                                                    //     option_values: [
+                                                    //       {
+                                                    //         label: 'Mayor',
+                                                    //         value: '>',
+                                                    //       },
+                                                    //       {
+                                                    //         label: 'Mayor o igual',
+                                                    //         value: '>=',
+                                                    //       },
+                                                    //       {
+                                                    //         label: 'Igual',
+                                                    //         value: '===',
+                                                    //       },
+                                                    //       {
+                                                    //         label: 'Diferente',
+                                                    //         value: '!==',
+                                                    //       },
+                                                    //       {
+                                                    //         label: 'Menor',
+                                                    //         value: '<',
+                                                    //       },
+                                                    //       {
+                                                    //         label: 'Menor o igual',
+                                                    //         value: '<=',
+                                                    //       },
+                                                    //     ],
+                                                    //   },
+                                                    // },
+                                                    {
+                                                        type: 'input',
+                                                        props: {
+                                                            name: 'value',
+                                                            label: 'Valor'
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
                                 }
                             }
                         ]
@@ -13591,7 +13737,8 @@ const formMapping = {
     radio_buttons: radioForm,
     checkbox: checkboxForm,
     subtitle: subtitleForm,
-    totalize: totalizeForm
+    totalize: totalizeForm,
+    placeholder: placeholderForm
 };
 const PropertyEditor = (props)=>{
     // States

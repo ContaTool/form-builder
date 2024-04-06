@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
+import { Draggable, Droppable } from '@hello-pangea/dnd';
 import ItemList from '../ItemList';
 
 interface NewItemProps {

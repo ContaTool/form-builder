@@ -34,11 +34,10 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   checkbox: CheckBox,
   radio_buttons: RadioContainer,
   totalize: Totalize,
-  // radio: RadioButton,
-  // button: Button,
   tabs: Tabs,
   tab: Root,
   placeholder: Placeholder,
+  placeholder_tab: Root,
 };
 
 const Reenderizer = ({

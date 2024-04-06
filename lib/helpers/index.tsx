@@ -79,12 +79,15 @@ export function findNodeByTotalizable(node) {
 export function decodeElement(data: NDataFormElement<any>) {
   if (data) {
     if (
-      (data.type === 'tabs' || data.type === 'radio_buttons') &&
+      (data.type === 'tabs' ||
+        data.type === 'radio_buttons' ||
+        data.type === 'placeholder') &&
       data.props.children
     ) {
       return {
         options: data.props.children.map((i: any) => ({
-          label: i.props.label,
+          // label: i.props.label,
+          ...i.props,
         })),
       };
     }

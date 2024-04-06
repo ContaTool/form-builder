@@ -9,6 +9,7 @@ interface Form {
   form: any;
   defaultValues: any;
   isEditing: boolean;
+  propertyEditor?: boolean;
   children: JSX.Element;
   onSubmit: (data: any) => void;
 }

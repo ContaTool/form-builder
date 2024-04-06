@@ -3,14 +3,22 @@ import React, { useState } from 'react';
 import Reenderizer from '../Reenderizer';
 import useItem from '../../hooks/useItem';
 
-type Tabs = {};
+interface Props {
+  children: Array<NDataFormElement<any>>;
+}
 
-const Tabs = (props: Tabs) => {
+interface TabsProps extends NDataFormElement<Props> {}
+
+const Tabs = (props: TabsProps) => {
   const { handleClick, baseStyles } = useItem({
     item: props.id,
     type: props.type,
     parent: props.parent,
   });
+
+  if (!props.props) {
+    throw new Error('Props must to be setted in order to use this element');
+  }
 
   if (props.props?.children.length == 0) {
     return <div onClick={handleClick} className={`${baseStyles} p-6`}></div>;
@@ -41,6 +49,7 @@ const Tabs = (props: Tabs) => {
       </div>
 
       {/* Childrens */}
+
       {props.props.children.map((tab, index) => (
         <div className={`${activeTab === index ? 'block' : 'hidden'} p-4`}>
           <Reenderizer
