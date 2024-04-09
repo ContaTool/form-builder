@@ -10040,13 +10040,6 @@ const createImpl = (createState)=>{
 const create = (createState)=>createState ? createImpl(createState) : createImpl;
 
 const useStore = create((set)=>({
-        bears: 0,
-        increasePopulation: ()=>set((state)=>({
-                    bears: state.bears + 1
-                })),
-        removeAllBears: ()=>set({
-                bears: 0
-            }),
         // Real world - at, least on try
         form: [],
         setForm: (newForm)=>set({
@@ -10102,9 +10095,9 @@ function findNodeById(obj, id) {
 function decodeElement(data) {
     if (data) {
         if ((data.type === 'tabs' || data.type === 'radio_buttons' || data.type === 'placeholder') && data.props.children) {
-            return {
+            return Object.assign(Object.assign({}, data.props), {
                 options: data.props.children.map((i)=>Object.assign({}, i.props))
-            };
+            });
         }
         return data.props;
     }
@@ -10113,7 +10106,7 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
-const FormContext = createContext();
+const FormContext = createContext(null);
 const FormContextProvider = ({ children, onDragEnd, isEditing, disableRequired })=>{
     const [item, setItem] = useState(null);
     const formData = useStore((state)=>state.form);
@@ -10133,7 +10126,8 @@ const FormContextProvider = ({ children, onDragEnd, isEditing, disableRequired }
     const values = {
         selectItem,
         selectedItem,
-        disableRequired
+        disableRequired,
+        form: formData
     };
     if (onDragEnd) {
         return React__default.createElement(FormContext.Provider, {
@@ -12460,16 +12454,16 @@ const Paragraph = (props)=>{
 };
 
 const Select = (props)=>{
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
     const { handleClick, baseStyles } = useItem({
         item: props.id,
         type: props.type,
         parent: props.parent
     });
-    const [name, _] = useState(props.props.name || '-');
+    const name = useRef(props.detailed ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}` : (_a = props.props.name) !== null && _a !== void 0 ? _a : '-');
     // States
     const [query, setQuery] = useState('');
-    const [filteredOptions, setFilteredOptions] = useState((_a = props.props.option_values) === null || _a === void 0 ? void 0 : _a.filter((i)=>i.value != 'add'));
+    const [filteredOptions, setFilteredOptions] = useState((_b = props.props.option_values) === null || _b === void 0 ? void 0 : _b.filter((i)=>i.value != 'add'));
     const [isOpen, setIsOpen] = useState(false);
     // Refs
     const wrapperRef = useRef(null);
@@ -12491,9 +12485,9 @@ const Select = (props)=>{
     ]);
     useEffect(()=>{
         var _a;
-        console.log('select', getValues(name));
-        const defaultValue = getValues(name);
-        if (getValues(name) !== '' && filteredOptions) {
+        console.log('select', getValues(name.current));
+        const defaultValue = getValues(name.current);
+        if (getValues(name.current) !== '' && filteredOptions) {
             const d = filteredOptions.find((i)=>i.value === defaultValue);
             setQuery((_a = d === null || d === void 0 ? void 0 : d.label) !== null && _a !== void 0 ? _a : '');
         }
@@ -12509,8 +12503,8 @@ const Select = (props)=>{
     const handleOptionSelect = (option)=>{
         setQuery(option.label);
         setIsOpen(false);
-        setValue(name, option.value);
-        trigger(name);
+        setValue(name.current, option.value);
+        trigger(name.current);
     };
     return React__default.createElement("div", {
         onClick: handleClick,
@@ -12518,12 +12512,12 @@ const Select = (props)=>{
         ref: wrapperRef
     }, React__default.createElement("label", {
         className: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-        htmlFor: name
+        htmlFor: name.current
     }, React__default.createElement("div", {
         className: "flex flex-row place-items-center h-5 "
     }, props.props.label, props.props.guide_text ? React__default.createElement(Tooltip, {
         text: props.props.guide_text
-    }) : null)), React__default.createElement("div", null, React__default.createElement("input", Object.assign({}, register(name, Object.assign({}, props.props.validations)), {
+    }) : null)), React__default.createElement("div", null, React__default.createElement("input", Object.assign({}, register(name.current, Object.assign({}, props.props.validations)), {
         type: "text",
         className: "w-full rounded py-3 px-4\n          border-gray-500 border-2 border-solid\n          focus:ring-transparent focus:border-pink-500",
         placeholder: "Buscar...",
@@ -12539,7 +12533,7 @@ const Select = (props)=>{
             onClick: ()=>handleOptionSelect(option)
         }, option.label))), React__default.createElement("p", {
         className: "text-red-500 text-xs italic"
-    }, (_c = (_b = errors[name]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString())));
+    }, (_d = (_c = errors[name.current]) === null || _c === void 0 ? void 0 : _c.message) === null || _d === void 0 ? void 0 : _d.toString())));
 };
 
 function TextArea(props) {
@@ -12560,11 +12554,10 @@ function TextArea(props) {
     }, props.props.label), React__default.createElement("div", {
         className: "relative"
     }, React__default.createElement("textarea", Object.assign({}, register(name, Object.assign({}, props.props.validations)), {
-        // {...props}
         placeholder: props.props.placeholder,
         className: "appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
     }))), React__default.createElement("p", {
-        className: "text-red-500 text-xs italic pt-2"
+        className: "text-red-500 text-xs italic"
     }, (_c = (_b = errors[name]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.toString()));
 }
 
@@ -12775,6 +12768,7 @@ const PlaceHolder = (props)=>{
     const { control } = useFormContext();
     const controlInput = useWatch({
         control: control,
+        // name: '347ae440-2bb3-4ae6-8e12-d8ec26bbb77a',
         name: props.props.listen
     });
     const { handleClick, baseStyles } = useItem({
@@ -12794,20 +12788,21 @@ const PlaceHolder = (props)=>{
     const prepare = (value)=>{
         return isNaN(value) ? `"${value}"` : value;
     };
+    console.log('controlInput', controlInput, props.props.listen);
     const getTab = (props)=>{
-        const value = 'NO';
-        return props.find((t)=>{
-            const conditional = `${prepare(value)} ${t.props.condicional} ${prepare(t.props.value)} `;
-            // console.log('la condicional', conditional);
-            if (eval(conditional)) {
-                return t;
-            }
-        });
+        if (controlInput) {
+            return props.find((t)=>{
+                const conditional = `${prepare(controlInput)} ${t.props.condicional} ${prepare(t.props.value)} `;
+                if (eval(conditional)) {
+                    return t;
+                }
+            });
+        }
     };
-    return React__default.createElement("div", {
+    return React__default.createElement(React__default.Fragment, null, props.isEditing ? React__default.createElement(React__default.Fragment, null, React__default.createElement("div", {
         onClick: handleClick,
         className: `${baseStyles} py-2 flex`
-    }, props.isEditing ? React__default.createElement(React__default.Fragment, null, React__default.createElement(PlaceholderEditor, Object.assign({}, props.props))) : React__default.createElement(React__default.Fragment, null, React__default.createElement(Reenderizer, {
+    }, React__default.createElement(PlaceholderEditor, Object.assign({}, props.props)))) : React__default.createElement(Reenderizer, {
         data: [
             ...((_a = getTab(props.props.children)) === null || _a === void 0 ? void 0 : _a.props.children) || []
         ],
@@ -12816,9 +12811,48 @@ const PlaceHolder = (props)=>{
             type: 'placeholder',
             id: props.id || ''
         }
-    })));
+    }));
 };
 var Placeholder = React__default.memo(PlaceHolder);
+
+const SelectElements = (props)=>{
+    // Get the context and inject the options
+    const formCtx = useContext(FormContext);
+    if (!formCtx) {
+        throw new Error('Form context must be implemented to use this component');
+    }
+    const extractChildren = (element, result = [])=>{
+        // If the element has children, recursively extract them
+        if (element.props && element.props.children) {
+            // Add children to the result array
+            element.props.children.forEach((child)=>{
+                if (!child.props.children) {
+                    result.push(child);
+                }
+                // Remove to listen its own child
+                if (child.id !== formCtx.selectedItem().id) {
+                    // Recursively extract children of each child
+                    extractChildren(child, result);
+                }
+            });
+        }
+        return result;
+    };
+    const interferedProps = Object.assign(Object.assign({}, props), {
+        props: Object.assign(Object.assign({}, props.props), {
+            option_values: [
+                ...extractChildren(formCtx.form[0])
+            ].map((element)=>{
+                var _a, _b;
+                return {
+                    label: (_a = element.props.label) !== null && _a !== void 0 ? _a : '',
+                    value: (_b = element.props.name) !== null && _b !== void 0 ? _b : ''
+                };
+            }).filter((i)=>i.value !== '')
+        })
+    });
+    return React__default.createElement(Select, Object.assign({}, interferedProps));
+}; // option_values?: { value: string; label: string }[];
 
 const componentMapping = {
     root: Root$1,
@@ -12837,7 +12871,8 @@ const componentMapping = {
     tabs: Tabs,
     tab: Root$1,
     placeholder: Placeholder,
-    placeholder_tab: Root$1
+    placeholder_tab: Root$1,
+    select_elements: SelectElements
 };
 const Reenderizer = ({ data, isEditing, parent, detailed })=>{
     return React__default.createElement(React__default.Fragment, null, data.map((item, index)=>{
@@ -13051,11 +13086,11 @@ var placeholderForm = [
                             {
                                 type: 'title',
                                 props: {
-                                    label: 'Edita placeholder?'
+                                    label: 'Edita contenido condicionado'
                                 }
                             },
                             {
-                                type: 'input',
+                                type: 'select_elements',
                                 props: {
                                     name: 'listen',
                                     label: 'Escucha cambios de:'
@@ -13078,46 +13113,46 @@ var placeholderForm = [
                                                             label: 'Etiqueta '
                                                         }
                                                     },
-                                                    {
-                                                        type: 'input',
-                                                        props: {
-                                                            name: 'condicional',
-                                                            label: 'Condicional '
-                                                        }
-                                                    },
                                                     // {
-                                                    //   type: 'select',
+                                                    //   type: 'input',
                                                     //   props: {
                                                     //     name: 'condicional',
-                                                    //     label: 'condicional',
-                                                    //     option_values: [
-                                                    //       {
-                                                    //         label: 'Mayor',
-                                                    //         value: '>',
-                                                    //       },
-                                                    //       {
-                                                    //         label: 'Mayor o igual',
-                                                    //         value: '>=',
-                                                    //       },
-                                                    //       {
-                                                    //         label: 'Igual',
-                                                    //         value: '===',
-                                                    //       },
-                                                    //       {
-                                                    //         label: 'Diferente',
-                                                    //         value: '!==',
-                                                    //       },
-                                                    //       {
-                                                    //         label: 'Menor',
-                                                    //         value: '<',
-                                                    //       },
-                                                    //       {
-                                                    //         label: 'Menor o igual',
-                                                    //         value: '<=',
-                                                    //       },
-                                                    //     ],
+                                                    //     label: 'Condicional ',
                                                     //   },
                                                     // },
+                                                    {
+                                                        type: 'select',
+                                                        props: {
+                                                            name: 'condicional',
+                                                            label: 'condicional',
+                                                            option_values: [
+                                                                {
+                                                                    label: 'Mayor',
+                                                                    value: '>'
+                                                                },
+                                                                {
+                                                                    label: 'Mayor o igual',
+                                                                    value: '>='
+                                                                },
+                                                                {
+                                                                    label: 'Igual',
+                                                                    value: '==='
+                                                                },
+                                                                {
+                                                                    label: 'Diferente',
+                                                                    value: '!=='
+                                                                },
+                                                                {
+                                                                    label: 'Menor',
+                                                                    value: '<'
+                                                                },
+                                                                {
+                                                                    label: 'Menor o igual',
+                                                                    value: '<='
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
                                                     {
                                                         type: 'input',
                                                         props: {
@@ -13757,6 +13792,7 @@ const PropertyEditor = (props)=>{
         ctx.selectedItem
     ]);
     if (!form) return React__default.createElement(React__default.Fragment, null);
+    console.log('decodeElement(ctx.selectedItem()', ctx.selectedItem());
     return React__default.createElement(Form, {
         propertyEditor: true,
         isEditing: false,

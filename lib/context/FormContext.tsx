@@ -3,7 +3,14 @@ import { DragDropContextProvider } from './DragDropContextProvider';
 import { useStore } from '../hooks/useStore';
 import { findNodeById } from '../helpers';
 
-const FormContext = createContext();
+interface FormContextProps {
+  selectedItem: any;
+  selectItem: () => {};
+  disableRequired: boolean; // I'm not sure about this. could be another thing
+  form: Array<any>;
+}
+
+const FormContext = createContext<FormContextProps | null>(null);
 
 interface FormContextProvider {
   children: React.ReactNode;
@@ -42,6 +49,7 @@ const FormContextProvider = ({
     selectItem,
     selectedItem,
     disableRequired,
+    form: formData,
   };
 
   if (onDragEnd) {

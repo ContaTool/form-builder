@@ -4,7 +4,6 @@ import New from './New';
 import { PropertyEditor } from './PropertyEditor';
 import { FormContext } from '../../context/FormContext';
 import { useStore } from '../../hooks/useStore';
-// import { useItemSelected } from '../../hooks/useItemSelected';
 
 interface ItemPropertiesProps {
   onSubmit: (data: any) => void;
@@ -39,7 +38,6 @@ const ItemProperties = (props: ItemPropertiesProps) => {
   const _deleteItem = () => {
     try {
       console.log('delete called', ctx.selectedItem());
-
       props.deleteItem({
         ...ctx.selectedItem(),
       });

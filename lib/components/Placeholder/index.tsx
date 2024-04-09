@@ -20,6 +20,7 @@ const PlaceHolder = (props: PlaceHolderProps) => {
   const { control } = useFormContext();
   const controlInput = useWatch({
     control: control,
+    // name: '347ae440-2bb3-4ae6-8e12-d8ec26bbb77a',
     name: props.props.listen,
   });
   const { handleClick, baseStyles } = useItem({
@@ -40,35 +41,36 @@ const PlaceHolder = (props: PlaceHolderProps) => {
     return isNaN(value) ? `"${value}"` : value;
   };
 
+  console.log('controlInput', controlInput, props.props.listen);
+
   const getTab = (props) => {
-    const value = 'NO';
-    return props.find((t) => {
-      const conditional = `${prepare(value)} ${t.props.condicional} ${prepare(t.props.value)} `;
-      // console.log('la condicional', conditional);
-      if (eval(conditional)) {
-        return t;
-      }
-    });
+    if (controlInput) {
+      return props.find((t) => {
+        const conditional = `${prepare(controlInput)} ${t.props.condicional} ${prepare(t.props.value)} `;
+        if (eval(conditional)) {
+          return t;
+        }
+      });
+    }
   };
 
   return (
-    <div onClick={handleClick} className={`${baseStyles} py-2 flex`}>
+    <>
       {props.isEditing ? (
         <>
           {/* Here i have to show some kind of tabs */}
-          <PlaceholderEditor {...props.props} />
+          <div onClick={handleClick} className={`${baseStyles} py-2 flex`}>
+            <PlaceholderEditor {...props.props} />
+          </div>
         </>
       ) : (
-        <>
-          {/* Validate which is the selection and show*/}
-          <Reenderizer
-            data={[...(getTab(props.props.children)?.props.children || [])]}
-            isEditing={props.isEditing ?? false}
-            parent={{ type: 'placeholder', id: props.id || '' }}
-          ></Reenderizer>
-        </>
+        <Reenderizer
+          data={[...(getTab(props.props.children)?.props.children || [])]}
+          isEditing={props.isEditing ?? false}
+          parent={{ type: 'placeholder', id: props.id || '' }}
+        />
       )}
-    </div>
+    </>
   );
 };
 

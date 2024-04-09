@@ -18,7 +18,11 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     parent: props.parent,
   });
 
-  const [name, _] = useState<string>(props.props.name || '-');
+  const name = useRef<string>(
+    props.detailed
+      ? `${props.detailed.name}.${props.detailed.index}.${props.props.name}`
+      : props.props.name ?? '-'
+  );
 
   // States
   const [query, setQuery] = useState<string>('');
@@ -58,9 +62,9 @@ const Select = (props: NDataFormElement<SelectProps>) => {
   }, [wrapperRef]);
 
   useEffect(() => {
-    console.log('select', getValues(name));
-    const defaultValue = getValues(name);
-    if (getValues(name) !== '' && filteredOptions) {
+    console.log('select', getValues(name.current));
+    const defaultValue = getValues(name.current);
+    if (getValues(name.current) !== '' && filteredOptions) {
       const d = filteredOptions.find((i) => i.value === defaultValue);
       setQuery(d?.label ?? '');
     }
@@ -81,8 +85,8 @@ const Select = (props: NDataFormElement<SelectProps>) => {
   const handleOptionSelect = (option: { value: string; label: string }) => {
     setQuery(option.label);
     setIsOpen(false);
-    setValue(name, option.value);
-    trigger(name);
+    setValue(name.current, option.value);
+    trigger(name.current);
   };
 
   return (
@@ -93,7 +97,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
     >
       <label
         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        htmlFor={name}
+        htmlFor={name.current}
       >
         <div className="flex flex-row place-items-center h-5 ">
           {props.props.label}
@@ -104,7 +108,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
       </label>
       <div>
         <input
-          {...register(name, { ...props.props.validations })}
+          {...register(name.current, { ...props.props.validations })}
           type="text"
           className="w-full rounded py-3 px-4
           border-gray-500 border-2 border-solid
@@ -132,7 +136,7 @@ const Select = (props: NDataFormElement<SelectProps>) => {
           </ul>
         )}
         <p className="text-red-500 text-xs italic">
-          {errors[name]?.message?.toString()}
+          {errors[name.current]?.message?.toString()}
         </p>
       </div>
     </div>

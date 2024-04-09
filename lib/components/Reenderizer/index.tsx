@@ -19,6 +19,7 @@ import Totalize from '../Totalize';
 // import RadioButton from '../RadioButton';
 import RadioContainer from '../RadioButton';
 import Placeholder from '../Placeholder';
+import { SelectElements } from '../SelectElements';
 
 const componentMapping: { [key: string]: React.ComponentType<any> } = {
   root: Root,
@@ -38,6 +39,7 @@ const componentMapping: { [key: string]: React.ComponentType<any> } = {
   tab: Root,
   placeholder: Placeholder,
   placeholder_tab: Root,
+  select_elements: SelectElements,
 };
 
 const Reenderizer = ({

@@ -10,11 +10,11 @@ export default [
               {
                 type: 'title',
                 props: {
-                  label: 'Edita placeholder?',
+                  label: 'Edita contenido condicionado',
                 },
               },
               {
-                type: 'input',
+                type: 'select_elements',
                 props: {
                   name: 'listen',
                   label: 'Escucha cambios de:',
@@ -37,47 +37,47 @@ export default [
                               label: 'Etiqueta ',
                             },
                           },
-                          {
-                            type: 'input',
-                            props: {
-                              name: 'condicional',
-                              label: 'Condicional ',
-                            },
-                          },
-
                           // {
-                          //   type: 'select',
+                          //   type: 'input',
                           //   props: {
                           //     name: 'condicional',
-                          //     label: 'condicional',
-                          //     option_values: [
-                          //       {
-                          //         label: 'Mayor',
-                          //         value: '>',
-                          //       },
-                          //       {
-                          //         label: 'Mayor o igual',
-                          //         value: '>=',
-                          //       },
-                          //       {
-                          //         label: 'Igual',
-                          //         value: '===',
-                          //       },
-                          //       {
-                          //         label: 'Diferente',
-                          //         value: '!==',
-                          //       },
-                          //       {
-                          //         label: 'Menor',
-                          //         value: '<',
-                          //       },
-                          //       {
-                          //         label: 'Menor o igual',
-                          //         value: '<=',
-                          //       },
-                          //     ],
+                          //     label: 'Condicional ',
                           //   },
                           // },
+
+                          {
+                            type: 'select',
+                            props: {
+                              name: 'condicional',
+                              label: 'condicional',
+                              option_values: [
+                                {
+                                  label: 'Mayor',
+                                  value: '>',
+                                },
+                                {
+                                  label: 'Mayor o igual',
+                                  value: '>=',
+                                },
+                                {
+                                  label: 'Igual',
+                                  value: '===',
+                                },
+                                {
+                                  label: 'Diferente',
+                                  value: '!==',
+                                },
+                                {
+                                  label: 'Menor',
+                                  value: '<',
+                                },
+                                {
+                                  label: 'Menor o igual',
+                                  value: '<=',
+                                },
+                              ],
+                            },
+                          },
 
                           {
                             type: 'input',

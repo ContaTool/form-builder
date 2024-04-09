@@ -85,8 +85,8 @@ export function decodeElement(data: NDataFormElement<any>) {
       data.props.children
     ) {
       return {
+        ...data.props,
         options: data.props.children.map((i: any) => ({
-          // label: i.props.label,
           ...i.props,
         })),
       };

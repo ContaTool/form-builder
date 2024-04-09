@@ -39,13 +39,12 @@ export default function TextArea(props: NDataFormElement<TextAreaProps>) {
       <div className="relative">
         <textarea
           {...register(name, { ...props.props.validations })}
-          // {...props}
           placeholder={props.props.placeholder}
           className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
         />
       </div>
 
-      <p className="text-red-500 text-xs italic pt-2">
+      <p className="text-red-500 text-xs italic">
         {errors[name]?.message?.toString()}
       </p>
     </div>

@@ -61,6 +61,8 @@ export const PropertyEditor = (props: PropertyEditorProps) => {
 
   if (!form) return <></>;
 
+  console.log('decodeElement(ctx.selectedItem()', ctx.selectedItem());
+
   return (
     <Form
       propertyEditor={true}
